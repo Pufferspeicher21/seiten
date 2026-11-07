@@ -108,14 +108,11 @@ Jeder Bewohner hat:
   (Geräte, Dinge). **Das ist endgültig**, er kommt nie zurück. Die Hof-KI fragt vorher einmal nach.
 
 ## 10. Die Welt
-**[GILT JETZT] Kleine Karte:** Hof, Koppel, Große Wiese, Teich frei. Obstwiese (ab Stufe 2), Lange Weide und
-Wäldchen (ab Stufe 3), Acker (ab Stufe 4). Jeder Zug gibt 5 Erfahrung, Mähen 8. Stufe = 1 + Erfahrung / 100.
-
-**[KOMMT MIT DEM UMBAU] Große Karte** (Entwurf: `entwurf.html`):
+**Die große Karte gilt seit 08.11.2026.**
 - **Start, offen:** Hof mit Stall, Schuppen, Scheune und dem Haus des Besitzers, Koppel, Große Wiese, Teich.
 - **Nebel-Ring:** Großer Wald, Quellwald, Hügel, Bachwiese, Acker, Obstwiese, Moor, Westwald. Freilegen kostet
-  Taler (Abschnitt 11). Manche Gebiete haben ein **Geheimnis**, das man beim ersten Betreten entdeckt.
-- **Die Welt wächst jeden Montag** um einen neuen Ring Nebel-Gebiete am Rand. Das macht die Hof-KI von selbst.
+  Taler (Abschnitt 11). **[GILT JETZT]** Bis die Taler kommen, bleiben alle Nebel-Gebiete zu. Manche Gebiete haben ein **Geheimnis**, das man beim ersten Betreten entdeckt.
+- **[KOMMT MIT DEM UMBAU] Die Welt wächst jeden Montag** um einen neuen Ring Nebel-Gebiete am Rand. Das macht die Hof-KI von selbst.
 - **Abläufe, an denen man drehen kann:**
   - Wasser: Der Fluss kommt aus dem Quellwald und fließt durch den Teich. Bei Regen steigt er, bei Hochwasser werden
     Bachwiese und Ufer überschwemmt. Wer ihn staut, bekommt einen neuen Teich.
@@ -212,7 +209,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
   bei einem seiner Bewohner etwas ansteht. Absender ist der Bewohner. Max bekommt keine Mails.
 
 ## 16. Für die Hof-KI (Technik)
-- `spielstand.json` ist die einzige Wahrheit. `karte.json` ist die aktuelle Karte, `karte-v2.json` der Entwurf.
+- `spielstand.json` ist die einzige Wahrheit. `karte.json` ist die aktuelle große Karte (Gebiete mit `nebel: true` sind noch zu, freigelegte stehen in `freigelegt` im Spielstand). `karte-v1-klein.json` ist die alte Karte (nur Archiv).
 - Abschnitte mit [KOMMT MIT DEM UMBAU] noch nicht anwenden. Abschnitte mit [GILT JETZT] gelten bis zum Umbau.
 - Bei jedem Lauf: Zeit nachrechnen, Pläne ausführen, Paul würfeln, Mails abarbeiten, Tagebuch, Push.
 - Tagebuch neueste oben, höchstens 60 Einträge, ältere nach `archiv/`.
@@ -225,6 +222,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
 ### Änderungsverlauf
 | Datum | Änderung |
 |---|---|
+| 08.11.2026 | Große Karte ist im Spiel: Start-Gebiete offen, Nebel-Gebiete zu bis zum Umbau, Fluss, Dorf mit Spielerhäusern. Stufen-Freischaltung entfällt. |
 | 08.11.2026 | Version 3: Sandkasten statt Wirtschaft. Baupläne, Fairness, Realismus, Pflege wie Tamagotchi, Anmeldung mit PIN, Entscheidungen auf der Seite, große Karte, Taler fürs Kümmern, Häuser, Abschied über Gnadenhof und Schrottplatz. |
 | 07.11.2026 | Paul der Hofhund, kein Selbstlauf mehr, Halter-Regel, Anträge, Karte und Live-Positionen. |
 | 07.11.2026 | Erste Fassung mit Bella. |

@@ -1,561 +1,876 @@
 {
-  "version": 1,
-  "hinweis": "Ausgedachte Karte. Koordinaten 0 bis 1000 (x, nach rechts) und 0 bis 700 (y, nach unten).",
-  "groesse": [
-    1000,
-    700
-  ],
-  "flaechen": [
-    {
-      "id": "w-grosse-wiese",
-      "name": "Große Wiese",
-      "art": "wiese",
-      "ab_stufe": 1,
-      "punkte": [
-        [
-          50,
-          150
-        ],
-        [
-          318,
-          62
-        ],
-        [
-          392,
-          322
-        ],
-        [
-          128,
-          452
-        ]
-      ]
-    },
-    {
-      "id": "w-koppel",
-      "name": "Koppel",
-      "art": "weide",
-      "ab_stufe": 1,
-      "punkte": [
-        [
-          346,
-          58
-        ],
-        [
-          548,
-          36
-        ],
-        [
-          588,
-          330
-        ],
-        [
-          418,
-          334
-        ]
-      ]
-    },
-    {
-      "id": "w-lange-weide",
-      "name": "Lange Weide",
-      "art": "weide",
-      "ab_stufe": 3,
-      "punkte": [
-        [
-          576,
-          34
-        ],
-        [
-          812,
-          18
-        ],
-        [
-          852,
-          236
-        ],
-        [
-          618,
-          318
-        ]
-      ]
-    },
-    {
-      "id": "wald",
-      "name": "Wäldchen",
-      "art": "wald",
-      "ab_stufe": 3,
-      "punkte": [
-        [
-          836,
-          14
-        ],
-        [
-          992,
-          10
-        ],
-        [
-          992,
-          188
-        ],
-        [
-          876,
-          224
-        ]
-      ]
-    },
-    {
-      "id": "acker",
-      "name": "Acker",
-      "art": "acker",
-      "ab_stufe": 4,
-      "punkte": [
-        [
-          880,
-          250
-        ],
-        [
-          992,
-          212
-        ],
-        [
-          992,
-          392
-        ],
-        [
-          912,
-          440
-        ],
-        [
-          812,
-          372
-        ]
-      ]
-    },
-    {
-      "id": "obstwiese",
-      "name": "Obstwiese",
-      "art": "obstwiese",
-      "ab_stufe": 2,
-      "punkte": [
-        [
-          150,
-          476
-        ],
-        [
-          322,
-          398
-        ],
-        [
-          372,
-          488
-        ],
-        [
-          216,
-          528
-        ]
-      ]
-    },
-    {
-      "id": "teich",
-      "name": "Teich",
-      "art": "teich",
-      "ab_stufe": 1,
-      "ellipse": [
-        668,
-        372,
-        38,
-        22
-      ]
-    },
-    {
-      "id": "hof",
-      "name": "Hof",
-      "art": "hof",
-      "ab_stufe": 1,
-      "punkte": [
-        [
-          412,
-          350
-        ],
-        [
-          612,
-          346
-        ],
-        [
-          636,
-          500
-        ],
-        [
-          398,
-          510
-        ]
-      ]
-    }
-  ],
-  "punkte": {
-    "stall": [
-      476,
-      394
+ "version": 3,
+ "hinweis": "Ausgedachte große Karte. Koordinaten 0 bis 1600 (x) und 0 bis 1100 (y). nebel: true = noch nicht freigelegt.",
+ "groesse": [
+  1600,
+  1100
+ ],
+ "flaechen": [
+  {
+   "id": "hof",
+   "name": "Hof",
+   "art": "hof",
+   "punkte": [
+    [
+     680,
+     550
     ],
-    "schuppen": [
-      590,
-      390
+    [
+     960,
+     545
     ],
-    "dorf": [
-      250,
-      620
+    [
+     985,
+     745
     ],
-    "tor": [
-      508,
-      348
-    ],
-    "korb": [
-      420,
-      474
-    ],
-    "sonne": [
-      [
-        468,
-        430
-      ],
-      [
-        528,
-        500
-      ],
-      [
-        618,
-        424
-      ],
-      [
-        455,
-        498
-      ]
-    ],
-    "teichrand": [
-      [
-        630,
-        368
-      ],
-      [
-        706,
-        372
-      ],
-      [
-        668,
-        396
-      ]
+    [
+     670,
+     752
     ]
+   ]
   },
-  "gebaeude": [
-    {
-      "name": "Stall",
-      "rect": [
-        432,
-        368,
-        92,
-        52
-      ],
-      "art": "stall"
-    },
-    {
-      "name": "Schuppen",
-      "rect": [
-        560,
-        366,
-        58,
-        42
-      ],
-      "art": "schuppen"
-    },
-    {
-      "name": "Wohnhaus",
-      "rect": [
-        438,
-        440,
-        74,
-        46
-      ],
-      "art": "haus"
-    },
-    {
-      "name": "Scheune",
-      "rect": [
-        540,
-        436,
-        70,
-        52
-      ],
-      "art": "scheune"
-    }
-  ],
-  "wege": [
-    {
-      "name": "Feldweg West",
-      "linie": [
-        [
-          332,
-          60
-        ],
-        [
-          406,
-          330
-        ],
-        [
-          420,
-          345
-        ]
-      ]
-    },
-    {
-      "name": "Feldweg Mitte",
-      "linie": [
-        [
-          562,
-          34
-        ],
-        [
-          602,
-          326
-        ],
-        [
-          600,
-          348
-        ]
-      ]
-    },
-    {
-      "name": "Hofweg",
-      "linie": [
-        [
-          510,
-          500
-        ],
-        [
-          514,
-          540
-        ]
-      ]
-    },
-    {
-      "name": "Weg zum Teich",
-      "linie": [
-        [
-          612,
-          352
-        ],
-        [
-          640,
-          368
-        ]
-      ]
-    }
-  ],
-  "strassen": [
-    {
-      "linie": [
-        [
-          0,
-          566
-        ],
-        [
-          220,
-          552
-        ],
-        [
-          514,
-          544
-        ],
-        [
-          760,
-          548
-        ],
-        [
-          1000,
-          532
-        ]
-      ]
-    },
-    {
-      "linie": [
-        [
-          740,
-          548
-        ],
-        [
-          860,
-          452
-        ],
-        [
-          1000,
-          360
-        ]
-      ]
-    }
-  ],
-  "baumreihen": [
-    {
-      "linie": [
-        [
-          326,
-          70
-        ],
-        [
-          400,
-          326
-        ]
-      ],
-      "abstand": 24
-    },
-    {
-      "linie": [
-        [
-          40,
-          160
-        ],
-        [
-          124,
-          456
-        ]
-      ],
-      "abstand": 30
-    },
-    {
-      "linie": [
-        [
-          760,
-          540
-        ],
-        [
-          990,
-          370
-        ]
-      ],
-      "abstand": 34
-    }
-  ],
-  "dorf": {
-    "haeuser": [
-      [
-        40,
-        590,
-        46,
-        30
-      ],
-      [
-        110,
-        600,
-        40,
-        34
-      ],
-      [
-        170,
-        586,
-        52,
-        28
-      ],
-      [
-        282,
-        590,
-        44,
-        32
-      ],
-      [
-        350,
-        598,
-        38,
-        28
-      ],
-      [
-        420,
-        584,
-        56,
-        34
-      ],
-      [
-        604,
-        586,
-        46,
-        30
-      ],
-      [
-        676,
-        594,
-        40,
-        36
-      ],
-      [
-        820,
-        580,
-        50,
-        30
-      ],
-      [
-        900,
-        568,
-        44,
-        32
-      ],
-      [
-        60,
-        640,
-        50,
-        30
-      ],
-      [
-        150,
-        650,
-        44,
-        28
-      ],
-      [
-        330,
-        640,
-        48,
-        32
-      ],
-      [
-        460,
-        636,
-        40,
-        30
-      ],
-      [
-        560,
-        644,
-        58,
-        32
-      ],
-      [
-        720,
-        640,
-        42,
-        30
-      ],
-      [
-        860,
-        630,
-        52,
-        34
-      ]
+  {
+   "id": "w-koppel",
+   "name": "Koppel",
+   "art": "weide",
+   "punkte": [
+    [
+     690,
+     330
     ],
-    "gaerten": [
-      [
-        230,
-        600,
-        40,
-        40
-      ],
-      [
-        520,
-        600,
-        60,
-        30
-      ],
-      [
-        780,
-        600,
-        30,
-        40
-      ]
+    [
+     900,
+     320
+    ],
+    [
+     935,
+     535
+    ],
+    [
+     700,
+     540
     ]
+   ]
+  },
+  {
+   "id": "w-grosse-wiese",
+   "name": "Große Wiese",
+   "art": "wiese",
+   "punkte": [
+    [
+     430,
+     300
+    ],
+    [
+     675,
+     328
+    ],
+    [
+     688,
+     540
+    ],
+    [
+     470,
+     600
+    ]
+   ]
+  },
+  {
+   "id": "teich",
+   "name": "Teich",
+   "art": "teich",
+   "ellipse": [
+    1020,
+    520,
+    58,
+    34
+   ]
+  },
+  {
+   "id": "wald-gross",
+   "name": "Großer Wald",
+   "art": "wald",
+   "punkte": [
+    [
+     620,
+     40
+    ],
+    [
+     1080,
+     30
+    ],
+    [
+     1062,
+     300
+    ],
+    [
+     905,
+     312
+    ],
+    [
+     700,
+     318
+    ]
+   ],
+   "nebel": true,
+   "preis": 20,
+   "geheimnis": "Lichtung mit altem Hochsitz"
+  },
+  {
+   "id": "quellwald",
+   "name": "Quellwald",
+   "art": "wald",
+   "punkte": [
+    [
+     1150,
+     30
+    ],
+    [
+     1580,
+     30
+    ],
+    [
+     1580,
+     320
+    ],
+    [
+     1210,
+     340
+    ],
+    [
+     1135,
+     205
+    ]
+   ],
+   "nebel": true,
+   "preis": 20,
+   "geheimnis": "Quelle des Flusses, Biberbau-Platz"
+  },
+  {
+   "id": "huegel",
+   "name": "Hügel",
+   "art": "huegel",
+   "punkte": [
+    [
+     1215,
+     355
+    ],
+    [
+     1580,
+     340
+    ],
+    [
+     1580,
+     550
+    ],
+    [
+     1250,
+     548
+    ]
+   ],
+   "nebel": true,
+   "preis": 20,
+   "geheimnis": "Aussichtspunkt, Rodelbahn im Winter"
+  },
+  {
+   "id": "bachwiese",
+   "name": "Bachwiese",
+   "art": "wiese",
+   "punkte": [
+    [
+     1075,
+     565
+    ],
+    [
+     1235,
+     560
+    ],
+    [
+     1240,
+     770
+    ],
+    [
+     1110,
+     790
+    ]
+   ],
+   "nebel": true,
+   "preis": 20,
+   "ueberschwemmbar": true
+  },
+  {
+   "id": "acker",
+   "name": "Acker",
+   "art": "acker",
+   "punkte": [
+    [
+     1255,
+     565
+    ],
+    [
+     1580,
+     565
+    ],
+    [
+     1580,
+     850
+    ],
+    [
+     1255,
+     855
+    ]
+   ],
+   "nebel": true,
+   "preis": 20
+  },
+  {
+   "id": "obstwiese",
+   "name": "Obstwiese",
+   "art": "obstwiese",
+   "punkte": [
+    [
+     480,
+     618
+    ],
+    [
+     662,
+     600
+    ],
+    [
+     668,
+     790
+    ],
+    [
+     505,
+     810
+    ]
+   ],
+   "nebel": true,
+   "preis": 20
+  },
+  {
+   "id": "moor",
+   "name": "Moor",
+   "art": "moor",
+   "punkte": [
+    [
+     40,
+     330
+    ],
+    [
+     420,
+     305
+    ],
+    [
+     462,
+     605
+    ],
+    [
+     310,
+     660
+    ],
+    [
+     60,
+     660
+    ]
+   ],
+   "nebel": true,
+   "preis": 20,
+   "geheimnis": "Irrlichter, ein alter Stiefel"
+  },
+  {
+   "id": "westwald",
+   "name": "Westwald",
+   "art": "wald",
+   "punkte": [
+    [
+     40,
+     40
+    ],
+    [
+     605,
+     40
+    ],
+    [
+     615,
+     295
+    ],
+    [
+     420,
+     292
+    ],
+    [
+     40,
+     315
+    ]
+   ],
+   "nebel": true,
+   "preis": 20,
+   "geheimnis": "Alte Hütte"
+  },
+  {
+   "id": "gnadenhof",
+   "name": "Gnadenhof",
+   "art": "sonder",
+   "punkte": [
+    [
+     40,
+     690
+    ],
+    [
+     330,
+     680
+    ],
+    [
+     340,
+     840
+    ],
+    [
+     40,
+     850
+    ]
+   ],
+   "text": "Abschied für Tiere. Wer hier hinkommt, bleibt für immer."
+  },
+  {
+   "id": "schrottplatz",
+   "name": "Schrottplatz",
+   "art": "sonder",
+   "punkte": [
+    [
+     1300,
+     925
+    ],
+    [
+     1580,
+     925
+    ],
+    [
+     1580,
+     1080
+    ],
+    [
+     1300,
+     1080
+    ]
+   ],
+   "text": "Abschied für Geräte und Dinge. Für immer."
+  },
+  {
+   "id": "dorf",
+   "name": "Dorf",
+   "art": "dorf",
+   "punkte": [
+    [
+     360,
+     860
+    ],
+    [
+     1240,
+     860
+    ],
+    [
+     1240,
+     1090
+    ],
+    [
+     360,
+     1090
+    ]
+   ]
   }
+ ],
+ "punkte": {
+  "stall": [
+   750,
+   592
+  ],
+  "schuppen": [
+   846,
+   588
+  ],
+  "tor": [
+   800,
+   550
+  ],
+  "korb": [
+   938,
+   646
+  ],
+  "dorf": [
+   600,
+   965
+  ],
+  "sonne": [
+   [
+    800,
+    732
+   ],
+   [
+    962,
+    700
+   ],
+   [
+    692,
+    730
+   ],
+   [
+    760,
+    728
+   ]
+  ],
+  "teichrand": [
+   [
+    958,
+    522
+   ],
+   [
+    1080,
+    520
+   ],
+   [
+    1012,
+    558
+   ]
+  ]
+ },
+ "fluss": {
+  "linie": [
+   [
+    1190,
+    30
+   ],
+   [
+    1150,
+    140
+   ],
+   [
+    1110,
+    260
+   ],
+   [
+    1062,
+    380
+   ],
+   [
+    1035,
+    488
+   ],
+   [
+    1030,
+    556
+   ],
+   [
+    1060,
+    640
+   ],
+   [
+    1090,
+    760
+   ],
+   [
+    1068,
+    880
+   ],
+   [
+    1085,
+    980
+   ],
+   [
+    1110,
+    1100
+   ]
+  ],
+  "breite": 16,
+  "bruecken": [
+   [
+    1070,
+    880
+   ]
+  ]
+ },
+ "strassen": [
+  {
+   "name": "Dorfstraße",
+   "linie": [
+    [
+     0,
+     875
+    ],
+    [
+     400,
+     868
+    ],
+    [
+     800,
+     880
+    ],
+    [
+     1200,
+     872
+    ],
+    [
+     1600,
+     885
+    ]
+   ]
+  },
+  {
+   "name": "Kirchweg",
+   "linie": [
+    [
+     800,
+     880
+    ],
+    [
+     805,
+     1090
+    ]
+   ]
+  },
+  {
+   "name": "Hofzufahrt",
+   "linie": [
+    [
+     825,
+     752
+    ],
+    [
+     815,
+     880
+    ]
+   ]
+  }
+ ],
+ "wege": [
+  {
+   "name": "Feldweg West",
+   "linie": [
+    [
+     680,
+     330
+    ],
+    [
+     690,
+     548
+    ]
+   ]
+  },
+  {
+   "name": "Waldweg",
+   "linie": [
+    [
+     800,
+     322
+    ],
+    [
+     820,
+     170
+    ],
+    [
+     880,
+     40
+    ]
+   ]
+  },
+  {
+   "name": "Teichweg",
+   "linie": [
+    [
+     960,
+     620
+    ],
+    [
+     985,
+     560
+    ]
+   ]
+  },
+  {
+   "name": "Moorpfad",
+   "linie": [
+    [
+     430,
+     420
+    ],
+    [
+     250,
+     480
+    ],
+    [
+     120,
+     560
+    ]
+   ]
+  }
+ ],
+ "baumreihen": [
+  {
+   "linie": [
+    [
+     425,
+     295
+    ],
+    [
+     465,
+     600
+    ]
+   ],
+   "abstand": 28
+  },
+  {
+   "linie": [
+    [
+     0,
+     860
+    ],
+    [
+     350,
+     852
+    ]
+   ],
+   "abstand": 32
+  },
+  {
+   "linie": [
+    [
+     1250,
+     860
+    ],
+    [
+     1600,
+     870
+    ]
+   ],
+   "abstand": 32
+  }
+ ],
+ "gebaeude": [
+  {
+   "name": "Stall",
+   "art": "stall",
+   "rect": [
+    700,
+    565,
+    100,
+    55
+   ]
+  },
+  {
+   "name": "Schuppen",
+   "art": "schuppen",
+   "rect": [
+    815,
+    565,
+    62,
+    45
+   ]
+  },
+  {
+   "name": "Scheune",
+   "art": "scheune",
+   "rect": [
+    890,
+    570,
+    70,
+    62
+   ]
+  },
+  {
+   "name": "Haus Max",
+   "art": "spielerhaus",
+   "spieler": "S-01",
+   "rect": [
+    700,
+    650,
+    88,
+    58
+   ],
+   "text": "Besitzer"
+  },
+  {
+   "name": "Bauplatz Garage",
+   "art": "bauplatz",
+   "rect": [
+    805,
+    665,
+    62,
+    48
+   ],
+   "preis": 30
+  },
+  {
+   "name": "Bauplatz Werkstatt",
+   "art": "bauplatz",
+   "rect": [
+    885,
+    665,
+    72,
+    50
+   ],
+   "preis": 30
+  },
+  {
+   "name": "Bauplatz Steg",
+   "art": "bauplatz",
+   "rect": [
+    1060,
+    490,
+    44,
+    16
+   ],
+   "preis": 30
+  },
+  {
+   "name": "Hundekorb Paul",
+   "art": "korb",
+   "rect": [
+    930,
+    640,
+    16,
+    12
+   ]
+  },
+  {
+   "name": "Haus Johanna",
+   "art": "spielerhaus",
+   "spieler": "S-02",
+   "rect": [
+    560,
+    900,
+    66,
+    44
+   ]
+  },
+  {
+   "name": "Haus Julian",
+   "art": "spielerhaus",
+   "spieler": "S-03",
+   "rect": [
+    660,
+    905,
+    62,
+    44
+   ]
+  },
+  {
+   "name": "Haus Justus",
+   "art": "spielerhaus",
+   "spieler": "S-04",
+   "rect": [
+    930,
+    900,
+    66,
+    46
+   ]
+  },
+  {
+   "name": "frei",
+   "art": "haus-frei",
+   "rect": [
+    460,
+    905,
+    58,
+    40
+   ],
+   "preis": 10
+  },
+  {
+   "name": "frei",
+   "art": "haus-frei",
+   "rect": [
+    1010,
+    905,
+    40,
+    40
+   ],
+   "preis": 10
+  },
+  {
+   "name": "frei",
+   "art": "haus-frei",
+   "rect": [
+    1130,
+    900,
+    60,
+    42
+   ],
+   "preis": 10
+  },
+  {
+   "name": "frei",
+   "art": "haus-frei",
+   "rect": [
+    520,
+    985,
+    58,
+    40
+   ],
+   "preis": 10
+  },
+  {
+   "name": "frei",
+   "art": "haus-frei",
+   "rect": [
+    650,
+    990,
+    60,
+    40
+   ],
+   "preis": 10
+  },
+  {
+   "name": "frei",
+   "art": "haus-frei",
+   "rect": [
+    880,
+    985,
+    58,
+    42
+   ],
+   "preis": 10
+  },
+  {
+   "name": "Kirche",
+   "art": "kirche",
+   "rect": [
+    770,
+    1010,
+    56,
+    62
+   ]
+  },
+  {
+   "name": "Kneipe Zum Zwickenden Retriever",
+   "art": "kneipe",
+   "rect": [
+    990,
+    985,
+    70,
+    44
+   ]
+  },
+  {
+   "name": "Bauplatz Haus",
+   "art": "bauplatz",
+   "rect": [
+    380,
+    910,
+    58,
+    40
+   ],
+   "preis": 40
+  },
+  {
+   "name": "Bauplatz Haus",
+   "art": "bauplatz",
+   "rect": [
+    1150,
+    990,
+    58,
+    40
+   ],
+   "preis": 40
+  }
+ ]
 }

@@ -46,15 +46,27 @@
     "w-koppel": {
       "gras": 72
     },
-    "w-lange-weide": {
-      "gras": 95
+    "bachwiese": {
+      "gras": 90
     },
     "obstwiese": {
       "gras": 70,
       "obst": 8
     },
-    "wald": {
+    "wald-gross": {
       "holz": 80
+    },
+    "quellwald": {
+      "holz": 85
+    },
+    "westwald": {
+      "holz": 75
+    },
+    "moor": {
+      "matsch": 80
+    },
+    "huegel": {
+      "gras": 60
     },
     "acker": {
       "zustand": "brach"
@@ -129,6 +141,11 @@
   },
   "tagebuch": [
     {
+      "zeit": "2026-11-08T01:00:00+01:00",
+      "wer": "Hof",
+      "text": "Über Nacht ist der Hof gewachsen! Rundherum liegen jetzt Wald, Moor, Hügel und eine Bachwiese im Nebel, ein Fluss fließt durch den Teich, und unten im Dorf stehen die Häuser von Johanna, Julian und Justus. Paul hat sofort einen neuen Sonnenplatz gesucht und ist auf dem Weg dorthin eingeschlafen."
+    },
+    {
       "zeit": "2026-11-07T23:45:00+01:00",
       "wer": "Hof",
       "text": "Paul ist da! Der Golden Retriever ist ab sofort Hofhund und Maskottchen. Er hat zur Begrüßung den Mäher angebellt, ist über seine eigenen Pfoten gestolpert und hat dann sehr lange und sehr hungrig zu Bella geschaut. Bella hat beschlossen, ab jetzt nur noch mit Hufschutz rauszugehen."
@@ -149,5 +166,11 @@
       "text": "Bella ist angekommen. Sie hat den Hänger verlassen, einmal geschnaubt und sich sofort das beste Stück Wiese gesucht. Willkommen im Zickenstall!"
     }
   ],
-  "antraege": []
+  "antraege": [],
+  "freigelegt": [],
+  "welt": {
+    "fluss": "normal",
+    "wetter": "bewölkt",
+    "woche": 1
+  }
 }
