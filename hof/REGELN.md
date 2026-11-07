@@ -27,7 +27,7 @@ Nie Nachnamen, Mailadressen, echte Orte, Termine oder Privates. Die Karte ist au
 | S-01 | Max | Besitzer vom Hof | keine eigenen (Paul gehört allen) |
 | S-02 | Johanna | Mitspielerin | Bella (Pferd) |
 | S-03 | Julian | Mitspieler | der Mäher |
-| S-04 | Justus | Mitspieler | noch keiner |
+| S-04 | Justus | Mitspieler | Manni (Opel Manta) |
 
 - **Halter:** Jeder Bewohner gehört genau einem Spieler. **Nur der Halter** darf ihn bedienen (füttern, pflegen,
   warten, planen, losschicken, Fähigkeiten einsetzen). Auch der Besitzer nie.
@@ -184,6 +184,26 @@ Brummig, stolz, hält sich für unverzichtbar.
 - **Züge:** tanken (+50), Öl nachfüllen (auf 100), Messer schleifen (auf 100), putzen und abschmieren (zustand +30,
   laune +10), loben (laune +5), mähen lassen (Fläche und Tag nennen).
 
+### Manni, Opel Manta (tiefergelegt) · Halter S-04 Justus · eingezogen 08.11.2026 (Antrag A-01, abgeschwächt)
+Rostig, Fuchsschwanz an der Antenne, Spoiler, viel zu laute Hupe. Ein Proll mit Herz: hält sich für das schönste Auto
+im Dorf und will bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.
+- **Bedürfnisse:** benzin (−25 pro Donut-Einsatz, −10 pro Dorfrunde), politur (−5/Tag, bei Regen −15), bewunderung
+  (−10/Tag), zustand (−3/Tag).
+- **Große Fähigkeit:** Donuts drehen auf einer Wiese. **Abgeschwächt durch die Hof-KI:** nur bei trockenem Wetter,
+  Gras dort −30 und 2 Tage Matsch, kostet jedes Mal benzin −25 und politur −15. Auf einer schon matschigen Fläche
+  bleibt er mit 50 % Chance selbst stecken (Halter muss ihn freischieben lassen, kostet einen Zug). Steht dort ein
+  Tier, flüchtet es (laune −10). Wegstoßen oder bedrängen kann er niemanden.
+- **Kleine Fähigkeiten:** Hupe mit Melodie (alle Tiere in der Nähe schauen hin, Paul dreht vor Begeisterung durch),
+  röhrender Auspuff (gibt im Stand Gas).
+- **Schwäche:** bleibt in Matsch und auf nassem Boden stecken, vor allem auf der Bachwiese. Bei Regen rostet er und
+  hat schlechte Laune.
+- **Beziehungen:** Erzfeind des Mähers (treffen sie sich, gibt es ein Fehlzündungs-Duell: beide laune −5, Bella
+  erschrickt). Bella hat Angst vor ihm (er ist lauter als der Mäher), er findet Pferde altmodisch. Paul hebt das Bein
+  an seinen Reifen (politur −5), trotzdem hupt Manni ihm zu.
+- **Zuhause:** Garage an Justus’ Haus im Dorf. Fährt über die Hofzufahrt zum Hof.
+- **Züge:** tanken (+50), polieren (politur auf 100, bewunderung +10), loben (bewunderung +15), durchs Dorf fahren
+  und angeben (bewunderung +20, benzin −10), schrauben und putzen (zustand +30), Donuts drehen (Fläche und Tag nennen).
+
 ### Paul, Golden Retriever · frei, gehört dem ganzen Hof (Maskottchen)
 Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen.
 - **Bedürfnisse:** satt, laune, energie. Er versorgt sich selbst, niemand muss oder kann ihn füttern.
@@ -198,6 +218,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
   |---|---|
   | Zwickt ein Pferd ins Bein | Pferd laune −5, pflege −5. Es tritt nach ihm, er ist beleidigt. |
   | Legt sich vor den Mäher, hebt das Bein am Mäher | Mäher laune −5, messer −5 oder zustand −5 |
+  | Hebt das Bein an Mannis Reifen | Manni politur −5, laune empört |
   | Scheucht kleine Tiere auf | Tier laune −5, flüchtet in ein Nachbargebiet |
   | Springt in den Teich, läuft gegen Bäume, jagt seinen Schwanz | keine Wirkung, nur peinlich |
   | Bringt etwas vom Dorf mit | selten: ein alter Schuh oder ein Fundstück |
@@ -224,6 +245,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
 ### Änderungsverlauf
 | Datum | Änderung |
 |---|---|
+| 08.11.2026 | Manni (Opel Manta, Halter Justus) eingezogen, Donuts abgeschwächt (Abschnitt 14). Paul: neuer Unfug an Mannis Reifen. |
 | 08.11.2026 | Zuhause in einem Nebel-Gebiet: Das Gebiet wird beim Einzug kostenlos freigelegt (Abschnitt 5). |
 | 08.11.2026 | Große Karte ist im Spiel: Start-Gebiete offen, Nebel-Gebiete zu bis zum Umbau, Fluss, Dorf mit Spielerhäusern. Stufen-Freischaltung entfällt. |
 | 08.11.2026 | Version 3: Sandkasten statt Wirtschaft. Baupläne, Fairness, Realismus, Pflege wie Tamagotchi, Anmeldung mit PIN, Entscheidungen auf der Seite, große Karte, Taler fürs Kümmern, Häuser, Abschied über Gnadenhof und Schrottplatz. |

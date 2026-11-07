@@ -129,10 +129,10 @@
 const NS = 'http://www.w3.org/2000/svg';
 const ABBAU_TIER = { satt: 20, laune: 10, fitness: 8, pflege: 10 };
 const NAMEN = { satt: 'Satt', laune: 'Laune', fitness: 'Fitness', pflege: 'Pflege', vertrauen: 'Vertrauen',
-  benzin: 'Benzin', oel: 'Öl', messer: 'Messer', zustand: 'Zustand' };
+  benzin: 'Benzin', oel: 'Öl', messer: 'Messer', zustand: 'Zustand', politur: 'Politur', bewunderung: 'Bewunderung', energie: 'Energie' };
 const AKTION = { tier: { weide: 'weiden', wiese: 'weiden', obstwiese: 'weiden', hof: 'stall' },
   geraet: { weide: 'maehen', wiese: 'maehen', obstwiese: 'maehen', hof: 'schuppen', wald: 'holz' } };
-const AKTION_TEXT = { weiden: 'weiden', maehen: 'mähen', stall: 'im Stall bleiben', schuppen: 'im Schuppen bleiben', holz: 'Holz machen' };
+const AKTION_TEXT = { donuts: 'Donuts drehen', garage: 'in der Garage bleiben', angeben: 'durchs Dorf fahren und angeben', weiden: 'weiden', maehen: 'mähen', stall: 'im Stall bleiben', schuppen: 'im Schuppen bleiben', holz: 'Holz machen' };
 const FARBE = { tier: '#c06a3a', geraet: '#5b63b5', frei: '#0a4ea2' };
 const farbeVon = b => b.frei ? FARBE.frei : FARBE[b.typ];
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -230,6 +230,28 @@ function maeherZustand(b, t) {
   const ende = L[L.length - 1][1];
   if (min < 750) { const q = (min - 720) / 30; return { pos: q < .6 ? lerp(ende, tor, ease(q / .6)) : lerp(tor, schuppen, ease((q - .6) / .4)), text: 'fährt zurück in den Schuppen', gemaeht: { f: o.f, L } }; }
   return { pos: schuppen, text: 'hat heute ' + o.f.name + ' gemäht und ist stolz', gemaeht: { f: o.f, L } };
+}
+
+// ---------- Autos (Manni) ----------
+function autoZustand(b, t) {
+  const { tag, min } = berlin(t), heim = b.zuhause_punkt || K.punkte.schuppen;
+  const p = planHeute(b, tag), f = p && flaeche(p.flaeche);
+  if (!p || !frei(f) || p.aktion === 'garage') return { pos: heim, text: 'steht in der Garage und lässt ab und zu den Motor aufheulen' };
+  const w = b.werte || {};
+  if ((w.benzin ?? 0) < 25) return { pos: heim, text: 'will los, aber der Tank ist fast leer' };
+  const tor = K.punkte.tor, bruecke = [815, 878];
+  if (p.aktion === 'angeben') {
+    if (min < 960 || min >= 1020) return { pos: heim, text: min < 960 ? 'poliert sich in Gedanken, um 16 Uhr geht es durchs Dorf' : 'ist vom Angeben zurück und sehr zufrieden mit sich' };
+    const q = (min - 960) / 60, runde = [[958, 966], [600, 880], [300, 872], [600, 880], [1200, 875], [958, 966]];
+    const seg = Math.min(runde.length - 2, Math.floor(q * (runde.length - 1))), qq = q * (runde.length - 1) - seg;
+    return { pos: lerp(runde[seg], runde[seg + 1], qq), text: 'fährt hupend durchs Dorf und lässt sich bewundern', bubble: 'TÖÖÖT', laut: true };
+  }
+  const c = f.ellipse ? [f.ellipse[0], f.ellipse[1]] : mitte(f.punkte);
+  if (min < 870) return { pos: heim, text: 'wartet in der Garage, um 15 Uhr geht es zur ' + f.name };
+  if (min < 900) { const q = (min - 870) / 30; return { pos: q < .4 ? lerp(heim, bruecke, ease(q / .4)) : q < .7 ? lerp(bruecke, tor, ease((q - .4) / .3)) : lerp(tor, c, ease((q - .7) / .3)), text: 'röhrt über die Hofzufahrt zur Fläche „' + f.name + '“', laut: true }; }
+  if (min < 920) { const a = (t.getTime() / 1000) * 2.2; return { pos: [c[0] + Math.cos(a) * 45, c[1] + Math.sin(a) * 28], text: 'dreht Donuts auf der Fläche „' + f.name + '“, der Rasen leidet', bubble: 'WRUMM', laut: true, donuts: { c } }; }
+  if (min < 950) { const q = (min - 920) / 30; return { pos: q < .3 ? lerp(c, tor, ease(q / .3)) : q < .6 ? lerp(tor, bruecke, ease((q - .3) / .3)) : lerp(bruecke, heim, ease((q - .6) / .4)), text: 'fährt zurück in die Garage, voller Matsch', gemaeht: null }; }
+  return { pos: heim, text: 'steht schlammverschmiert in der Garage und will dringend poliert werden', donuts: { c, fertig: true } };
 }
 
 // ---------- Tiere ----------
@@ -348,7 +370,7 @@ function zeichneKarte() {
     const [x, y, w, h] = g.rect, pe = { 'pointer-events': 'none' };
     if (g.art === 'bauplatz') { el('rect', { x, y, width: w, height: h, rx: 3, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 2, 'stroke-dasharray': '6 4', ...pe }, svg); el('text', { x: x + w / 2, y: y + h + 13, 'text-anchor': 'middle', class: 'lbl klein', ...pe }, svg).textContent = g.name.replace('Bauplatz ', 'Bauplatz: '); return; }
     if (g.art === 'korb') { el('ellipse', { cx: x + w / 2, cy: y + h / 2, rx: w * .7, ry: h * .6, fill: '#8a5a2b', ...pe }, svg); return; }
-    const fill = g.art === 'spielerhaus' ? 'var(--spieler)' : (g.art === 'stall' || g.art === 'scheune') ? 'var(--roof)' : 'var(--house)';
+    const fill = g.art === 'garage' ? '#9a948a' : g.art === 'spielerhaus' ? 'var(--spieler)' : (g.art === 'stall' || g.art === 'scheune') ? 'var(--roof)' : 'var(--house)';
     el('rect', { x, y, width: w, height: h, rx: 3, fill, stroke: 'rgba(0,0,0,.25)', ...pe }, svg);
     if (g.art === 'spielerhaus' || g.art === 'haus-frei') el('rect', { x, y, width: w, height: Math.min(14, h * .3), rx: 3, fill: 'var(--roof)', opacity: .7, ...pe }, svg);
     const label = g.art === 'spielerhaus' ? g.name.replace('Haus ', '') : g.art === 'haus-frei' ? 'frei' : g.name.split(' ')[0];
@@ -380,7 +402,7 @@ function tick() {
   const t = jetzt();
   document.getElementById('uhr').textContent = t.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' }) + ' Uhr';
   const gefahr = [];
-  for (const b of S.bewohner.filter(b => b.typ === 'geraet')) { const z = b.id === 'maeher' || /mäher/i.test(b.art) ? maeherZustand(b, t) : { pos: K.punkte.schuppen, text: 'liegt im Schuppen' }; zustand[b.id] = z; if (z.laut) gefahr.push(z.pos); }
+  for (const b of S.bewohner.filter(b => b.typ === 'geraet')) { const z = b.id === 'maeher' || /mäher/i.test(b.art) ? maeherZustand(b, t) : b.zuhause_punkt ? autoZustand(b, t) : { pos: K.punkte.schuppen, text: 'liegt im Schuppen' }; zustand[b.id] = z; if (z.laut) gefahr.push(z.pos); }
   const pferdRoh = {};
   for (const b of S.bewohner.filter(b => b.typ === 'tier' && !b.frei)) pferdRoh[b.id] = tierZustand(b, t, null);
   const bella = S.bewohner.find(b => /pferd/i.test(b.art || '') && !b.frei);
@@ -397,7 +419,7 @@ function tick() {
     const tmp = tierZustand(b, t, null, gefahrBei), nah = gefahr.sort((a, c) => dist(a, tmp.pos) - dist(c, tmp.pos))[0];
     zustand[b.id] = nah ? tierZustand(b, t, nah, gefahrBei) : tmp;
   }
-  const geraete = S.bewohner.filter(b => b.typ === 'geraet').length; let gi = 0;
+  const geraete = S.bewohner.filter(b => b.typ === 'geraet' && !b.zuhause_punkt).length; let gi = 0;
   for (const b of S.bewohner) {
     const z = zustand[b.id]; let [x, y] = z.pos;
     if (b.typ === 'geraet' && dist(z.pos, K.punkte.schuppen) < 1) { x += (gi++ - (geraete - 1) / 2) * 30; }
@@ -405,6 +427,7 @@ function tick() {
     bubEls[b.id].textContent = z.bubble || '';
   }
   mowEl.innerHTML = '';
+  for (const b of S.bewohner) { const z = zustand[b.id]; if (z && z.donuts) { const [x, y] = z.donuts.c; for (let i = 0; i < 3; i++) el('ellipse', { cx: x + i * 6 - 6, cy: y + i * 3 - 3, rx: 45 + i * 4, ry: 28 + i * 3, fill: 'none', stroke: '#6b5233', 'stroke-width': 7, opacity: .55 }, mowEl); } }
   for (const b of S.bewohner) {
     const z = zustand[b.id], m = z.maeht || z.gemaeht; if (!m) continue;
     const cp = el('clipPath', { id: 'clip-' + b.id }, mowEl); el('polygon', { points: poly(m.f).join(' ') }, cp);
@@ -474,7 +497,7 @@ function baueePlaner() {
   wer.innerHTML = S.bewohner.filter(b => !b.frei).map(b => `<option value="${b.id}">${esc(b.name || b.anzeigename)} (Halter: ${esc(spielerName(b.halter))})</option>`).join('');
   const fuelleWo = () => {
     const b = S.bewohner.find(x => x.id === wer.value);
-    wo.innerHTML = K.flaechen.filter(f => AKTION[b.typ][f.art]).map(f => `<option value="${f.id}" ${frei(f) ? '' : 'disabled'}>${esc(f.name)}${frei(f) ? '' : ' (im Nebel)'}</option>`).join('');
+    wo.innerHTML = K.flaechen.filter(f => (b.aktionen || AKTION[b.typ])[f.art]).map(f => `<option value="${f.id}" ${frei(f) ? '' : 'disabled'}>${esc(f.name)}${frei(f) ? '' : ' (im Nebel)'}</option>`).join('');
   };
   fuelleWo(); wer.onchange = () => { fuelleWo(); planText(); }; wo.onchange = planText;
   const heute = jetzt();
@@ -493,7 +516,7 @@ function planText() {
   const tage = [...document.querySelectorAll('#p-tage input:checked')].map(i => i.value);
   const out = document.getElementById('p-text');
   if (!b || !f || !tage.length) { out.value = 'Bitte Bewohner, Fläche und mindestens einen Tag wählen.'; return; }
-  const aktion = AKTION[b.typ][f.art];
+  const aktion = (b.aktionen || AKTION[b.typ])[f.art];
   const tt = tage.map(t => new Date(t).toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit' })).join(', ');
   out.value = `Hof-Plan: ${b.name || b.anzeigename} soll am ${tt} auf der Fläche "${f.name}" ${AKTION_TEXT[aktion]}.\n[PLAN ${b.id} ${aktion} ${f.id} ${tage.join(',')}]`;
 }
@@ -516,8 +539,8 @@ Promise.all(['karte.json', 'spielstand.json'].map(f => fetch(f + '?t=' + Date.no
   K = k; S = s;
   if (!S.bewohner && S.tiere) S.bewohner = S.tiere.map(t => ({ id: t.name.toLowerCase(), typ: 'tier', ort: 'w-koppel', plan: [], ...t }));
   S.flaechen = S.flaechen || {}; S.spieler = S.spieler || [];
-  if (PARAM.get('demo')) { const tag = berlin(jetzt()).tag; S.bewohner.forEach(b => { if (b.frei) return; b.plan = [{ datum: tag, flaeche: b.typ === 'tier' ? 'w-grosse-wiese' : 'w-koppel', aktion: b.typ === 'tier' ? 'weiden' : 'maehen', von: 'Test' }]; });
-    document.querySelector('main').insertAdjacentHTML('afterbegin', '<div class="vorschau"><b>Testtag:</b> nur eine Vorschau mit ausgedachten Befehlen (Bella weidet auf der Großen Wiese, der Mäher mäht die Koppel, Paul macht, was er will). Am echten Spielstand ändert sich nichts. <a href="./">Zurück zum echten Hof</a></div>'); }
+  if (PARAM.get('demo')) { const tag = berlin(jetzt()).tag; S.bewohner.forEach(b => { if (b.frei) return; b.plan = [{ datum: tag, flaeche: b.id === 'manni' ? 'w-grosse-wiese' : b.typ === 'tier' ? 'w-grosse-wiese' : 'w-koppel', aktion: b.id === 'manni' ? 'donuts' : b.typ === 'tier' ? 'weiden' : 'maehen', von: 'Test' }]; });
+    document.querySelector('main').insertAdjacentHTML('afterbegin', '<div class="vorschau"><b>Testtag:</b> nur eine Vorschau mit ausgedachten Befehlen (Bella weidet auf der Großen Wiese, der Mäher mäht vormittags die Koppel, Manni dreht ab 15 Uhr Donuts auf der Großen Wiese, Paul macht, was er will). Am echten Spielstand ändert sich nichts. <a href="./">Zurück zum echten Hof</a></div>'); }
   if (VERSATZ || PARAM.get('demo')) document.querySelector('.live').innerHTML = '<i></i> Vorschau';
   document.getElementById('hofname').textContent = S.hofname; document.title = S.hofname;
   document.getElementById('stand').textContent = 'Stand ' + datumZeit(S.letzte_berechnung) + ' · Stufe ' + S.level;

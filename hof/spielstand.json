@@ -4,19 +4,23 @@
   "letzte_berechnung": "2026-11-07T22:20:00+01:00",
   "letzte_meldung": {},
   "taler": 50,
-  "erfahrung": 0,
+  "erfahrung": 40,
   "level": 1,
   "vorraete": {
-    "heu": 10,
-    "hafer": 3,
+    "heu": 9,
+    "hafer": 2,
     "karotte": 5,
-    "apfel": 2,
+    "apfel": 0,
     "benzinkanister": 2,
     "oel": 1,
     "brennholz": 0
   },
-  "ausruestung": [],
-  "erfolge": [],
+  "ausruestung": [
+    "Bürste (Bella)"
+  ],
+  "erfolge": [
+    "Erster Ausritt"
+  ],
   "spieler": [
     {
       "id": "S-01",
@@ -80,13 +84,13 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 79,
-        "laune": 69,
-        "fitness": 60,
-        "pflege": 69,
-        "vertrauen": 10
+        "satt": 100,
+        "laune": 100,
+        "fitness": 85,
+        "pflege": 100,
+        "vertrauen": 17
       },
-      "stimmung": "Steht im Stall und wartet darauf, dass Johanna ihr sagt, wo es heute hingeht.",
+      "stimmung": "Satt, gestriegelt und nach dem Abendritt bester Laune. Hat Johanna zweimal angestupst, weil sie noch mehr Äpfel vermutet.",
       "ort": "w-koppel",
       "plan": [],
       "tricks": [],
@@ -131,15 +135,54 @@
       "stimmung": "Liegt auf dem Hofplatz in der Sonne, das Lätzchen schief, und beobachtet Bella sehr, sehr aufmerksam.",
       "ort": "hof",
       "plan": []
+    },
+    {
+      "id": "manni",
+      "name": "Manni",
+      "typ": "geraet",
+      "art": "Opel Manta (tiefergelegt)",
+      "halter": "S-04",
+      "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
+      "werte": {
+        "benzin": 70,
+        "politur": 80,
+        "bewunderung": 50,
+        "zustand": 60
+      },
+      "stimmung": "Steht frisch eingezogen in der Garage an Justus’ Haus und lässt den Motor ab und zu grundlos aufheulen.",
+      "ort": "dorf",
+      "zuhause": "Garage Justus",
+      "zuhause_punkt": [
+        958,
+        966
+      ],
+      "plan": [],
+      "aktionen": {
+        "wiese": "donuts",
+        "weide": "donuts",
+        "obstwiese": "donuts",
+        "hof": "garage",
+        "dorf": "angeben"
+      }
     }
   ],
   "letzte_pflege": {
     "S-01": null,
-    "S-02": null,
+    "S-02": "2026-11-07T22:26:00+01:00",
     "S-03": null,
     "S-04": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-08T01:30:00+01:00",
+      "wer": "Hof",
+      "text": "Mit lautem Hupkonzert ist Manni ins Dorf gerollt, ein rostiger Opel Manta mit Fuchsschwanz, und hat sich in der Garage an Justus’ Haus breitgemacht. Der Mäher hat ihm sofort eine Fehlzündung entgegengeknallt, Bella hat sich im Stall in die hinterste Ecke verzogen, und Paul ist begeistert zur Garage getrabt, um das Bein an Mannis Reifen zu heben. Manni ist zutiefst beleidigt."
+    },
+    {
+      "zeit": "2026-11-07T22:26:00+01:00",
+      "wer": "Johanna (S-02)",
+      "text": "Johanna hat Bella mit Hafer, Heu und gleich zwei Äpfeln verwöhnt, sie gestriegelt, den Stall ausgemistet und ist mit ihr im Mondschein eine Runde über den Hof geritten. Dazu gab es eine eigene Bürste. Bella hat danach so zufrieden geschnaubt, dass Paul im Hundekorb aufgewacht ist. Erfolg: Erster Ausritt."
+    },
     {
       "zeit": "2026-11-08T01:00:00+01:00",
       "wer": "Hof",
@@ -166,7 +209,16 @@
       "text": "Bella ist angekommen. Sie hat den Hänger verlassen, einmal geschnaubt und sich sofort das beste Stück Wiese gesucht. Willkommen im Zickenstall!"
     }
   ],
-  "antraege": [],
+  "antraege": [
+    {
+      "id": "A-01",
+      "von": "S-04",
+      "idee": "Opel Manta mit Charakter",
+      "name": "Manni",
+      "status": "genehmigt vom Besitzer am 08.11.2026, mit Abschwächung der Donuts",
+      "datum": "2026-11-08"
+    }
+  ],
   "freigelegt": [],
   "welt": {
     "fluss": "normal",

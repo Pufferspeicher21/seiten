@@ -432,6 +432,10 @@
     1012,
     558
    ]
+  ],
+  "garage_justus": [
+   958,
+   966
   ]
  },
  "fluss": {
@@ -871,6 +875,17 @@
     40
    ],
    "preis": 40
+  },
+  {
+   "name": "Garage Justus",
+   "art": "garage",
+   "rect": [
+    935,
+    952,
+    46,
+    28
+   ],
+   "spieler": "S-04"
   }
  ]
 }
