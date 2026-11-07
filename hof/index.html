@@ -132,7 +132,7 @@ const NAMEN = { satt: 'Satt', laune: 'Laune', fitness: 'Fitness', pflege: 'Pfleg
   benzin: 'Benzin', oel: 'Öl', messer: 'Messer', zustand: 'Zustand', politur: 'Politur', bewunderung: 'Bewunderung', energie: 'Energie' };
 const AKTION = { tier: { weide: 'weiden', wiese: 'weiden', obstwiese: 'weiden', hof: 'stall' },
   geraet: { weide: 'maehen', wiese: 'maehen', obstwiese: 'maehen', hof: 'schuppen', wald: 'holz' } };
-const AKTION_TEXT = { donuts: 'Donuts drehen', garage: 'in der Garage bleiben', angeben: 'durchs Dorf fahren und angeben', weiden: 'weiden', maehen: 'mähen', stall: 'im Stall bleiben', schuppen: 'im Schuppen bleiben', holz: 'Holz machen' };
+const AKTION_TEXT = { donuts: 'Donuts drehen', garage: 'in der Garage bleiben', hupen: 'auf dem Hofplatz hupen und röhren', angeben: 'durchs Dorf fahren und angeben', weiden: 'weiden', maehen: 'mähen', stall: 'im Stall bleiben', schuppen: 'im Schuppen bleiben', holz: 'Holz machen' };
 const FARBE = { tier: '#c06a3a', geraet: '#5b63b5', frei: '#0a4ea2' };
 const farbeVon = b => b.frei ? FARBE.frei : FARBE[b.typ];
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -245,6 +245,14 @@ function autoZustand(b, t) {
     const q = (min - 960) / 60, runde = [[958, 966], [600, 880], [300, 872], [600, 880], [1200, 875], [958, 966]];
     const seg = Math.min(runde.length - 2, Math.floor(q * (runde.length - 1))), qq = q * (runde.length - 1) - seg;
     return { pos: lerp(runde[seg], runde[seg + 1], qq), text: 'fährt hupend durchs Dorf und lässt sich bewundern', bubble: 'TÖÖÖT', laut: true };
+  }
+  if (p.aktion === 'hupen') {
+    const platz = [798, 604], weg = q => q < .4 ? lerp(heim, bruecke, ease(q / .4)) : q < .7 ? lerp(bruecke, tor, ease((q - .4) / .3)) : lerp(tor, platz, ease((q - .7) / .3));
+    if (min < 540) return { pos: heim, text: 'wärmt in der Garage schon mal die Hupe an, um 9 Uhr geht es auf den Hof' };
+    if (min < 570) return { pos: weg((min - 540) / 30), text: 'röhrt über die Hofzufahrt auf den Hofplatz', laut: true };
+    if (min < 1080) { const z = Math.floor(t.getTime() / 4000) % 3; return { pos: [platz[0] + Math.sin(t.getTime() / 300) * 1.5, platz[1]], text: 'steht zwischen Stall und Schuppen, hupt Melodien und lässt den Auspuff röhren', bubble: ['TÖÖÖT', 'BRÖÖÖM', 'TÜ-TÜ-TÜÜÜ'][z], laut: true }; }
+    if (min < 1110) return { pos: weg(1 - (min - 1080) / 30), text: 'fährt zufrieden zurück in die Garage', laut: true };
+    return { pos: heim, text: 'steht wieder in der Garage und ist sehr zufrieden mit seinem Konzert' };
   }
   const c = f.ellipse ? [f.ellipse[0], f.ellipse[1]] : mitte(f.punkte);
   if (min < 870) return { pos: heim, text: 'wartet in der Garage, um 15 Uhr geht es zur ' + f.name };

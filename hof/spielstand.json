@@ -147,19 +147,26 @@
         "bewunderung": 50,
         "zustand": 60
       },
-      "stimmung": "Steht frisch eingezogen in der Garage an Justus’ Haus und lässt den Motor ab und zu grundlos aufheulen.",
+      "stimmung": "Hat für heute ein Hupkonzert auf dem Hofplatz angekündigt und poliert in Gedanken schon die Hupe.",
       "ort": "dorf",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
         958,
         966
       ],
-      "plan": [],
+      "plan": [
+        {
+          "datum": "2026-11-08",
+          "flaeche": "hof",
+          "aktion": "hupen",
+          "von": "S-04"
+        }
+      ],
       "aktionen": {
         "wiese": "donuts",
         "weide": "donuts",
         "obstwiese": "donuts",
-        "hof": "garage",
+        "hof": "hupen",
         "dorf": "angeben"
       }
     }
@@ -168,9 +175,14 @@
     "S-01": null,
     "S-02": "2026-11-07T22:26:00+01:00",
     "S-03": null,
-    "S-04": null
+    "S-04": "2026-11-08T00:50:00+01:00"
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-08T00:50:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Justus schickt Manni für Sonntag auf den Hofplatz: Ab 9 Uhr steht er zwischen Stall und Schuppen, lässt den Auspuff röhren und gibt ein Hupkonzert, als Rache für die Fehlzündung und das Bein an seinem Reifen. Bella und der Mäher sind in Stall und Schuppen sicher und tun so, als hörten sie nichts. Paul findet die Hupe großartig."
+    },
     {
       "zeit": "2026-11-08T01:30:00+01:00",
       "wer": "Hof",

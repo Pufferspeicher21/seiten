@@ -203,6 +203,8 @@ im Dorf und will bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.
 - **Zuhause:** Garage an Justus’ Haus im Dorf. Fährt über die Hofzufahrt zum Hof.
 - **Züge:** tanken (+50), polieren (politur auf 100, bewunderung +10), loben (bewunderung +15), durchs Dorf fahren
   und angeben (bewunderung +20, benzin −10), schrauben und putzen (zustand +30), Donuts drehen (Fläche und Tag nennen).
+  Auf den Hofplatz fahren und Krach machen (Hupe und Auspuff, Tag nennen): steht von 9 bis 18 Uhr zwischen Stall und
+  Schuppen. Wer draußen in der Nähe ist, erschrickt (laune −5). Wer in seinem Zuhause ist, ist sicher (Abschnitt 7).
 
 ### Paul, Golden Retriever · frei, gehört dem ganzen Hof (Maskottchen)
 Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen.
@@ -246,6 +248,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
 | Datum | Änderung |
 |---|---|
 | 08.11.2026 | Manni (Opel Manta, Halter Justus) eingezogen, Donuts abgeschwächt (Abschnitt 14). Paul: neuer Unfug an Mannis Reifen. |
+| 08.11.2026 | Manni: neuer Zug „Hofplatz, Krach machen“ (Abschnitt 14). Stufe und Erfahrung entfallen. |
 | 08.11.2026 | Zuhause in einem Nebel-Gebiet: Das Gebiet wird beim Einzug kostenlos freigelegt (Abschnitt 5). |
 | 08.11.2026 | Große Karte ist im Spiel: Start-Gebiete offen, Nebel-Gebiete zu bis zum Umbau, Fluss, Dorf mit Spielerhäusern. Stufen-Freischaltung entfällt. |
 | 08.11.2026 | Version 3: Sandkasten statt Wirtschaft. Baupläne, Fairness, Realismus, Pflege wie Tamagotchi, Anmeldung mit PIN, Entscheidungen auf der Seite, große Karte, Taler fürs Kümmern, Häuser, Abschied über Gnadenhof und Schrottplatz. |
