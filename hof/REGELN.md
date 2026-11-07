@@ -69,7 +69,9 @@ Jeder Bewohner hat:
 - **Eine Schwäche:** etwas, wovor er Angst hat oder was er nicht kann.
 - **Beziehungen** zu jedem anderen Bewohner: **mag**, **jagt**, **fürchtet** oder **ignoriert**. Zieht jemand Neues
   ein, legt die Hof-KI die Beziehungen in beide Richtungen fest. Alle wissen sofort voneinander.
-- **Ein Zuhause:** Stall, Schuppen, Bau, Hundekorb, Landeplatz. Dort ist er sicher.
+- **Ein Zuhause:** Stall, Schuppen, Bau, Hundekorb, Landeplatz. Dort ist er sicher. Das Zuhause darf überall auf der
+  Karte liegen, auch im eigenen Haus im Dorf. **Liegt es in einem Nebel-Gebiet, wird dieses eine Gebiet beim Einzug
+  kostenlos freigelegt** (für alle).
 
 ## 6. Pflege (Tamagotchi)
 - Bedürfnisse sinken jeden Tag. Einmal am Tag kümmern reicht.
@@ -222,6 +224,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
 ### Änderungsverlauf
 | Datum | Änderung |
 |---|---|
+| 08.11.2026 | Zuhause in einem Nebel-Gebiet: Das Gebiet wird beim Einzug kostenlos freigelegt (Abschnitt 5). |
 | 08.11.2026 | Große Karte ist im Spiel: Start-Gebiete offen, Nebel-Gebiete zu bis zum Umbau, Fluss, Dorf mit Spielerhäusern. Stufen-Freischaltung entfällt. |
 | 08.11.2026 | Version 3: Sandkasten statt Wirtschaft. Baupläne, Fairness, Realismus, Pflege wie Tamagotchi, Anmeldung mit PIN, Entscheidungen auf der Seite, große Karte, Taler fürs Kümmern, Häuser, Abschied über Gnadenhof und Schrottplatz. |
 | 07.11.2026 | Paul der Hofhund, kein Selbstlauf mehr, Halter-Regel, Anträge, Karte und Live-Positionen. |
