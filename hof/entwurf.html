@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zickenstall Entwurf</title>
+<style>
+  :root { --bg: #f6f1e7; --card: #fffdf8; --text: #3a2f25; --muted: #85766a; --line: #e6dccb; --accent: #8a5a2b;
+    --map: #e9e2cf; --road: #b9b2a3; --path: #d9c9a3; --water: #7fb2cf; --house: #d6cdbd; --roof: #a8463a; --fog: #c9c5bd; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1f1a15; --card: #2a231c; --text: #f0e6d8; --muted: #b3a493; --line: #3e342a; --accent: #d9a46a;
+    --map: #3a352b; --road: #6e675b; --path: #6f6248; --water: #3f6f88; --house: #5b5449; --roof: #8e3f35; --fog: #55524b; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1200px; margin: 0 auto; padding: 20px 16px 48px; }
+  h1 { margin: 0; font-size: 1.6rem; }
+  .sub { color: var(--muted); font-size: .9rem; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-top: 16px; }
+  .rahmen { overflow: auto; border-radius: 10px; }
+  svg { width: 100%; min-width: 900px; height: auto; display: block; background: var(--map); border-radius: 10px; }
+  .lbl { font-size: 18px; font-weight: 600; fill: var(--text); paint-order: stroke; stroke: var(--card); stroke-width: 4px; }
+  .klein { font-size: 13px; font-weight: 400; }
+  .haus { font-size: 11px; font-weight: 600; }
+  .legende { display: flex; flex-wrap: wrap; gap: 14px; font-size: .85rem; color: var(--muted); margin-top: 10px; }
+  .legende span::before { content: ""; display: inline-block; width: 14px; height: 14px; border-radius: 3px; margin-right: 6px; vertical-align: -2px; background: var(--c); border: 1px solid rgba(0,0,0,.2); }
+  ul { margin: 6px 0 0; padding-left: 20px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Zickenstall: Entwurf der großen Karte</h1>
+  <div class="sub">Nur ein Entwurf zum Anschauen. Das laufende Spiel ist <a href="./">hier</a>. Die Karte ist ausgedacht.</div>
+  <section class="card">
+    <div class="rahmen"><svg id="k" viewBox="0 0 1600 1100" role="img" aria-label="Entwurf der großen Hofkarte"></svg></div>
+    <div class="legende">
+      <span style="--c:#7fb35a">Start, offen</span>
+      <span style="--c:var(--fog)">Nebel, mit Talern freilegen</span>
+      <span style="--c:#e7c9a0">Spielerhaus</span>
+      <span style="--c:var(--house)">freies Haus (10 Taler)</span>
+      <span style="--c:transparent">gestrichelt: Bauplatz</span>
+      <span style="--c:#b8a8c9">Abschiedsorte</span>
+    </div>
+  </section>
+  <section class="card">
+    <b>Was man auf dem Entwurf sieht</b>
+    <ul>
+      <li><b>Start (offen):</b> Hof mit Stall, Schuppen, Scheune und dem Haus von Max, dazu Koppel, Große Wiese und Teich.</li>
+      <li><b>Nebel-Ring:</b> Großer Wald, Quellwald, Hügel, Bachwiese, Acker, Obstwiese, Moor, Westwald. Je 20 Taler. Manche haben ein Geheimnis, das man beim ersten Betreten entdeckt.</li>
+      <li><b>Fluss:</b> entspringt im Quellwald, fließt durch den Teich, unter der Brücke durchs Dorf. Die Bachwiese kann bei Hochwasser überschwemmt werden.</li>
+      <li><b>Dorf:</b> Häuser von Johanna, Julian und Justus, freie Häuser, zwei Bauplätze, Kirche und Kneipe.</li>
+      <li><b>Bauplätze am Hof:</b> Garage, Werkstatt, Steg am Teich (je 30 Taler).</li>
+      <li><b>Abschiedsorte:</b> Gnadenhof (Tiere) und Schrottplatz (Geräte), für immer.</li>
+      <li><b>Ab Woche 2</b> wächst die Welt am Rand weiter (gestrichelter Rahmen).</li>
+    </ul>
+  </section>
+</main>
+<script>
+const NS = 'http://www.w3.org/2000/svg';
+function el(t, a, p) { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+function txt(p, x, y, s, cls) { const t = el('text', { x, y, 'text-anchor': 'middle', class: cls || 'lbl' }, p); t.textContent = s; return t; }
+function mitte(P) { let x = 0, y = 0; P.forEach(p => { x += p[0]; y += p[1]; }); return [x / P.length, y / P.length]; }
+function rng(seed) { let a = 0; for (const c of seed) a = (a * 31 + c.charCodeAt(0)) | 0; return () => { a = (a * 1103515245 + 12345) | 0; return ((a >>> 0) % 10000) / 10000; }; }
+function inPoly([x, y], P) { let r = false; for (let i = 0, j = P.length - 1; i < P.length; j = i++) { const [xi, yi] = P[i], [xj, yj] = P[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) r = !r; } return r; }
+const FARBE = { hof: '#d8ccb0', weide: '#7fb35a', wiese: '#8cbd63', teich: 'var(--water)', wald: '#4f7d3f', huegel: '#a7b86b', acker: '#b99c74', obstwiese: '#86b65e', moor: '#7d7a55', sonder: '#b8a8c9', dorf: '#e3dccb' };
+fetch('karte-v2.json?t=' + Date.now()).then(r => r.json()).then(K => {
+  const s = document.getElementById('k');
+  const defs = el('defs', {}, s);
+  const p = el('pattern', { id: 'nebel', width: 26, height: 26, patternUnits: 'userSpaceOnUse' }, defs);
+  el('rect', { width: 26, height: 26, fill: 'var(--fog)' }, p);
+  el('circle', { cx: 7, cy: 8, r: 5, fill: '#fff', opacity: .25 }, p); el('circle', { cx: 19, cy: 18, r: 6, fill: '#fff', opacity: .2 }, p);
+  el('rect', { x: 8, y: 8, width: 1584, height: 1084, rx: 14, fill: 'none', stroke: 'var(--muted)', 'stroke-dasharray': '10 8', 'stroke-width': 2 }, s);
+  for (const g of K.gebiete.filter(g => g.art === 'dorf')) el('polygon', { points: g.punkte.join(' '), fill: FARBE.dorf, opacity: .6 }, s);
+  for (const g of K.gebiete.filter(g => g.art !== 'dorf')) {
+    const nebel = g.ring >= 1, fill = nebel ? 'url(#nebel)' : FARBE[g.art] || '#ccc';
+    const a = { fill, stroke: 'rgba(0,0,0,.18)', 'stroke-width': 2 };
+    if (g.ellipse) el('ellipse', { ...a, cx: g.ellipse[0], cy: g.ellipse[1], rx: g.ellipse[2], ry: g.ellipse[3] }, s);
+    else el('polygon', { ...a, points: g.punkte.join(' ') }, s);
+    if (!nebel && g.art === 'wald' || !nebel && g.art === 'moor') {}
+  }
+  K.strassen.forEach(r => el('polyline', { points: r.linie.join(' '), fill: 'none', stroke: 'var(--road)', 'stroke-width': 16, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, s));
+  K.wege.forEach(w => el('polyline', { points: w.linie.join(' '), fill: 'none', stroke: 'var(--path)', 'stroke-width': 8, 'stroke-linecap': 'round', opacity: .9 }, s));
+  el('polyline', { points: K.fluss.linie.join(' '), fill: 'none', stroke: 'var(--water)', 'stroke-width': K.fluss.breite, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, s);
+  K.fluss.bruecken.forEach(([x, y]) => el('rect', { x: x - 26, y: y - 12, width: 52, height: 24, rx: 4, fill: '#a07a52', stroke: '#6e5034' }, s));
+  K.baumreihen.forEach(b => { const [a, z] = b.linie, n = Math.floor(Math.hypot(z[0] - a[0], z[1] - a[1]) / b.abstand); for (let i = 0; i <= n; i++) el('circle', { cx: a[0] + (z[0] - a[0]) * i / n, cy: a[1] + (z[1] - a[1]) * i / n, r: 10, fill: '#4c7a3c' }, s); });
+  for (const g of K.gebaeude) {
+    const [x, y, w, h] = g.rect;
+    if (g.art === 'bauplatz') { el('rect', { x, y, width: w, height: h, rx: 3, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 2, 'stroke-dasharray': '6 4' }, s); txt(s, x + w / 2, y + h + 13, g.name.replace('Bauplatz ', '') + ' · ' + g.preis + ' T', 'lbl haus'); continue; }
+    const fill = g.art === 'spielerhaus' ? '#e7c9a0' : g.art === 'haus-frei' ? 'var(--house)' : g.art === 'korb' ? '#0a4ea2' : g.art === 'kirche' ? '#cfc6b6' : (g.art === 'stall' || g.art === 'scheune') ? 'var(--roof)' : '#c9bda5';
+    el('rect', { x, y, width: w, height: h, rx: 3, fill, stroke: 'rgba(0,0,0,.25)' }, s);
+    if (g.art !== 'korb') el('rect', { x, y, width: w, height: Math.min(14, h * .3), rx: 3, fill: 'var(--roof)', opacity: g.art === 'spielerhaus' || g.art === 'haus-frei' ? .7 : 0 }, s);
+    if (g.art === 'spielerhaus') { txt(s, x + w / 2, y + h / 2 + 8, g.name.replace('Haus ', ''), 'lbl haus'); if (g.text) txt(s, x + w / 2, y + h + 13, g.text, 'lbl haus'); }
+    else if (g.art === 'haus-frei') txt(s, x + w / 2, y + h / 2 + 8, 'frei', 'lbl haus');
+    else if (g.art !== 'korb') txt(s, x + w / 2, y + h / 2 + 5, g.name.length > 14 ? g.name.split(' ')[0] : g.name, 'lbl haus');
+  }
+  for (const g of K.gebiete) {
+    if (g.art === 'hof') continue;
+    const c = g.ellipse ? [g.ellipse[0], g.ellipse[1] + 6] : mitte(g.punkte);
+    txt(s, c[0], c[1], g.name);
+    if (g.ring >= 1) txt(s, c[0], c[1] + 20, 'Nebel · ' + g.preis + ' Taler', 'lbl klein');
+    if (g.ueberschwemmbar) txt(s, c[0], c[1] + 36, 'kann überschwemmen', 'lbl klein');
+    if (g.art === 'sonder') txt(s, c[0], c[1] + 20, 'für immer', 'lbl klein');
+  }
+  txt(s, 1500, 1060, 'Ab Woche 2: neue Gebiete am Rand', 'lbl klein');
+  txt(s, 1110, 120, 'Fluss', 'lbl klein');
+});
+</script>
+</body>
+</html>
