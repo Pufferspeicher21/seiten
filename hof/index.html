@@ -69,6 +69,11 @@
   textarea { width: 100%; min-height: 70px; margin-top: 10px; }
   .legende { display: flex; flex-wrap: wrap; gap: 12px; font-size: .8rem; color: var(--muted); margin-top: 8px; }
   .legende span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -2px; background: var(--c); }
+  .knoepfe { display: flex; gap: 8px; flex-wrap: wrap; width: 100%; order: 3; }
+  .knopf { display: inline-block; border: 1px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 4px 14px; text-decoration: none; font-size: .9rem; font-weight: 600; }
+  .knopf.leise { border-color: var(--line); color: var(--muted); font-weight: 400; }
+  .knopf:hover { background: var(--accent); color: var(--card); }
+  .vorschau { background: #f3e3c4; color: #5a3b12; border-radius: 10px; padding: 8px 12px; margin-top: 12px; font-size: .9rem; }
   footer { color: var(--muted); font-size: .8rem; margin-top: 24px; text-align: center; }
 </style>
 </head>
@@ -76,6 +81,7 @@
 <main>
   <header>
     <h1 id="hofname">Zickenstall</h1>
+    <nav class="knoepfe"><a class="knopf" href="regeln.html">So funktioniert&#39;s</a><a class="knopf" id="testtag" href="#">Testtag ansehen</a><a class="knopf leise" href="entwurf.html">Entwurf große Karte</a></nav>
     <div class="sub"><span class="live"><i></i> live</span> · <span id="uhr"></span> · <span id="stand">wird geladen …</span></div>
   </header>
 
@@ -237,13 +243,13 @@ function tierZustand(b, t, gefahr, gefahrBei) {
   const fl = flecken(o.f, tag), slot = 15, k = Math.floor((min - 440) / slot);
   const wp = i => { if (i < 0) return stall; const g = gefahrBei && gefahrBei(440 + i * slot); return zufallsPunkt(o.f, rng(b.id + tag + 'wp' + i), fl, g ? p => dist(p, g) < 170 ? -10 : 0 : null); };
   let pos, text;
-  if (min < 440) { pos = lerp(stall, wp(0), ease((min - 420) / 20)); text = 'geht raus auf die ' + o.f.name; }
+  if (min < 440) { pos = lerp(stall, wp(0), ease((min - 420) / 20)); text = 'geht raus zur Fläche „' + o.f.name + '“'; }
   else if (min >= 1150) { pos = lerp(wp(Math.floor((1150 - 440) / slot)), stall, ease((min - 1150) / 20)); text = 'geht zurück in den Stall'; }
   else {
     const inSlot = (min - 440) - k * slot, a = wp(k - 1 < 0 ? 0 : k - 1), z = wp(k);
     pos = inSlot < 4 && k > 0 ? lerp(a, z, ease(inSlot / 4)) : wackel(z, 1.5);
     const g = (S.flaechen[o.f.id] || {}).gras ?? 50;
-    text = (inSlot < 4 && k > 0 ? 'sucht sich eine neue Stelle auf der ' : 'grast auf der ') + o.f.name + (g < 30 ? ' (Gras viel zu kurz, sie meckert)' : '');
+    text = (inSlot < 4 && k > 0 ? 'sucht sich eine neue Stelle, Fläche ' : 'grast, Fläche ') + '„' + o.f.name + '“' + (g < 30 ? ' (Gras viel zu kurz, sie meckert)' : '');
   }
   let bubble = null;
   if (gefahr && dist(pos, gefahr) < 90 && o.f && o.f.punkte) {
@@ -495,10 +501,12 @@ Promise.all(['karte.json', 'spielstand.json'].map(f => fetch(f + '?t=' + Date.no
   K = k; S = s;
   if (!S.bewohner && S.tiere) S.bewohner = S.tiere.map(t => ({ id: t.name.toLowerCase(), typ: 'tier', ort: 'w-koppel', plan: [], ...t }));
   S.flaechen = S.flaechen || {}; S.spieler = S.spieler || [];
-  if (PARAM.get('demo')) { const tag = berlin(jetzt()).tag; S.bewohner.forEach(b => b.plan = [{ datum: tag, flaeche: 'w-koppel', aktion: b.typ === 'tier' ? 'weiden' : 'maehen', von: 'Demo' }]); }
+  if (PARAM.get('demo')) { const tag = berlin(jetzt()).tag; S.bewohner.forEach(b => { if (b.frei) return; b.plan = [{ datum: tag, flaeche: b.typ === 'tier' ? 'w-grosse-wiese' : 'w-koppel', aktion: b.typ === 'tier' ? 'weiden' : 'maehen', von: 'Test' }]; });
+    document.querySelector('main').insertAdjacentHTML('afterbegin', '<div class="vorschau"><b>Testtag:</b> nur eine Vorschau mit ausgedachten Befehlen (Bella weidet auf der Großen Wiese, der Mäher mäht die Koppel, Paul macht, was er will). Am echten Spielstand ändert sich nichts. <a href="./">Zurück zum echten Hof</a></div>'); }
   if (VERSATZ || PARAM.get('demo')) document.querySelector('.live').innerHTML = '<i></i> Vorschau';
   document.getElementById('hofname').textContent = S.hofname; document.title = S.hofname;
   document.getElementById('stand').textContent = 'Stand ' + datumZeit(S.letzte_berechnung) + ' · Stufe ' + S.level;
+  const tt = document.getElementById('testtag'); if (tt) { const d = new Date(); const tag = d.toLocaleDateString('en-CA', { timeZone: 'Europe/Berlin' }); tt.href = '?demo=1&zeit=' + tag + 'T10:20'; }
   zeichneKarte(); tick(); zeigeBewohner(); baueePlaner(); zeigeRest();
   setInterval(zeigeBewohner, 30000);
   const rahmen = document.querySelector('.kartenrahmen'); rahmen.scrollLeft = (rahmen.scrollWidth - rahmen.clientWidth) / 2;

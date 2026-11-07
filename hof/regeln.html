@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>So funktioniert's</title>
+<style>
+  :root { --bg: #f6f1e7; --card: #fffdf8; --text: #3a2f25; --muted: #85766a; --line: #e6dccb; --accent: #8a5a2b; --hint: #f3e3c4; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1f1a15; --card: #2a231c; --text: #f0e6d8; --muted: #b3a493; --line: #3e342a; --accent: #d9a46a; --hint: #4a3b26; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 20px 16px 60px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 8px 20px 20px; margin-top: 16px; }
+  h1 { font-size: 1.7rem; margin: 16px 0 4px; }
+  h2 { font-size: 1.25rem; margin: 28px 0 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.05rem; margin: 20px 0 6px; }
+  a { color: var(--accent); }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; margin: 8px 0; display: block; overflow-x: auto; }
+  th, td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: var(--bg); }
+  code { background: var(--bg); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .umbau { background: var(--hint); border-radius: 4px; padding: 0 5px; font-size: .8em; font-weight: 700; white-space: nowrap; }
+  .jetzt { background: var(--line); border-radius: 4px; padding: 0 5px; font-size: .8em; font-weight: 700; white-space: nowrap; }
+  nav { display: flex; gap: 12px; flex-wrap: wrap; font-size: .95rem; }
+  #inhalt { columns: 2 240px; font-size: .92rem; margin: 8px 0 0; padding-left: 18px; }
+</style>
+</head>
+<body>
+<main>
+  <nav><a href="./">Zurück zum Hof</a><a href="entwurf.html">Entwurf große Karte</a></nav>
+  <section class="card">
+    <ol id="inhalt"></ol>
+    <div id="regeln">Regeln werden geladen …</div>
+  </section>
+</main>
+<script>
+const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+function inline(s) {
+  return esc(s).replace(/\*\*\[KOMMT MIT DEM UMBAU\]\*\*|\[KOMMT MIT DEM UMBAU\]/g, '<span class="umbau">kommt mit dem Umbau</span>')
+    .replace(/\*\*\[GILT JETZT\]\*\*|\[GILT JETZT\]/g, '<span class="jetzt">gilt jetzt</span>')
+    .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/(entwurf\.html)/g, '<a href="entwurf.html">$1</a>');
+}
+function md(text) {
+  const L = text.replace(/\r/g, '').split('\n'); let html = '', i = 0, inList = false;
+  const closeList = () => { if (inList) { html += '</ul>'; inList = false; } };
+  while (i < L.length) {
+    let l = L[i];
+    if (/^\s*\|/.test(l)) {
+      closeList(); const rows = [];
+      while (i < L.length && /^\s*\|/.test(L[i])) { rows.push(L[i].trim()); i++; }
+      const cells = r => r.replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+      html += '<table><tr>' + cells(rows[0]).map(c => '<th>' + inline(c) + '</th>').join('') + '</tr>';
+      rows.slice(2).forEach(r => html += '<tr>' + cells(r).map(c => '<td>' + inline(c) + '</td>').join('') + '</tr>');
+      html += '</table>'; continue;
+    }
+    if (/^### /.test(l)) { closeList(); html += '<h3>' + inline(l.slice(4)) + '</h3>'; }
+    else if (/^## /.test(l)) { closeList(); const t = l.slice(3); html += '<h2 id="a' + (t.match(/^\d+/) || [''])[0] + '">' + inline(t) + '</h2>'; }
+    else if (/^# /.test(l)) { closeList(); html += '<h1>' + inline(l.slice(2)) + '</h1>'; }
+    else if (/^\s*- /.test(l)) { if (!inList) { html += '<ul>'; inList = true; } html += '<li>' + inline(l.replace(/^\s*- /, '')) + '</li>'; }
+    else if (/^---$/.test(l.trim())) { closeList(); }
+    else if (l.trim() === '') { closeList(); }
+    else if (inList && /^\s{2,}/.test(l)) { html = html.replace(/<\/li>$/, ' ' + inline(l.trim()) + '</li>'); }
+    else { closeList(); html += '<p>' + inline(l) + '</p>'; }
+    i++;
+  }
+  closeList(); return html;
+}
+fetch('REGELN.md?t=' + Date.now()).then(r => r.text()).then(t => {
+  document.getElementById('regeln').innerHTML = md(t);
+  document.getElementById('inhalt').innerHTML = [...document.querySelectorAll('h2')].map(h => `<li><a href="#${h.id}">${h.textContent.replace(/^\d+\.\s*/, '')}</a></li>`).join('');
+}).catch(() => document.getElementById('regeln').textContent = 'Regeln konnten nicht geladen werden.');
+</script>
+</body>
+</html>
