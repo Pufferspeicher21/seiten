@@ -13,22 +13,31 @@ Die Karte ist ausgedacht. Sie darf keinem echten Ort entsprechen, auch wenn sie 
   „Ich geh zum Schrotthändler“ sind erlaubt, passieren aber nie.
 - Wer länger nicht da war, bekommt erzählt, was in der Zeit passiert ist (1 bis 3 kleine Erlebnisse).
 
-## 2. Spieler, Rollen und Rechte
+## 2. Spieler, Rollen, Halter und Rechte
 Jeder Spieler hat eine feste ID (`S-01`, `S-02`, …). Im Spielstand stehen nur ID, Vorname und Rolle.
 Wie sich ein Spieler ausweist, steht nicht hier (privat). Zurzeit: über seine Mailadresse oder im Chat mit der KI.
 Später kann ein echtes Login dazukommen, die IDs bleiben dann gleich.
 
+**Halter:** Jeder Bewohner gehört genau einem Spieler (Feld `halter` im Spielstand). **Nur der Halter** darf seinen
+Bewohner bedienen: füttern, pflegen, warten, tanken, planen, ausreiten, mähen lassen, Tricks üben, Turnier anmelden.
+Auch der Besitzer des Hofs darf fremde Bewohner nie bedienen. Will jemand einen fremden Bewohner bedienen, passiert
+es nicht. Der Bewohner bedankt sich höchstens höflich für das Angebot und verweist auf seinen Halter.
+
 | Recht | Besitzer | Mitspieler | Gast |
 |---|---|---|---|
-| Füttern, pflegen, ausreiten, spielen, Gerät warten (tanken, Öl, schärfen, putzen) | ja | ja | ja |
-| Pläne machen (wer wann auf welche Fläche) | ja | ja | nein |
-| Einkaufen, Turnier anmelden, Reitstunden geben | ja | ja | nein |
-| Mähen, Holz machen, Fläche bearbeiten | ja | ja | nein |
-| Bäume fällen, Fläche umbauen, neues Tier oder Gerät aufnehmen | ja | nein | nein |
+| Eigene Bewohner bedienen (siehe oben) | ja | ja | ja |
+| Fremde Bewohner bedienen | nein | nein | nein |
+| Einkaufen aus der Hofkasse (für eigene Bewohner) | ja | ja | nein |
+| Einen eigenen neuen Bewohner vorschlagen (Antrag) | ja | ja | ja |
+| Antrag genehmigen, Bewohner einziehen lassen, Halter festlegen | ja | nein | nein |
+| Bäume fällen, Fläche umbauen | ja | nein | nein |
 | Spieler aufnehmen, Rolle ändern | ja | nein | nein |
 
-Will ein Spieler etwas, das seine Rolle nicht darf, passiert es nicht. Die Spielleitung erklärt das freundlich im Spiel
-(„Das muss der Besitzer entscheiden“) und vermerkt den Wunsch im Tagebuch.
+Will ein Spieler etwas, das er nicht darf, passiert es nicht. Die Spielleitung erklärt das freundlich im Spiel
+und vermerkt den Wunsch im Tagebuch.
+
+**Die Hofkasse** (Taler, Vorräte) gehört allen. Wer einkauft, nutzt sie für seine eigenen Bewohner.
+Wer mit seinem Bewohner Geld verdient (Turnier, Reitstunden, Brennholz), zahlt es in die Hofkasse ein.
 
 ## 3. Die Karte
 Die Karte besteht aus **Flächen**. Jede Fläche hat eine ID, einen Namen, eine Art und Werte.
@@ -90,15 +99,23 @@ Axt (ab Stufe 2) und Motorsäge (ab Stufe 3) sind Geräte ohne eigene Werte auß
 (die Motorsäge ist launisch, die Axt stoisch). Motorsäge braucht zusätzlich `benzin` (−10 pro Einsatz) und `kette` (Schärfe).
 Holz machen im Wald: Axt holz −10, Brennholz +2. Motorsäge holz −25, Brennholz +5. Brennholz verkaufen: 4 Taler pro Stück.
 
-### 4.4 Neue Bewohner
-Neue Tiere und Geräte bekommen beim Einzug Werte, die zu ihrer Art passen, eigene Züge und einen Charakter.
-Aufnehmen darf nur der Besitzer, und nur, wenn die Stufe es freigibt.
+### 4.4 Neue Bewohner und eigene Erfindungen
+- **Jeder Spieler darf einen eigenen Bewohner vorschlagen**, auch etwas Verrücktes (ein UFO, ein sprechender Traktor,
+  ein Geist im Heuboden). Der Vorschlag kommt als **Antrag** in `antraege` im Spielstand
+  (`{"id", "von", "idee", "name", "entwurf", "status", "datum"}`).
+- Die Spielleitung macht daraus einen fairen Bewohner (`entwurf`): Art, Wesen, 3 bis 5 Werte (was er braucht),
+  was er kann, was er nicht kann, eigene Züge, Wirkung auf die anderen Bewohner. Nichts Übermächtiges: Was er bringt,
+  kostet ihn auch etwas. Er darf die Karte nicht verlassen und keinen anderen Bewohner bedienen.
+- Der Antrag wartet, bis der **Besitzer** zustimmt (im Chat mit der KI). Erst dann zieht der Bewohner ein.
+  Halter ist der Spieler, der ihn vorgeschlagen hat.
+- Die Stufen in Abschnitt 7 gelten für Tiere und Geräte aus dem Hof-Katalog. Eigene Erfindungen sind davon frei,
+  der Besitzer entscheidet.
 
 ## 5. Pläne und Bewegung
 - Ein **Plan** sagt, wo ein Bewohner an einem Tag ist und was er dort macht:
   `{"datum": "2026-11-10", "flaeche": "w-koppel", "aktion": "weiden", "von": "S-02"}`.
   Aktionen: `weiden`, `maehen`, `holz`, `pfluecken`, `ausreiten`, `stall`, `schuppen`.
-- Pläne machen dürfen Besitzer und Mitspieler. Ein neuer Plan für denselben Tag ersetzt den alten.
+- Pläne macht nur der Halter des Bewohners. Ein neuer Plan für denselben Tag ersetzt den alten.
 - **Ohne Plan:** Tiere suchen sich selbst die beste freie Fläche (bei Bella: die Weide mit dem meisten Gras,
   gern in Teichnähe). Geräte bleiben im Schuppen.
 - **Plan gegen Bedürfnis:** Ein Plan geht vor. Ist die geplante Fläche aber schlecht für das Tier (Bella auf gras < 30),
@@ -130,8 +147,10 @@ Erster Ausritt · 7 Tage am Stück versorgt · Erstes Turnier · Turniersieg · 
 
 ## 9. Meldungen an Spieler (per Mail)
 - Antwort auf jeden Spielzug: was passiert ist, neue Werte kurz, Link zur Hofseite.
-- Von sich aus höchstens **1 Mail pro Tag**, nur wenn etwas ansteht (Wert unter 30, ausgebüxt, Stufe erreicht,
-  Turnier möglich, Mäher-Benzin leer und ein Mäh-Plan steht an). Feld `letzte_meldung` beachten.
+- Meldungen gehen immer an den **Halter** des Bewohners, um den es geht.
+- Von sich aus höchstens **1 Mail pro Tag und Spieler**, nur wenn etwas ansteht (Wert unter 30, ausgebüxt,
+  Stufe erreicht, Turnier möglich, Benzin leer und ein Mäh-Plan steht an, Antrag entschieden).
+  Feld `letzte_meldung` (je Spieler-ID) beachten.
 - Absender ist der Bewohner, um den es geht. Betreff beginnt mit „Hof:“.
 - Max bekommt keine Mails und steht nie in CC. Er sieht alles auf der Seite und im Chat.
 

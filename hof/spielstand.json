@@ -2,7 +2,7 @@
   "version": 2,
   "hofname": "Zickenstall",
   "letzte_berechnung": "2026-11-07T22:20:00+01:00",
-  "letzte_meldung": null,
+  "letzte_meldung": {},
   "taler": 50,
   "erfahrung": 0,
   "level": 1,
@@ -18,16 +18,47 @@
   "ausruestung": [],
   "erfolge": [],
   "spieler": [
-    { "id": "S-01", "name": "Max", "rolle": "besitzer" },
-    { "id": "S-02", "name": "Johanna", "rolle": "mitspieler" }
+    {
+      "id": "S-01",
+      "name": "Max",
+      "rolle": "besitzer"
+    },
+    {
+      "id": "S-02",
+      "name": "Johanna",
+      "rolle": "mitspieler"
+    },
+    {
+      "id": "S-03",
+      "name": "Julian",
+      "rolle": "mitspieler"
+    },
+    {
+      "id": "S-04",
+      "name": "Justus",
+      "rolle": "mitspieler"
+    }
   ],
   "flaechen": {
-    "w-grosse-wiese": { "gras": 85 },
-    "w-koppel": { "gras": 72 },
-    "w-lange-weide": { "gras": 95 },
-    "obstwiese": { "gras": 70, "obst": 8 },
-    "wald": { "holz": 80 },
-    "acker": { "zustand": "brach" }
+    "w-grosse-wiese": {
+      "gras": 85
+    },
+    "w-koppel": {
+      "gras": 72
+    },
+    "w-lange-weide": {
+      "gras": 95
+    },
+    "obstwiese": {
+      "gras": 70,
+      "obst": 8
+    },
+    "wald": {
+      "holz": 80
+    },
+    "acker": {
+      "zustand": "brach"
+    }
   },
   "bewohner": [
     {
@@ -36,14 +67,21 @@
       "typ": "tier",
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
-      "werte": { "satt": 79, "laune": 69, "fitness": 60, "pflege": 69, "vertrauen": 10 },
+      "werte": {
+        "satt": 79,
+        "laune": 69,
+        "fitness": 60,
+        "pflege": 69,
+        "vertrauen": 10
+      },
       "stimmung": "Neugierig. Beäugt den neuen Stall und überlegt, ob er ihr Niveau hat.",
       "ort": "w-koppel",
       "plan": [],
       "tricks": [],
       "trick_uebungen": {},
       "ausgebuext": false,
-      "letztes_turnier": null
+      "letztes_turnier": null,
+      "halter": "S-02"
     },
     {
       "id": "maeher",
@@ -52,15 +90,32 @@
       "typ": "geraet",
       "art": "Aufsitzmäher (Benzin)",
       "beschreibung": "Alter Benzin-Aufsitzmäher. Brummig, stolz, hält sich für unverzichtbar. Springt nicht an, wenn er schlechte Laune hat. Name wird noch ausgesucht.",
-      "werte": { "benzin": 60, "oel": 80, "messer": 70, "zustand": 65, "laune": 55 },
+      "werte": {
+        "benzin": 60,
+        "oel": 80,
+        "messer": 70,
+        "zustand": 65,
+        "laune": 55
+      },
       "stimmung": "Steht im Schuppen und tut so, als hätte er schon immer hier gestanden.",
       "ort": "hof",
       "plan": [],
-      "anspring_serie": 0
+      "anspring_serie": 0,
+      "halter": "S-03"
     }
   ],
-  "letzte_pflege": { "S-01": null, "S-02": null },
+  "letzte_pflege": {
+    "S-01": null,
+    "S-02": null,
+    "S-03": null,
+    "S-04": null
+  },
   "tagebuch": [
+    {
+      "zeit": "2026-11-07T23:30:00+01:00",
+      "wer": "Hof",
+      "text": "Neue Hofordnung: Bella gehört jetzt Johanna, der Mäher gehört Julian. Max ist der Besitzer vom Hof. Justus ist neu dabei und darf sich einen eigenen Bewohner ausdenken. Bella hat die Nachricht mit einem zufriedenen Schnauben aufgenommen, der Mäher mit einer Fehlzündung."
+    },
     {
       "zeit": "2026-11-07T23:00:00+01:00",
       "wer": "Hof",
@@ -71,5 +126,6 @@
       "wer": "Hof",
       "text": "Bella ist angekommen. Sie hat den Hänger verlassen, einmal geschnaubt und sich sofort das beste Stück Wiese gesucht. Willkommen im Zickenstall!"
     }
-  ]
+  ],
+  "antraege": []
 }

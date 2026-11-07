@@ -94,7 +94,7 @@
 
   <section class="card planer">
     <h3>Plan machen</h3>
-    <div class="sub">Wer soll wann wohin? Auswählen, Text kopieren und an die Hof-KI mailen. Fläche geht auch per Tipp auf die Karte.</div>
+    <div class="sub">Wer soll wann wohin? Auswählen, Text kopieren und an die Hof-KI mailen. Pläne gelten nur, wenn sie vom Halter des Bewohners kommen. Fläche geht auch per Tipp auf die Karte.</div>
     <div class="grid2" style="gap:12px">
       <div>
         <label for="p-wer">Wer</label>
@@ -369,6 +369,7 @@ function zeigeInfo() {
 }
 
 // ---------- Karten unter der Karte ----------
+function spielerName(id) { const p = (S.spieler || []).find(x => x.id === id); return p ? p.name + ' (' + p.id + ')' : 'noch keiner'; }
 function jetztWerte(b) {
   const w = { ...(b.werte || {}) }; if (b.typ !== 'tier') return w;
   const tage = Math.max(0, (jetzt().getTime() - new Date(S.letzte_berechnung).getTime()) / 864e5);
@@ -386,6 +387,7 @@ function zeigeBewohner() {
       .map(p => `${new Date(p.datum).toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit' })}: ${esc((flaeche(p.flaeche) || {}).name || p.flaeche)} (${AKTION_TEXT[p.aktion] || esc(p.aktion)})`);
     return `<section class="card bew">
       <h2>${esc(b.name || b.anzeigename)} <span class="sub">${esc(b.art)}</span></h2>
+      <div class="sub">Halter: ${esc(spielerName(b.halter))}</div>
       <p class="stimmung">${b.ausgebuext ? '<span class="warn">Ausgebüxt! Muss abgeholt werden.</span>' : esc(b.stimmung)}</p>
       ${bars}
       ${niedrig.length ? `<p class="warn">Braucht dringend: ${niedrig.join(', ')}</p>` : ''}
@@ -397,7 +399,7 @@ function zeigeBewohner() {
 // ---------- Planer ----------
 function baueePlaner() {
   const wer = document.getElementById('p-wer'), wo = document.getElementById('p-wo'), tage = document.getElementById('p-tage');
-  wer.innerHTML = S.bewohner.map(b => `<option value="${b.id}">${esc(b.name || b.anzeigename)}</option>`).join('');
+  wer.innerHTML = S.bewohner.map(b => `<option value="${b.id}">${esc(b.name || b.anzeigename)} (Halter: ${esc(spielerName(b.halter))})</option>`).join('');
   const fuelleWo = () => {
     const b = S.bewohner.find(x => x.id === wer.value);
     wo.innerHTML = K.flaechen.filter(f => AKTION[b.typ][f.art]).map(f => `<option value="${f.id}" ${frei(f) ? '' : 'disabled'}>${esc(f.name)}${frei(f) ? '' : ' (ab Stufe ' + f.ab_stufe + ')'}</option>`).join('');
@@ -431,8 +433,9 @@ function zeigeRest() {
     [v.heu ?? 0, 'Heu'], [v.hafer ?? 0, 'Hafer'], [(v.karotte ?? 0) + ' / ' + (v.apfel ?? 0), 'Karotten / Äpfel'],
     [v.benzinkanister ?? 0, 'Benzinkanister'], [v.oel ?? 0, 'Öl'], [v.brennholz ?? 0, 'Brennholz']]
     .map(([a, b]) => `<div class="stat"><b>${esc(a)}</b><span>${b}</span></div>`).join('');
-  const rollen = { besitzer: 'Besitzer', mitspieler: 'Mitspielerin/Mitspieler', gast: 'Gast' };
-  document.getElementById('spieler').innerHTML = (S.spieler || []).map(p => `<div>${esc(p.id)} · <b>${esc(p.name)}</b> <span class="sub">${rollen[p.rolle] || esc(p.rolle)} · zuletzt ${datumZeit((S.letzte_pflege || {})[p.id])}</span></div>`).join('');
+  const rollen = { besitzer: 'Besitzer vom Hof', mitspieler: 'Mitspieler', gast: 'Gast' };
+  document.getElementById('spieler').innerHTML = (S.spieler || []).map(p => { const eig = S.bewohner.filter(b => b.halter === p.id).map(b => esc(b.name || b.anzeigename)); return `<div>${esc(p.id)} · <b>${esc(p.name)}</b> <span class="sub">${rollen[p.rolle] || esc(p.rolle)} · ${eig.length ? 'hält ' + eig.join(', ') : 'noch kein Bewohner'} · zuletzt ${datumZeit((S.letzte_pflege || {})[p.id])}</span></div>`; }).join('')
+    + ((S.antraege || []).length ? '<h3 style="margin-top:14px">Anträge</h3>' + S.antraege.map(a => `<div class="sub"><b>${esc(a.name || a.idee)}</b> von ${esc(spielerName(a.von))}: ${esc(a.status || 'wartet auf den Besitzer')}</div>`).join('') : '');
   document.getElementById('erfolge').innerHTML = S.erfolge.length ? S.erfolge.map(e => `<span class="tag">${esc(e)}</span>`).join('') : '<p class="sub">Noch keine. Der erste Ausritt wäre ein Anfang.</p>';
   document.getElementById('tagebuch').innerHTML = S.tagebuch.slice(0, 20).map(e => `<div class="eintrag"><div class="meta">${datumZeit(e.zeit)} · ${esc(e.wer)}</div>${esc(e.text)}</div>`).join('') || '<p class="sub">Noch nichts passiert.</p>';
 }
