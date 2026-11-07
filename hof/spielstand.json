@@ -175,9 +175,14 @@
     "S-01": null,
     "S-02": "2026-11-07T22:26:00+01:00",
     "S-03": null,
-    "S-04": "2026-11-08T00:50:00+01:00"
+    "S-04": "2026-11-08T01:00:00+01:00"
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-08T01:00:00+01:00",
+      "wer": "Hof",
+      "text": "Justus hat eine Gans mit St.-Pauli-Schal vorgeschlagen. Paul hat das irgendwie mitbekommen, ist schnaufend bis zu Justus ins Dorf getrabt und hat ihn ins Hosenbein gebissen. Sanft, aber deutlich. Danach musste er sich erst mal hinlegen. Antrag A-02 (Gerda) wartet auf den Besitzer."
+    },
     {
       "zeit": "2026-11-08T00:50:00+01:00",
       "wer": "Justus (S-04)",
@@ -227,6 +232,39 @@
       "name": "Manni",
       "status": "genehmigt vom Besitzer am 08.11.2026, mit Abschwächung der Donuts",
       "datum": "2026-11-08"
+    },
+    {
+      "id": "A-02",
+      "von": "S-04",
+      "idee": "Hausgans mit St.-Pauli-Schal",
+      "name": "Gerda",
+      "status": "wartet auf den Besitzer",
+      "datum": "2026-11-08",
+      "entwurf": {
+        "art": "Hausgans (weiß, braun-weißer St.-Pauli-Schal)",
+        "typ": "tier",
+        "wesen": "Laut, gierig, hält den Teich für ihren. Glühender St.-Pauli-Fan, hasst den HSV. Hält sich für eine knallharte Geschäftsfrau.",
+        "beduerfnisse": {
+          "satt": "−15/Tag",
+          "wasser": "−20/Tag (schwimmen +40)",
+          "ruhm": "−10/Tag (Schal bewundern oder St. Pauli loben +15)"
+        },
+        "grosse_faehigkeit": "Erkundungsflattern: höchstens 1-mal pro Woche flattert sie in ein Nebel-Gebiet, das an den Teich grenzt, und erzählt, was dort liegt und ob es ein Geheimnis hat. Das Gebiet bleibt im Nebel, Freilegen kostet weiter Taler (ab Umbau 5 Taler billiger, wenn Gerda es erkundet hat). Kostet satt −20.",
+        "kleine_faehigkeiten": [
+          "Schilf-Geschäft: verkauft Kiez-Schilf an die Dorfkneipe, bringt dafür Kleinkram mit (Brotkrumen, Bierdeckel), ruhm +5. Keine Taler.",
+          "Kneifen: wer ihr am Teich zu nahe kommt, laune −5, am liebsten Paul."
+        ],
+        "schwaeche": "Eitel: dreckiger Schal (z. B. Matsch nach Mannis Donuts) = sie schmollt und macht nichts, bis der Schal gewaschen ist. Bei Gewitter versteckt sie sich in ihrer Hütte.",
+        "beziehungen": {
+          "paul": "jagt (kneift ihn in den Hintern). Paul bleibt Paul: er scheucht sie auf, sie flüchtet auf den Teich, er springt hinterher.",
+          "bella": "ignoriert, schnattert, wenn Bella am Teich grast",
+          "maeher": "jagt (schnattert ihn an, wenn er am Teich mäht, Mäher laune −5)",
+          "manni": "gegenseitige Verachtung, seine Donuts verdrecken ihren Schal"
+        },
+        "zuhause": "kleine Holzhütte mit St.-Pauli-Fahne am Teichufer (kommt beim Einzug mit)",
+        "zuege": "füttern (satt +30), schwimmen lassen (wasser +40), Schal waschen (ruhm +10, Schmollen vorbei), Schal bewundern oder St. Pauli loben (ruhm +15, Vorsicht Paul), am Teich grasen lassen (satt +20, Gras −10), Erkundungsflattern (Gebiet nennen)",
+        "abschwaechung": "Erkundungsflug deckt nicht auf, nur erzählen, 1-mal pro Woche, nur Nachbargebiete vom Teich (Hausgänse fliegen kaum, und Nebel-Gebiete sind bis zu den Talern zu). Schilf-Geschäft bringt keine Taler (Taler nur fürs Kümmern, kein Grinden). Der Teich gehört allen. Pauls Wesen bleibt, wie Max ihn festgelegt hat (keine Angst vor Gerda). Fuchs gestrichen (gibt es auf dem Hof nicht)."
+      }
     }
   ],
   "freigelegt": [],
