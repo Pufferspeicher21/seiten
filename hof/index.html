@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zickenstall</title>
+<style>
+  :root {
+    --bg: #f6f1e7; --card: #fffdf8; --text: #3a2f25; --muted: #85766a;
+    --line: #e6dccb; --accent: #8a5a2b; --good: #5b8c3a; --mid: #d19a2a; --bad: #c2553d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1f1a15; --card: #2a231c; --text: #f0e6d8; --muted: #b3a493;
+      --line: #3e342a; --accent: #d9a46a; --good: #8cc265; --mid: #e5b54a; --bad: #e07a62; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
+  header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 1.8rem; }
+  .sub { color: var(--muted); font-size: .9rem; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-top: 16px; }
+  .tier { display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; }
+  @media (max-width: 480px) { .tier { grid-template-columns: 1fr; } .tier svg { margin: 0 auto; } }
+  h2 { margin: 0 0 4px; font-size: 1.3rem; }
+  h3 { margin: 0 0 10px; font-size: 1rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .stimmung { font-style: italic; margin: 4px 0 12px; }
+  .bar { display: grid; grid-template-columns: 80px 1fr 36px; gap: 8px; align-items: center; font-size: .9rem; margin: 6px 0; }
+  .track { height: 10px; background: var(--line); border-radius: 6px; overflow: hidden; }
+  .fill { height: 100%; border-radius: 6px; transition: width .4s; }
+  .num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+  .stat { border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+  .stat b { display: block; font-size: 1.3rem; }
+  .stat span { color: var(--muted); font-size: .85rem; }
+  .eintrag { border-top: 1px solid var(--line); padding: 10px 0; }
+  .eintrag:first-child { border-top: 0; padding-top: 0; }
+  .eintrag .meta { color: var(--muted); font-size: .8rem; }
+  .tag { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; margin: 0 6px 6px 0; font-size: .85rem; }
+  .warn { color: var(--bad); font-weight: 600; }
+  footer { color: var(--muted); font-size: .8rem; margin-top: 24px; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 id="hofname">Zickenstall</h1>
+    <div class="sub" id="stand">wird geladen …</div>
+  </header>
+  <div id="tiere"></div>
+  <section class="card">
+    <h3>Hof</h3>
+    <div class="grid" id="hofwerte"></div>
+  </section>
+  <section class="card">
+    <h3>Tagebuch</h3>
+    <div id="tagebuch"></div>
+  </section>
+  <section class="card">
+    <h3>Erfolge</h3>
+    <div id="erfolge"></div>
+  </section>
+  <footer>Kein Tier kann sterben. Höchstens beleidigt sein. Mitspielen geht per Mail an die Hof-KI.</footer>
+</main>
+<script>
+const ABBAU = { satt: 20, laune: 10, fitness: 8, pflege: 10 };
+const NAMEN = { satt: 'Satt', laune: 'Laune', fitness: 'Fitness', pflege: 'Pflege', vertrauen: 'Vertrauen' };
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const farbe = v => v >= 60 ? 'var(--good)' : v >= 30 ? 'var(--mid)' : 'var(--bad)';
+const datum = iso => iso ? new Date(iso).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '–';
+
+function pferd(laune) {
+  const mund = laune >= 50 ? 'M70 74 Q76 79 82 74' : 'M70 78 Q76 73 82 78';
+  return `<svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">
+    <ellipse cx="60" cy="112" rx="40" ry="5" fill="var(--line)"/>
+    <path d="M40 30 L46 8 L54 28 Z" fill="var(--accent)"/>
+    <path d="M66 28 L74 8 L80 30 Z" fill="var(--accent)"/>
+    <path d="M38 34 Q60 18 82 34 L90 84 Q88 100 76 100 L44 100 Q32 100 30 84 Z" fill="var(--accent)" opacity=".85"/>
+    <path d="M44 22 Q56 14 70 22 L62 40 Q56 30 46 36 Z" fill="var(--text)" opacity=".75"/>
+    <circle cx="48" cy="50" r="4" fill="var(--text)"/><circle cx="72" cy="50" r="4" fill="var(--text)"/>
+    <ellipse cx="60" cy="82" rx="22" ry="15" fill="var(--card)" opacity=".55"/>
+    <circle cx="53" cy="80" r="2.5" fill="var(--text)"/><circle cx="67" cy="80" r="2.5" fill="var(--text)"/>
+    <path d="${mund}" transform="translate(-16 10)" stroke="var(--text)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </svg>`;
+}
+
+function jetztWerte(tier, seit) {
+  const tage = Math.max(0, (Date.now() - new Date(seit).getTime()) / 864e5);
+  const w = { ...tier.werte };
+  for (const k in ABBAU) if (k in w) w[k] = Math.max(0, Math.round(w[k] - ABBAU[k] * tage));
+  return w;
+}
+
+fetch('spielstand.json?t=' + Date.now()).then(r => r.json()).then(s => {
+  document.getElementById('hofname').textContent = s.hofname || 'Der Hof';
+  document.title = s.hofname || 'Der Hof';
+  document.getElementById('stand').textContent = 'Stand: ' + datum(s.letzte_berechnung) + ' · Level ' + s.level;
+
+  document.getElementById('tiere').innerHTML = s.tiere.map(t => {
+    const w = jetztWerte(t, s.letzte_berechnung);
+    const bars = Object.keys(NAMEN).filter(k => k in w).map(k => `
+      <div class="bar"><span>${NAMEN[k]}</span>
+        <div class="track"><div class="fill" style="width:${w[k]}%;background:${k === 'vertrauen' ? 'var(--accent)' : farbe(w[k])}"></div></div>
+        <span class="num">${w[k]}</span></div>`).join('');
+    const niedrig = ['satt', 'laune', 'pflege'].filter(k => w[k] < 30).map(k => NAMEN[k]);
+    return `<section class="card tier">
+      ${pferd(w.laune)}
+      <div>
+        <h2>${esc(t.name)} <span class="sub">${esc(t.art)}</span></h2>
+        <p class="stimmung">${t.ausgebuext ? '<span class="warn">Ausgebüxt! Steht beim Nachbarn und muss abgeholt werden.</span>' : esc(t.stimmung)}</p>
+        ${bars}
+        ${niedrig.length ? `<p class="warn">Braucht dringend: ${niedrig.join(', ')}</p>` : ''}
+        ${t.tricks.length ? `<p>Kann: ${t.tricks.map(esc).join(', ')}</p>` : ''}
+      </div></section>`;
+  }).join('');
+
+  const v = s.vorraete || {};
+  document.getElementById('hofwerte').innerHTML = [
+    [s.taler, 'Taler'], [s.erfahrung, 'Erfahrung'], [s.level, 'Level'],
+    [v.heu ?? 0, 'Heu'], [v.hafer ?? 0, 'Hafer'], [(v.karotte ?? 0) + ' / ' + (v.apfel ?? 0), 'Karotten / Äpfel'],
+    [datum(s.letzte_pflege?.Max), 'Max zuletzt'], [datum(s.letzte_pflege?.Johanna), 'Johanna zuletzt']
+  ].map(([a, b]) => `<div class="stat"><b>${esc(a)}</b><span>${b}</span></div>`).join('');
+
+  document.getElementById('tagebuch').innerHTML = s.tagebuch.slice(0, 20).map(e =>
+    `<div class="eintrag"><div class="meta">${datum(e.zeit)} · ${esc(e.wer)}</div>${esc(e.text)}</div>`).join('') || '<p class="sub">Noch nichts passiert.</p>';
+
+  document.getElementById('erfolge').innerHTML = s.erfolge.length
+    ? s.erfolge.map(e => `<span class="tag">${esc(e)}</span>`).join('')
+    : '<p class="sub">Noch keine. Der erste Ausritt wäre ein Anfang.</p>';
+}).catch(() => { document.getElementById('stand').textContent = 'Spielstand konnte nicht geladen werden.'; });
+</script>
+</body>
+</html>
