@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "hofname": "Zickenstall",
   "letzte_berechnung": "2026-11-07T22:20:00+01:00",
   "letzte_meldung": null,
@@ -9,34 +10,62 @@
     "heu": 10,
     "hafer": 3,
     "karotte": 5,
-    "apfel": 2
+    "apfel": 2,
+    "benzinkanister": 2,
+    "oel": 1,
+    "brennholz": 0
   },
   "ausruestung": [],
   "erfolge": [],
-  "tiere": [
+  "spieler": [
+    { "id": "S-01", "name": "Max", "rolle": "besitzer" },
+    { "id": "S-02", "name": "Johanna", "rolle": "mitspieler" }
+  ],
+  "flaechen": {
+    "w-grosse-wiese": { "gras": 85 },
+    "w-koppel": { "gras": 72 },
+    "w-lange-weide": { "gras": 95 },
+    "obstwiese": { "gras": 70, "obst": 8 },
+    "wald": { "holz": 80 },
+    "acker": { "zustand": "brach" }
+  },
+  "bewohner": [
     {
+      "id": "bella",
       "name": "Bella",
+      "typ": "tier",
       "art": "Pferd",
-      "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen.",
-      "werte": {
-        "satt": 79,
-        "laune": 69,
-        "fitness": 60,
-        "pflege": 69,
-        "vertrauen": 10
-      },
+      "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
+      "werte": { "satt": 79, "laune": 69, "fitness": 60, "pflege": 69, "vertrauen": 10 },
       "stimmung": "Neugierig. Beäugt den neuen Stall und überlegt, ob er ihr Niveau hat.",
+      "ort": "w-koppel",
+      "plan": [],
       "tricks": [],
       "trick_uebungen": {},
       "ausgebuext": false,
       "letztes_turnier": null
+    },
+    {
+      "id": "maeher",
+      "name": null,
+      "anzeigename": "Der Mäher",
+      "typ": "geraet",
+      "art": "Aufsitzmäher (Benzin)",
+      "beschreibung": "Alter Benzin-Aufsitzmäher. Brummig, stolz, hält sich für unverzichtbar. Springt nicht an, wenn er schlechte Laune hat. Name wird noch ausgesucht.",
+      "werte": { "benzin": 60, "oel": 80, "messer": 70, "zustand": 65, "laune": 55 },
+      "stimmung": "Steht im Schuppen und tut so, als hätte er schon immer hier gestanden.",
+      "ort": "hof",
+      "plan": [],
+      "anspring_serie": 0
     }
   ],
-  "letzte_pflege": {
-    "Max": null,
-    "Johanna": null
-  },
+  "letzte_pflege": { "S-01": null, "S-02": null },
   "tagebuch": [
+    {
+      "zeit": "2026-11-07T23:00:00+01:00",
+      "wer": "Hof",
+      "text": "Ein alter Aufsitzmäher ist in den Schuppen gerollt. Er hat einmal laut geknattert, eine blaue Wolke ausgestoßen und Bella dabei direkt angeschaut. Die beiden werden keine Freunde."
+    },
     {
       "zeit": "2026-11-07T21:00:00+01:00",
       "wer": "Hof",

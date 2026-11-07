@@ -8,37 +8,67 @@
   :root {
     --bg: #f6f1e7; --card: #fffdf8; --text: #3a2f25; --muted: #85766a;
     --line: #e6dccb; --accent: #8a5a2b; --good: #5b8c3a; --mid: #d19a2a; --bad: #c2553d;
+    --map-bg: #e9e2cf; --road: #b9b2a3; --path: #d9c9a3; --house: #cfc6b6; --roof: #a8463a;
+    --water: #8fbcd4; --wood: #557a46; --field: #b99c74; --lock: #c9c3b6;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #1f1a15; --card: #2a231c; --text: #f0e6d8; --muted: #b3a493;
-      --line: #3e342a; --accent: #d9a46a; --good: #8cc265; --mid: #e5b54a; --bad: #e07a62; }
+      --line: #3e342a; --accent: #d9a46a; --good: #8cc265; --mid: #e5b54a; --bad: #e07a62;
+      --map-bg: #3a352b; --road: #6e675b; --path: #6f6248; --house: #5b5449; --roof: #8e3f35;
+      --water: #3f6f88; --wood: #33502b; --field: #6b5640; --lock: #4a463e; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text);
     font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
+  main { max-width: 980px; margin: 0 auto; padding: 20px 16px 48px; }
   header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
   h1 { margin: 0; font-size: 1.8rem; }
+  h2 { margin: 0 0 4px; font-size: 1.2rem; }
+  h3 { margin: 0 0 10px; font-size: .95rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
   .sub { color: var(--muted); font-size: .9rem; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-top: 16px; }
-  .tier { display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; }
-  @media (max-width: 480px) { .tier { grid-template-columns: 1fr; } .tier svg { margin: 0 auto; } }
-  h2 { margin: 0 0 4px; font-size: 1.3rem; }
-  h3 { margin: 0 0 10px; font-size: 1rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
-  .stimmung { font-style: italic; margin: 4px 0 12px; }
-  .bar { display: grid; grid-template-columns: 80px 1fr 36px; gap: 8px; align-items: center; font-size: .9rem; margin: 6px 0; }
+  .live { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; color: var(--muted); }
+  .live i { width: 8px; height: 8px; border-radius: 50%; background: var(--good); animation: puls 2s infinite; }
+  @keyframes puls { 50% { opacity: .3; } }
+  .kartenrahmen { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; }
+  @media (max-width: 640px) { #karte { min-width: 680px; } }
+  #karte { width: 100%; height: auto; display: block; border-radius: 10px; background: var(--map-bg); touch-action: manipulation; }
+  .fl { cursor: pointer; transition: opacity .2s; }
+  .fl:hover { opacity: .85; }
+  .fl.aktiv { stroke: var(--accent); stroke-width: 4; }
+  .lbl { font-size: 15px; fill: var(--text); paint-order: stroke; stroke: var(--card); stroke-width: 3px; pointer-events: none; font-weight: 600; }
+  .lbl.klein { font-size: 12px; font-weight: 400; }
+  .marker { cursor: pointer; }
+  .marker text { font-size: 13px; font-weight: 700; pointer-events: none; }
+  .ring { animation: ring 2.4s infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes ring { 0% { transform: scale(.6); opacity: .7; } 100% { transform: scale(2.2); opacity: 0; } }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .bew { display: grid; grid-template-columns: 1fr; gap: 4px; }
+  .bar { display: grid; grid-template-columns: 80px 1fr 36px; gap: 8px; align-items: center; font-size: .9rem; }
   .track { height: 10px; background: var(--line); border-radius: 6px; overflow: hidden; }
-  .fill { height: 100%; border-radius: 6px; transition: width .4s; }
+  .fill { height: 100%; border-radius: 6px; }
   .num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+  .stimmung { font-style: italic; margin: 2px 0 8px; }
+  .warn { color: var(--bad); font-weight: 600; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
   .stat { border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
-  .stat b { display: block; font-size: 1.3rem; }
+  .stat b { display: block; font-size: 1.2rem; }
   .stat span { color: var(--muted); font-size: .85rem; }
   .eintrag { border-top: 1px solid var(--line); padding: 10px 0; }
   .eintrag:first-child { border-top: 0; padding-top: 0; }
   .eintrag .meta { color: var(--muted); font-size: .8rem; }
   .tag { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; margin: 0 6px 6px 0; font-size: .85rem; }
-  .warn { color: var(--bad); font-weight: 600; }
+  #info { min-height: 54px; }
+  .planer label { display: block; font-size: .9rem; color: var(--muted); margin: 10px 0 4px; }
+  select, button, textarea { font: inherit; color: var(--text); background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+  select { width: 100%; }
+  button { cursor: pointer; }
+  button:hover { border-color: var(--accent); }
+  .tage { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tage label { margin: 0; display: inline-flex; gap: 4px; align-items: center; border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; color: var(--text); cursor: pointer; }
+  textarea { width: 100%; min-height: 70px; margin-top: 10px; }
+  .legende { display: flex; flex-wrap: wrap; gap: 12px; font-size: .8rem; color: var(--muted); margin-top: 8px; }
+  .legende span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -2px; background: var(--c); }
   footer { color: var(--muted); font-size: .8rem; margin-top: 24px; text-align: center; }
 </style>
 </head>
@@ -46,89 +76,379 @@
 <main>
   <header>
     <h1 id="hofname">Zickenstall</h1>
-    <div class="sub" id="stand">wird geladen …</div>
+    <div class="sub"><span class="live"><i></i> live</span> · <span id="uhr"></span> · <span id="stand">wird geladen …</span></div>
   </header>
-  <div id="tiere"></div>
+
   <section class="card">
-    <h3>Hof</h3>
-    <div class="grid" id="hofwerte"></div>
+    <div class="kartenrahmen"><svg id="karte" viewBox="0 0 1000 700" role="img" aria-label="Karte vom Hof mit den aktuellen Standorten der Bewohner"></svg></div>
+    <div class="legende">
+      <span style="--c:#5f9a3a">langes Gras</span>
+      <span style="--c:#a9c97a">mittel</span>
+      <span style="--c:#dbe7b6">kurz / gemäht</span>
+      <span style="--c:var(--lock)">noch gesperrt</span>
+    </div>
+    <div id="info" class="sub" style="margin-top:10px">Tipp: Auf eine Fläche oder einen Bewohner tippen. Auf dem Handy lässt sich die Karte seitlich wischen.</div>
   </section>
-  <section class="card">
-    <h3>Tagebuch</h3>
-    <div id="tagebuch"></div>
+
+  <div class="grid2" id="bewohner"></div>
+
+  <section class="card planer">
+    <h3>Plan machen</h3>
+    <div class="sub">Wer soll wann wohin? Auswählen, Text kopieren und an die Hof-KI mailen. Fläche geht auch per Tipp auf die Karte.</div>
+    <div class="grid2" style="gap:12px">
+      <div>
+        <label for="p-wer">Wer</label>
+        <select id="p-wer"></select>
+        <label for="p-wo">Wohin</label>
+        <select id="p-wo"></select>
+      </div>
+      <div>
+        <label>An welchen Tagen</label>
+        <div class="tage" id="p-tage"></div>
+      </div>
+    </div>
+    <textarea id="p-text" readonly></textarea>
+    <button id="p-kopie" type="button">Text kopieren</button> <span id="p-ok" class="sub"></span>
   </section>
-  <section class="card">
-    <h3>Erfolge</h3>
-    <div id="erfolge"></div>
-  </section>
-  <footer>Kein Tier kann sterben. Höchstens beleidigt sein. Mitspielen geht per Mail an die Hof-KI.</footer>
+
+  <div class="grid2">
+    <section class="card"><h3>Hof</h3><div class="stats" id="hofwerte"></div></section>
+    <section class="card"><h3>Spieler</h3><div id="spieler"></div><h3 style="margin-top:14px">Erfolge</h3><div id="erfolge"></div></section>
+  </div>
+
+  <section class="card"><h3>Tagebuch</h3><div id="tagebuch"></div></section>
+  <footer>Kein Bewohner kann sterben oder kaputtgehen. Höchstens beleidigt sein. Positionen werden live auf der Seite berechnet, die Werte rechnet die Hof-KI zweimal am Tag.</footer>
 </main>
 <script>
-const ABBAU = { satt: 20, laune: 10, fitness: 8, pflege: 10 };
-const NAMEN = { satt: 'Satt', laune: 'Laune', fitness: 'Fitness', pflege: 'Pflege', vertrauen: 'Vertrauen' };
+const NS = 'http://www.w3.org/2000/svg';
+const ABBAU_TIER = { satt: 20, laune: 10, fitness: 8, pflege: 10 };
+const NAMEN = { satt: 'Satt', laune: 'Laune', fitness: 'Fitness', pflege: 'Pflege', vertrauen: 'Vertrauen',
+  benzin: 'Benzin', oel: 'Öl', messer: 'Messer', zustand: 'Zustand' };
+const AKTION = { tier: { weide: 'weiden', wiese: 'weiden', obstwiese: 'weiden', hof: 'stall', teich: 'weiden' },
+  geraet: { weide: 'maehen', wiese: 'maehen', obstwiese: 'maehen', hof: 'schuppen', wald: 'holz' } };
+const AKTION_TEXT = { weiden: 'weiden', maehen: 'mähen', stall: 'im Stall bleiben', schuppen: 'im Schuppen bleiben', holz: 'Holz machen' };
+const FARBE = { tier: '#c06a3a', geraet: '#5b63b5' };
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const farbe = v => v >= 60 ? 'var(--good)' : v >= 30 ? 'var(--mid)' : 'var(--bad)';
-const datum = iso => iso ? new Date(iso).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '–';
+const datumZeit = iso => iso ? new Date(iso).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' }) : '–';
+let K, S, sel = null, fEls = {}, mEls = {}, mowEl, bubEls = {};
+// Vorschau: ?zeit=2026-11-08T10:30 (Uhrzeit vorgeben) und ?demo=1 (Probe-Plan: Mäher mäht die Koppel, auf der Bella steht)
+const PARAM = new URLSearchParams(location.search);
+const VERSATZ = PARAM.get('zeit') ? new Date(PARAM.get('zeit')).getTime() - Date.now() : 0;
+const jetzt = () => new Date(Date.now() + VERSATZ);
 
-function pferd(laune) {
-  const mund = laune >= 50 ? 'M70 74 Q76 79 82 74' : 'M70 78 Q76 73 82 78';
-  return `<svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">
-    <ellipse cx="60" cy="112" rx="40" ry="5" fill="var(--line)"/>
-    <path d="M40 30 L46 8 L54 28 Z" fill="var(--accent)"/>
-    <path d="M66 28 L74 8 L80 30 Z" fill="var(--accent)"/>
-    <path d="M38 34 Q60 18 82 34 L90 84 Q88 100 76 100 L44 100 Q32 100 30 84 Z" fill="var(--accent)" opacity=".85"/>
-    <path d="M44 22 Q56 14 70 22 L62 40 Q56 30 46 36 Z" fill="var(--text)" opacity=".75"/>
-    <circle cx="48" cy="50" r="4" fill="var(--text)"/><circle cx="72" cy="50" r="4" fill="var(--text)"/>
-    <ellipse cx="60" cy="82" rx="22" ry="15" fill="var(--card)" opacity=".55"/>
-    <circle cx="53" cy="80" r="2.5" fill="var(--text)"/><circle cx="67" cy="80" r="2.5" fill="var(--text)"/>
-    <path d="${mund}" transform="translate(-16 10)" stroke="var(--text)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  </svg>`;
+// ---------- Hilfen ----------
+function hash(str) { let h = 2166136261; for (const c of str) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { let a = hash(seed); return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function berlin(t) {
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Berlin', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' })
+    .formatToParts(t).map(x => [x.type, x.value]));
+  return { tag: `${p.year}-${p.month}-${p.day}`, min: +p.hour * 60 + +p.minute + +p.second / 60 };
+}
+function inPoly([x, y], pts) { let r = false; for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) { const [xi, yi] = pts[i], [xj, yj] = pts[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) r = !r; } return r; }
+function bbox(pts) { const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]); return [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)]; }
+function mitte(pts) { let x = 0, y = 0; pts.forEach(p => { x += p[0]; y += p[1]; }); return [x / pts.length, y / pts.length]; }
+function shrink(pts, f = .86) { const [cx, cy] = mitte(pts); return pts.map(([x, y]) => [cx + (x - cx) * f, cy + (y - cy) * f]); }
+const lerp = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+const ease = t => t < .5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2;
+const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
+function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function flaeche(id) { return K.flaechen.find(f => f.id === id); }
+function frei(f) { return f && (f.ab_stufe || 1) <= (S.level || 1); }
+function poly(f) { if (f.punkte) return f.punkte; const [cx, cy, rx, ry] = f.ellipse; return Array.from({ length: 16 }, (_, i) => [cx + rx * Math.cos(i / 16 * 2 * Math.PI), cy + ry * Math.sin(i / 16 * 2 * Math.PI)]); }
+function grasFarbe(g) {
+  const a = [219, 231, 182], b = [95, 154, 58], t = Math.max(0, Math.min(1, g / 100));
+  return `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * t)).join(',')})`;
+}
+// Grasflecken: wo es auf einer Fläche besonders saftig ist (fest pro Fläche und Woche)
+function flecken(f, tag) {
+  const woche = Math.floor(new Date(tag).getTime() / 6048e5);
+  const r = rng(f.id + 'flecken' + woche), P = shrink(poly(f)), [x0, y0, x1, y1] = bbox(P), out = [];
+  for (let i = 0; i < 400 && out.length < 5; i++) { const p = [x0 + r() * (x1 - x0), y0 + r() * (y1 - y0)]; if (inPoly(p, P)) out.push(p); }
+  return out;
+}
+function saftig(p, fl) { return fl.reduce((s, c) => s + Math.exp(-(dist(p, c) ** 2) / 4000), 0); }
+function zufallsPunkt(f, r, fl, malus) {
+  const P = shrink(poly(f)), [x0, y0, x1, y1] = bbox(P); let best = null, bs = -1;
+  for (let n = 0, i = 0; i < 300 && n < 5; i++) {
+    const p = [x0 + r() * (x1 - x0), y0 + r() * (y1 - y0)];
+    if (!inPoly(p, P)) continue; n++;
+    const s = (fl ? saftig(p, fl) : r()) + (malus ? malus(p) : 0); if (s > bs) { bs = s; best = p; }
+  }
+  return best || mitte(P);
 }
 
-function jetztWerte(tier, seit) {
-  const tage = Math.max(0, (Date.now() - new Date(seit).getTime()) / 864e5);
-  const w = { ...tier.werte };
-  for (const k in ABBAU) if (k in w) w[k] = Math.max(0, Math.round(w[k] - ABBAU[k] * tage));
+// ---------- Pläne ----------
+function planHeute(b, tag) { return (b.plan || []).find(p => p.datum === tag); }
+function tagesOrt(b, tag) {
+  const p = planHeute(b, tag); const f = p && flaeche(p.flaeche);
+  if (p && frei(f)) return { f, aktion: p.aktion };
+  if (b.typ === 'geraet') return { f: flaeche('hof'), aktion: 'schuppen' };
+  let f2 = flaeche(b.ort);
+  if (!f2 || !frei(f2) || !['weide', 'wiese', 'obstwiese'].includes(f2.art)) {
+    const weiden = K.flaechen.filter(x => frei(x) && ['weide', 'wiese', 'obstwiese'].includes(x.art));
+    weiden.sort((a, c) => ((S.flaechen[c.id] || {}).gras || 0) - ((S.flaechen[a.id] || {}).gras || 0));
+    f2 = weiden[0];
+  }
+  return { f: f2, aktion: 'weiden' };
+}
+
+// ---------- Mäher ----------
+function bahnen(f) {
+  const P = poly(f), [, y0, , y1] = bbox(P), out = [];
+  let rechts = true;
+  for (let y = y0 + 12; y < y1 - 6; y += 22) {
+    const xs = [];
+    for (let i = 0, j = P.length - 1; i < P.length; j = i++) {
+      const [xi, yi] = P[i], [xj, yj] = P[j];
+      if ((yi > y) !== (yj > y)) xs.push((xj - xi) * (y - yi) / (yj - yi) + xi);
+    }
+    if (xs.length < 2) continue;
+    const a = Math.min(...xs) + 8, b = Math.max(...xs) - 8; if (b <= a) continue;
+    out.push(rechts ? [[a, y], [b, y]] : [[b, y], [a, y]]); rechts = !rechts;
+  }
+  return out;
+}
+function aufBahnen(L, p) {
+  const segs = []; L.forEach((l, i) => { segs.push(l); if (L[i + 1]) segs.push([l[1], L[i + 1][0]]); });
+  const total = segs.reduce((s, g) => s + dist(g[0], g[1]), 0); let rest = p * total;
+  for (let i = 0; i < segs.length; i++) { const d = dist(segs[i][0], segs[i][1]); if (rest <= d) return { pos: lerp(segs[i][0], segs[i][1], d ? rest / d : 0), seg: i }; rest -= d; }
+  return { pos: segs.length ? segs[segs.length - 1][1] : [0, 0], seg: segs.length };
+}
+function maeherZustand(b, t) {
+  const { tag, min } = berlin(t), schuppen = K.punkte.schuppen;
+  const o = tagesOrt(b, tag);
+  if (!o.f || o.aktion !== 'maehen') return { pos: schuppen, text: 'steht im Schuppen' };
+  const w = b.werte || {};
+  if ((w.benzin ?? 0) < 20 || (w.oel ?? 0) < 20) return { pos: schuppen, text: 'will mähen, hat aber zu wenig ' + ((w.benzin ?? 0) < 20 ? 'Benzin' : 'Öl') };
+  if ((w.laune ?? 50) < 30 && rng(b.id + tag + 'start')() < .5) return { pos: schuppen, text: 'springt heute nicht an', bubble: '...' };
+  const L = bahnen(o.f); if (!L.length) return { pos: schuppen, text: 'steht im Schuppen' };
+  const start = L[0][0], tor = K.punkte.tor;
+  if (min < 570) return { pos: schuppen, text: 'wartet im Schuppen, um 10 Uhr wird ' + o.f.name + ' gemäht' };
+  if (min < 600) { const q = (min - 570) / 30; return { pos: q < .4 ? lerp(schuppen, tor, ease(q / .4)) : lerp(tor, start, ease((q - .4) / .6)), text: 'fährt zur ' + o.f.name, laut: true }; }
+  if (min < 720) { const q = (min - 600) / 120, r = aufBahnen(L, q); return { pos: r.pos, text: 'mäht ' + o.f.name + ' (' + Math.round(q * 100) + ' %)', maeht: { f: o.f, L, q }, laut: true }; }
+  const ende = L[L.length - 1][1];
+  if (min < 750) { const q = (min - 720) / 30; return { pos: q < .6 ? lerp(ende, tor, ease(q / .6)) : lerp(tor, schuppen, ease((q - .6) / .4)), text: 'fährt zurück in den Schuppen', gemaeht: { f: o.f, L } }; }
+  return { pos: schuppen, text: 'hat heute ' + o.f.name + ' gemäht und ist stolz', gemaeht: { f: o.f, L } };
+}
+
+// ---------- Tiere ----------
+function tierZustand(b, t, gefahr, gefahrBei) {
+  const { tag, min } = berlin(t), stall = K.punkte.stall;
+  const wackel = (p, s = 2) => { const q = t.getTime() / 1000; return [p[0] + Math.sin(q / 3 + hash(b.id) % 7) * s, p[1] + Math.cos(q / 4) * s]; };
+  if (b.ausgebuext) return { pos: wackel(K.punkte.dorf, 4), text: 'ist ausgebüxt und steht beim Nachbarn im Dorf', bubble: '?' };
+  const o = tagesOrt(b, tag);
+  if (!o.f || o.aktion === 'stall') return { pos: wackel(stall, 1), text: 'steht im Stall' };
+  if (min < 420 || min >= 1170) return { pos: wackel(stall, 1), text: 'schläft im Stall' };
+  const fl = flecken(o.f, tag), slot = 15, k = Math.floor((min - 440) / slot);
+  const wp = i => { if (i < 0) return stall; const g = gefahrBei && gefahrBei(440 + i * slot); return zufallsPunkt(o.f, rng(b.id + tag + 'wp' + i), fl, g ? p => dist(p, g) < 170 ? -10 : 0 : null); };
+  let pos, text;
+  if (min < 440) { pos = lerp(stall, wp(0), ease((min - 420) / 20)); text = 'geht raus auf die ' + o.f.name; }
+  else if (min >= 1150) { pos = lerp(wp(Math.floor((1150 - 440) / slot)), stall, ease((min - 1150) / 20)); text = 'geht zurück in den Stall'; }
+  else {
+    const inSlot = (min - 440) - k * slot, a = wp(k - 1 < 0 ? 0 : k - 1), z = wp(k);
+    pos = inSlot < 4 && k > 0 ? lerp(a, z, ease(inSlot / 4)) : wackel(z, 1.5);
+    const g = (S.flaechen[o.f.id] || {}).gras ?? 50;
+    text = (inSlot < 4 && k > 0 ? 'sucht sich eine neue Stelle auf der ' : 'grast auf der ') + o.f.name + (g < 30 ? ' (Gras viel zu kurz, sie meckert)' : '');
+  }
+  let bubble = null;
+  if (gefahr && dist(pos, gefahr) < 90) {
+    const P = poly(o.f); let d = [pos[0] - gefahr[0], pos[1] - gefahr[1]]; const n = Math.hypot(...d) || 1; d = [d[0] / n, d[1] / n];
+    for (const w of [0, .8, -.8, 1.6, -1.6, 2.4, -2.4, Math.PI]) {
+      const c = Math.cos(w), s = Math.sin(w), dd = [d[0] * c - d[1] * s, d[0] * s + d[1] * c], q = [gefahr[0] + dd[0] * 95, gefahr[1] + dd[1] * 95];
+      if (inPoly(q, P)) { pos = q; break; }
+    }
+    bubble = '!'; text = 'weicht dem Mäher aus und schnaubt empört';
+  }
+  return { pos, text, bubble };
+}
+
+// ---------- Karte zeichnen ----------
+function zeichneKarte() {
+  const svg = document.getElementById('karte'); svg.innerHTML = '';
+  const defs = el('defs', {}, svg);
+  const pat = el('pattern', { id: 'sperre', width: 10, height: 10, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
+  el('rect', { width: 10, height: 10, fill: 'var(--lock)' }, pat); el('line', { x1: 0, y1: 0, x2: 0, y2: 10, stroke: 'var(--map-bg)', 'stroke-width': 3 }, pat);
+  const d = K.dorf;
+  d.gaerten.forEach(([x, y, w, h]) => el('rect', { x, y, width: w, height: h, rx: 4, fill: '#9fbf7a', opacity: .5 }, svg));
+  K.strassen.forEach(s => el('polyline', { points: s.linie.join(' '), fill: 'none', stroke: 'var(--road)', 'stroke-width': 14, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, svg));
+  d.haeuser.forEach(([x, y, w, h]) => { el('rect', { x, y, width: w, height: h, rx: 2, fill: 'var(--house)' }, svg); el('rect', { x, y, width: w, height: h * .45, rx: 2, fill: 'var(--roof)', opacity: .55 }, svg); });
+  el('text', { x: 500, y: 690, 'text-anchor': 'middle', class: 'lbl klein' }, svg).textContent = 'Dorf';
+  for (const f of K.flaechen) {
+    const st = S.flaechen[f.id] || {}, offen = frei(f);
+    let fill = 'var(--map-bg)';
+    if (!offen) fill = 'url(#sperre)';
+    else if (['wiese', 'weide', 'obstwiese'].includes(f.art)) fill = grasFarbe(st.gras ?? 60);
+    else if (f.art === 'wald') fill = 'var(--wood)';
+    else if (f.art === 'acker') fill = 'var(--field)';
+    else if (f.art === 'teich') fill = 'var(--water)';
+    else if (f.art === 'hof') fill = '#d8ccb0';
+    const attrs = { fill, stroke: 'rgba(0,0,0,.12)', 'stroke-width': 1.5, class: 'fl', 'data-id': f.id };
+    const shape = f.ellipse ? el('ellipse', { ...attrs, cx: f.ellipse[0], cy: f.ellipse[1], rx: f.ellipse[2], ry: f.ellipse[3] }, svg) : el('polygon', { ...attrs, points: f.punkte.join(' ') }, svg);
+    shape.addEventListener('click', () => waehle({ art: 'flaeche', id: f.id }));
+    fEls[f.id] = shape;
+    if (offen && f.art === 'wald') { const r = rng(f.id + 'baeume'), P = poly(f), [x0, y0, x1, y1] = bbox(P); for (let i = 0; i < 120; i++) { const p = [x0 + r() * (x1 - x0), y0 + r() * (y1 - y0)]; if (inPoly(p, P)) el('circle', { cx: p[0], cy: p[1], r: 7 + r() * 6, fill: '#3f6a34', opacity: .8, 'pointer-events': 'none' }, svg); } }
+    if (offen && f.art === 'obstwiese') { const r = rng(f.id + 'obst'), P = shrink(poly(f), .8), [x0, y0, x1, y1] = bbox(P); for (let i = 0; i < 80; i++) { const p = [x0 + r() * (x1 - x0), y0 + r() * (y1 - y0)]; if (inPoly(p, P)) { el('circle', { cx: p[0], cy: p[1], r: 9, fill: '#4f7f3a', 'pointer-events': 'none' }, svg); el('circle', { cx: p[0] + 3, cy: p[1] - 2, r: 2, fill: '#c94b3a', 'pointer-events': 'none' }, svg); } } }
+  }
+  mowEl = el('g', { 'pointer-events': 'none' }, svg);
+  K.wege.forEach(w => el('polyline', { points: w.linie.join(' '), fill: 'none', stroke: 'var(--path)', 'stroke-width': 7, 'stroke-linecap': 'round', 'stroke-dasharray': '1 0', 'pointer-events': 'none' }, svg));
+  K.baumreihen.forEach(b => { const [a, z] = b.linie, n = Math.floor(dist(a, z) / b.abstand); for (let i = 0; i <= n; i++) { const p = lerp(a, z, i / n); el('circle', { cx: p[0], cy: p[1], r: 9, fill: '#4c7a3c', 'pointer-events': 'none' }, svg); } });
+  K.gebaeude.forEach(g => { const [x, y, w, h] = g.rect; el('rect', { x, y, width: w, height: h, rx: 3, fill: g.art === 'stall' || g.art === 'scheune' ? 'var(--roof)' : 'var(--house)', stroke: 'rgba(0,0,0,.2)', 'pointer-events': 'none' }, svg); el('text', { x: x + w / 2, y: y + h / 2 + 4, 'text-anchor': 'middle', class: 'lbl klein' }, svg).textContent = g.name; });
+  for (const f of K.flaechen) {
+    if (f.art === 'hof') continue;
+    const c = f.ellipse ? [f.ellipse[0], f.ellipse[1] - f.ellipse[3] - 6] : mitte(f.punkte);
+    el('text', { x: c[0], y: c[1], 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = f.name;
+    if (!frei(f)) el('text', { x: c[0], y: c[1] + 18, 'text-anchor': 'middle', class: 'lbl klein' }, svg).textContent = 'ab Stufe ' + f.ab_stufe;
+    else if ((S.flaechen[f.id] || {}).gras != null) el('text', { x: c[0], y: c[1] + 18, 'text-anchor': 'middle', class: 'lbl klein' }, svg).textContent = 'Gras ' + S.flaechen[f.id].gras;
+  }
+  for (const b of S.bewohner) {
+    const g = el('g', { class: 'marker' }, svg);
+    el('circle', { r: 14, fill: FARBE[b.typ], class: 'ring', opacity: .5 }, g);
+    el('circle', { r: 13, fill: FARBE[b.typ], stroke: '#fff', 'stroke-width': 3 }, g);
+    el('text', { y: 5, 'text-anchor': 'middle', fill: '#fff' }, g).textContent = (b.name || b.anzeigename || '?')[0].toUpperCase() === 'D' && b.typ === 'geraet' ? 'M' : (b.name || b.anzeigename)[0];
+    const name = el('text', { y: -20, 'text-anchor': 'middle', class: 'lbl klein' }, g); name.textContent = b.name || b.anzeigename;
+    const bub = el('text', { x: 16, y: -10, class: 'lbl', fill: 'var(--bad)' }, g);
+    g.addEventListener('click', e => { e.stopPropagation(); waehle({ art: 'bewohner', id: b.id }); });
+    mEls[b.id] = g; bubEls[b.id] = bub;
+  }
+}
+
+let zustand = {};
+function tick() {
+  const t = jetzt();
+  document.getElementById('uhr').textContent = t.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' }) + ' Uhr';
+  const gefahr = [];
+  for (const b of S.bewohner.filter(b => b.typ === 'geraet')) { const z = b.id === 'maeher' || /mäher/i.test(b.art) ? maeherZustand(b, t) : { pos: K.punkte.schuppen, text: 'liegt im Schuppen' }; zustand[b.id] = z; if (z.laut) gefahr.push(z.pos); }
+  for (const b of S.bewohner.filter(b => b.typ === 'tier')) {
+    const tag0 = new Date(t.getTime() - berlin(t).min * 6e4);
+    const gefahrBei = m => { const tt = new Date(tag0.getTime() + m * 6e4); const ps = S.bewohner.filter(x => x.typ === 'geraet').map(x => maeherZustand(x, tt)).filter(z => z.laut).map(z => z.pos); return ps[0] || null; };
+    const tmp = tierZustand(b, t, null, gefahrBei), nah = gefahr.sort((a, c) => dist(a, tmp.pos) - dist(c, tmp.pos))[0];
+    zustand[b.id] = nah ? tierZustand(b, t, nah, gefahrBei) : tmp;
+  }
+  const geraete = S.bewohner.filter(b => b.typ === 'geraet').length; let gi = 0;
+  for (const b of S.bewohner) {
+    const z = zustand[b.id]; let [x, y] = z.pos;
+    if (b.typ === 'geraet' && dist(z.pos, K.punkte.schuppen) < 1) { x += (gi++ - (geraete - 1) / 2) * 30; }
+    mEls[b.id].setAttribute('transform', `translate(${x.toFixed(1)},${y.toFixed(1)})`);
+    bubEls[b.id].textContent = z.bubble || '';
+  }
+  mowEl.innerHTML = '';
+  for (const b of S.bewohner) {
+    const z = zustand[b.id], m = z.maeht || z.gemaeht; if (!m) continue;
+    const cp = el('clipPath', { id: 'clip-' + b.id }, mowEl); el('polygon', { points: poly(m.f).join(' ') }, cp);
+    const g = el('g', { 'clip-path': `url(#clip-${b.id})` }, mowEl);
+    const fertig = z.maeht ? aufBahnen(m.L, m.q).seg : 1e9;
+    m.L.forEach((l, i) => {
+      if (i * 2 > fertig) return;
+      let a = l[0], e = l[1]; if (i * 2 === fertig && z.maeht) e = z.pos;
+      el('line', { x1: a[0], y1: a[1], x2: e[0], y2: e[1], stroke: '#e6efc6', 'stroke-width': 22, opacity: .85 }, g);
+    });
+  }
+  if (sel && sel.art === 'bewohner') zeigeInfo();
+}
+
+// ---------- Auswahl und Info ----------
+function waehle(s) {
+  sel = s;
+  Object.values(fEls).forEach(e => e.classList.remove('aktiv'));
+  if (s.art === 'flaeche') { fEls[s.id].classList.add('aktiv'); const o = [...document.getElementById('p-wo').options].find(o => o.value === s.id); if (o && !o.disabled) { document.getElementById('p-wo').value = s.id; planText(); } }
+  zeigeInfo();
+}
+function zeigeInfo() {
+  const box = document.getElementById('info');
+  if (!sel) return;
+  if (sel.art === 'flaeche') {
+    const f = flaeche(sel.id), st = S.flaechen[f.id] || {};
+    const werte = Object.entries(st).map(([k, v]) => `${k === 'gras' ? 'Gras' : k === 'obst' ? 'Äpfel' : k === 'holz' ? 'Holz' : k}: ${esc(v)}`).join(' · ');
+    const hier = S.bewohner.filter(b => zustand[b.id] && inPoly(zustand[b.id].pos, poly(f))).map(b => esc(b.name || b.anzeigename));
+    box.innerHTML = `<b>${esc(f.name)}</b> · ${frei(f) ? (werte || 'Hofgelände') : 'gesperrt, frei ab Stufe ' + f.ab_stufe}${hier.length ? ' · gerade hier: ' + hier.join(', ') : ''}`;
+  } else {
+    const b = S.bewohner.find(x => x.id === sel.id), z = zustand[b.id];
+    box.innerHTML = `<b>${esc(b.name || b.anzeigename)}</b> ${esc(z ? z.text : '')} <span class="sub">· Punkt ${z ? Math.round(z.pos[0]) + ' / ' + Math.round(z.pos[1]) : ''}</span>`;
+  }
+}
+
+// ---------- Karten unter der Karte ----------
+function jetztWerte(b) {
+  const w = { ...(b.werte || {}) }; if (b.typ !== 'tier') return w;
+  const tage = Math.max(0, (jetzt().getTime() - new Date(S.letzte_berechnung).getTime()) / 864e5);
+  for (const k in ABBAU_TIER) if (k in w) w[k] = Math.max(0, Math.round(w[k] - ABBAU_TIER[k] * tage));
   return w;
 }
-
-fetch('spielstand.json?t=' + Date.now()).then(r => r.json()).then(s => {
-  document.getElementById('hofname').textContent = s.hofname || 'Der Hof';
-  document.title = s.hofname || 'Der Hof';
-  document.getElementById('stand').textContent = 'Stand: ' + datum(s.letzte_berechnung) + ' · Level ' + s.level;
-
-  document.getElementById('tiere').innerHTML = s.tiere.map(t => {
-    const w = jetztWerte(t, s.letzte_berechnung);
-    const bars = Object.keys(NAMEN).filter(k => k in w).map(k => `
-      <div class="bar"><span>${NAMEN[k]}</span>
-        <div class="track"><div class="fill" style="width:${w[k]}%;background:${k === 'vertrauen' ? 'var(--accent)' : farbe(w[k])}"></div></div>
-        <span class="num">${w[k]}</span></div>`).join('');
-    const niedrig = ['satt', 'laune', 'pflege'].filter(k => w[k] < 30).map(k => NAMEN[k]);
-    return `<section class="card tier">
-      ${pferd(w.laune)}
-      <div>
-        <h2>${esc(t.name)} <span class="sub">${esc(t.art)}</span></h2>
-        <p class="stimmung">${t.ausgebuext ? '<span class="warn">Ausgebüxt! Steht beim Nachbarn und muss abgeholt werden.</span>' : esc(t.stimmung)}</p>
-        ${bars}
-        ${niedrig.length ? `<p class="warn">Braucht dringend: ${niedrig.join(', ')}</p>` : ''}
-        ${t.tricks.length ? `<p>Kann: ${t.tricks.map(esc).join(', ')}</p>` : ''}
-      </div></section>`;
+function zeigeBewohner() {
+  document.getElementById('bewohner').innerHTML = S.bewohner.map(b => {
+    const w = jetztWerte(b);
+    const bars = Object.keys(w).map(k => `<div class="bar"><span>${NAMEN[k] || esc(k)}</span>
+      <div class="track"><div class="fill" style="width:${w[k]}%;background:${k === 'vertrauen' ? 'var(--accent)' : farbe(w[k])}"></div></div>
+      <span class="num">${w[k]}</span></div>`).join('');
+    const niedrig = Object.keys(w).filter(k => k !== 'vertrauen' && w[k] < 30).map(k => NAMEN[k] || k);
+    const plan = (b.plan || []).filter(p => p.datum >= berlin(jetzt()).tag).slice(0, 4)
+      .map(p => `${new Date(p.datum).toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit' })}: ${esc((flaeche(p.flaeche) || {}).name || p.flaeche)} (${AKTION_TEXT[p.aktion] || esc(p.aktion)})`);
+    return `<section class="card bew">
+      <h2>${esc(b.name || b.anzeigename)} <span class="sub">${esc(b.art)}</span></h2>
+      <p class="stimmung">${b.ausgebuext ? '<span class="warn">Ausgebüxt! Muss abgeholt werden.</span>' : esc(b.stimmung)}</p>
+      ${bars}
+      ${niedrig.length ? `<p class="warn">Braucht dringend: ${niedrig.join(', ')}</p>` : ''}
+      <p class="sub">${plan.length ? 'Plan: ' + plan.join(' · ') : 'Kein Plan. ' + (b.typ === 'tier' ? 'Sucht sich selbst die beste Wiese.' : 'Bleibt im Schuppen.')}</p>
+    </section>`;
   }).join('');
+}
 
-  const v = s.vorraete || {};
-  document.getElementById('hofwerte').innerHTML = [
-    [s.taler, 'Taler'], [s.erfahrung, 'Erfahrung'], [s.level, 'Level'],
+// ---------- Planer ----------
+function baueePlaner() {
+  const wer = document.getElementById('p-wer'), wo = document.getElementById('p-wo'), tage = document.getElementById('p-tage');
+  wer.innerHTML = S.bewohner.map(b => `<option value="${b.id}">${esc(b.name || b.anzeigename)}</option>`).join('');
+  const fuelleWo = () => {
+    const b = S.bewohner.find(x => x.id === wer.value);
+    wo.innerHTML = K.flaechen.filter(f => AKTION[b.typ][f.art]).map(f => `<option value="${f.id}" ${frei(f) ? '' : 'disabled'}>${esc(f.name)}${frei(f) ? '' : ' (ab Stufe ' + f.ab_stufe + ')'}</option>`).join('');
+  };
+  fuelleWo(); wer.onchange = () => { fuelleWo(); planText(); }; wo.onchange = planText;
+  const heute = jetzt();
+  tage.innerHTML = Array.from({ length: 7 }, (_, i) => { const d = new Date(heute.getTime() + i * 864e5); const tag = berlin(d).tag;
+    return `<label><input type="checkbox" value="${tag}" ${i === 1 ? 'checked' : ''}> ${d.toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', timeZone: 'Europe/Berlin' })}</label>`; }).join('');
+  tage.onchange = planText;
+  document.getElementById('p-kopie').onclick = async () => {
+    const txt = document.getElementById('p-text'); let ok = false;
+    try { await navigator.clipboard.writeText(txt.value); ok = true; } catch { txt.select(); try { ok = document.execCommand('copy'); } catch {} }
+    document.getElementById('p-ok').textContent = ok ? 'Kopiert. Jetzt in die Mail an die Hof-KI einfügen.' : 'Bitte den Text markieren und selbst kopieren.';
+  };
+  planText();
+}
+function planText() {
+  const b = S.bewohner.find(x => x.id === document.getElementById('p-wer').value), f = flaeche(document.getElementById('p-wo').value);
+  const tage = [...document.querySelectorAll('#p-tage input:checked')].map(i => i.value);
+  const out = document.getElementById('p-text');
+  if (!b || !f || !tage.length) { out.value = 'Bitte Bewohner, Fläche und mindestens einen Tag wählen.'; return; }
+  const aktion = AKTION[b.typ][f.art];
+  const tt = tage.map(t => new Date(t).toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit' })).join(', ');
+  out.value = `Hof-Plan: ${b.name || b.anzeigename} soll am ${tt} auf der Fläche "${f.name}" ${AKTION_TEXT[aktion]}.\n[PLAN ${b.id} ${aktion} ${f.id} ${tage.join(',')}]`;
+}
+
+// ---------- Rest ----------
+function zeigeRest() {
+  const v = S.vorraete || {};
+  document.getElementById('hofwerte').innerHTML = [[S.taler, 'Taler'], [S.erfahrung, 'Erfahrung'], [S.level, 'Stufe'],
     [v.heu ?? 0, 'Heu'], [v.hafer ?? 0, 'Hafer'], [(v.karotte ?? 0) + ' / ' + (v.apfel ?? 0), 'Karotten / Äpfel'],
-    [datum(s.letzte_pflege?.Max), 'Max zuletzt'], [datum(s.letzte_pflege?.Johanna), 'Johanna zuletzt']
-  ].map(([a, b]) => `<div class="stat"><b>${esc(a)}</b><span>${b}</span></div>`).join('');
+    [v.benzinkanister ?? 0, 'Benzinkanister'], [v.oel ?? 0, 'Öl'], [v.brennholz ?? 0, 'Brennholz']]
+    .map(([a, b]) => `<div class="stat"><b>${esc(a)}</b><span>${b}</span></div>`).join('');
+  const rollen = { besitzer: 'Besitzer', mitspieler: 'Mitspielerin/Mitspieler', gast: 'Gast' };
+  document.getElementById('spieler').innerHTML = (S.spieler || []).map(p => `<div>${esc(p.id)} · <b>${esc(p.name)}</b> <span class="sub">${rollen[p.rolle] || esc(p.rolle)} · zuletzt ${datumZeit((S.letzte_pflege || {})[p.id])}</span></div>`).join('');
+  document.getElementById('erfolge').innerHTML = S.erfolge.length ? S.erfolge.map(e => `<span class="tag">${esc(e)}</span>`).join('') : '<p class="sub">Noch keine. Der erste Ausritt wäre ein Anfang.</p>';
+  document.getElementById('tagebuch').innerHTML = S.tagebuch.slice(0, 20).map(e => `<div class="eintrag"><div class="meta">${datumZeit(e.zeit)} · ${esc(e.wer)}</div>${esc(e.text)}</div>`).join('') || '<p class="sub">Noch nichts passiert.</p>';
+}
 
-  document.getElementById('tagebuch').innerHTML = s.tagebuch.slice(0, 20).map(e =>
-    `<div class="eintrag"><div class="meta">${datum(e.zeit)} · ${esc(e.wer)}</div>${esc(e.text)}</div>`).join('') || '<p class="sub">Noch nichts passiert.</p>';
-
-  document.getElementById('erfolge').innerHTML = s.erfolge.length
-    ? s.erfolge.map(e => `<span class="tag">${esc(e)}</span>`).join('')
-    : '<p class="sub">Noch keine. Der erste Ausritt wäre ein Anfang.</p>';
-}).catch(() => { document.getElementById('stand').textContent = 'Spielstand konnte nicht geladen werden.'; });
+Promise.all(['karte.json', 'spielstand.json'].map(f => fetch(f + '?t=' + Date.now()).then(r => r.json()))).then(([k, s]) => {
+  K = k; S = s;
+  if (!S.bewohner && S.tiere) S.bewohner = S.tiere.map(t => ({ id: t.name.toLowerCase(), typ: 'tier', ort: 'w-koppel', plan: [], ...t }));
+  S.flaechen = S.flaechen || {}; S.spieler = S.spieler || [];
+  if (PARAM.get('demo')) { const tag = berlin(jetzt()).tag; S.bewohner.forEach(b => b.plan = [{ datum: tag, flaeche: 'w-koppel', aktion: b.typ === 'tier' ? 'weiden' : 'maehen', von: 'Demo' }]); }
+  if (VERSATZ || PARAM.get('demo')) document.querySelector('.live').innerHTML = '<i></i> Vorschau';
+  document.getElementById('hofname').textContent = S.hofname; document.title = S.hofname;
+  document.getElementById('stand').textContent = 'Stand ' + datumZeit(S.letzte_berechnung) + ' · Stufe ' + S.level;
+  zeichneKarte(); zeigeBewohner(); baueePlaner(); zeigeRest(); tick();
+  const rahmen = document.querySelector('.kartenrahmen'); rahmen.scrollLeft = (rahmen.scrollWidth - rahmen.clientWidth) / 2;
+  setInterval(tick, 1000);
+}).catch(e => { console.error(e); document.getElementById('stand').textContent = 'Spielstand konnte nicht geladen werden.'; });
 </script>
 </body>
 </html>

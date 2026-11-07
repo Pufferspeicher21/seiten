@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "hinweis": "Ausgedachte Karte. Koordinaten 0 bis 1000 (x, nach rechts) und 0 bis 700 (y, nach unten).",
+  "groesse": [1000, 700],
+  "flaechen": [
+    { "id": "w-grosse-wiese", "name": "Große Wiese", "art": "wiese", "ab_stufe": 1,
+      "punkte": [[50,150],[318,62],[392,322],[128,452]] },
+    { "id": "w-koppel", "name": "Koppel", "art": "weide", "ab_stufe": 1,
+      "punkte": [[346,58],[548,36],[588,330],[418,334]] },
+    { "id": "w-lange-weide", "name": "Lange Weide", "art": "weide", "ab_stufe": 3,
+      "punkte": [[576,34],[812,18],[852,236],[618,318]] },
+    { "id": "wald", "name": "Wäldchen", "art": "wald", "ab_stufe": 3,
+      "punkte": [[836,14],[992,10],[992,188],[876,224]] },
+    { "id": "acker", "name": "Acker", "art": "acker", "ab_stufe": 4,
+      "punkte": [[880,250],[992,212],[992,392],[912,440],[812,372]] },
+    { "id": "obstwiese", "name": "Obstwiese", "art": "obstwiese", "ab_stufe": 2,
+      "punkte": [[150,476],[322,398],[372,488],[216,528]] },
+    { "id": "teich", "name": "Teich", "art": "teich", "ab_stufe": 1,
+      "ellipse": [668,372,38,22] },
+    { "id": "hof", "name": "Hof", "art": "hof", "ab_stufe": 1,
+      "punkte": [[412,350],[612,346],[636,500],[398,510]] }
+  ],
+  "punkte": {
+    "stall": [476,394],
+    "schuppen": [590,390],
+    "dorf": [250,620],
+    "tor": [508,348]
+  },
+  "gebaeude": [
+    { "name": "Stall", "rect": [432,368,92,52], "art": "stall" },
+    { "name": "Schuppen", "rect": [560,366,58,42], "art": "schuppen" },
+    { "name": "Wohnhaus", "rect": [438,440,74,46], "art": "haus" },
+    { "name": "Scheune", "rect": [540,436,70,52], "art": "scheune" }
+  ],
+  "wege": [
+    { "name": "Feldweg West", "linie": [[332,60],[406,330],[420,345]] },
+    { "name": "Feldweg Mitte", "linie": [[562,34],[602,326],[600,348]] },
+    { "name": "Hofweg", "linie": [[510,500],[514,540]] },
+    { "name": "Weg zum Teich", "linie": [[612,352],[640,368]] }
+  ],
+  "strassen": [
+    { "linie": [[0,566],[220,552],[514,544],[760,548],[1000,532]] },
+    { "linie": [[740,548],[860,452],[1000,360]] }
+  ],
+  "baumreihen": [
+    { "linie": [[326,70],[400,326]], "abstand": 24 },
+    { "linie": [[40,160],[124,456]], "abstand": 30 },
+    { "linie": [[760,540],[990,370]], "abstand": 34 }
+  ],
+  "dorf": {
+    "haeuser": [[40,590,46,30],[110,600,40,34],[170,586,52,28],[282,590,44,32],[350,598,38,28],[420,584,56,34],
+                [604,586,46,30],[676,594,40,36],[820,580,50,30],[900,568,44,32],[60,640,50,30],[150,650,44,28],
+                [330,640,48,32],[460,636,40,30],[560,644,58,32],[720,640,42,30],[860,630,52,34]],
+    "gaerten": [[230,600,40,40],[520,600,60,30],[780,600,30,40]]
+  }
+}
