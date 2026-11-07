@@ -74,7 +74,7 @@
         "pflege": 69,
         "vertrauen": 10
       },
-      "stimmung": "Neugierig. Beäugt den neuen Stall und überlegt, ob er ihr Niveau hat.",
+      "stimmung": "Steht im Stall und wartet darauf, dass Johanna ihr sagt, wo es heute hingeht.",
       "ort": "w-koppel",
       "plan": [],
       "tricks": [],
@@ -102,6 +102,23 @@
       "plan": [],
       "anspring_serie": 0,
       "halter": "S-03"
+    },
+    {
+      "id": "paul",
+      "name": "Paul",
+      "typ": "tier",
+      "art": "Golden Retriever (Hofhund)",
+      "halter": null,
+      "frei": true,
+      "beschreibung": "Maskottchen und Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen. Ein ganz Lieber, nur bei Pferden dreht er durch, denn er frisst nur Pferdefleisch. Wer St. Pauli mag, wird gebissen.",
+      "werte": {
+        "satt": 80,
+        "laune": 90,
+        "energie": 60
+      },
+      "stimmung": "Liegt auf dem Hofplatz in der Sonne, das Lätzchen schief, und beobachtet Bella sehr, sehr aufmerksam.",
+      "ort": "hof",
+      "plan": []
     }
   ],
   "letzte_pflege": {
@@ -111,6 +128,11 @@
     "S-04": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-07T23:45:00+01:00",
+      "wer": "Hof",
+      "text": "Paul ist da! Der Golden Retriever ist ab sofort Hofhund und Maskottchen. Er hat zur Begrüßung den Mäher angebellt, ist über seine eigenen Pfoten gestolpert und hat dann sehr lange und sehr hungrig zu Bella geschaut. Bella hat beschlossen, ab jetzt nur noch mit Hufschutz rauszugehen."
+    },
     {
       "zeit": "2026-11-07T23:30:00+01:00",
       "wer": "Hof",

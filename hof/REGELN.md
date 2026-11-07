@@ -18,7 +18,8 @@ Jeder Spieler hat eine feste ID (`S-01`, `S-02`, …). Im Spielstand stehen nur 
 Wie sich ein Spieler ausweist, steht nicht hier (privat). Zurzeit: über seine Mailadresse oder im Chat mit der KI.
 Später kann ein echtes Login dazukommen, die IDs bleiben dann gleich.
 
-**Halter:** Jeder Bewohner gehört genau einem Spieler (Feld `halter` im Spielstand). **Nur der Halter** darf seinen
+**Halter:** Jeder Bewohner gehört genau einem Spieler (Feld `halter` im Spielstand). Einzige Ausnahme sind freie Hof-Bewohner
+wie Paul (Abschnitt 4.5): Sie haben keinen Halter und lassen sich von niemandem steuern. **Nur der Halter** darf seinen
 Bewohner bedienen: füttern, pflegen, warten, tanken, planen, ausreiten, mähen lassen, Tricks üben, Turnier anmelden.
 Auch der Besitzer des Hofs darf fremde Bewohner nie bedienen. Will jemand einen fremden Bewohner bedienen, passiert
 es nicht. Der Bewohner bedankt sich höchstens höflich für das Angebot und verweist auf seinen Halter.
@@ -99,6 +100,32 @@ Axt (ab Stufe 2) und Motorsäge (ab Stufe 3) sind Geräte ohne eigene Werte auß
 (die Motorsäge ist launisch, die Axt stoisch). Motorsäge braucht zusätzlich `benzin` (−10 pro Einsatz) und `kette` (Schärfe).
 Holz machen im Wald: Axt holz −10, Brennholz +2. Motorsäge holz −25, Brennholz +5. Brennholz verkaufen: 4 Taler pro Stück.
 
+### 4.5 Paul, der Hofhund (freier Bewohner)
+Golden Retriever, **Maskottchen und Liebling vom Hof**. Gehört dem Hof, hat **keinen Halter**, niemand kann ihn
+steuern. Er macht, was er will. Spieler dürfen ihn streicheln oder loben (laune +5), Befehle ignoriert er.
+- **Ein kleines Dickerchen:** langsam, schläft viel (am liebsten in der Sonne auf dem Hofplatz). Nachts im Hundekorb.
+- **Pech beim Denken:** jagt den eigenen Schwanz, läuft gegen Bäume, vergisst mitten auf der Wiese, was er wollte,
+  fällt in den Teich.
+- **Trägt immer sein HSV-Lätzchen** und ist großer HSV-Fan. Manchmal bellt er die Hymne.
+- **Frisst nur Pferdefleisch** und dreht bei Pferden durch: Er jagt sie und versucht, ihnen ins Bein zu beißen.
+  Er erwischt nie mehr als ein Zwicken. Er ist trotzdem ein ganz Lieber, nur eben nicht bei Pferden.
+  Woher er sein Futter hat, weiß keiner. Vermutlich vom Metzger im Dorf.
+- **Werte:** satt, laune, energie (sinkt beim Rumrennen, steigt beim Schlafen). Paul versorgt sich selbst, die Werte
+  sind nur zum Anschauen. Kein Spieler muss (oder kann) ihn füttern.
+
+**Pauls Unfug** (die Spielleitung würfelt bei jedem Lauf 0 bis 2 Erlebnisse, passend zur Lage, und schreibt sie
+ins Tagebuch):
+| Unfug | Wirkung |
+|---|---|
+| Jagt ein Pferd, zwickt ihm ins Bein | Pferd laune −5, pflege −5. Das Pferd tritt nach ihm, Paul ist kurz beleidigt. |
+| Legt sich quer vor den Mäher / hebt im Schuppen das Bein am Mäher | Mäher laune −5, messer −5 oder zustand −5 |
+| Scheucht Gänse, Hühner oder andere kleine Tiere auf | Tier laune −5, flattert auf eine andere Fläche |
+| Springt in den Teich | Paul nass, alle anderen lachen (keine Wirkung) |
+| Pech beim Denken | Keine Wirkung, nur peinlich |
+| Bringt etwas Komisches vom Dorf mit | Selten: 1 bis 5 Taler gefunden, oder ein alter Schuh |
+| **St. Pauli:** Erwähnt ein Spieler St. Pauli wohlwollend, beißt Paul ihn (im Spiel) | Dieser Spieler zahlt 2 Taler Pflastergeld aus der Hofkasse, Tagebuch-Eintrag |
+Paul tut nie jemandem wirklich weh, nichts geht kaputt, niemand wird krank. Es ist Slapstick.
+
 ### 4.4 Neue Bewohner und eigene Erfindungen
 - **Jeder Spieler darf einen eigenen Bewohner vorschlagen**, auch etwas Verrücktes (ein UFO, ein sprechender Traktor,
   ein Geist im Heuboden). Der Vorschlag kommt als **Antrag** in `antraege` im Spielstand
@@ -116,8 +143,12 @@ Holz machen im Wald: Axt holz −10, Brennholz +2. Motorsäge holz −25, Brennh
   `{"datum": "2026-11-10", "flaeche": "w-koppel", "aktion": "weiden", "von": "S-02"}`.
   Aktionen: `weiden`, `maehen`, `holz`, `pfluecken`, `ausreiten`, `stall`, `schuppen`.
 - Pläne macht nur der Halter des Bewohners. Ein neuer Plan für denselben Tag ersetzt den alten.
-- **Ohne Plan:** Tiere suchen sich selbst die beste freie Fläche (bei Bella: die Weide mit dem meisten Gras,
-  gern in Teichnähe). Geräte bleiben im Schuppen.
+- **Ohne Plan passiert nichts von selbst.** Jeder Bewohner mit Halter tut nur, was sein Halter sagt (das ist der Sinn:
+  Bewohner müssen gepflegt und versorgt werden). Ohne Plan bleiben Tiere den ganzen Tag im Stall, Geräte im Schuppen.
+  Ein Tier, das einen ganzen Tag ohne Plan im Stall steht, langweilt sich: laune −5 zusätzlich, und es wird nicht vom
+  Weiden satt (nur von Futter). Abends um 19 Uhr gehen Tiere, die draußen waren, von selbst zurück in den Stall
+  (Feierabend, keine eigene Entscheidung).
+- Einzige Ausnahme: freie Hof-Bewohner wie Paul (Abschnitt 4.5) entscheiden alles selbst.
 - **Plan gegen Bedürfnis:** Ein Plan geht vor. Ist die geplante Fläche aber schlecht für das Tier (Bella auf gras < 30),
   geht es trotzdem hin, meckert aber laut, und laune −5. Ist eine Fläche nicht freigeschaltet, gilt der Plan nicht.
 - Was gestern passiert ist, steht als Ort und Tagebuch im Spielstand. Pläne in der Vergangenheit werden gelöscht,
@@ -135,8 +166,8 @@ Axt 30 (ab Stufe 2) · Motorsäge 80 (ab Stufe 3).
 Jeder Zug gibt dem Hof 5 Erfahrung, Mähen 8, Turnier 20. Stufe = 1 + Erfahrung / 100 (abgerundet).
 | Stufe | Frei wird |
 |---|---|
-| 1 | Hofplatz, Stall, Schuppen, Koppel, Große Wiese, Teich, Feldwege. Bella, der Mäher. |
-| 2 | Obstwiese (Äpfel pflücken). Axt. Ein Hofhund kann einziehen. |
+| 1 | Hofplatz, Stall, Schuppen, Koppel, Große Wiese, Teich, Feldwege. Bella, der Mäher, Paul (immer da). |
+| 2 | Obstwiese (Äpfel pflücken). Axt. |
 | 3 | Lange Weide. Wäldchen (Holz machen). Motorsäge. Hühner (3 Taler pro Tag über Eier, wenn gefüttert). |
 | 4 | Acker. Anhänger (mehr Heu pro Mäh-Einsatz +50 %). |
 | 5 | Ziegen oder ein zweites Pferd, nach Wahl. Traktor. |

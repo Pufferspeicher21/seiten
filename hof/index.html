@@ -127,7 +127,8 @@ const NAMEN = { satt: 'Satt', laune: 'Laune', fitness: 'Fitness', pflege: 'Pfleg
 const AKTION = { tier: { weide: 'weiden', wiese: 'weiden', obstwiese: 'weiden', hof: 'stall', teich: 'weiden' },
   geraet: { weide: 'maehen', wiese: 'maehen', obstwiese: 'maehen', hof: 'schuppen', wald: 'holz' } };
 const AKTION_TEXT = { weiden: 'weiden', maehen: 'mähen', stall: 'im Stall bleiben', schuppen: 'im Schuppen bleiben', holz: 'Holz machen' };
-const FARBE = { tier: '#c06a3a', geraet: '#5b63b5' };
+const FARBE = { tier: '#c06a3a', geraet: '#5b63b5', frei: '#0a4ea2' };
+const farbeVon = b => b.frei ? FARBE.frei : FARBE[b.typ];
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const farbe = v => v >= 60 ? 'var(--good)' : v >= 30 ? 'var(--mid)' : 'var(--bad)';
 const datumZeit = iso => iso ? new Date(iso).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' }) : '–';
@@ -183,14 +184,7 @@ function planHeute(b, tag) { return (b.plan || []).find(p => p.datum === tag); }
 function tagesOrt(b, tag) {
   const p = planHeute(b, tag); const f = p && flaeche(p.flaeche);
   if (p && frei(f)) return { f, aktion: p.aktion };
-  if (b.typ === 'geraet') return { f: flaeche('hof'), aktion: 'schuppen' };
-  let f2 = flaeche(b.ort);
-  if (!f2 || !frei(f2) || !['weide', 'wiese', 'obstwiese'].includes(f2.art)) {
-    const weiden = K.flaechen.filter(x => frei(x) && ['weide', 'wiese', 'obstwiese'].includes(x.art));
-    weiden.sort((a, c) => ((S.flaechen[c.id] || {}).gras || 0) - ((S.flaechen[a.id] || {}).gras || 0));
-    f2 = weiden[0];
-  }
-  return { f: f2, aktion: 'weiden' };
+  return { f: flaeche('hof'), aktion: b.typ === 'geraet' ? 'schuppen' : 'stall' };
 }
 
 // ---------- Mäher ----------
@@ -238,7 +232,7 @@ function tierZustand(b, t, gefahr, gefahrBei) {
   const wackel = (p, s = 2) => { const q = t.getTime() / 1000; return [p[0] + Math.sin(q / 3 + hash(b.id) % 7) * s, p[1] + Math.cos(q / 4) * s]; };
   if (b.ausgebuext) return { pos: wackel(K.punkte.dorf, 4), text: 'ist ausgebüxt und steht beim Nachbarn im Dorf', bubble: '?' };
   const o = tagesOrt(b, tag);
-  if (!o.f || o.aktion === 'stall') return { pos: wackel(stall, 1), text: 'steht im Stall' };
+  if (!o.f || o.aktion === 'stall') return { pos: wackel(stall, 1), text: 'steht im Stall und wartet auf einen Befehl von ' + (spielerName(b.halter).split(' (')[0] || 'ihrem Halter') + ' (langweilt sich)' };
   if (min < 420 || min >= 1170) return { pos: wackel(stall, 1), text: 'schläft im Stall' };
   const fl = flecken(o.f, tag), slot = 15, k = Math.floor((min - 440) / slot);
   const wp = i => { if (i < 0) return stall; const g = gefahrBei && gefahrBei(440 + i * slot); return zufallsPunkt(o.f, rng(b.id + tag + 'wp' + i), fl, g ? p => dist(p, g) < 170 ? -10 : 0 : null); };
@@ -252,15 +246,61 @@ function tierZustand(b, t, gefahr, gefahrBei) {
     text = (inSlot < 4 && k > 0 ? 'sucht sich eine neue Stelle auf der ' : 'grast auf der ') + o.f.name + (g < 30 ? ' (Gras viel zu kurz, sie meckert)' : '');
   }
   let bubble = null;
-  if (gefahr && dist(pos, gefahr) < 90) {
+  if (gefahr && dist(pos, gefahr) < 90 && o.f && o.f.punkte) {
     const P = poly(o.f); let d = [pos[0] - gefahr[0], pos[1] - gefahr[1]]; const n = Math.hypot(...d) || 1; d = [d[0] / n, d[1] / n];
     for (const w of [0, .8, -.8, 1.6, -1.6, 2.4, -2.4, Math.PI]) {
       const c = Math.cos(w), s = Math.sin(w), dd = [d[0] * c - d[1] * s, d[0] * s + d[1] * c], q = [gefahr[0] + dd[0] * 95, gefahr[1] + dd[1] * 95];
       if (inPoly(q, P)) { pos = q; break; }
     }
-    bubble = '!'; text = 'weicht dem Mäher aus und schnaubt empört';
+    bubble = '!'; text = text.includes('Paul') ? text : 'weicht aus und schnaubt empört';
   }
   return { pos, text, bubble };
+}
+
+// ---------- Paul (freier Hofhund) ----------
+const PECH = ['jagt seinen eigenen Schwanz', 'ist gegen einen Baum gelaufen und guckt verwirrt', 'hat vergessen, warum er hergekommen ist', 'bellt seinen eigenen Schatten an', 'versucht, einen Schmetterling zu fangen, und fällt um'];
+function hundZiel(b, tag, k, akt, r) {
+  const sonne = K.punkte.sonne || [K.punkte.korb];
+  const offen = K.flaechen.filter(f => frei(f) && ['weide', 'wiese', 'obstwiese', 'hof'].includes(f.art));
+  switch (akt) {
+    case 'schlafen': case 'hsv': return sonne[Math.floor(r() * sonne.length)];
+    case 'teich': { const t = K.punkte.teichrand || [[668, 372]]; return t[Math.floor(r() * t.length)]; }
+    case 'schuppen': return [K.punkte.schuppen[0] - 22, K.punkte.schuppen[1] + 14];
+    default: { const f = offen[Math.floor(r() * offen.length)]; return zufallsPunkt(f, r); }
+  }
+}
+function hundAktivitaet(b, tag, k, lage) {
+  const r = rng(b.id + tag + 'akt' + k), w = [['schlafen', .36], ['schnueffeln', .22], ['pech', .1], ['teich', .07], ['hsv', .05]];
+  if (lage.pferd) w.push(['pferd', .2]);
+  w.push(lage.maeher ? ['maeher', .2] : ['schuppen', .04]);
+  const sum = w.reduce((a, x) => a + x[1], 0); let x = r() * sum, akt = w[0][0];
+  for (const [n, p] of w) { if (x < p) { akt = n; break; } x -= p; }
+  return { akt, r };
+}
+function hundZustand(b, t, lage) {
+  const { tag, min } = berlin(t), korb = K.punkte.korb || K.punkte.stall;
+  const q = t.getTime() / 1000, wackel = (p, s) => [p[0] + Math.sin(q / 2.3) * s, p[1] + Math.cos(q / 3.1) * s];
+  if (min < 450 || min >= 1260) return { pos: wackel(korb, .6), text: 'schnarcht im Hundekorb, das HSV-Lätzchen schief', bubble: 'zzz' };
+  const slot = 20, k = Math.floor((min - 450) / slot), inSlot = (min - 450) - k * slot;
+  const ziel = i => { if (i < 0) return korb; const a = hundAktivitaet(b, tag, i, lage.statisch); return hundZiel(b, tag, i, a.akt, a.r); };
+  const { akt } = hundAktivitaet(b, tag, k, lage.statisch);
+  const start = ziel(k - 1);
+  let ende = ziel(k);
+  if (akt === 'pferd' && lage.pferd) ende = [lage.pferd[0] - 26, lage.pferd[1] + 10];
+  if (akt === 'maeher' && lage.maeher) ende = [lage.maeher[0] + 30, lage.maeher[1]];
+  const lauf = 9;                                   // ein Dickerchen braucht Zeit
+  if (inSlot < lauf) return { pos: lerp(start, ende, ease(inSlot / lauf)), text: 'trottet ' + ({ pferd: 'mit Blick auf Bella los', maeher: 'zum Mäher', teich: 'Richtung Teich', schlafen: 'zu einem Sonnenplatz', hsv: 'auf den Hofplatz' }[akt] || 'über den Hof') + ' (gemütlich, er ist ja nicht der Schnellste)' };
+  const rest = inSlot - lauf;
+  switch (akt) {
+    case 'schlafen': return { pos: wackel(ende, .5), text: 'macht ein Nickerchen in der Sonne', bubble: 'zzz' };
+    case 'hsv': return { pos: wackel(ende, 1), text: 'bellt die HSV-Hymne, das Lätzchen flattert', bubble: 'HSV!' };
+    case 'teich': return rest < 4 ? { pos: [668, 372], text: 'ist in den Teich gesprungen', bubble: 'platsch' } : { pos: wackel(ende, 2), text: 'schüttelt sich nass neben dem Teich' };
+    case 'schuppen': return { pos: wackel(ende, .5), text: 'schnüffelt am Mäher und hebt das Bein', bubble: '!' };
+    case 'pech': { const w = q / .6; return { pos: [ende[0] + Math.cos(w) * 8, ende[1] + Math.sin(w) * 8], text: PECH[Math.floor(rng(b.id + tag + 'pech' + k)() * PECH.length)], bubble: '?' }; }
+    case 'pferd': return lage.pferd ? { pos: [lage.pferd[0] + Math.cos(q * 1.4) * 34, lage.pferd[1] + Math.sin(q * 1.4) * 22], text: 'jagt Bella und versucht, ihr ins Bein zu zwicken (Pferdefleisch!)', bubble: 'Wuff!', jagt: true } : { pos: wackel(ende, 2), text: 'sucht Bella' };
+    case 'maeher': return lage.maeher ? { pos: [lage.maeher[0] + 24, lage.maeher[1] + 6], text: 'hat sich quer vor den Mäher gelegt und stellt sich tot', bubble: 'zzz', stoert: true } : { pos: wackel(ende, 1), text: 'wartet auf den Mäher' };
+    default: return { pos: wackel(ende, 2.5), text: 'schnüffelt herum' };
+  }
 }
 
 // ---------- Karte zeichnen ----------
@@ -303,8 +343,9 @@ function zeichneKarte() {
   }
   for (const b of S.bewohner) {
     const g = el('g', { class: 'marker' }, svg);
-    el('circle', { r: 14, fill: FARBE[b.typ], class: 'ring', opacity: .5 }, g);
-    el('circle', { r: 13, fill: FARBE[b.typ], stroke: '#fff', 'stroke-width': 3 }, g);
+    el('circle', { r: 14, fill: farbeVon(b), class: 'ring', opacity: .5 }, g);
+    el('circle', { r: 13, fill: farbeVon(b), stroke: '#fff', 'stroke-width': 3 }, g);
+    if (b.frei) el('path', { d: 'M-7 9 L0 15 L7 9 Z', fill: '#fff', stroke: '#111', 'stroke-width': 1 }, g);
     el('text', { y: 5, 'text-anchor': 'middle', fill: '#fff' }, g).textContent = (b.name || b.anzeigename || '?')[0].toUpperCase() === 'D' && b.typ === 'geraet' ? 'M' : (b.name || b.anzeigename)[0];
     const name = el('text', { y: -20, 'text-anchor': 'middle', class: 'lbl klein' }, g); name.textContent = b.name || b.anzeigename;
     const bub = el('text', { x: 16, y: -10, class: 'lbl', fill: 'var(--bad)' }, g);
@@ -319,7 +360,17 @@ function tick() {
   document.getElementById('uhr').textContent = t.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' }) + ' Uhr';
   const gefahr = [];
   for (const b of S.bewohner.filter(b => b.typ === 'geraet')) { const z = b.id === 'maeher' || /mäher/i.test(b.art) ? maeherZustand(b, t) : { pos: K.punkte.schuppen, text: 'liegt im Schuppen' }; zustand[b.id] = z; if (z.laut) gefahr.push(z.pos); }
-  for (const b of S.bewohner.filter(b => b.typ === 'tier')) {
+  const pferdRoh = {};
+  for (const b of S.bewohner.filter(b => b.typ === 'tier' && !b.frei)) pferdRoh[b.id] = tierZustand(b, t, null);
+  const bella = S.bewohner.find(b => /pferd/i.test(b.art || '') && !b.frei);
+  const draussen = bella && pferdRoh[bella.id] && !/Stall|Dorf/.test(pferdRoh[bella.id].text) ? pferdRoh[bella.id].pos : null;
+  const maeherAktiv = Object.values(zustand).find(z => z && z.maeht);
+  for (const b of S.bewohner.filter(b => b.frei)) {
+    zustand[b.id] = hundZustand(b, t, { pferd: draussen, maeher: maeherAktiv ? maeherAktiv.pos : null, statisch: { pferd: !!draussen, maeher: !!maeherAktiv } });
+    if (zustand[b.id].jagt) gefahr.push(zustand[b.id].pos);
+    if (zustand[b.id].stoert && maeherAktiv) { maeherAktiv.bubble = '!?'; maeherAktiv.text += ', aber Paul liegt im Weg'; }
+  }
+  for (const b of S.bewohner.filter(b => b.typ === 'tier' && !b.frei)) {
     const tag0 = new Date(t.getTime() - berlin(t).min * 6e4);
     const gefahrBei = m => { const tt = new Date(tag0.getTime() + m * 6e4); const ps = S.bewohner.filter(x => x.typ === 'geraet').map(x => maeherZustand(x, tt)).filter(z => z.laut).map(z => z.pos); return ps[0] || null; };
     const tmp = tierZustand(b, t, null, gefahrBei), nah = gefahr.sort((a, c) => dist(a, tmp.pos) - dist(c, tmp.pos))[0];
@@ -387,11 +438,11 @@ function zeigeBewohner() {
       .map(p => `${new Date(p.datum).toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit' })}: ${esc((flaeche(p.flaeche) || {}).name || p.flaeche)} (${AKTION_TEXT[p.aktion] || esc(p.aktion)})`);
     return `<section class="card bew">
       <h2>${esc(b.name || b.anzeigename)} <span class="sub">${esc(b.art)}</span></h2>
-      <div class="sub">Halter: ${esc(spielerName(b.halter))}</div>
+      <div class="sub">${b.frei ? 'Gehört dem ganzen Hof (Maskottchen)' : 'Halter: ' + esc(spielerName(b.halter))}</div>
       <p class="stimmung">${b.ausgebuext ? '<span class="warn">Ausgebüxt! Muss abgeholt werden.</span>' : esc(b.stimmung)}</p>
       ${bars}
       ${niedrig.length ? `<p class="warn">Braucht dringend: ${niedrig.join(', ')}</p>` : ''}
-      <p class="sub">${plan.length ? 'Plan: ' + plan.join(' · ') : 'Kein Plan. ' + (b.typ === 'tier' ? 'Sucht sich selbst die beste Wiese.' : 'Bleibt im Schuppen.')}</p>
+      <p class="sub">${b.frei ? 'Hört auf niemanden. Macht, was er will. Gerade: ' + esc((zustand[b.id] || {}).text || '') : plan.length ? 'Plan: ' + plan.join(' · ') : 'Kein Plan. ' + (b.typ === 'tier' ? 'Bleibt im Stall und langweilt sich.' : 'Bleibt im Schuppen.')}</p>
     </section>`;
   }).join('');
 }
@@ -399,7 +450,7 @@ function zeigeBewohner() {
 // ---------- Planer ----------
 function baueePlaner() {
   const wer = document.getElementById('p-wer'), wo = document.getElementById('p-wo'), tage = document.getElementById('p-tage');
-  wer.innerHTML = S.bewohner.map(b => `<option value="${b.id}">${esc(b.name || b.anzeigename)} (Halter: ${esc(spielerName(b.halter))})</option>`).join('');
+  wer.innerHTML = S.bewohner.filter(b => !b.frei).map(b => `<option value="${b.id}">${esc(b.name || b.anzeigename)} (Halter: ${esc(spielerName(b.halter))})</option>`).join('');
   const fuelleWo = () => {
     const b = S.bewohner.find(x => x.id === wer.value);
     wo.innerHTML = K.flaechen.filter(f => AKTION[b.typ][f.art]).map(f => `<option value="${f.id}" ${frei(f) ? '' : 'disabled'}>${esc(f.name)}${frei(f) ? '' : ' (ab Stufe ' + f.ab_stufe + ')'}</option>`).join('');
@@ -448,7 +499,8 @@ Promise.all(['karte.json', 'spielstand.json'].map(f => fetch(f + '?t=' + Date.no
   if (VERSATZ || PARAM.get('demo')) document.querySelector('.live').innerHTML = '<i></i> Vorschau';
   document.getElementById('hofname').textContent = S.hofname; document.title = S.hofname;
   document.getElementById('stand').textContent = 'Stand ' + datumZeit(S.letzte_berechnung) + ' · Stufe ' + S.level;
-  zeichneKarte(); zeigeBewohner(); baueePlaner(); zeigeRest(); tick();
+  zeichneKarte(); tick(); zeigeBewohner(); baueePlaner(); zeigeRest();
+  setInterval(zeigeBewohner, 30000);
   const rahmen = document.querySelector('.kartenrahmen'); rahmen.scrollLeft = (rahmen.scrollWidth - rahmen.clientWidth) / 2;
   setInterval(tick, 1000);
 }).catch(e => { console.error(e); document.getElementById('stand').textContent = 'Spielstand konnte nicht geladen werden.'; });
