@@ -1,11 +1,16 @@
 {
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-07T21:00:00+01:00",
+  "letzte_berechnung": "2026-11-07T22:20:00+01:00",
   "letzte_meldung": null,
   "taler": 50,
   "erfahrung": 0,
   "level": 1,
-  "vorraete": { "heu": 10, "hafer": 3, "karotte": 5, "apfel": 2 },
+  "vorraete": {
+    "heu": 10,
+    "hafer": 3,
+    "karotte": 5,
+    "apfel": 2
+  },
   "ausruestung": [],
   "erfolge": [],
   "tiere": [
@@ -13,7 +18,13 @@
       "name": "Bella",
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen.",
-      "werte": { "satt": 80, "laune": 70, "fitness": 60, "pflege": 70, "vertrauen": 10 },
+      "werte": {
+        "satt": 79,
+        "laune": 69,
+        "fitness": 60,
+        "pflege": 69,
+        "vertrauen": 10
+      },
       "stimmung": "Neugierig. Beäugt den neuen Stall und überlegt, ob er ihr Niveau hat.",
       "tricks": [],
       "trick_uebungen": {},
@@ -21,7 +32,10 @@
       "letztes_turnier": null
     }
   ],
-  "letzte_pflege": { "Max": null, "Johanna": null },
+  "letzte_pflege": {
+    "Max": null,
+    "Johanna": null
+  },
   "tagebuch": [
     {
       "zeit": "2026-11-07T21:00:00+01:00",
