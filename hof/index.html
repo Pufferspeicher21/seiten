@@ -524,7 +524,7 @@ function planText() {
 // ---------- Rest ----------
 function zeigeRest() {
   const v = S.vorraete || {};
-  document.getElementById('hofwerte').innerHTML = [[S.taler, 'Taler'], [S.erfahrung, 'Erfahrung'], [S.level, 'Stufe'],
+  document.getElementById('hofwerte').innerHTML = [[S.taler, 'Taler'],
     [v.heu ?? 0, 'Heu'], [v.hafer ?? 0, 'Hafer'], [(v.karotte ?? 0) + ' / ' + (v.apfel ?? 0), 'Karotten / Äpfel'],
     [v.benzinkanister ?? 0, 'Benzinkanister'], [v.oel ?? 0, 'Öl'], [v.brennholz ?? 0, 'Brennholz']]
     .map(([a, b]) => `<div class="stat"><b>${esc(a)}</b><span>${b}</span></div>`).join('');
@@ -543,7 +543,7 @@ Promise.all(['karte.json', 'spielstand.json'].map(f => fetch(f + '?t=' + Date.no
     document.querySelector('main').insertAdjacentHTML('afterbegin', '<div class="vorschau"><b>Testtag:</b> nur eine Vorschau mit ausgedachten Befehlen (Bella weidet auf der Großen Wiese, der Mäher mäht vormittags die Koppel, Manni dreht ab 15 Uhr Donuts auf der Großen Wiese, Paul macht, was er will). Am echten Spielstand ändert sich nichts. <a href="./">Zurück zum echten Hof</a></div>'); }
   if (VERSATZ || PARAM.get('demo')) document.querySelector('.live').innerHTML = '<i></i> Vorschau';
   document.getElementById('hofname').textContent = S.hofname; document.title = S.hofname;
-  document.getElementById('stand').textContent = 'Stand ' + datumZeit(S.letzte_berechnung) + ' · Stufe ' + S.level;
+  document.getElementById('stand').textContent = 'Stand ' + datumZeit(S.letzte_berechnung);
   const tt = document.getElementById('testtag'); if (tt) { const d = new Date(); const tag = d.toLocaleDateString('en-CA', { timeZone: 'Europe/Berlin' }); tt.href = '?demo=1&zeit=' + tag + 'T10:20'; }
   zeichneKarte(); tick(); zeigeBewohner(); baueePlaner(); zeigeRest();
   setInterval(zeigeBewohner, 30000);
