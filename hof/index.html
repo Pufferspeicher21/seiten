@@ -539,7 +539,7 @@ function zeigeRest() {
     [v.heu ?? 0, 'Heu'], [v.hafer ?? 0, 'Hafer'], [(v.karotte ?? 0) + ' / ' + (v.apfel ?? 0), 'Karotten / Äpfel'],
     [v.benzinkanister ?? 0, 'Benzinkanister'], [v.oel ?? 0, 'Öl'], [v.brennholz ?? 0, 'Brennholz']]
     .map(([a, b]) => `<div class="stat"><b>${esc(a)}</b><span>${b}</span></div>`).join('');
-  const rollen = { besitzer: 'Besitzer vom Hof', mitspieler: 'Mitspieler', gast: 'Gast' };
+  const rollen = { besitzer: 'Hofbauer (Besitzer vom Hof)', mitspieler: 'Mitspieler', gast: 'Gast' };
   document.getElementById('spieler').innerHTML = (S.spieler || []).map(p => { const eig = S.bewohner.filter(b => b.halter === p.id).map(b => esc(b.name || b.anzeigename)); return `<div>${esc(p.id)} · <b>${esc(p.name)}</b> <span class="sub">${rollen[p.rolle] || esc(p.rolle)} · ${eig.length ? 'hält ' + eig.join(', ') : 'noch kein Bewohner'} · zuletzt ${datumZeit((S.letzte_pflege || {})[p.id])}</span></div>`; }).join('')
     + ((S.antraege || []).length ? '<h3 style="margin-top:14px">Anträge</h3>' + S.antraege.map(a => `<div class="sub"><b>${esc(a.name || a.idee)}</b> von ${esc(spielerName(a.von))}: ${esc(a.status || 'wartet auf den Besitzer')}</div>`).join('') : '');
   document.getElementById('erfolge').innerHTML = S.erfolge.length ? S.erfolge.map(e => `<span class="tag">${esc(e)}</span>`).join('') : '<p class="sub">Noch keine. Der erste Ausritt wäre ein Anfang.</p>';

@@ -207,6 +207,11 @@
   },
   "tagebuch": [
     {
+      "zeit": "2026-11-08T12:00:00+01:00",
+      "wer": "Hof",
+      "text": "Max ist jetzt offiziell der Hofbauer. Er hat einen Hammer, eine Rolle Weidezaun und eine Trillerpfeife. Paul hat die Pfeife einmal gehört, ist sofort in seinen Korb getrottet und hat dort zufrieden weitergeschlafen. Gerda hat den Zaun misstrauisch angeschnattert."
+    },
+    {
       "zeit": "2026-11-08T01:10:00+01:00",
       "wer": "Hof",
       "text": "Gerda ist eingezogen! Die Gans mit dem St.-Pauli-Schal hat eine kleine Holzhütte am Teichufer bezogen und als Erstes die Fahne gehisst. Paul hat sie von der Hofmitte aus gesehen, ist losgestürmt, hat auf halber Strecke eine Pause gebraucht und wurde dann am Teich in den Hintern gekniffen. Manni hat abfällig gehupt, Gerda hat zurückgeschnattert. Bella hat nicht mal den Kopf gehoben."
@@ -305,5 +310,11 @@
     "fluss": "normal",
     "wetter": "bewölkt",
     "woche": 1
+  },
+  "hofbauer": {
+    "zaeune": [],
+    "pfeife": null,
+    "ereignisse": [],
+    "stellschrauben": []
   }
 }

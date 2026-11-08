@@ -1,6 +1,6 @@
 # Regelwerk Zickenstall
 
-Version 3 · Stand 08.11.2026 · Wird bei jeder Entscheidung von Spielern und Hof-KI sofort angepasst (Abschnitt 17).
+Version 3.1 · Stand 08.11.2026 · Wird bei jeder Entscheidung von Spielern und Hof-KI sofort angepasst (Abschnitt 17).
 
 **Kennzeichnung:** Abschnitte mit **[KOMMT MIT DEM UMBAU]** sind beschlossen, gelten aber erst, wenn die neue Seite
 mit Anmeldung und großer Karte online ist. Bis dahin gelten die mit **[GILT JETZT]** markierten Übergangsregeln.
@@ -24,7 +24,7 @@ Nie Nachnamen, Mailadressen, echte Orte, Termine oder Privates. Die Karte ist au
 ## 2. Spieler, Rollen, Halter
 | ID | Name | Rolle | Bewohner |
 |---|---|---|---|
-| S-01 | Max | Besitzer vom Hof | keine eigenen (Paul gehört allen) |
+| S-01 | Max | Besitzer vom Hof, Hofbauer | keine eigenen (Paul gehört allen) |
 | S-02 | Johanna | Mitspielerin | Bella (Pferd) |
 | S-03 | Julian | Mitspieler | der Mäher |
 | S-04 | Justus | Mitspieler | Manni (Opel Manta), Gerda (Gans) |
@@ -33,7 +33,8 @@ Nie Nachnamen, Mailadressen, echte Orte, Termine oder Privates. Die Karte ist au
   warten, planen, losschicken, Fähigkeiten einsetzen). Auch der Besitzer nie.
 - **Freie Bewohner** (zurzeit nur Paul) haben keinen Halter und entscheiden alles selbst.
 - **Besitzer (Max):** nimmt Spieler auf, genehmigt neue Bewohner, setzt PINs zurück, löst Hof-Ereignisse aus.
-  Er bedient keine fremden Bewohner.
+  Er bedient keine fremden Bewohner. Als **Hofbauer** gleicht er aus, wenn etwas im Spiel wirklich nervt (Abschnitt 2a).
+  Er hat keine eigenen Bewohner, damit er neutral bleibt.
 - Neue Spieler nimmt nur der Besitzer auf.
 
 | Recht | Besitzer | Mitspieler | Gast |
@@ -43,7 +44,29 @@ Nie Nachnamen, Mailadressen, echte Orte, Termine oder Privates. Die Karte ist au
 | Eigenen neuen Bewohner vorschlagen | ja | ja | ja |
 | Neuen Bewohner genehmigen | ja | nein | nein |
 | Spieler aufnehmen, PIN zurücksetzen | ja | nein | nein |
-| Hof-Ereignis auslösen **[KOMMT MIT DEM UMBAU]** | ja | nein | nein |
+| Hof-Ereignis auslösen | ja | nein | nein |
+| Hofbauer-Werkzeuge (Abschnitt 2a) | ja | nein | nein |
+
+## 2a. Der Hofbauer (Max)
+Der Hofbauer ist der Moderator vom Hof. **Er dreht an der Welt, nie an den Bewohnern:** Er ändert keine Werte, bedient
+niemanden und streicht keine Fähigkeiten. Er ändert nur die Umstände. Eingriffe macht er nur im Chat mit der Hof-KI,
+jeder steht mit Begründung im Tagebuch.
+
+| Werkzeug | Was es tut | Wie oft |
+|---|---|---|
+| **Zaun ziehen** | Sperrt eine Fläche für einen Tag für einen bestimmten Bewohner (z. B. „Manni heute nicht auf die Koppel“). Zuhause und Hofzufahrt nie. | 1-mal am Tag |
+| **Pfeife für Paul** | Paul legt sich für einen Lauf in seinen Hundekorb, kein Unfug. | 1-mal am Tag |
+| **Hof-Ereignis** | Gewitter, Regen, Hitzewelle, Hochwasser, Dorffest. Trifft alle gleich. **[GILT JETZT]** 1-mal pro Woche gratis. Ab Umbau 25 Taler. | siehe links |
+| **Hof ausbauen** | Dauerhaftes Gegenmittel, z. B. Steg am Teich (dort kneift Gerda nicht), Zaun um die Koppel. Ab Umbau mit Talern (Abschnitt 11). | nach Bedarf |
+| **Stellschraube** | Nur für echte Notfälle: ändert eine Zahl im Bauplan eines Bewohners (Abschnitt 14). | siehe Grenzen |
+
+**Grenzen der Stellschraube** (damit kein Bewohner kaputt- oder übermächtig gedreht wird):
+- Höchstens **1 Änderung pro Bewohner und Woche**, höchstens **25 %** (aus „Gras −30“ wird z. B. −22, nie −5).
+- **Große Fähigkeit, Schwäche und Wesen bleiben immer.** Abschwächen oder verstärken ja, streichen oder verdoppeln nie.
+- Die Hof-KI prüft jede Änderung gegen Abschnitt 7 und lehnt ab, wenn ein Bewohner dadurch nutzlos oder übermächtig wird.
+- Jede Änderung steht mit Begründung im Tagebuch und mit Datum im Bauplan (Abschnitt 14). **Sie läuft nach 1 Woche aus**,
+  außer der Hofbauer bestätigt sie.
+- Erst die kleinen Werkzeuge (Zaun, Pfeife, Ereignis, Ausbau), dann die Stellschraube.
 
 ## 3. Wie man Entscheidungen trifft
 - Die Hof-KI fragt nicht ständig nach. **Jeder Spieler kennt die Regeln** und sagt selbst, was sein Bewohner tun soll.
@@ -137,7 +160,7 @@ Taler sind Belohnung fürs Kümmern, nicht fürs Grinden.
 | Neues Haus auf einem Bauplatz | 40 | jeder |
 | Hof ausbauen (Garage, Werkstatt, Steg …) | 30 | Besitzer oder Topf |
 | Kleinkram für eigene Bewohner (Hütte, Spielzeug, Sattel) | 5 bis 10 | jeder |
-| Hof-Ereignis auslösen (Gewitter, Hochwasser, Dorffest, Hitzewelle) | 25 | nur Besitzer |
+| Hof-Ereignis auslösen (Gewitter, Hochwasser, Dorffest, Hitzewelle) | 25 | nur Besitzer (Hofbauer) |
 
 **Topf:** Für große Sachen kann jeder Taler in einen gemeinsamen Topf werfen. Ist er voll, passiert es.
 **[GILT JETZT]** Noch keine Taler. Futter, Benzin und Pflege gibt es einfach.
@@ -229,7 +252,8 @@ HSV. Hält sich für eine knallharte Geschäftsfrau.
 ### Paul, Golden Retriever · frei, gehört dem ganzen Hof (Maskottchen)
 Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen.
 - **Bedürfnisse:** satt, laune, energie. Er versorgt sich selbst, niemand muss oder kann ihn füttern.
-- **Er hört auf niemanden.** Streicheln oder Loben geht (laune +5), Befehle ignoriert er.
+- **Er hört auf niemanden.** Streicheln oder Loben geht (laune +5), Befehle ignoriert er. Einzige Ausnahme: die
+  **Pfeife des Hofbauern** (Abschnitt 2a), dann trottet er für einen Lauf in seinen Korb.
 - **Schläft viel**, ist langsam unterwegs, nachts im Hundekorb.
 - **Frisst nur Pferdefleisch** und dreht bei Pferden durch: jagt sie und zwickt ins Bein. Mehr als ein Zwicken wird
   es nie.
@@ -258,6 +282,9 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
 - Abschnitte mit [KOMMT MIT DEM UMBAU] noch nicht anwenden. Abschnitte mit [GILT JETZT] gelten bis zum Umbau.
 - Bei jedem Lauf: Zeit nachrechnen, Pläne ausführen, Paul würfeln, Mails abarbeiten, Tagebuch, Push.
 - Tagebuch neueste oben, höchstens 60 Einträge, ältere nach `archiv/`.
+- Hofbauer-Eingriffe stehen in `spielstand.json` unter `hofbauer`: `zaeune` (bewohner, flaeche, datum: Pläne dorthin
+  an dem Tag ablehnen), `pfeife` (Datum des Laufs ohne Paul-Unfug), `ereignisse` (datum, art), `stellschrauben`
+  (bewohner, was, alt, neu, seit, bis). Abgelaufene Einträge beim Lauf löschen, Stellschrauben dann wieder auf alt.
 
 ## 17. Wie dieses Regelwerk geändert wird
 - Neue Regeln entstehen nur durch Entscheidungen des Besitzers im Chat mit der Hof-KI.
@@ -267,6 +294,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
 ### Änderungsverlauf
 | Datum | Änderung |
 |---|---|
+| 08.11.2026 | Neue Rolle Hofbauer (Max): Zaun, Pfeife für Paul, Hof-Ereignis (jetzt 1-mal pro Woche gratis), Hof ausbauen, Stellschraube mit festen Grenzen (Abschnitt 2a). |
 | 08.11.2026 | Manni (Opel Manta, Halter Justus) eingezogen, Donuts abgeschwächt (Abschnitt 14). Paul: neuer Unfug an Mannis Reifen. |
 | 08.11.2026 | Manni: neuer Zug „Hofplatz, Krach machen“ (Abschnitt 14). Stufe und Erfahrung entfallen. |
 | 08.11.2026 | Gerda (Hausgans, Halter Justus) eingezogen, abgeschwächt: Erkunden statt Freilegen, Schilf ohne Taler (Abschnitt 14). |
