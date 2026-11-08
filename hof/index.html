@@ -317,6 +317,7 @@ function hundZustand(b, t, lage) {
   const { tag, min } = berlin(t), korb = K.punkte.korb || K.punkte.stall;
   const q = t.getTime() / 1000, wackel = (p, s) => [p[0] + Math.sin(q / 2.3) * s, p[1] + Math.cos(q / 3.1) * s];
   if (min < 450 || min >= 1260) return { pos: wackel(korb, .6), text: 'schnarcht im Hundekorb, das HSV-Lätzchen schief', bubble: 'zzz' };
+  if (lage.befehlGans && lage.gans) { const w = q * 1.1, z = Math.floor(q / 3) % 4; return { pos: [lage.gans[0] + Math.cos(w) * 30, lage.gans[1] + Math.sin(w) * 18], text: ['jagt Gerda um den Teich', 'ist Gerda hinterher ins Wasser gesprungen', 'wurde von Gerda in den Hintern gekniffen und jagt sie trotzdem weiter', 'bellt Gerdas St.-Pauli-Schal an'][z], bubble: ['Wuff!', 'platsch', 'AUA', 'HSV!'][z], jagtGans: true }; }
   const slot = 20, k = Math.floor((min - 450) / slot), inSlot = (min - 450) - k * slot;
   const ziel = i => { if (i < 0) return korb; const a = hundAktivitaet(b, tag, i, lage.statisch); return hundZiel(b, tag, i, a.akt, a.r); };
   const { akt } = hundAktivitaet(b, tag, k, lage.statisch);
@@ -330,7 +331,7 @@ function hundZustand(b, t, lage) {
   switch (akt) {
     case 'schlafen': return { pos: wackel(ende, .5), text: 'macht ein Nickerchen in der Sonne', bubble: 'zzz' };
     case 'hsv': return { pos: wackel(ende, 1), text: 'bellt die HSV-Hymne, das Lätzchen flattert', bubble: 'HSV!' };
-    case 'teich': return rest < 4 ? { pos: [668, 372], text: 'ist in den Teich gesprungen', bubble: 'platsch' } : { pos: wackel(ende, 2), text: 'schüttelt sich nass neben dem Teich' };
+    case 'teich': return rest < 4 ? { pos: [K.flaechen.find(f => f.id === 'teich').ellipse[0] - 20, K.flaechen.find(f => f.id === 'teich').ellipse[1]], text: 'ist in den Teich gesprungen', bubble: 'platsch' } : { pos: wackel(ende, 2), text: 'schüttelt sich nass neben dem Teich' };
     case 'schuppen': return { pos: wackel(ende, .5), text: 'schnüffelt am Mäher und hebt das Bein', bubble: '!' };
     case 'pech': { const w = q / .6; return { pos: [ende[0] + Math.cos(w) * 8, ende[1] + Math.sin(w) * 8], text: PECH[Math.floor(rng(b.id + tag + 'pech' + k)() * PECH.length)], bubble: '?' }; }
     case 'pferd': return lage.pferd ? { pos: [lage.pferd[0] + Math.cos(q * 1.4) * 34, lage.pferd[1] + Math.sin(q * 1.4) * 22], text: 'jagt Bella und versucht, ihr ins Bein zu zwicken (Pferdefleisch!)', bubble: 'Wuff!', jagt: true } : { pos: wackel(ende, 2), text: 'sucht Bella' };
@@ -416,8 +417,9 @@ function tick() {
   const bella = S.bewohner.find(b => /pferd/i.test(b.art || '') && !b.frei);
   const draussen = bella && pferdRoh[bella.id] && !/Stall|Dorf/.test(pferdRoh[bella.id].text) ? pferdRoh[bella.id].pos : null;
   const maeherAktiv = Object.values(zustand).find(z => z && z.maeht);
+  const gansRoh = pferdRoh.gerda, gans = gansRoh && !/Hütte|Häuschen/.test(gansRoh.text) ? gansRoh.pos : null;
   for (const b of S.bewohner.filter(b => b.frei)) {
-    zustand[b.id] = hundZustand(b, t, { pferd: draussen, maeher: maeherAktiv ? maeherAktiv.pos : null, statisch: { pferd: !!draussen, maeher: !!maeherAktiv } });
+    zustand[b.id] = hundZustand(b, t, { gans, befehlGans: S.testBefehlPaul === 'gerda', pferd: draussen, maeher: maeherAktiv ? maeherAktiv.pos : null, statisch: { pferd: !!draussen, maeher: !!maeherAktiv } });
     if (zustand[b.id].jagt) gefahr.push(zustand[b.id].pos);
     if (zustand[b.id].stoert && maeherAktiv) { maeherAktiv.bubble = '!?'; maeherAktiv.text += ', aber Paul liegt im Weg'; }
   }
@@ -427,6 +429,7 @@ function tick() {
     const tmp = tierZustand(b, t, null, gefahrBei), nah = gefahr.sort((a, c) => dist(a, tmp.pos) - dist(c, tmp.pos))[0];
     zustand[b.id] = nah ? tierZustand(b, t, nah, gefahrBei) : tmp;
   }
+  if (zustand.gerda && S.bewohner.some(b => b.frei && zustand[b.id] && zustand[b.id].jagtGans)) { zustand.gerda.bubble = 'SCHNATTER!'; zustand.gerda.text = 'flüchtet schnatternd über den Teich und kneift Paul, wann immer er nah genug kommt'; }
   const geraete = S.bewohner.filter(b => b.typ === 'geraet' && !b.zuhause_punkt).length; let gi = 0;
   for (const b of S.bewohner) {
     const z = zustand[b.id]; let [x, y] = z.pos;
@@ -548,7 +551,8 @@ Promise.all(['karte.json', 'spielstand.json'].map(f => fetch(f + '?t=' + Date.no
   if (!S.bewohner && S.tiere) S.bewohner = S.tiere.map(t => ({ id: t.name.toLowerCase(), typ: 'tier', ort: 'w-koppel', plan: [], ...t }));
   S.flaechen = S.flaechen || {}; S.spieler = S.spieler || [];
   if (PARAM.get('demo')) { const tag = berlin(jetzt()).tag; S.bewohner.forEach(b => { if (b.frei) return; b.plan = [{ datum: tag, flaeche: b.id === 'manni' ? 'w-grosse-wiese' : b.typ === 'tier' ? 'w-grosse-wiese' : 'w-koppel', aktion: b.id === 'manni' ? 'donuts' : b.typ === 'tier' ? 'weiden' : 'maehen', von: 'Test' }]; });
-    document.querySelector('main').insertAdjacentHTML('afterbegin', '<div class="vorschau"><b>Testtag:</b> nur eine Vorschau mit ausgedachten Befehlen (Bella weidet auf der Großen Wiese, der Mäher mäht vormittags die Koppel, Manni dreht ab 15 Uhr Donuts auf der Großen Wiese, Paul macht, was er will). Am echten Spielstand ändert sich nichts. <a href="./">Zurück zum echten Hof</a></div>'); }
+    const gerda = S.bewohner.find(b => b.id === 'gerda'); if (gerda) { gerda.plan = [{ datum: tag, flaeche: 'teich', aktion: 'schwimmen', von: 'Test' }]; S.testBefehlPaul = 'gerda'; }
+    document.querySelector('main').insertAdjacentHTML('afterbegin', '<div class="vorschau"><b>Testtag:</b> nur eine Vorschau mit ausgedachten Befehlen (Bella weidet auf der Großen Wiese, der Mäher mäht vormittags die Koppel, Manni dreht ab 15 Uhr Donuts auf der Großen Wiese, Gerda schwimmt auf dem Teich, und Paul jagt sie den ganzen Tag, weil der Besitzer es fürs Testen so will. Im echten Spiel hört Paul auf niemanden). Am echten Spielstand ändert sich nichts. <a href="./">Zurück zum echten Hof</a></div>'); }
   if (VERSATZ || PARAM.get('demo')) document.querySelector('.live').innerHTML = '<i></i> Vorschau';
   document.getElementById('hofname').textContent = S.hofname; document.title = S.hofname;
   document.getElementById('stand').textContent = 'Stand ' + datumZeit(S.letzte_berechnung);
