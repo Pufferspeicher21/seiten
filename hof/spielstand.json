@@ -169,6 +169,34 @@
         "hof": "hupen",
         "dorf": "angeben"
       }
+    },
+    {
+      "id": "gerda",
+      "name": "Gerda",
+      "typ": "tier",
+      "art": "Hausgans (St.-Pauli-Schal)",
+      "halter": "S-04",
+      "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
+      "werte": {
+        "satt": 70,
+        "wasser": 80,
+        "ruhm": 50
+      },
+      "stimmung": "Hat gerade ihre St.-Pauli-Fahne an die neue Hütte genagelt und schnattert jeden an, der zum Teich schaut.",
+      "ort": "teich",
+      "zuhause": "Hütte am Teich",
+      "zuhause_punkt": [
+        1095,
+        552
+      ],
+      "plan": [],
+      "aktionen": {
+        "teich": "schwimmen",
+        "weide": "weiden",
+        "wiese": "weiden",
+        "obstwiese": "weiden",
+        "hof": "huette"
+      }
     }
   ],
   "letzte_pflege": {
@@ -178,6 +206,11 @@
     "S-04": "2026-11-08T01:00:00+01:00"
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-08T01:10:00+01:00",
+      "wer": "Hof",
+      "text": "Gerda ist eingezogen! Die Gans mit dem St.-Pauli-Schal hat eine kleine Holzhütte am Teichufer bezogen und als Erstes die Fahne gehisst. Paul hat sie von der Hofmitte aus gesehen, ist losgestürmt, hat auf halber Strecke eine Pause gebraucht und wurde dann am Teich in den Hintern gekniffen. Manni hat abfällig gehupt, Gerda hat zurückgeschnattert. Bella hat nicht mal den Kopf gehoben."
+    },
     {
       "zeit": "2026-11-08T01:00:00+01:00",
       "wer": "Hof",
@@ -238,7 +271,7 @@
       "von": "S-04",
       "idee": "Hausgans mit St.-Pauli-Schal",
       "name": "Gerda",
-      "status": "wartet auf den Besitzer",
+      "status": "genehmigt vom Besitzer am 08.11.2026, mit Abschwächung",
       "datum": "2026-11-08",
       "entwurf": {
         "art": "Hausgans (weiß, braun-weißer St.-Pauli-Schal)",

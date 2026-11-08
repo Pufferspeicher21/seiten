@@ -27,7 +27,7 @@ Nie Nachnamen, Mailadressen, echte Orte, Termine oder Privates. Die Karte ist au
 | S-01 | Max | Besitzer vom Hof | keine eigenen (Paul gehört allen) |
 | S-02 | Johanna | Mitspielerin | Bella (Pferd) |
 | S-03 | Julian | Mitspieler | der Mäher |
-| S-04 | Justus | Mitspieler | Manni (Opel Manta) |
+| S-04 | Justus | Mitspieler | Manni (Opel Manta), Gerda (Gans) |
 
 - **Halter:** Jeder Bewohner gehört genau einem Spieler. **Nur der Halter** darf ihn bedienen (füttern, pflegen,
   warten, planen, losschicken, Fähigkeiten einsetzen). Auch der Besitzer nie.
@@ -165,7 +165,7 @@ Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Men
   kleineren Tiere auf.
 - **Kleine Fähigkeiten:** lautes Wiehern (weckt Paul), Ausschlagen (wer zu nah ist, weicht zurück).
 - **Schwäche:** Angst vor dem knatternden Mäher.
-- **Beziehungen:** fürchtet den Mäher, fürchtet Paul (er zwickt), mag Äpfel.
+- **Beziehungen:** fürchtet den Mäher, fürchtet Paul (er zwickt), mag Äpfel, ignoriert Gerda.
 - **Zuhause:** Stall.
 - **Züge:** Heu (satt +30), Hafer (satt +40, laune +5), Apfel oder Karotte (laune +10, vertrauen +2), striegeln
   (pflege +30, vertrauen +3), Stall misten (pflege +15, laune +5), ausreiten (fitness +25, laune +15, satt −10),
@@ -179,7 +179,7 @@ Brummig, stolz, hält sich für unverzichtbar.
 - **Große Fähigkeit:** Mähen. Eine Fläche wird kurz (Gras 10), daraus wird Heu. Bella hat danach dort nichts zu fressen.
 - **Kleine Fähigkeiten:** Fehlzündung (lauter Knall, alle Tiere erschrecken), Abgaswolke.
 - **Schwäche:** springt bei schlechter Laune (unter 30) oft nicht an. Hasst Matsch.
-- **Beziehungen:** ignoriert Bella, fürchtet Paul (er hebt das Bein).
+- **Beziehungen:** ignoriert Bella, fürchtet Paul (er hebt das Bein), ärgert sich über Gerdas Geschnatter.
 - **Zuhause:** Schuppen.
 - **Züge:** tanken (+50), Öl nachfüllen (auf 100), Messer schleifen (auf 100), putzen und abschmieren (zustand +30,
   laune +10), loben (laune +5), mähen lassen (Fläche und Tag nennen).
@@ -199,12 +199,32 @@ im Dorf und will bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.
   hat schlechte Laune.
 - **Beziehungen:** Erzfeind des Mähers (treffen sie sich, gibt es ein Fehlzündungs-Duell: beide laune −5, Bella
   erschrickt). Bella hat Angst vor ihm (er ist lauter als der Mäher), er findet Pferde altmodisch. Paul hebt das Bein
-  an seinen Reifen (politur −5), trotzdem hupt Manni ihm zu.
+  an seinen Reifen (politur −5), trotzdem hupt Manni ihm zu. Gerda
+  hält er für einen Staubwedel.
 - **Zuhause:** Garage an Justus’ Haus im Dorf. Fährt über die Hofzufahrt zum Hof.
 - **Züge:** tanken (+50), polieren (politur auf 100, bewunderung +10), loben (bewunderung +15), durchs Dorf fahren
   und angeben (bewunderung +20, benzin −10), schrauben und putzen (zustand +30), Donuts drehen (Fläche und Tag nennen).
   Auf den Hofplatz fahren und Krach machen (Hupe und Auspuff, Tag nennen): steht von 9 bis 18 Uhr zwischen Stall und
   Schuppen. Wer draußen in der Nähe ist, erschrickt (laune −5). Wer in seinem Zuhause ist, ist sicher (Abschnitt 7).
+
+### Gerda, Hausgans · Halter S-04 Justus · eingezogen 08.11.2026 (Antrag A-02, abgeschwächt)
+Weiß, mit braun-weißem St.-Pauli-Schal. Laut, gierig, hält den Teich für ihren. Glühender St.-Pauli-Fan, hasst den
+HSV. Hält sich für eine knallharte Geschäftsfrau.
+- **Bedürfnisse:** satt (−15/Tag), wasser (−20/Tag), ruhm (−10/Tag).
+- **Große Fähigkeit:** Erkundungsflattern. **Abgeschwächt durch die Hof-KI:** höchstens 1-mal pro Woche, nur in ein
+  Nebel-Gebiet, das an den Teich grenzt. Sie erzählt, was dort liegt und ob es ein Geheimnis hat. Das Gebiet bleibt
+  im Nebel (ab Umbau: Freilegen dort 5 Taler billiger). Kostet satt −20. Hausgänse fliegen kaum.
+- **Kleine Fähigkeiten:** Schilf-Geschäft (verkauft Kiez-Schilf an die Dorfkneipe, bringt Kleinkram mit, ruhm +5,
+  **keine Taler**), Kneifen (wer ihr am Teich zu nahe kommt: laune −5, am liebsten Paul).
+- **Schwäche:** eitel. Ist der Schal dreckig (z. B. Matsch nach Mannis Donuts), schmollt sie und macht nichts, bis
+  er gewaschen ist. Bei Gewitter versteckt sie sich in ihrer Hütte.
+- **Beziehungen:** jagt Paul (kneift ihn in den Hintern), ignoriert Bella (schnattert, wenn sie am Teich grast),
+  jagt den Mäher weg (schnattert ihn an, wenn er am Teich mäht: Mäher laune −5), gegenseitige Verachtung mit Manni.
+  Der Teich gehört trotzdem allen.
+- **Zuhause:** kleine Holzhütte mit St.-Pauli-Fahne am Teichufer.
+- **Züge:** füttern (satt +30), schwimmen lassen auf dem Teich (wasser +40), Schal waschen (ruhm +10, Schmollen
+  vorbei), Schal bewundern oder St. Pauli loben (ruhm +15, Vorsicht: Paul), auf einer Wiese grasen lassen (satt +20,
+  Gras −10), Erkundungsflattern (Gebiet nennen).
 
 ### Paul, Golden Retriever · frei, gehört dem ganzen Hof (Maskottchen)
 Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen.
@@ -249,6 +269,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
 |---|---|
 | 08.11.2026 | Manni (Opel Manta, Halter Justus) eingezogen, Donuts abgeschwächt (Abschnitt 14). Paul: neuer Unfug an Mannis Reifen. |
 | 08.11.2026 | Manni: neuer Zug „Hofplatz, Krach machen“ (Abschnitt 14). Stufe und Erfahrung entfallen. |
+| 08.11.2026 | Gerda (Hausgans, Halter Justus) eingezogen, abgeschwächt: Erkunden statt Freilegen, Schilf ohne Taler (Abschnitt 14). |
 | 08.11.2026 | Zuhause in einem Nebel-Gebiet: Das Gebiet wird beim Einzug kostenlos freigelegt (Abschnitt 5). |
 | 08.11.2026 | Große Karte ist im Spiel: Start-Gebiete offen, Nebel-Gebiete zu bis zum Umbau, Fluss, Dorf mit Spielerhäusern. Stufen-Freischaltung entfällt. |
 | 08.11.2026 | Version 3: Sandkasten statt Wirtschaft. Baupläne, Fairness, Realismus, Pflege wie Tamagotchi, Anmeldung mit PIN, Entscheidungen auf der Seite, große Karte, Taler fürs Kümmern, Häuser, Abschied über Gnadenhof und Schrottplatz. |

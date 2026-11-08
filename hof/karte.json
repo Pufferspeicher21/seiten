@@ -436,6 +436,10 @@
   "garage_justus": [
    958,
    966
+  ],
+  "huette_gerda": [
+   1095,
+   552
   ]
  },
  "fluss": {
@@ -886,6 +890,16 @@
     28
    ],
    "spieler": "S-04"
+  },
+  {
+   "name": "Hütte Gerda",
+   "art": "huette",
+   "rect": [
+    1084,
+    532,
+    22,
+    16
+   ]
   }
  ]
 }

@@ -132,7 +132,7 @@ const NAMEN = { satt: 'Satt', laune: 'Laune', fitness: 'Fitness', pflege: 'Pfleg
   benzin: 'Benzin', oel: 'Öl', messer: 'Messer', zustand: 'Zustand', politur: 'Politur', bewunderung: 'Bewunderung', energie: 'Energie' };
 const AKTION = { tier: { weide: 'weiden', wiese: 'weiden', obstwiese: 'weiden', hof: 'stall' },
   geraet: { weide: 'maehen', wiese: 'maehen', obstwiese: 'maehen', hof: 'schuppen', wald: 'holz' } };
-const AKTION_TEXT = { donuts: 'Donuts drehen', garage: 'in der Garage bleiben', hupen: 'auf dem Hofplatz hupen und röhren', angeben: 'durchs Dorf fahren und angeben', weiden: 'weiden', maehen: 'mähen', stall: 'im Stall bleiben', schuppen: 'im Schuppen bleiben', holz: 'Holz machen' };
+const AKTION_TEXT = { donuts: 'Donuts drehen', garage: 'in der Garage bleiben', hupen: 'auf dem Hofplatz hupen und röhren', angeben: 'durchs Dorf fahren und angeben', weiden: 'weiden', maehen: 'mähen', stall: 'im Stall bleiben', huette: 'in der Hütte bleiben', schwimmen: 'schwimmen und schnattern', schuppen: 'im Schuppen bleiben', holz: 'Holz machen' };
 const FARBE = { tier: '#c06a3a', geraet: '#5b63b5', frei: '#0a4ea2' };
 const farbeVon = b => b.frei ? FARBE.frei : FARBE[b.typ];
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -264,22 +264,22 @@ function autoZustand(b, t) {
 
 // ---------- Tiere ----------
 function tierZustand(b, t, gefahr, gefahrBei) {
-  const { tag, min } = berlin(t), stall = K.punkte.stall;
+  const { tag, min } = berlin(t), stall = b.zuhause_punkt || K.punkte.stall, heim = b.zuhause_punkt ? 'Hütte' : 'Stall';
   const wackel = (p, s = 2) => { const q = t.getTime() / 1000; return [p[0] + Math.sin(q / 3 + hash(b.id) % 7) * s, p[1] + Math.cos(q / 4) * s]; };
   if (b.ausgebuext) return { pos: wackel(K.punkte.dorf, 4), text: 'ist ausgebüxt und steht beim Nachbarn im Dorf', bubble: '?' };
   const o = tagesOrt(b, tag);
-  if (!o.f || o.aktion === 'stall') return { pos: wackel(stall, 1), text: 'steht im Stall und wartet auf einen Befehl von ' + (spielerName(b.halter).split(' (')[0] || 'ihrem Halter') + ' (langweilt sich)' };
-  if (min < 420 || min >= 1170) return { pos: wackel(stall, 1), text: 'schläft im Stall' };
+  if (!o.f || o.aktion === 'stall' || o.aktion === 'huette') return { pos: wackel(stall, 1), text: (b.zuhause_punkt ? 'sitzt in ihrer Hütte' : 'steht im Stall') + ' und wartet auf einen Befehl von ' + (spielerName(b.halter).split(' (')[0] || 'ihrem Halter') + ' (langweilt sich)' };
+  if (min < 420 || min >= 1170) return { pos: wackel(stall, 1), text: 'schläft im ' + (b.zuhause_punkt ? 'Häuschen' : 'Stall') };
   const fl = flecken(o.f, tag), slot = 15, k = Math.floor((min - 440) / slot);
   const wp = i => { if (i < 0) return stall; const g = gefahrBei && gefahrBei(440 + i * slot); return zufallsPunkt(o.f, rng(b.id + tag + 'wp' + i), fl, g ? p => dist(p, g) < 170 ? -10 : 0 : null); };
   let pos, text;
   if (min < 440) { pos = lerp(stall, wp(0), ease((min - 420) / 20)); text = 'geht raus zur Fläche „' + o.f.name + '“'; }
-  else if (min >= 1150) { pos = lerp(wp(Math.floor((1150 - 440) / slot)), stall, ease((min - 1150) / 20)); text = 'geht zurück in den Stall'; }
+  else if (min >= 1150) { pos = lerp(wp(Math.floor((1150 - 440) / slot)), stall, ease((min - 1150) / 20)); text = 'geht zurück ' + (b.zuhause_punkt ? 'in ihre Hütte' : 'in den Stall'); }
   else {
     const inSlot = (min - 440) - k * slot, a = wp(k - 1 < 0 ? 0 : k - 1), z = wp(k);
     pos = inSlot < 4 && k > 0 ? lerp(a, z, ease(inSlot / 4)) : wackel(z, 1.5);
     const g = (S.flaechen[o.f.id] || {}).gras ?? 50;
-    text = (inSlot < 4 && k > 0 ? 'sucht sich eine neue Stelle, Fläche ' : 'grast, Fläche ') + '„' + o.f.name + '“' + (g < 30 ? ' (Gras viel zu kurz, sie meckert)' : '');
+    text = o.f.art === 'teich' ? (inSlot < 4 && k > 0 ? 'paddelt quer über den Teich' : 'schwimmt auf dem Teich und schnattert') : (inSlot < 4 && k > 0 ? 'sucht sich eine neue Stelle, Fläche ' : 'grast, Fläche ') + '„' + o.f.name + '“' + (g < 30 ? ' (Gras viel zu kurz, sie meckert)' : '');
   }
   let bubble = null;
   if (gefahr && dist(pos, gefahr) < 90 && o.f && o.f.punkte) {
@@ -494,7 +494,7 @@ function zeigeBewohner() {
       <p class="stimmung">${b.ausgebuext ? '<span class="warn">Ausgebüxt! Muss abgeholt werden.</span>' : esc(b.stimmung)}</p>
       ${bars}
       ${niedrig.length ? `<p class="warn">Braucht dringend: ${niedrig.join(', ')}</p>` : ''}
-      <p class="sub">${b.frei ? 'Hört auf niemanden. Macht, was er will. Gerade: ' + esc((zustand[b.id] || {}).text || '') : plan.length ? 'Plan: ' + plan.join(' · ') : 'Kein Plan. ' + (b.typ === 'tier' ? 'Bleibt im Stall und langweilt sich.' : 'Bleibt im Schuppen.')}</p>
+      <p class="sub">${b.frei ? 'Hört auf niemanden. Macht, was er will. Gerade: ' + esc((zustand[b.id] || {}).text || '') : plan.length ? 'Plan: ' + plan.join(' · ') : 'Kein Plan. ' + (b.typ === 'tier' ? 'Bleibt im ' + (b.zuhause_punkt ? 'Häuschen' : 'Stall') + ' und langweilt sich.' : 'Bleibt im Schuppen.')}</p>
     </section>`;
   }).join('');
 }
