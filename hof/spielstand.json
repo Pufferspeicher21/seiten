@@ -1,7 +1,7 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-07T22:20:00+01:00",
+  "letzte_berechnung": "2026-11-08T07:12:04+01:00",
   "letzte_meldung": {},
   "taler": 50,
   "vorraete": {
@@ -43,16 +43,16 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 85
+      "gras": 87
     },
     "w-koppel": {
-      "gras": 72
+      "gras": 74
     },
     "bachwiese": {
-      "gras": 90
+      "gras": 92
     },
     "obstwiese": {
-      "gras": 70,
+      "gras": 72,
       "obst": 8
     },
     "wald-gross": {
@@ -68,7 +68,7 @@
       "matsch": 80
     },
     "huegel": {
-      "gras": 60
+      "gras": 62
     },
     "acker": {
       "zustand": "brach"
@@ -82,14 +82,14 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 100,
-        "laune": 100,
-        "fitness": 85,
-        "pflege": 100,
+        "satt": 80,
+        "laune": 85,
+        "fitness": 77,
+        "pflege": 90,
         "vertrauen": 17
       },
-      "stimmung": "Satt, gestriegelt und nach dem Abendritt bester Laune. Hat Johanna zweimal angestupst, weil sie noch mehr Äpfel vermutet.",
-      "ort": "w-koppel",
+      "stimmung": "Steht im Stall und kaut gelangweilt Heu. Ohne Ausritt und ohne Apfel ist ihre Laune gesunken, und sie lässt es alle merken.",
+      "ort": "hof",
       "plan": [],
       "tricks": [],
       "trick_uebungen": {},
@@ -108,10 +108,10 @@
         "benzin": 60,
         "oel": 80,
         "messer": 70,
-        "zustand": 65,
-        "laune": 55
+        "zustand": 62,
+        "laune": 50
       },
-      "stimmung": "Steht im Schuppen und tut so, als hätte er schon immer hier gestanden.",
+      "stimmung": "Steht im Schuppen und knattert im Leerlauf vor sich hin. Langweilt sich, tut aber so, als wäre das Absicht.",
       "ort": "hof",
       "plan": [],
       "anspring_serie": 0,
@@ -130,7 +130,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Liegt auf dem Hofplatz in der Sonne, das Lätzchen schief, und beobachtet Bella sehr, sehr aufmerksam.",
+      "stimmung": "Hat im Hofplatz seinen Schwanz gejagt, ist dann gegen den eigenen Hundekorb gelaufen und tut so, als wäre nichts gewesen.",
       "ort": "hof",
       "plan": []
     },
@@ -147,8 +147,8 @@
         "bewunderung": 50,
         "zustand": 60
       },
-      "stimmung": "Hat für heute ein Hupkonzert auf dem Hofplatz angekündigt und poliert in Gedanken schon die Hupe.",
-      "ort": "dorf",
+      "stimmung": "Wartet ungeduldig auf neun Uhr: Hupe ist geölt, Auspuff bereit, danach will er poliert und gelobt werden.",
+      "ort": "hof",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
         958,
@@ -159,7 +159,8 @@
           "datum": "2026-11-08",
           "flaeche": "hof",
           "aktion": "hupen",
-          "von": "S-04"
+          "von": "S-04",
+          "danach": "polieren, loben"
         }
       ],
       "aktionen": {
@@ -178,18 +179,26 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 70,
+        "satt": 100,
         "wasser": 80,
         "ruhm": 50
       },
-      "stimmung": "Hat gerade ihre St.-Pauli-Fahne an die neue Hütte genagelt und schnattert jeden an, der zum Teich schaut.",
+      "stimmung": "Satt bis zum Schnabelrand, der Schal sitzt perfekt. Wollte in den Großen Wald flattern, aber der ist zu weit weg. Sie schnattert beleidigt, bleibt am Teich und plant jetzt ein Bad.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
         1095,
         552
       ],
-      "plan": [],
+      "plan": [
+        {
+          "datum": "2026-11-08",
+          "flaeche": "teich",
+          "aktion": "schwimmen",
+          "danach": "Schal bewundern",
+          "von": "S-04"
+        }
+      ],
       "aktionen": {
         "teich": "schwimmen",
         "weide": "weiden",
@@ -203,9 +212,19 @@
     "S-01": null,
     "S-02": "2026-11-07T22:26:00+01:00",
     "S-03": null,
-    "S-04": "2026-11-08T01:00:00+01:00"
+    "S-04": "2026-11-08T07:12:04+01:00"
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-08T07:12:04+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag auf dem Hof. Bella langweilt sich im Stall und schaut sehr vorwurfsvoll, der Mäher knattert im Leerlauf vor sich hin. Paul hat auf dem Hofplatz seinen Schwanz gejagt und ist danach gegen seinen Hundekorb gelaufen. Alle anderen haben es gesehen, keiner sagt etwas."
+    },
+    {
+      "zeit": "2026-11-08T07:12:04+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda wird erst einmal ordentlich gefüttert und sieht danach aus wie ein weißer Fußball mit Schal. Ihr Erkundungsflug in den Großen Wald fällt aus: Das ist selbst für eine Hausgans zu weit vom Teich. Sie nimmt es persönlich. Danach soll sie schwimmen und abends ihren Schal bewundern. Manni bekommt nach seinem Hupkonzert Politur und Lob. Außerdem schlägt Justus einen Keiler namens Horst vor (Antrag A-03)."
+    },
     {
       "zeit": "2026-11-08T12:00:00+01:00",
       "wer": "Hof",
@@ -303,6 +322,40 @@
         "zuege": "füttern (satt +30), schwimmen lassen (wasser +40), Schal waschen (ruhm +10, Schmollen vorbei), Schal bewundern oder St. Pauli loben (ruhm +15, Vorsicht Paul), am Teich grasen lassen (satt +20, Gras −10), Erkundungsflattern (Gebiet nennen)",
         "abschwaechung": "Erkundungsflug deckt nicht auf, nur erzählen, 1-mal pro Woche, nur Nachbargebiete vom Teich (Hausgänse fliegen kaum, und Nebel-Gebiete sind bis zu den Talern zu). Schilf-Geschäft bringt keine Taler (Taler nur fürs Kümmern, kein Grinden). Der Teich gehört allen. Pauls Wesen bleibt, wie Max ihn festgelegt hat (keine Angst vor Gerda). Fuchs gestrichen (gibt es auf dem Hof nicht)."
       }
+    },
+    {
+      "id": "A-03",
+      "von": "S-04",
+      "idee": "Wildschwein-Keiler mit abgebrochenem Hauer",
+      "name": "Horst",
+      "entwurf": {
+        "art": "Wildschwein-Keiler (massig, borstig, ein Hauer abgebrochen)",
+        "typ": "tier",
+        "wesen": "Verfressen, stur und gemütlich, bis jemand an sein Futter geht. Wühlt alles um, was nach Eicheln, Wurzeln oder Fallobst riecht. Ordnung findet er überbewertet.",
+        "beduerfnisse": {
+          "satt": "−20/Tag (Eicheln, Wurzeln, Fallobst)",
+          "suhle": "−15/Tag (Wälzen im Schlamm +40)",
+          "ruhe": "−10/Tag, bei Pauls Bellen oder Mannis Hupe −10 zusätzlich"
+        },
+        "grosse_faehigkeit": "Schneise wühlen: höchstens 1-mal pro Woche, nur in ein Nebel-Gebiet direkt neben seinem Standort. Er erzählt, was er dort gefunden hat. Das Gebiet bleibt im Nebel, Freilegen kostet ab Umbau 5 Taler weniger. Zusammen mit Gerdas Erkundungsflug ist das Gebiet höchstens 10 Taler billiger (Preis nie unter 10). Kostet satt −20 und suhle −20.",
+        "kleine_faehigkeiten": [
+          "Wühlen: auf einer Wiese Löcher, Gras −5, der Mäher holpert darüber (messer −5, laune −5).",
+          "Grunzen: drohendes Grunzen, kleinere Tiere in der Nähe weichen zurück (laune −5)."
+        ],
+        "schwaeche": "Verfressen: beim Fressen vergisst er alles andere und merkt nicht, was um ihn passiert. Wenn Paul bellt, zieht er sich grunzend in seine Suhle zurück.",
+        "beziehungen": {
+          "bella": "ärgert sie (Bella laune −5, wenn sie am selben Ort sind), sie findet ihn eklig, Äpfel aus dem Vorrat klaut er nicht",
+          "maeher": "wird vom Mäher gehasst (Löcher stumpfen Messer)",
+          "paul": "Paul bellt, Horst grunzt zurück, keiner traut sich näher. Paul bleibt Paul.",
+          "manni": "scheuert sich an seinem Lack (politur −5), Krieg",
+          "gerda": "Zweckbündnis, sonst Streit ums Gras am Teich"
+        },
+        "zuhause": "Schlammsuhle am Rand der Großen Wiese, nahe am Waldrand. Läge sie im Großen Wald (Nebel), würde dieser beim Einzug kostenlos freigelegt (Abschnitt 5). Das entscheidet Max.",
+        "zuege": "füttern (satt +30), in der Suhle wälzen lassen (suhle +40), Ruhe gönnen (ruhe +30), auf einer Wiese wühlen lassen (satt +15, Gras −5), Schneise wühlen (Gebiet nennen)",
+        "abschwaechung": "Schneise nur 1-mal pro Woche, nur Nachbargebiet, Gebiet bleibt Nebel, nur 5 statt 10 Taler Rabatt (mit Gerda höchstens 10 zusammen). Keine Äpfel-Klauerei aus dem Vorrat. Pauls Wesen bleibt wie festgelegt. Zuhause auf offenem Gebiet statt im Nebel-Wald, sonst gratis Freilegen."
+      },
+      "status": "wartet auf den Besitzer",
+      "datum": "2026-11-08"
     }
   ],
   "freigelegt": [],
