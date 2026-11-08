@@ -1,11 +1,11 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-08T07:12:04+01:00",
+  "letzte_berechnung": "2026-11-08T18:11:15+01:00",
   "letzte_meldung": {},
   "taler": 50,
   "vorraete": {
-    "heu": 9,
+    "heu": 8,
     "hafer": 2,
     "karotte": 5,
     "apfel": 0,
@@ -46,7 +46,7 @@
       "gras": 87
     },
     "w-koppel": {
-      "gras": 74
+      "gras": 59
     },
     "bachwiese": {
       "gras": 92
@@ -82,15 +82,52 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 80,
-        "laune": 85,
-        "fitness": 77,
-        "pflege": 90,
+        "satt": 100,
+        "laune": 95,
+        "fitness": 100,
+        "pflege": 85,
         "vertrauen": 17
       },
-      "stimmung": "Steht im Stall und kaut gelangweilt Heu. Ohne Ausritt und ohne Apfel ist ihre Laune gesunken, und sie lässt es alle merken.",
-      "ort": "hof",
-      "plan": [],
+      "stimmung": "Nach Ausritt, Heu und Koppel satt und zufrieden. Paul hat ihr kurz ins Bein gezwickt, sie hat ihm hinterhergeschaut, als wäre er Luft. Jetzt zurück im Stall.",
+      "ort": "w-koppel",
+      "plan": [
+        {
+          "datum": "2026-11-09",
+          "flaeche": "w-koppel",
+          "aktion": "weiden",
+          "von": "S-02"
+        },
+        {
+          "datum": "2026-11-10",
+          "flaeche": "w-koppel",
+          "aktion": "weiden",
+          "von": "S-02"
+        },
+        {
+          "datum": "2026-11-11",
+          "flaeche": "w-koppel",
+          "aktion": "weiden",
+          "von": "S-02"
+        },
+        {
+          "datum": "2026-11-12",
+          "flaeche": "w-koppel",
+          "aktion": "weiden",
+          "von": "S-02"
+        },
+        {
+          "datum": "2026-11-13",
+          "flaeche": "w-koppel",
+          "aktion": "weiden",
+          "von": "S-02"
+        },
+        {
+          "datum": "2026-11-14",
+          "flaeche": "w-koppel",
+          "aktion": "weiden",
+          "von": "S-02"
+        }
+      ],
       "tricks": [],
       "trick_uebungen": {},
       "ausgebuext": false,
@@ -130,7 +167,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat im Hofplatz seinen Schwanz gejagt, ist dann gegen den eigenen Hundekorb gelaufen und tut so, als wäre nichts gewesen.",
+      "stimmung": "Hat Bella ins Bein gezwickt und Mannis Reifen markiert. Zwei gute Taten, dann Schlaf im Hundekorb.",
       "ort": "hof",
       "plan": []
     },
@@ -142,27 +179,19 @@
       "halter": "S-04",
       "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
       "werte": {
-        "benzin": 70,
-        "politur": 80,
-        "bewunderung": 50,
+        "benzin": 60,
+        "politur": 100,
+        "bewunderung": 95,
         "zustand": 60
       },
-      "stimmung": "Wartet ungeduldig auf neun Uhr: Hupe ist geölt, Auspuff bereit, danach will er poliert und gelobt werden.",
-      "ort": "hof",
+      "stimmung": "Fährt zufrieden zurück in seine Garage: poliert, gelobt, Kassette laut, Dorf bewundert. Nur Pauls Bein an seinem Reifen wurmt ihn noch.",
+      "ort": "dorf",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
         958,
         966
       ],
-      "plan": [
-        {
-          "datum": "2026-11-08",
-          "flaeche": "hof",
-          "aktion": "hupen",
-          "von": "S-04",
-          "danach": "polieren, loben"
-        }
-      ],
+      "plan": [],
       "aktionen": {
         "wiese": "donuts",
         "weide": "donuts",
@@ -179,26 +208,18 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 100,
-        "wasser": 80,
-        "ruhm": 50
+        "satt": 80,
+        "wasser": 100,
+        "ruhm": 65
       },
-      "stimmung": "Satt bis zum Schnabelrand, der Schal sitzt perfekt. Wollte in den Großen Wald flattern, aber der ist zu weit weg. Sie schnattert beleidigt, bleibt am Teich und plant jetzt ein Bad.",
+      "stimmung": "Schwimmrunde gedreht, Schal bewundert, Bachwiese erkundet. Sie ist sehr stolz auf sich und erzählt es jedem, der nicht schnell genug wegkommt.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
         1095,
         552
       ],
-      "plan": [
-        {
-          "datum": "2026-11-08",
-          "flaeche": "teich",
-          "aktion": "schwimmen",
-          "danach": "Schal bewundern",
-          "von": "S-04"
-        }
-      ],
+      "plan": [],
       "aktionen": {
         "teich": "schwimmen",
         "weide": "weiden",
@@ -210,11 +231,26 @@
   ],
   "letzte_pflege": {
     "S-01": null,
-    "S-02": "2026-11-07T22:26:00+01:00",
+    "S-02": "2026-11-08T18:11:15+01:00",
     "S-03": null,
-    "S-04": "2026-11-08T07:12:04+01:00"
+    "S-04": "2026-11-08T18:11:15+01:00"
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-08T18:11:15+01:00",
+      "wer": "Johanna (S-02)",
+      "text": "Johanna ist mit Bella ausgeritten (ein bisschen Trab am Feldweg), hat sie mit Heu gefüttert und auf die Koppel gestellt. Den Stall-Plan hat sie sich anders überlegt: Bella darf jetzt bis Samstag jeden Tag auf die Koppel. Bella tut so, als wäre das immer ihre Idee gewesen."
+    },
+    {
+      "zeit": "2026-11-08T18:11:15+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda ist zum Erkundungsflattern von ihrem Teich in die Bachwiese gehüpft, ein Flug mit viel Flügelschlagen und wenig Höhe. Dort steht saftiges Gras, der Boden ist weich und nass (Mannis Albtraum), ein Geheimnis gibt es nicht. Das Gebiet bleibt im Nebel. Danach ein Bad und der Schal bewundert. Manni hat sich nach dem Hupkonzert polieren und loben lassen und ist dann den Abend langsam durchs Dorf gerollt, Fenster runter, Kassette laut. Die Dorfkneipe hat gewunken."
+    },
+    {
+      "zeit": "2026-11-08T18:11:15+01:00",
+      "wer": "Hof",
+      "text": "Paul hat heute zweimal zugeschlagen: erst ein Zwicken in Bellas Bein auf dem Weg zur Koppel, dann das Bein an Mannis frisch polierten Reifen. Bella hat getreten, Manni hat empört gehupt, Paul hat sich danach zufrieden hingelegt."
+    },
     {
       "zeit": "2026-11-08T07:12:04+01:00",
       "wer": "Hof",
