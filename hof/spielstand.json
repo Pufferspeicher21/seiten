@@ -39,6 +39,11 @@
       "id": "S-04",
       "name": "Justus",
       "rolle": "mitspieler"
+    },
+    {
+      "id": "S-05",
+      "name": "Sharon",
+      "rolle": "mitspieler"
     }
   ],
   "flaechen": {
@@ -227,15 +232,57 @@
         "obstwiese": "weiden",
         "hof": "huette"
       }
+    },
+    {
+      "id": "lipa",
+      "name": "Lipa",
+      "typ": "tier",
+      "art": "Philippinischer Koboldmaki (Tarsier)",
+      "halter": "S-05",
+      "beschreibung": "Winziger Koboldmaki mit riesigen Kulleraugen, nachtaktiv und ein großartiger Springer. Ob Herr oder Dame, weiß niemand, alle sagen einfach Lipa. Liebt Bier über alles. Wo ein Bier aufgeht, ist Lipa nicht weit, und danach hört man irgendwo ein schiefes, glückliches Lied.",
+      "werte": {
+        "bier": 50,
+        "insekten": 70,
+        "ruhe": 80
+      },
+      "stimmung": "Gerade eingezogen. Sitzt mit großen Augen in einem hohlen Baum irgendwo im Großen Wald und lauscht, ob im Dorf schon ein Kronkorken zischt.",
+      "ort": "wald-gross",
+      "zuhause": "hohler Baum im Großen Wald (genaue Stelle geheim)",
+      "zuhause_punkt": [
+        790,
+        150
+      ],
+      "heim": {
+        "sitzt": "sitzt in seinem hohlen Baum",
+        "schlaeft": "schläft in seinem hohlen Baum",
+        "zurueck": "verschwindet zurück in den Wald",
+        "bleibt": "Bleibt in seinem hohlen Baum"
+      },
+      "plan": [],
+      "aktionen": {
+        "dorf": "kneipe",
+        "wald": "insekten",
+        "wiese": "insekten",
+        "weide": "insekten",
+        "obstwiese": "insekten",
+        "teich": "insekten",
+        "hof": "huette"
+      }
     }
   ],
   "letzte_pflege": {
     "S-01": null,
     "S-02": "2026-11-09T19:12:00+01:00",
     "S-03": null,
-    "S-04": "2026-11-09T07:20:00+01:00"
+    "S-04": "2026-11-09T07:20:00+01:00",
+    "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-09T21:30:00+01:00",
+      "wer": "Hof",
+      "text": "Lipa ist eingezogen! Ein winziger Koboldmaki mit Augen so groß wie Bierdeckel wohnt jetzt in einem hohlen Baum irgendwo im Großen Wald. Wo genau, weiß keiner. Dafür ist der Große Wald jetzt für alle freigelegt. In der Dorfkneipe hat am ersten Abend schon ein halbes Bier gefehlt, und aus dem Gebüsch kam ein schiefes Lied. Paul hat geschlafen und nichts gemerkt."
+    },
     {
       "zeit": "2026-11-09T19:12:00+01:00",
       "wer": "Hof",
@@ -412,9 +459,19 @@
       },
       "status": "wartet auf den Besitzer",
       "datum": "2026-11-08"
+    },
+    {
+      "id": "A-04",
+      "von": "S-05",
+      "idee": "Bier-Koboldmaki (Tarsier)",
+      "name": "Lipa",
+      "status": "genehmigt vom Besitzer am 09.11.2026, mit Abschwächung (Bier-Radar nur ein Gebiet weit, Flaschendieb 50 %)",
+      "datum": "2026-11-09"
     }
   ],
-  "freigelegt": [],
+  "freigelegt": [
+    "wald-gross"
+  ],
   "welt": {
     "fluss": "normal",
     "wetter": "bewölkt",

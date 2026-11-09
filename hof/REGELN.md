@@ -28,6 +28,7 @@ Nie Nachnamen, Mailadressen, echte Orte, Termine oder Privates. Die Karte ist au
 | S-02 | Johanna | Mitspielerin | Bella (Pferd) |
 | S-03 | Julian | Mitspieler | der Mäher |
 | S-04 | Justus | Mitspieler | Manni (Opel Manta), Gerda (Gans) |
+| S-05 | Sharon | Mitspielerin | Lipa (Koboldmaki) |
 
 - **Halter:** Jeder Bewohner gehört genau einem Spieler. **Nur der Halter** darf ihn bedienen (füttern, pflegen,
   warten, planen, losschicken, Fähigkeiten einsetzen). Auch der Besitzer nie.
@@ -249,6 +250,31 @@ HSV. Hält sich für eine knallharte Geschäftsfrau.
   vorbei), Schal bewundern oder St. Pauli loben (ruhm +15, Vorsicht: Paul), auf einer Wiese grasen lassen (satt +20,
   Gras −10), Erkundungsflattern (Gebiet nennen).
 
+### Lipa, Philippinischer Koboldmaki (Tarsier) · Halterin S-05 Sharon · eingezogen 09.11.2026 (Antrag A-04, abgeschwächt)
+Winzig, riesige Kulleraugen, nachtaktiv, ein großartiger Springer. Ob Herr oder Dame, weiß niemand, alle sagen
+einfach Lipa (man darf „er“ sagen). Liebt Bier über alles.
+- **Bedürfnisse:** bier (−15/Tag), insekten (−15/Tag), ruhe (−10/Tag, zusätzlich −10, wenn der Mäher oder Manni im
+  selben Gebiet Lärm machen oder grelles Licht ist).
+- **Große Fähigkeit:** Bier-Radar (höchstens 2-mal am Tag). Spürt geöffnetes Bier auf und springt blitzschnell hin,
+  **abgeschwächt durch die Hof-KI:** höchstens ein Gebiet weit. Ob der Diebstahl gelingt, entscheidet die Hof-KI.
+- **Kleine Fähigkeiten:** Flotter Flaschendieb (höchstens 1-mal am Tag, nur geöffnetes, unbeaufsichtigtes Bier im
+  eigenen Gebiet, 50 % Chance, bei Erfolg bier +40, sonst erwischt und ohne Bier). Das geheime Ständchen (nach einem
+  erfolgreichen Diebstahl beschwipst, singt bis zum nächsten Tag schief und laut, wer hinhört, kann ihn finden).
+- **Bei anderen Spielern klauen:** höchstens 1 Bier pro Mitspieler und Tag, nie aus dem Zuhause eines anderen
+  Bewohners. Der Bestohlene bekommt im Tagebuch einen Hinweis („Aus dem Gebüsch ertönt ein schiefes Lied …“).
+- **Schwäche:** kann dem Geruch von Bier nicht widerstehen und vergisst jede Vorsicht. Der Gesang verrät ihn. Hasst
+  grelles Licht und laute Maschinen.
+- **Beziehungen:** ignoriert Bella (beobachtet sie aus sicherer Entfernung), fürchtet den Mäher (springt der Motor
+  an, ist Lipa weg), mag Paul (besonders, wenn er schläft), mag Manni (dort gibt es öfter ein Feierabendbier),
+  meidet Gerda (ihr Geschnatter stört). Umgekehrt: Bella ignoriert ihn, der Mäher merkt ihn nicht, Paul würde ihn
+  aufscheuchen, bemerkt ihn aber fast nie, Manni merkt nicht, wenn ein Bier fehlt, Gerda schnattert ihn an.
+- **Zuhause:** ein hohler Baum im Großen Wald. Die genaue Stelle ist geheim, auf der Karte steht kein Baum.
+  Der Große Wald wurde beim Einzug für alle freigelegt (Abschnitt 5).
+- **Lieblingsort:** die Dorfkneipe, hinter den Bierkästen und unter der Theke.
+- **Züge:** in die Dorfkneipe schleichen (Tag nennen, bier +15 aus Schaumresten, dazu ein Versuch Flaschendieb),
+  Insekten jagen auf einer Wiese, am Teich oder im Wald (insekten +30), im Baum ausschlafen (ruhe +30),
+  Bier-Radar (Gebiet nennen).
+
 ### Paul, Golden Retriever · frei, gehört dem ganzen Hof (Maskottchen)
 Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen.
 - **Bedürfnisse:** satt, laune, energie. Er versorgt sich selbst, niemand muss oder kann ihn füttern.
@@ -294,6 +320,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
 ### Änderungsverlauf
 | Datum | Änderung |
 |---|---|
+| 09.11.2026 | Sharon (S-05) spielt mit. Lipa (Koboldmaki, Halterin Sharon) eingezogen, Bier-Radar abgeschwächt, Zuhause im Großen Wald, der dadurch freigelegt ist (Abschnitt 14). |
 | 08.11.2026 | Neue Rolle Hofbauer (Max): Zaun, Pfeife für Paul, Hof-Ereignis (jetzt 1-mal pro Woche gratis), Hof ausbauen, Stellschraube mit festen Grenzen (Abschnitt 2a). |
 | 08.11.2026 | Manni (Opel Manta, Halter Justus) eingezogen, Donuts abgeschwächt (Abschnitt 14). Paul: neuer Unfug an Mannis Reifen. |
 | 08.11.2026 | Manni: neuer Zug „Hofplatz, Krach machen“ (Abschnitt 14). Stufe und Erfahrung entfallen. |
