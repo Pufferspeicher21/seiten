@@ -1,7 +1,7 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-08T19:10:50+01:00",
+  "letzte_berechnung": "2026-11-09T07:20:00+01:00",
   "letzte_meldung": {},
   "taler": 50,
   "vorraete": {
@@ -43,32 +43,32 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 87
+      "gras": 89
     },
     "w-koppel": {
-      "gras": 59
+      "gras": 61
     },
     "bachwiese": {
-      "gras": 92
+      "gras": 94
     },
     "obstwiese": {
-      "gras": 72,
+      "gras": 74,
       "obst": 8
     },
     "wald-gross": {
-      "holz": 80
+      "holz": 81
     },
     "quellwald": {
-      "holz": 85
+      "holz": 86
     },
     "westwald": {
-      "holz": 75
+      "holz": 76
     },
     "moor": {
       "matsch": 80
     },
     "huegel": {
-      "gras": 62
+      "gras": 64
     },
     "acker": {
       "zustand": "brach"
@@ -82,13 +82,13 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 100,
-        "laune": 95,
-        "fitness": 100,
-        "pflege": 85,
+        "satt": 80,
+        "laune": 85,
+        "fitness": 92,
+        "pflege": 75,
         "vertrauen": 17
       },
-      "stimmung": "Nach Ausritt, Heu und Koppel satt und zufrieden. Paul hat ihr kurz ins Bein gezwickt, sie hat ihm hinterhergeschaut, als wäre er Luft. Jetzt zurück im Stall.",
+      "stimmung": "Steht heute auf der Koppel und tut so, als wäre das immer ihre Idee gewesen. Paul hat sie heute noch in Ruhe gelassen.",
       "ort": "w-koppel",
       "plan": [
         {
@@ -144,11 +144,11 @@
       "werte": {
         "benzin": 60,
         "oel": 80,
-        "messer": 70,
-        "zustand": 62,
-        "laune": 50
+        "messer": 65,
+        "zustand": 59,
+        "laune": 40
       },
-      "stimmung": "Steht im Schuppen und knattert im Leerlauf vor sich hin. Langweilt sich, tut aber so, als wäre das Absicht.",
+      "stimmung": "Steht im Schuppen. Jemand hat ans Bein gepinkelt, und keiner hat ihn gelobt. Er knattert beleidigt.",
       "ort": "hof",
       "plan": [],
       "anspring_serie": 0,
@@ -167,7 +167,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat Bella ins Bein gezwickt und Mannis Reifen markiert. Zwei gute Taten, dann Schlaf im Hundekorb.",
+      "stimmung": "Hat am Mäher das Bein gehoben und am Teich Gerda aufgescheucht. Danach Mittagsschlaf im Hundekorb.",
       "ort": "hof",
       "plan": []
     },
@@ -180,11 +180,11 @@
       "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
       "werte": {
         "benzin": 60,
-        "politur": 100,
-        "bewunderung": 95,
-        "zustand": 60
+        "politur": 95,
+        "bewunderung": 100,
+        "zustand": 57
       },
-      "stimmung": "Fährt zufrieden zurück in seine Garage: poliert, gelobt, Kassette laut, Dorf bewundert. Nur Pauls Bein an seinem Reifen wurmt ihn noch.",
+      "stimmung": "In der Garage gelobt worden, Fuchsschwanz glänzt. Er hält sich heute für den Schönsten im ganzen Landkreis.",
       "ort": "dorf",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
@@ -208,11 +208,11 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 80,
+        "satt": 65,
         "wasser": 100,
-        "ruhm": 65
+        "ruhm": 70
       },
-      "stimmung": "Schwimmrunde gedreht, Schal bewundert, Bachwiese erkundet. Sie ist sehr stolz auf sich und erzählt es jedem, der nicht schnell genug wegkommt.",
+      "stimmung": "Schwimmrunde gedreht und Schal bewundert. Sie lässt es jeden wissen, besonders Paul, der am Ufer vorbeigetrottet ist.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
@@ -233,9 +233,19 @@
     "S-01": null,
     "S-02": "2026-11-08T18:11:15+01:00",
     "S-03": null,
-    "S-04": "2026-11-08T18:11:15+01:00"
+    "S-04": "2026-11-09T07:20:00+01:00"
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-09T07:20:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Manni wurde in der Garage gelobt und ist jetzt bei bewunderung 100. Gerda hat auf dem Teich geschwommen und den St.-Pauli-Schal bewundert. Weil Justus dabei St. Pauli so wohlwollend erwähnte, hat Paul ihn im Spiel kurz gebissen. Pflaster drauf, Justus lebt."
+    },
+    {
+      "zeit": "2026-11-09T07:20:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, Bella ist auf der Koppel (Gras wächst langsam, es ist November). Paul hat am Mäher das Bein gehoben (Mäher laune −5, Messer −5) und danach am Teich Gerda aufgescheucht. Sie hat ihm im Vorbeigehen in den Hintern gekniffen, er war sehr beleidigt."
+    },
     {
       "zeit": "2026-11-08T18:11:15+01:00",
       "wer": "Johanna (S-02)",
