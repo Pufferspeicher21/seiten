@@ -203,7 +203,8 @@
         "obstwiese": "donuts",
         "hof": "hupen",
         "dorf": "angeben"
-      }
+      },
+      "feierabendbier": false
     },
     {
       "id": "gerda",
@@ -465,7 +466,7 @@
       "von": "S-05",
       "idee": "Bier-Koboldmaki (Tarsier)",
       "name": "Lipa",
-      "status": "genehmigt vom Besitzer am 09.11.2026, mit Abschwächung (Bier-Radar nur ein Gebiet weit, Flaschendieb 50 %)",
+      "status": "genehmigt vom Besitzer am 09.11.2026 (Bier nur in Kneipe, bei Festen und als Mannis Feierabendbier, Bier-Radar 70 % bei Festen)",
       "datum": "2026-11-09"
     }
   ],

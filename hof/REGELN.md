@@ -221,6 +221,8 @@ im Dorf und will bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.
   röhrender Auspuff (gibt im Stand Gas).
 - **Schwäche:** bleibt in Matsch und auf nassem Boden stecken, vor allem auf der Bachwiese. Bei Regen rostet er und
   hat schlechte Laune.
+- **Feierabendbier:** Nach jeder Dorfrunde hat Manni ein Feierabendbier dabei (bis zur nächsten Rechnung). Lipa
+  darf es ihm klauen, außer in der Garage (Abschnitt 14, Lipa).
 - **Beziehungen:** Erzfeind des Mähers (treffen sie sich, gibt es ein Fehlzündungs-Duell: beide laune −5, Bella
   erschrickt). Bella hat Angst vor ihm (er ist lauter als der Mäher), er findet Pferde altmodisch. Paul hebt das Bein
   an seinen Reifen (politur −5), trotzdem hupt Manni ihm zu. Gerda
@@ -255,13 +257,19 @@ Winzig, riesige Kulleraugen, nachtaktiv, ein großartiger Springer. Ob Herr oder
 einfach Lipa (man darf „er“ sagen). Liebt Bier über alles.
 - **Bedürfnisse:** bier (−15/Tag), insekten (−15/Tag), ruhe (−10/Tag, zusätzlich −10, wenn der Mäher oder Manni im
   selben Gebiet Lärm machen oder grelles Licht ist).
-- **Große Fähigkeit:** Bier-Radar (höchstens 2-mal am Tag). Spürt geöffnetes Bier auf und springt blitzschnell hin,
-  **abgeschwächt durch die Hof-KI:** höchstens ein Gebiet weit. Ob der Diebstahl gelingt, entscheidet die Hof-KI.
-- **Kleine Fähigkeiten:** Flotter Flaschendieb (höchstens 1-mal am Tag, nur geöffnetes, unbeaufsichtigtes Bier im
-  eigenen Gebiet, 50 % Chance, bei Erfolg bier +40, sonst erwischt und ohne Bier). Das geheime Ständchen (nach einem
+- **Woher das Bier kommt (Besitzer, 09.11.2026):** Bier gibt es nur an drei Stellen: in der **Dorfkneipe** (jeden
+  Abend steht dort offenes Bier), bei **Festen und Hof-Ereignissen** und bei **Manni** (nach jeder Dorfrunde hat er
+  ein Feierabendbier dabei, bis zur nächsten Rechnung). Sonst hat niemand Bier, und wer kein Bier hat, kann auch
+  nicht bestohlen werden.
+- **Große Fähigkeit:** Bier-Radar (höchstens 2-mal am Tag). Spürt, wo gerade gefeiert wird (Fest, Hof-Ereignis) oder
+  wo Mannis Feierabendbier steht, und springt hin, höchstens ein Gebiet weit. Dort klappt der Flaschendieb mit
+  70 % statt 50 %.
+- **Kleine Fähigkeiten:** Flotter Flaschendieb (höchstens 1-mal am Tag, nur offenes Bier im eigenen Gebiet:
+  Kneipe, Fest oder Mannis Feierabendbier, 50 % Chance, bei Erfolg bier +40, sonst erwischt und ohne Bier). Das geheime Ständchen (nach einem
   erfolgreichen Diebstahl beschwipst, singt bis zum nächsten Tag schief und laut, wer hinhört, kann ihn finden).
-- **Bei anderen Spielern klauen:** höchstens 1 Bier pro Mitspieler und Tag, nie aus dem Zuhause eines anderen
-  Bewohners. Der Bestohlene bekommt im Tagebuch einen Hinweis („Aus dem Gebüsch ertönt ein schiefes Lied …“).
+- **Bei Manni klauen:** höchstens 1-mal am Tag, nie aus seiner Garage (Zuhause). Manni verliert nur sein
+  Feierabendbier, sonst nichts. Im Tagebuch steht ein Hinweis („Aus dem Gebüsch ertönt ein schiefes Lied …“).
+  Bei anderen Spielern gibt es nichts zu klauen.
 - **Schwäche:** kann dem Geruch von Bier nicht widerstehen und vergisst jede Vorsicht. Der Gesang verrät ihn. Hasst
   grelles Licht und laute Maschinen.
 - **Beziehungen:** ignoriert Bella (beobachtet sie aus sicherer Entfernung), fürchtet den Mäher (springt der Motor
@@ -271,7 +279,8 @@ einfach Lipa (man darf „er“ sagen). Liebt Bier über alles.
 - **Zuhause:** ein hohler Baum im Großen Wald. Die genaue Stelle ist geheim, auf der Karte steht kein Baum.
   Der Große Wald wurde beim Einzug für alle freigelegt (Abschnitt 5).
 - **Lieblingsort:** die Dorfkneipe, hinter den Bierkästen und unter der Theke.
-- **Züge:** in die Dorfkneipe schleichen (Tag nennen, bier +15 aus Schaumresten, dazu ein Versuch Flaschendieb),
+- **Züge:** in die Dorfkneipe schleichen (Tag nennen, bier +15 aus Schaumresten, dazu ein Versuch Flaschendieb am
+  offenen Bier),
   Insekten jagen auf einer Wiese, am Teich oder im Wald (insekten +30), im Baum ausschlafen (ruhe +30),
   Bier-Radar (Gebiet nennen).
 
@@ -320,6 +329,7 @@ Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein
 ### Änderungsverlauf
 | Datum | Änderung |
 |---|---|
+| 09.11.2026 | Lipa: Bier gibt es nur in der Kneipe, bei Festen und als Mannis Feierabendbier. Klauen bei Mitspielern gestrichen (außer Mannis Feierabendbier), Bier-Radar findet Feste und Mannis Bier (70 %). |
 | 09.11.2026 | Sharon (S-05) spielt mit. Lipa (Koboldmaki, Halterin Sharon) eingezogen, Bier-Radar abgeschwächt, Zuhause im Großen Wald, der dadurch freigelegt ist (Abschnitt 14). |
 | 08.11.2026 | Neue Rolle Hofbauer (Max): Zaun, Pfeife für Paul, Hof-Ereignis (jetzt 1-mal pro Woche gratis), Hof ausbauen, Stellschraube mit festen Grenzen (Abschnitt 2a). |
 | 08.11.2026 | Manni (Opel Manta, Halter Justus) eingezogen, Donuts abgeschwächt (Abschnitt 14). Paul: neuer Unfug an Mannis Reifen. |
