@@ -1,11 +1,11 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-09T07:20:00+01:00",
+  "letzte_berechnung": "2026-11-09T19:12:00+01:00",
   "letzte_meldung": {},
   "taler": 50,
   "vorraete": {
-    "heu": 8,
+    "heu": 6,
     "hafer": 2,
     "karotte": 5,
     "apfel": 0,
@@ -82,13 +82,13 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 80,
-        "laune": 85,
-        "fitness": 92,
-        "pflege": 75,
+        "satt": 100,
+        "laune": 80,
+        "fitness": 100,
+        "pflege": 70,
         "vertrauen": 17
       },
-      "stimmung": "Steht heute auf der Koppel und tut so, als wäre das immer ihre Idee gewesen. Paul hat sie heute noch in Ruhe gelassen.",
+      "stimmung": "Zweimal Heu, Training und ein Schrittspaziergang. Paul hat sie auf der Koppel kurz ins Bein gezwickt, sie hat getreten. Sie schnaubt zufrieden und macht Feierabend.",
       "ort": "w-koppel",
       "plan": [
         {
@@ -167,7 +167,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat am Mäher das Bein gehoben und am Teich Gerda aufgescheucht. Danach Mittagsschlaf im Hundekorb.",
+      "stimmung": "Hat auf der Koppel Bella ins Bein gezwickt, wurde getreten und schaut beleidigt aus seinem Korb.",
       "ort": "hof",
       "plan": []
     },
@@ -231,11 +231,21 @@
   ],
   "letzte_pflege": {
     "S-01": null,
-    "S-02": "2026-11-08T18:11:15+01:00",
+    "S-02": "2026-11-09T19:12:00+01:00",
     "S-03": null,
     "S-04": "2026-11-09T07:20:00+01:00"
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-09T19:12:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde: Paul hat auf der Koppel Bella ins Bein gezwickt (Bella laune −5, pflege −5). Sie hat getreten, er hat beleidigt geschaut und sich in den Hundekorb verzogen."
+    },
+    {
+      "zeit": "2026-11-09T19:12:00+01:00",
+      "wer": "Johanna (S-02)",
+      "text": "Johanna hat Bella morgens und nach der Weide mit Heu gefüttert, mit ihr trainiert (longiert) und danach eine kleine Runde im Schritt gedreht. Bella ist satt, fit und gibt sich bei der Pflege ein bisschen beleidigt."
+    },
     {
       "zeit": "2026-11-09T07:20:00+01:00",
       "wer": "Justus (S-04)",
