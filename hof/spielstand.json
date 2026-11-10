@@ -1,7 +1,7 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-10T07:20:00+01:00",
+  "letzte_berechnung": "2026-11-10T19:15:00+01:00",
   "letzte_meldung": {},
   "taler": 48,
   "vorraete": {
@@ -48,7 +48,7 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 90
+      "gras": 75
     },
     "w-koppel": {
       "gras": 62
@@ -87,21 +87,15 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 90,
+        "satt": 100,
         "laune": 100,
         "fitness": 100,
-        "pflege": 65,
-        "vertrauen": 19
+        "pflege": 95,
+        "vertrauen": 22
       },
-      "stimmung": "Heu zum Frühstück, große Ausreitrunde mit Pferdefreunden, Karotte statt Äpfel. Steht heute weit weg vom Hundekorb auf der Großen Wiese und tut vornehm.",
+      "stimmung": "Hufe frisch gemacht, glänzend geputzt, vom Tierarzt am Bein begutachtet (nur ein Kratzer) und danach noch ein Stück Große Wiese. Paul wurde in sicherem Abstand gehalten, Bella tut vornehm.",
       "ort": "w-grosse-wiese",
       "plan": [
-        {
-          "datum": "2026-11-10",
-          "flaeche": "w-grosse-wiese",
-          "aktion": "weiden",
-          "von": "S-02"
-        },
         {
           "datum": "2026-11-11",
           "flaeche": "w-koppel",
@@ -166,7 +160,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat am Mäher das Bein gehoben und sieht sehr zufrieden aus.",
+      "stimmung": "Hat auf dem Hofplatz seinen Schwanz gejagt und ist danach gegen die Hundehütte gerannt. Bella hat er von Weitem sehnsüchtig angestarrt, der Tierarzt hat ihn weggeschickt.",
       "ort": "hof",
       "plan": []
     },
@@ -267,12 +261,22 @@
   ],
   "letzte_pflege": {
     "S-01": null,
-    "S-02": "2026-11-10T07:20:00+01:00",
+    "S-02": "2026-11-10T19:15:00+01:00",
     "S-03": null,
     "S-04": "2026-11-10T07:20:00+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-10T19:15:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde: Paul hat auf dem Hofplatz seinen Schwanz gejagt und ist gegen den Hundekorb gelaufen. Zu Bella kam er nicht durch, der Tierarzt stand im Weg und hat ihn mit einem Blick zurück ins Körbchen geschickt."
+    },
+    {
+      "zeit": "2026-11-10T19:15:00+01:00",
+      "wer": "Johanna (S-02)",
+      "text": "Am Nachmittag kam spontan der Hufschmied und hat Bellas Hufe schön gemacht, danach wurde sie geputzt (pflege +30, vertrauen +3). Der Tierarzt hat sich die Stellen am Bein angeschaut: nur ein Kratzer, nichts Schlimmes. Danach ging es wieder auf die Große Wiese (satt +25, laune +5, Gras −15). Bella hat alles mit sehr vornehmer Miene über sich ergehen lassen."
+    },
     {
       "zeit": "2026-11-10T07:20:00+01:00",
       "wer": "Hof",
