@@ -1,13 +1,13 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-09T19:12:00+01:00",
+  "letzte_berechnung": "2026-11-10T07:20:00+01:00",
   "letzte_meldung": {},
-  "taler": 50,
+  "taler": 48,
   "vorraete": {
-    "heu": 6,
+    "heu": 5,
     "hafer": 2,
-    "karotte": 5,
+    "karotte": 4,
     "apfel": 0,
     "benzinkanister": 2,
     "oel": 1,
@@ -48,16 +48,16 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 89
+      "gras": 90
     },
     "w-koppel": {
-      "gras": 61
+      "gras": 62
     },
     "bachwiese": {
-      "gras": 94
+      "gras": 95
     },
     "obstwiese": {
-      "gras": 74,
+      "gras": 75,
       "obst": 8
     },
     "wald-gross": {
@@ -73,7 +73,7 @@
       "matsch": 80
     },
     "huegel": {
-      "gras": 64
+      "gras": 65
     },
     "acker": {
       "zustand": "brach"
@@ -87,24 +87,18 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 100,
-        "laune": 80,
+        "satt": 90,
+        "laune": 100,
         "fitness": 100,
-        "pflege": 70,
-        "vertrauen": 17
+        "pflege": 65,
+        "vertrauen": 19
       },
-      "stimmung": "Zweimal Heu, Training und ein Schrittspaziergang. Paul hat sie auf der Koppel kurz ins Bein gezwickt, sie hat getreten. Sie schnaubt zufrieden und macht Feierabend.",
-      "ort": "w-koppel",
+      "stimmung": "Heu zum Frühstück, große Ausreitrunde mit Pferdefreunden, Karotte statt Äpfel. Steht heute weit weg vom Hundekorb auf der Großen Wiese und tut vornehm.",
+      "ort": "w-grosse-wiese",
       "plan": [
         {
-          "datum": "2026-11-09",
-          "flaeche": "w-koppel",
-          "aktion": "weiden",
-          "von": "S-02"
-        },
-        {
           "datum": "2026-11-10",
-          "flaeche": "w-koppel",
+          "flaeche": "w-grosse-wiese",
           "aktion": "weiden",
           "von": "S-02"
         },
@@ -149,11 +143,11 @@
       "werte": {
         "benzin": 60,
         "oel": 80,
-        "messer": 65,
-        "zustand": 59,
-        "laune": 40
+        "messer": 60,
+        "zustand": 58,
+        "laune": 32
       },
-      "stimmung": "Steht im Schuppen. Jemand hat ans Bein gepinkelt, und keiner hat ihn gelobt. Er knattert beleidigt.",
+      "stimmung": "Steht im Schuppen. Paul hat wieder ans Bein gepinkelt, keiner hat ihn gelobt. Er knattert gekränkt.",
       "ort": "hof",
       "plan": [],
       "anspring_serie": 0,
@@ -172,7 +166,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat auf der Koppel Bella ins Bein gezwickt, wurde getreten und schaut beleidigt aus seinem Korb.",
+      "stimmung": "Hat am Mäher das Bein gehoben und sieht sehr zufrieden aus.",
       "ort": "hof",
       "plan": []
     },
@@ -185,11 +179,11 @@
       "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
       "werte": {
         "benzin": 60,
-        "politur": 95,
+        "politur": 93,
         "bewunderung": 100,
-        "zustand": 57
+        "zustand": 86
       },
-      "stimmung": "In der Garage gelobt worden, Fuchsschwanz glänzt. Er hält sich heute für den Schönsten im ganzen Landkreis.",
+      "stimmung": "Geschraubt, geputzt und gelobt. Der Fuchsschwanz glänzt, und Manni hält sich wieder für den Schönsten im Landkreis.",
       "ort": "dorf",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
@@ -214,11 +208,11 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 65,
-        "wasser": 100,
-        "ruhm": 70
+        "satt": 88,
+        "wasser": 90,
+        "ruhm": 80
       },
-      "stimmung": "Schwimmrunde gedreht und Schal bewundert. Sie lässt es jeden wissen, besonders Paul, der am Ufer vorbeigetrottet ist.",
+      "stimmung": "Satt wie ein weißer Fußball, Schal bewundert. Sie hat Paul sicherheitshalber schon mal angeschnattert.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
@@ -242,9 +236,9 @@
       "halter": "S-05",
       "beschreibung": "Winziger Koboldmaki mit riesigen Kulleraugen, nachtaktiv und ein großartiger Springer. Ob Herr oder Dame, weiß niemand, alle sagen einfach Lipa. Liebt Bier über alles. Wo ein Bier aufgeht, ist Lipa nicht weit, und danach hört man irgendwo ein schiefes, glückliches Lied.",
       "werte": {
-        "bier": 50,
-        "insekten": 70,
-        "ruhe": 80
+        "bier": 42,
+        "insekten": 62,
+        "ruhe": 75
       },
       "stimmung": "Gerade eingezogen. Sitzt mit großen Augen in einem hohlen Baum irgendwo im Großen Wald und lauscht, ob im Dorf schon ein Kronkorken zischt.",
       "ort": "wald-gross",
@@ -273,12 +267,27 @@
   ],
   "letzte_pflege": {
     "S-01": null,
-    "S-02": "2026-11-09T19:12:00+01:00",
+    "S-02": "2026-11-10T07:20:00+01:00",
     "S-03": null,
-    "S-04": "2026-11-09T07:20:00+01:00",
+    "S-04": "2026-11-10T07:20:00+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-10T07:20:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag. Paul hat am Mäher das Bein gehoben (Mäher laune −5, Messer −5) und fühlt sich großartig. Bella steht weit weg vom Hundekorb und tut so, als hätte sie Paul nie gesehen."
+    },
+    {
+      "zeit": "2026-11-10T07:20:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda wurde gefüttert und hat ihren St.-Pauli-Schal bewundert, Manni wurde geschraubt, geputzt und gelobt. Weil Justus dabei St. Pauli so wohlwollend erwähnte, hat Paul ihn im Spiel erneut gebissen (2 Taler Pflastergeld aus der Hofkasse)."
+    },
+    {
+      "zeit": "2026-11-10T07:20:00+01:00",
+      "wer": "Johanna (S-02)",
+      "text": "Johanna füttert Bella am Morgen mit Heu, geht mit ihr ausreiten und gibt Leckerlis (Karotten, Äpfel sind aus). Bella steht heute auf der Großen Wiese, weit weg von Paul. Einen Zaun kann nur der Hofbauer ziehen."
+    },
     {
       "zeit": "2026-11-09T21:30:00+01:00",
       "wer": "Hof",
