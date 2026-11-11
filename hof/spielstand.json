@@ -1,16 +1,16 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-10T19:15:00+01:00",
+  "letzte_berechnung": "2026-11-11T07:20:00+01:00",
   "letzte_meldung": {},
-  "taler": 48,
+  "taler": 46,
   "vorraete": {
-    "heu": 5,
+    "heu": 4,
     "hafer": 2,
-    "karotte": 4,
+    "karotte": 1,
     "apfel": 0,
-    "benzinkanister": 2,
-    "oel": 1,
+    "benzinkanister": 1,
+    "oel": 0,
     "brennholz": 0
   },
   "ausruestung": [
@@ -48,32 +48,32 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 75
+      "gras": 77
     },
     "w-koppel": {
-      "gras": 62
+      "gras": 64
     },
     "bachwiese": {
-      "gras": 95
+      "gras": 97
     },
     "obstwiese": {
-      "gras": 75,
+      "gras": 77,
       "obst": 8
     },
     "wald-gross": {
-      "holz": 81
+      "holz": 82
     },
     "quellwald": {
-      "holz": 86
+      "holz": 87
     },
     "westwald": {
-      "holz": 76
+      "holz": 77
     },
     "moor": {
       "matsch": 80
     },
     "huegel": {
-      "gras": 65
+      "gras": 67
     },
     "acker": {
       "zustand": "brach"
@@ -90,11 +90,11 @@
         "satt": 100,
         "laune": 100,
         "fitness": 100,
-        "pflege": 95,
-        "vertrauen": 22
+        "pflege": 85,
+        "vertrauen": 28
       },
-      "stimmung": "Hufe frisch gemacht, glänzend geputzt, vom Tierarzt am Bein begutachtet (nur ein Kratzer) und danach noch ein Stück Große Wiese. Paul wurde in sicherem Abstand gehalten, Bella tut vornehm.",
-      "ort": "w-grosse-wiese",
+      "stimmung": "Salbe auf dem Kratzer, Training, drei Karotten und Heu. Jetzt steht sie vornehm auf der Koppel und hält Ausschau nach Paul, die Hinterhufe schon gespitzt.",
+      "ort": "w-koppel",
       "plan": [
         {
           "datum": "2026-11-11",
@@ -135,15 +135,28 @@
       "art": "Aufsitzmäher (Benzin)",
       "beschreibung": "Alter Benzin-Aufsitzmäher. Brummig, stolz, hält sich für unverzichtbar. Springt nicht an, wenn er schlechte Laune hat. Name wird noch ausgesucht.",
       "werte": {
-        "benzin": 60,
-        "oel": 80,
-        "messer": 60,
-        "zustand": 58,
-        "laune": 32
+        "benzin": 100,
+        "oel": 100,
+        "messer": 100,
+        "zustand": 55,
+        "laune": 27
       },
-      "stimmung": "Steht im Schuppen. Paul hat wieder ans Bein gepinkelt, keiner hat ihn gelobt. Er knattert gekränkt.",
-      "ort": "hof",
-      "plan": [],
+      "stimmung": "Frisch getankt, Öl drin, Messer scharf wie nie. Er brummt trotzdem gekränkt, denn gelobt hat ihn keiner. Heute soll er beide Wiesen mähen.",
+      "ort": "w-grosse-wiese",
+      "plan": [
+        {
+          "datum": "2026-11-11",
+          "flaeche": "w-grosse-wiese",
+          "aktion": "maehen",
+          "von": "S-03"
+        },
+        {
+          "datum": "2026-11-11",
+          "flaeche": "w-koppel",
+          "aktion": "maehen",
+          "von": "S-03"
+        }
+      ],
       "anspring_serie": 0,
       "halter": "S-03"
     },
@@ -160,7 +173,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat auf dem Hofplatz seinen Schwanz gejagt und ist danach gegen die Hundehütte gerannt. Bella hat er von Weitem sehnsüchtig angestarrt, der Tierarzt hat ihn weggeschickt.",
+      "stimmung": "Ist in Richtung Teich getrottet, hat Gerda aufgescheucht und dafür einen Zwicker in den Hintern kassiert. Er trägt es mit Fassung und seinem HSV-Lätzchen. Justus hat er zur Sicherheit auch noch gebissen.",
       "ort": "hof",
       "plan": []
     },
@@ -173,11 +186,11 @@
       "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
       "werte": {
         "benzin": 60,
-        "politur": 93,
+        "politur": 88,
         "bewunderung": 100,
-        "zustand": 86
+        "zustand": 83
       },
-      "stimmung": "Geschraubt, geputzt und gelobt. Der Fuchsschwanz glänzt, und Manni hält sich wieder für den Schönsten im Landkreis.",
+      "stimmung": "Gelobt und wieder voll im Glanz. Manni hält sich in der Garage für das schönste Auto im Landkreis und lässt zur Probe kurz den Auspuff röhren.",
       "ort": "dorf",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
@@ -202,18 +215,25 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 88,
-        "wasser": 90,
-        "ruhm": 80
+        "satt": 73,
+        "wasser": 70,
+        "ruhm": 85
       },
-      "stimmung": "Satt wie ein weißer Fußball, Schal bewundert. Sie hat Paul sicherheitshalber schon mal angeschnattert.",
+      "stimmung": "Der Schal wurde ausgiebig bewundert, Gerda trägt den Schnabel hoch. Auf den Teich freut sie sich schon. Paul hat sie vorhin vorsorglich angeschnattert.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
         1095,
         552
       ],
-      "plan": [],
+      "plan": [
+        {
+          "datum": "2026-11-11",
+          "flaeche": "teich",
+          "aktion": "schwimmen",
+          "von": "S-04"
+        }
+      ],
       "aktionen": {
         "teich": "schwimmen",
         "weide": "weiden",
@@ -230,9 +250,9 @@
       "halter": "S-05",
       "beschreibung": "Winziger Koboldmaki mit riesigen Kulleraugen, nachtaktiv und ein großartiger Springer. Ob Herr oder Dame, weiß niemand, alle sagen einfach Lipa. Liebt Bier über alles. Wo ein Bier aufgeht, ist Lipa nicht weit, und danach hört man irgendwo ein schiefes, glückliches Lied.",
       "werte": {
-        "bier": 42,
-        "insekten": 62,
-        "ruhe": 75
+        "bier": 27,
+        "insekten": 47,
+        "ruhe": 65
       },
       "stimmung": "Gerade eingezogen. Sitzt mit großen Augen in einem hohlen Baum irgendwo im Großen Wald und lauscht, ob im Dorf schon ein Kronkorken zischt.",
       "ort": "wald-gross",
@@ -261,12 +281,32 @@
   ],
   "letzte_pflege": {
     "S-01": null,
-    "S-02": "2026-11-10T19:15:00+01:00",
-    "S-03": null,
-    "S-04": "2026-11-10T07:20:00+01:00",
+    "S-02": "2026-11-11T07:20:00+01:00",
+    "S-03": "2026-11-11T07:20:00+01:00",
+    "S-04": "2026-11-11T07:20:00+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-11T07:20:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda hat ihren St.-Pauli-Schal ausgiebig bewundert und darf später auf den Teich, Manni wurde in der Garage gelobt. Weil Justus dabei St. Pauli so wohlwollend erwähnte, hat Paul ihn im Spiel gebissen (2 Taler Pflastergeld aus der Hofkasse)."
+    },
+    {
+      "zeit": "2026-11-11T07:20:00+01:00",
+      "wer": "Julian (S-03)",
+      "text": "Der Mäher wurde getankt, bekam frisches Öl und neue Schärfe auf die Messer. Heute soll er die Große Wiese und die Koppel mähen. Seine Laune ist allerdings im Keller, er könnte zicken."
+    },
+    {
+      "zeit": "2026-11-11T07:20:00+01:00",
+      "wer": "Johanna (S-02)",
+      "text": "Bella bekam Salbe auf den Kratzer, danach Training, drei Karotten und Heu. Heute steht sie auf der Koppel. Paul soll sich vorsehen: Ausschlagen mit den Hinterbeinen ist erlaubt."
+    },
+    {
+      "zeit": "2026-11-11T07:20:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag. Paul ist zum Teich getrabt, hat Gerda aufgescheucht und dafür sofort einen Zwicker in den Hintern bekommen. Er hat es für ein Spiel gehalten."
+    },
     {
       "zeit": "2026-11-10T19:15:00+01:00",
       "wer": "Hof",
