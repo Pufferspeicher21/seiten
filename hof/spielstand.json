@@ -1,11 +1,13 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-11T07:20:00+01:00",
-  "letzte_meldung": {},
+  "letzte_berechnung": "2026-11-11T19:15:00+01:00",
+  "letzte_meldung": {
+    "S-02": "2026-11-11"
+  },
   "taler": 46,
   "vorraete": {
-    "heu": 4,
+    "heu": 8,
     "hafer": 2,
     "karotte": 1,
     "apfel": 0,
@@ -48,10 +50,10 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 77
+      "gras": 10
     },
     "w-koppel": {
-      "gras": 64
+      "gras": 10
     },
     "bachwiese": {
       "gras": 97
@@ -88,20 +90,14 @@
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
         "satt": 100,
-        "laune": 100,
+        "laune": 95,
         "fitness": 100,
-        "pflege": 85,
+        "pflege": 80,
         "vertrauen": 28
       },
-      "stimmung": "Salbe auf dem Kratzer, Training, drei Karotten und Heu. Jetzt steht sie vornehm auf der Koppel und hält Ausschau nach Paul, die Hinterhufe schon gespitzt.",
+      "stimmung": "Hat vornehm die Koppel abgegrast, wurde von Paul ins Bein gezwickt und hat sich vor dem knatternden Mäher fast in die Hufe gesetzt. Jetzt steht sie beleidigt auf der kurz gemähten Koppel und schaut sehr vorwurfsvoll.",
       "ort": "w-koppel",
       "plan": [
-        {
-          "datum": "2026-11-11",
-          "flaeche": "w-koppel",
-          "aktion": "weiden",
-          "von": "S-02"
-        },
         {
           "datum": "2026-11-12",
           "flaeche": "w-koppel",
@@ -135,28 +131,15 @@
       "art": "Aufsitzmäher (Benzin)",
       "beschreibung": "Alter Benzin-Aufsitzmäher. Brummig, stolz, hält sich für unverzichtbar. Springt nicht an, wenn er schlechte Laune hat. Name wird noch ausgesucht.",
       "werte": {
-        "benzin": 100,
-        "oel": 100,
-        "messer": 100,
-        "zustand": 55,
-        "laune": 27
+        "benzin": 60,
+        "oel": 90,
+        "messer": 75,
+        "zustand": 85,
+        "laune": 37
       },
-      "stimmung": "Frisch getankt, Öl drin, Messer scharf wie nie. Er brummt trotzdem gekränkt, denn gelobt hat ihn keiner. Heute soll er beide Wiesen mähen.",
-      "ort": "w-grosse-wiese",
-      "plan": [
-        {
-          "datum": "2026-11-11",
-          "flaeche": "w-grosse-wiese",
-          "aktion": "maehen",
-          "von": "S-03"
-        },
-        {
-          "datum": "2026-11-11",
-          "flaeche": "w-koppel",
-          "aktion": "maehen",
-          "von": "S-03"
-        }
-      ],
+      "stimmung": "Gelobt und abgeschmiert brummt er zufrieden. Beide Wiesen sind kurz, das Heu liegt im Schuppen. Nur dass Paul ihm ans Bein, äh, ans Rad gepinkelt hat, nimmt er übel.",
+      "ort": "w-koppel",
+      "plan": [],
       "anspring_serie": 0,
       "halter": "S-03"
     },
@@ -173,7 +156,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Ist in Richtung Teich getrottet, hat Gerda aufgescheucht und dafür einen Zwicker in den Hintern kassiert. Er trägt es mit Fassung und seinem HSV-Lätzchen. Justus hat er zur Sicherheit auch noch gebissen.",
+      "stimmung": "Hat Bella ins Bein gezwickt und dafür einen Tritt-Versuch kassiert, danach dem Mäher ans Rad gepinkelt. Zufrieden trottet er zum Hundekorb.",
       "ort": "hof",
       "plan": []
     },
@@ -216,24 +199,17 @@
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
         "satt": 73,
-        "wasser": 70,
+        "wasser": 100,
         "ruhm": 85
       },
-      "stimmung": "Der Schal wurde ausgiebig bewundert, Gerda trägt den Schnabel hoch. Auf den Teich freut sie sich schon. Paul hat sie vorhin vorsorglich angeschnattert.",
+      "stimmung": "Hat ausgiebig auf dem Teich geplanscht und den Schal im Wind flattern lassen. Teich gehört ihr, das ist amtlich.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
         1095,
         552
       ],
-      "plan": [
-        {
-          "datum": "2026-11-11",
-          "flaeche": "teich",
-          "aktion": "schwimmen",
-          "von": "S-04"
-        }
-      ],
+      "plan": [],
       "aktionen": {
         "teich": "schwimmen",
         "weide": "weiden",
@@ -282,11 +258,26 @@
   "letzte_pflege": {
     "S-01": null,
     "S-02": "2026-11-11T07:20:00+01:00",
-    "S-03": "2026-11-11T07:20:00+01:00",
+    "S-03": "2026-11-11T19:15:00+01:00",
     "S-04": "2026-11-11T07:20:00+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-11T19:15:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde: Paul hat Bella auf der Koppel ins Bein gezwickt (Bella laune −5, pflege −5, sie hat nach ihm getreten und knapp verfehlt) und dem Mäher danach ans Rad gepinkelt (Mäher laune −5, Messer −5). Er findet beides sehr gelungen."
+    },
+    {
+      "zeit": "2026-11-11T19:15:00+01:00",
+      "wer": "Julian (S-03)",
+      "text": "Der Mäher wurde ausgiebig gelobt, bekam Komplimente für seine Arbeit und wurde einmal abgeschmiert (zustand +30, laune +15). Damit sprang er an und hat die Große Wiese und die Koppel auf Gras 10 gemäht (Heu +4, Benzin −40, Öl −10, Messer −20). Bella auf der Koppel hat den Lärm gar nicht gemocht."
+    },
+    {
+      "zeit": "2026-11-11T19:15:00+01:00",
+      "wer": "Hof",
+      "text": "Gerda hat auf dem Teich geplanscht (wasser +40). Bella hat die Koppel abgegrast (satt +25, laune +5, Gras −15), bevor der Mäher kam."
+    },
     {
       "zeit": "2026-11-11T07:20:00+01:00",
       "wer": "Justus (S-04)",
