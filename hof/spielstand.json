@@ -1,11 +1,11 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-11T19:15:00+01:00",
+  "letzte_berechnung": "2026-11-12T07:15:00+01:00",
   "letzte_meldung": {
     "S-02": "2026-11-11"
   },
-  "taler": 46,
+  "taler": 44,
   "vorraete": {
     "heu": 8,
     "hafer": 2,
@@ -50,16 +50,16 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 10
+      "gras": 11
     },
     "w-koppel": {
-      "gras": 10
+      "gras": 11
     },
     "bachwiese": {
-      "gras": 97
+      "gras": 98
     },
     "obstwiese": {
-      "gras": 77,
+      "gras": 78,
       "obst": 8
     },
     "wald-gross": {
@@ -75,7 +75,7 @@
       "matsch": 80
     },
     "huegel": {
-      "gras": 67
+      "gras": 68
     },
     "acker": {
       "zustand": "brach"
@@ -89,13 +89,13 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 100,
-        "laune": 95,
-        "fitness": 100,
-        "pflege": 80,
+        "satt": 90,
+        "laune": 90,
+        "fitness": 96,
+        "pflege": 75,
         "vertrauen": 28
       },
-      "stimmung": "Hat vornehm die Koppel abgegrast, wurde von Paul ins Bein gezwickt und hat sich vor dem knatternden Mäher fast in die Hufe gesetzt. Jetzt steht sie beleidigt auf der kurz gemähten Koppel und schaut sehr vorwurfsvoll.",
+      "stimmung": "Steht fröstelnd auf der Koppel, kaut auf dem kurzen Stoppelgras herum und wirft dem Schuppen, wo der Mäher brummt, böse Blicke zu.",
       "ort": "w-koppel",
       "plan": [
         {
@@ -134,11 +134,11 @@
         "benzin": 60,
         "oel": 90,
         "messer": 75,
-        "zustand": 85,
-        "laune": 37
+        "zustand": 84,
+        "laune": 32
       },
-      "stimmung": "Gelobt und abgeschmiert brummt er zufrieden. Beide Wiesen sind kurz, das Heu liegt im Schuppen. Nur dass Paul ihm ans Bein, äh, ans Rad gepinkelt hat, nimmt er übel.",
-      "ort": "w-koppel",
+      "stimmung": "Steht gelangweilt im Schuppen und brummelt vor sich hin. Seit dem Mähen hat ihn keiner mehr beachtet, die Laune sinkt.",
+      "ort": "hof",
       "plan": [],
       "anspring_serie": 0,
       "halter": "S-03"
@@ -156,7 +156,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat Bella ins Bein gezwickt und dafür einen Tritt-Versuch kassiert, danach dem Mäher ans Rad gepinkelt. Zufrieden trottet er zum Hundekorb.",
+      "stimmung": "Ist zum Teich getrabt, hat Gerda angebellt, ist ihr hinterher ins Wasser gesprungen und hat sich dabei selbst nass und lächerlich gemacht. Jetzt schüttelt er sich auf dem Hofplatz.",
       "ort": "hof",
       "plan": []
     },
@@ -169,11 +169,11 @@
       "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
       "werte": {
         "benzin": 60,
-        "politur": 88,
+        "politur": 86,
         "bewunderung": 100,
-        "zustand": 83
+        "zustand": 82
       },
-      "stimmung": "Gelobt und wieder voll im Glanz. Manni hält sich in der Garage für das schönste Auto im Landkreis und lässt zur Probe kurz den Auspuff röhren.",
+      "stimmung": "Wurde in der Garage gelobt und ist wieder voll im Glanz. Lässt zufrieden den Auspuff röhren.",
       "ort": "dorf",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
@@ -198,11 +198,11 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 73,
-        "wasser": 100,
-        "ruhm": 85
+        "satt": 95,
+        "wasser": 90,
+        "ruhm": 95
       },
-      "stimmung": "Hat ausgiebig auf dem Teich geplanscht und den Schal im Wind flattern lassen. Teich gehört ihr, das ist amtlich.",
+      "stimmung": "Satt, mit blank bewundertem Schal. Der Teich gehört ihr, das ist amtlich, und Paul hat es heute auch gemerkt.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
@@ -226,11 +226,11 @@
       "halter": "S-05",
       "beschreibung": "Winziger Koboldmaki mit riesigen Kulleraugen, nachtaktiv und ein großartiger Springer. Ob Herr oder Dame, weiß niemand, alle sagen einfach Lipa. Liebt Bier über alles. Wo ein Bier aufgeht, ist Lipa nicht weit, und danach hört man irgendwo ein schiefes, glückliches Lied.",
       "werte": {
-        "bier": 27,
-        "insekten": 47,
-        "ruhe": 65
+        "bier": 20,
+        "insekten": 40,
+        "ruhe": 60
       },
-      "stimmung": "Gerade eingezogen. Sitzt mit großen Augen in einem hohlen Baum irgendwo im Großen Wald und lauscht, ob im Dorf schon ein Kronkorken zischt.",
+      "stimmung": "Sitzt mit großen Augen in seinem hohlen Baum und lauscht, ob im Dorf schon ein Kronkorken zischt.",
       "ort": "wald-gross",
       "zuhause": "hohler Baum im Großen Wald (genaue Stelle geheim)",
       "zuhause_punkt": [
@@ -259,10 +259,20 @@
     "S-01": null,
     "S-02": "2026-11-11T07:20:00+01:00",
     "S-03": "2026-11-11T19:15:00+01:00",
-    "S-04": "2026-11-11T07:20:00+01:00",
+    "S-04": "2026-11-12T07:15:00+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-12T07:15:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda wurde gefüttert (satt +30) und durfte ihren St.-Pauli-Schal bewundern (ruhm +15), Manni wurde in der Garage gelobt (bewunderung +15). Weil Justus dabei St. Pauli so wohlwollend erwähnte, hat Paul ihn im Spiel gebissen (2 Taler Pflastergeld aus der Hofkasse)."
+    },
+    {
+      "zeit": "2026-11-12T07:15:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Paul ist zum Teich getrabt, hat Gerda angebellt und ist ihr hinterher ins Wasser gesprungen. Peinlich, aber keiner wurde verletzt. Bella steht auf der Koppel, der Mäher langweilt sich im Schuppen (laune −5)."
+    },
     {
       "zeit": "2026-11-11T19:15:00+01:00",
       "wer": "Hof",
@@ -519,7 +529,7 @@
   ],
   "welt": {
     "fluss": "normal",
-    "wetter": "bewölkt",
+    "wetter": "frostig, trocken",
     "woche": 1
   },
   "hofbauer": {
