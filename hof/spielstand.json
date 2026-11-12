@@ -1,11 +1,12 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-12T07:15:00+01:00",
+  "letzte_berechnung": "2026-11-12T19:11:49+01:00",
   "letzte_meldung": {
-    "S-02": "2026-11-11"
+    "S-02": "2026-11-11",
+    "S-03": "2026-11-12"
   },
-  "taler": 44,
+  "taler": 50,
   "vorraete": {
     "heu": 8,
     "hafer": 2,
@@ -89,21 +90,15 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 90,
-        "laune": 90,
+        "satt": 93,
+        "laune": 80,
         "fitness": 96,
         "pflege": 75,
         "vertrauen": 28
       },
-      "stimmung": "Steht fröstelnd auf der Koppel, kaut auf dem kurzen Stoppelgras herum und wirft dem Schuppen, wo der Mäher brummt, böse Blicke zu.",
+      "stimmung": "Hat die Koppel nur noch als Stoppelfeld vorgefunden, meckert vorwurfsvoll und wirft Paul, der sie hungrig anstarrt, einen Blick zu, der Hufeisen schmelzen könnte.",
       "ort": "w-koppel",
       "plan": [
-        {
-          "datum": "2026-11-12",
-          "flaeche": "w-koppel",
-          "aktion": "weiden",
-          "von": "S-02"
-        },
         {
           "datum": "2026-11-13",
           "flaeche": "w-koppel",
@@ -156,7 +151,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Ist zum Teich getrabt, hat Gerda angebellt, ist ihr hinterher ins Wasser gesprungen und hat sich dabei selbst nass und lächerlich gemacht. Jetzt schüttelt er sich auf dem Hofplatz.",
+      "stimmung": "Hat auf der Koppel Bella hungrig angestarrt und einen Huf-Warnschuss kassiert. Liegt jetzt beleidigt im Hundekorb.",
       "ort": "hof",
       "plan": []
     },
@@ -259,10 +254,20 @@
     "S-01": null,
     "S-02": "2026-11-11T07:20:00+01:00",
     "S-03": "2026-11-11T19:15:00+01:00",
-    "S-04": "2026-11-12T07:15:00+01:00",
+    "S-04": "2026-11-12T19:11:49+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-12T19:11:49+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Justus erinnert Max an Horst (Antrag A-03), der noch auf die Entscheidung wartet, und bittet darum, die 6 Taler Pflastergeld zurückzubuchen, weil Taler erst mit dem Umbau gelten. Die Hof-KI gibt ihm recht: Hofkasse wieder bei 50 Talern. Die Bisse bleiben Paul gegönnt."
+    },
+    {
+      "zeit": "2026-11-12T19:11:49+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde: Bella hat die abgemähte Koppel nur noch angeschaut (satt +3, laune −5, sie meckert). Paul hat sie dabei hungrig angestarrt, sie hat nach ihm getreten und knapp verfehlt (Bella laune −5). Er ist beleidigt in den Hundekorb getrottet."
+    },
     {
       "zeit": "2026-11-12T07:15:00+01:00",
       "wer": "Justus (S-04)",
@@ -513,7 +518,8 @@
         "abschwaechung": "Schneise nur 1-mal pro Woche, nur Nachbargebiet, Gebiet bleibt Nebel, nur 5 statt 10 Taler Rabatt (mit Gerda höchstens 10 zusammen). Keine Äpfel-Klauerei aus dem Vorrat. Pauls Wesen bleibt wie festgelegt. Zuhause auf offenem Gebiet statt im Nebel-Wald, sonst gratis Freilegen."
       },
       "status": "wartet auf den Besitzer",
-      "datum": "2026-11-08"
+      "datum": "2026-11-08",
+      "wunsch": "Justus würde die Suhle gern im Großen Wald anlegen (der ist inzwischen frei, 12.11.). Entscheidung liegt bei Max."
     },
     {
       "id": "A-04",
