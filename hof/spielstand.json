@@ -1,7 +1,7 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-13T07:12:00+01:00",
+  "letzte_berechnung": "2026-11-13T19:11:00+01:00",
   "letzte_meldung": {
     "S-02": "2026-11-13",
     "S-03": "2026-11-13"
@@ -12,7 +12,7 @@
     "hafer": 2,
     "karotte": 1,
     "apfel": 0,
-    "benzinkanister": 1,
+    "benzinkanister": 0,
     "oel": 0,
     "brennholz": 0
   },
@@ -54,7 +54,7 @@
       "gras": 13
     },
     "w-koppel": {
-      "gras": 13
+      "gras": 3
     },
     "bachwiese": {
       "gras": 100
@@ -90,21 +90,15 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 73,
-        "laune": 65,
+        "satt": 83,
+        "laune": 60,
         "fitness": 88,
-        "pflege": 60,
+        "pflege": 55,
         "vertrauen": 28
       },
-      "stimmung": "Steht auf der Koppel, die nur noch aus Stoppeln besteht, und sieht Paul schon wieder hungrig näherkommen. Er hat sie ins Bein gezwickt, sie hat nach ihm getreten.",
+      "stimmung": "Steht auf der Koppel, die nur noch aus Stoppeln besteht. Paul hat sie schon wieder ins Bein gezwickt, sie hat nach ihm getreten und knapp verfehlt.",
       "ort": "w-koppel",
       "plan": [
-        {
-          "datum": "2026-11-13",
-          "flaeche": "w-koppel",
-          "aktion": "weiden",
-          "von": "S-02"
-        },
         {
           "datum": "2026-11-14",
           "flaeche": "w-koppel",
@@ -126,13 +120,13 @@
       "art": "Aufsitzmäher (Benzin)",
       "beschreibung": "Alter Benzin-Aufsitzmäher. Brummig, stolz, hält sich für unverzichtbar. Springt nicht an, wenn er schlechte Laune hat. Name wird noch ausgesucht.",
       "werte": {
-        "benzin": 60,
+        "benzin": 100,
         "oel": 90,
-        "messer": 75,
-        "zustand": 81,
-        "laune": 27
+        "messer": 100,
+        "zustand": 100,
+        "laune": 42
       },
-      "stimmung": "Steht im Schuppen und brummelt vor sich hin. Die Laune ist unter 30, so ein Tag ist nichts für ihn. Ob er heute anspringt, ist fraglich.",
+      "stimmung": "Steht frisch betankt, geschliffen und abgeschmiert im Schuppen und brummt zufrieden. Die Laune ist noch unter 50, aber er hat ein Lob gehört und schwillt vor Stolz.",
       "ort": "hof",
       "plan": [],
       "anspring_serie": 0,
@@ -151,7 +145,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat Bella ins Bein gezwickt und sich einen Tritt eingefangen, den er knapp verfehlt hat. Schleicht beleidigt Richtung Hundekorb.",
+      "stimmung": "Hat Bella ins Bein gezwickt, einen Tritt knapp verfehlt und sich dann beim Schwanzjagen im Kreis gedreht. Trottet zum Hundekorb.",
       "ort": "hof",
       "plan": []
     },
@@ -253,11 +247,21 @@
   "letzte_pflege": {
     "S-01": null,
     "S-02": "2026-11-11T07:20:00+01:00",
-    "S-03": "2026-11-11T19:15:00+01:00",
+    "S-03": "2026-11-13T19:11:00+01:00",
     "S-04": "2026-11-13T07:12:00+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-13T19:11:00+01:00",
+      "wer": "Julian (S-03)",
+      "text": "Der Mäher wurde ganz doll gelobt, getankt (Benzin 100), bekam frische Messer und wurde einmal abgeschmiert (zustand 100, laune 42). Ölnachfüllen fiel aus, der Ölvorrat ist leer (der Ölstand liegt noch bei 90). Einen Mähplan gibt es für heute nicht, er blieb im Schuppen."
+    },
+    {
+      "zeit": "2026-11-13T19:11:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde: Bella hat die Koppel bis auf kümmerliche Stoppeln abgegrast (satt +10, Gras −10). Paul hat sie dabei wieder hungrig angestarrt und ins Bein gezwickt (Bella laune −5, pflege −5), sie hat nach ihm getreten und knapp verfehlt. Danach hat er sich beim Schwanzjagen im Kreis gedreht."
+    },
     {
       "zeit": "2026-11-13T07:12:00+01:00",
       "wer": "Justus (S-04)",
