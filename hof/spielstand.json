@@ -1,14 +1,14 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-14T07:16:00+01:00",
+  "letzte_berechnung": "2026-11-14T19:11:00+01:00",
   "letzte_meldung": {
     "S-02": "2026-11-14",
     "S-03": "2026-11-13"
   },
   "taler": 50,
   "vorraete": {
-    "heu": 8,
+    "heu": 9,
     "hafer": 2,
     "karotte": 1,
     "apfel": 0,
@@ -51,10 +51,10 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 15
+      "gras": 10
     },
     "w-koppel": {
-      "gras": 5
+      "gras": 0
     },
     "bachwiese": {
       "gras": 100
@@ -90,22 +90,15 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 63,
-        "laune": 45,
+        "satt": 66,
+        "laune": 30,
         "fitness": 80,
-        "pflege": 40,
+        "pflege": 35,
         "vertrauen": 28
       },
-      "stimmung": "Steht auf der Koppel und sucht Halme zwischen den Stoppeln. Paul hat ihr wieder ins Bein gezwickt, sie hat nach ihm getreten und knapp verfehlt. Heute soll es hier laut werden, das ahnt sie schon.",
+      "stimmung": "Hat die Koppel bis auf den letzten Halm abgesucht und meckert. Dann knatterte der Mäher heran, und Bella hat ihm den Rücken zugedreht. Ihr Bein erinnert sich an Pauls Zwicker von heute früh.",
       "ort": "w-koppel",
-      "plan": [
-        {
-          "datum": "2026-11-14",
-          "flaeche": "w-koppel",
-          "aktion": "weiden",
-          "von": "S-02"
-        }
-      ],
+      "plan": [],
       "tricks": [],
       "trick_uebungen": {},
       "ausgebuext": false,
@@ -120,28 +113,15 @@
       "art": "Aufsitzmäher (Benzin)",
       "beschreibung": "Alter Benzin-Aufsitzmäher. Brummig, stolz, hält sich für unverzichtbar. Springt nicht an, wenn er schlechte Laune hat. Name wird noch ausgesucht.",
       "werte": {
-        "benzin": 100,
-        "oel": 90,
-        "messer": 100,
+        "benzin": 60,
+        "oel": 80,
+        "messer": 75,
         "zustand": 97,
-        "laune": 47
+        "laune": 42
       },
-      "stimmung": "Wurde heute früh gelobt und wirft sich in die Brust. Heute darf er die Große Wiese und die Koppel mähen, das hält er für längst überfällig.",
-      "ort": "hof",
-      "plan": [
-        {
-          "datum": "2026-11-14",
-          "flaeche": "w-grosse-wiese",
-          "aktion": "maehen",
-          "von": "S-03"
-        },
-        {
-          "datum": "2026-11-14",
-          "flaeche": "w-koppel",
-          "aktion": "maehen",
-          "von": "S-03"
-        }
-      ],
+      "stimmung": "Ist angesprungen und hat Große Wiese und Koppel abgefahren, Brust raus. Paul hat sich vor ihm in die Spur gelegt und das Bein gehoben, das nimmt er persönlich.",
+      "ort": "w-koppel",
+      "plan": [],
       "anspring_serie": 0,
       "halter": "S-03"
     },
@@ -158,7 +138,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat Bella wieder ins Bein gezwickt, den Tritt knapp verfehlt und sich beim Schwanzjagen im Kreis gedreht. Trottet zum Hundekorb.",
+      "stimmung": "Hat sich vor den Mäher gelegt und das Bein gehoben, ist ordentlich ausgeschimpft worden und trottet zum Hundekorb.",
       "ort": "hof",
       "plan": []
     },
@@ -265,6 +245,11 @@
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-14T19:11:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde, frostig und trocken: Der Mäher ist angesprungen und hat die Große Wiese auf Gras 10 gemäht (Heu +1, die Koppel war schon kahl). Benzin −40, Öl −10, Messer −20. Bella hat auf der Koppel nur noch Stoppeln gefunden (satt +3, laune −5) und den Lärm gar nicht gemocht (laune −5). Paul hat sich dem Mäher in den Weg gelegt und das Bein gehoben (Mäher laune −5, Messer −5). Lipa wartet im hohlen Baum weiter auf Bier (bier 0, insekten 10)."
+    },
     {
       "zeit": "2026-11-14T07:16:00+01:00",
       "wer": "Justus (S-04)",
