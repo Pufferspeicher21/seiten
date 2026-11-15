@@ -1,7 +1,7 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-15T07:11:00+01:00",
+  "letzte_berechnung": "2026-11-15T19:11:00+01:00",
   "letzte_meldung": {
     "S-02": "2026-11-15",
     "S-03": "2026-11-13"
@@ -90,13 +90,13 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 46,
-        "laune": 15,
-        "fitness": 72,
-        "pflege": 25,
+        "satt": 36,
+        "laune": 10,
+        "fitness": 68,
+        "pflege": 20,
         "vertrauen": 28
       },
-      "stimmung": "Steht im Stall, hat Hunger und schlechte Laune, und gestriegelt hat sie schon lange keiner mehr. Sie scharrt demonstrativ im Stroh und wartet auf Johanna.",
+      "stimmung": "Steht noch immer im Stall, hungrig, ungestriegelt und beleidigt. Sie scharrt im Stroh und wartet auf Johanna.",
       "ort": "hof",
       "plan": [],
       "tricks": [],
@@ -116,10 +116,10 @@
         "benzin": 60,
         "oel": 80,
         "messer": 75,
-        "zustand": 94,
-        "laune": 37
+        "zustand": 93,
+        "laune": 34
       },
-      "stimmung": "Steht im Schuppen und brummelt. Seit gestern Abend hat ihn keiner gelobt, das nimmt er persönlich.",
+      "stimmung": "Steht im Schuppen und brummelt. Lob wäre jetzt fällig, sonst springt er bald nicht mehr an.",
       "ort": "hof",
       "plan": [],
       "anspring_serie": 0,
@@ -138,7 +138,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Ist in den Teich gesprungen, hat Gerda aufgescheucht und trottet nass zum Hundekorb.",
+      "stimmung": "Hat seinen Schwanz gejagt, ist dabei umgekippt und schläft jetzt im Hundekorb.",
       "ort": "hof",
       "plan": []
     },
@@ -151,9 +151,9 @@
       "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
       "werte": {
         "benzin": 60,
-        "politur": 71,
-        "bewunderung": 100,
-        "zustand": 73
+        "politur": 69,
+        "bewunderung": 95,
+        "zustand": 72
       },
       "stimmung": "Wurde in der Garage gelobt, der Fuchsschwanz wippt wie verrückt. Politur ist noch ordentlich, Frost und Rost sind ihm egal.",
       "ort": "dorf",
@@ -180,9 +180,9 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 80,
-        "wasser": 70,
-        "ruhm": 100
+        "satt": 73,
+        "wasser": 60,
+        "ruhm": 95
       },
       "stimmung": "Satt, der Schal wurde bewundert, sie thront am Teich und kneift vorsichtshalber in die Luft.",
       "ort": "teich",
@@ -210,9 +210,9 @@
       "werte": {
         "bier": 0,
         "insekten": 0,
-        "ruhe": 30
+        "ruhe": 25
       },
-      "stimmung": "Sitzt im hohlen Baum, hungrig und völlig bierlos. Die Kulleraugen starren ins Leere.",
+      "stimmung": "Sitzt im hohlen Baum, hungrig und bierlos, und träumt von Schaumresten.",
       "ort": "wald-gross",
       "zuhause": "hohler Baum im Großen Wald (genaue Stelle geheim)",
       "zuhause_punkt": [
@@ -245,6 +245,11 @@
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-15T19:11:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde, frostig und trocken. Niemand hat einen Plan geschickt: Bella bleibt im Stall (satt 36, laune 10, pflege 20) und ist ziemlich beleidigt, der Mäher brummelt im Schuppen, Manni glänzt in der Garage, Gerda thront am Teich, Lipa träumt im Baum von Bier. Paul hat seinen Schwanz gejagt, ist umgekippt und schläft im Korb."
+    },
     {
       "zeit": "2026-11-15T07:11:00+01:00",
       "wer": "Justus (S-04)",
