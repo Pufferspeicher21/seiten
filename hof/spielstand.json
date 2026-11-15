@@ -1,9 +1,9 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-14T19:11:00+01:00",
+  "letzte_berechnung": "2026-11-15T07:11:00+01:00",
   "letzte_meldung": {
-    "S-02": "2026-11-14",
+    "S-02": "2026-11-15",
     "S-03": "2026-11-13"
   },
   "taler": 50,
@@ -51,32 +51,32 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 10
+      "gras": 12
     },
     "w-koppel": {
-      "gras": 0
+      "gras": 2
     },
     "bachwiese": {
       "gras": 100
     },
     "obstwiese": {
-      "gras": 82,
+      "gras": 84,
       "obst": 8
     },
     "wald-gross": {
-      "holz": 83
+      "holz": 84
     },
     "quellwald": {
-      "holz": 88
+      "holz": 89
     },
     "westwald": {
-      "holz": 78
+      "holz": 79
     },
     "moor": {
       "matsch": 80
     },
     "huegel": {
-      "gras": 72
+      "gras": 74
     },
     "acker": {
       "zustand": "brach"
@@ -90,14 +90,14 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 66,
-        "laune": 30,
-        "fitness": 80,
-        "pflege": 35,
+        "satt": 46,
+        "laune": 15,
+        "fitness": 72,
+        "pflege": 25,
         "vertrauen": 28
       },
-      "stimmung": "Hat die Koppel bis auf den letzten Halm abgesucht und meckert. Dann knatterte der Mäher heran, und Bella hat ihm den Rücken zugedreht. Ihr Bein erinnert sich an Pauls Zwicker von heute früh.",
-      "ort": "w-koppel",
+      "stimmung": "Steht im Stall, hat Hunger und schlechte Laune, und gestriegelt hat sie schon lange keiner mehr. Sie scharrt demonstrativ im Stroh und wartet auf Johanna.",
+      "ort": "hof",
       "plan": [],
       "tricks": [],
       "trick_uebungen": {},
@@ -116,11 +116,11 @@
         "benzin": 60,
         "oel": 80,
         "messer": 75,
-        "zustand": 97,
-        "laune": 42
+        "zustand": 94,
+        "laune": 37
       },
-      "stimmung": "Ist angesprungen und hat Große Wiese und Koppel abgefahren, Brust raus. Paul hat sich vor ihm in die Spur gelegt und das Bein gehoben, das nimmt er persönlich.",
-      "ort": "w-koppel",
+      "stimmung": "Steht im Schuppen und brummelt. Seit gestern Abend hat ihn keiner gelobt, das nimmt er persönlich.",
+      "ort": "hof",
       "plan": [],
       "anspring_serie": 0,
       "halter": "S-03"
@@ -138,7 +138,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat sich vor den Mäher gelegt und das Bein gehoben, ist ordentlich ausgeschimpft worden und trottet zum Hundekorb.",
+      "stimmung": "Ist in den Teich gesprungen, hat Gerda aufgescheucht und trottet nass zum Hundekorb.",
       "ort": "hof",
       "plan": []
     },
@@ -151,11 +151,11 @@
       "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
       "werte": {
         "benzin": 60,
-        "politur": 76,
+        "politur": 71,
         "bewunderung": 100,
-        "zustand": 76
+        "zustand": 73
       },
-      "stimmung": "Wurde in der Garage gelobt und strahlt, der Fuchsschwanz wippt. Von Politur fehlt nur ein Hauch.",
+      "stimmung": "Wurde in der Garage gelobt, der Fuchsschwanz wippt wie verrückt. Politur ist noch ordentlich, Frost und Rost sind ihm egal.",
       "ort": "dorf",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
@@ -180,11 +180,11 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 65,
-        "wasser": 90,
+        "satt": 80,
+        "wasser": 70,
         "ruhm": 100
       },
-      "stimmung": "Schwimmt stolz ihre Runden im Teich, der Schal wurde bewundert. Alles läuft nach ihrem Plan.",
+      "stimmung": "Satt, der Schal wurde bewundert, sie thront am Teich und kneift vorsichtshalber in die Luft.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
@@ -209,10 +209,10 @@
       "beschreibung": "Winziger Koboldmaki mit riesigen Kulleraugen, nachtaktiv und ein großartiger Springer. Ob Herr oder Dame, weiß niemand, alle sagen einfach Lipa. Liebt Bier über alles. Wo ein Bier aufgeht, ist Lipa nicht weit, und danach hört man irgendwo ein schiefes, glückliches Lied.",
       "werte": {
         "bier": 0,
-        "insekten": 10,
-        "ruhe": 40
+        "insekten": 0,
+        "ruhe": 30
       },
-      "stimmung": "Sitzt im hohlen Baum, hungrig und ohne einen Tropfen Bier. Die großen Augen suchen nach Insekten und nach dem Kronkorken-Zischen aus dem Dorf.",
+      "stimmung": "Sitzt im hohlen Baum, hungrig und völlig bierlos. Die Kulleraugen starren ins Leere.",
       "ort": "wald-gross",
       "zuhause": "hohler Baum im Großen Wald (genaue Stelle geheim)",
       "zuhause_punkt": [
@@ -241,10 +241,20 @@
     "S-01": null,
     "S-02": "2026-11-11T07:20:00+01:00",
     "S-03": "2026-11-14T07:16:00+01:00",
-    "S-04": "2026-11-14T07:16:00+01:00",
+    "S-04": "2026-11-15T07:11:00+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-15T07:11:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda wurde gefüttert (satt 80) und hat danach ihren Schal bewundert (ruhm 100). Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-15T07:11:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Alle sind über Nacht ein Stück hungriger und müder geworden. Bella steht ohne Plan im Stall und ist schlecht gelaunt (laune 15, pflege 25), der Mäher bleibt im Schuppen und brummelt, Lipa hat keinen Tropfen Bier und keine Insekten mehr. Paul ist in den Teich gesprungen und hat Gerda aufgescheucht, die ihn dafür in den Hintern gekniffen hat. Seit Mittwoch hat sich niemand um Bella gekümmert."
+    },
     {
       "zeit": "2026-11-14T19:11:00+01:00",
       "wer": "Hof",
