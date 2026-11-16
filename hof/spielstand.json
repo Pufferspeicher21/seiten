@@ -1,10 +1,10 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-15T19:11:00+01:00",
+  "letzte_berechnung": "2026-11-16T07:12:00+01:00",
   "letzte_meldung": {
-    "S-02": "2026-11-15",
-    "S-03": "2026-11-13"
+    "S-02": "2026-11-16",
+    "S-03": "2026-11-16"
   },
   "taler": 50,
   "vorraete": {
@@ -51,32 +51,32 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 12
+      "gras": 13
     },
     "w-koppel": {
-      "gras": 2
+      "gras": 3
     },
     "bachwiese": {
       "gras": 100
     },
     "obstwiese": {
-      "gras": 84,
+      "gras": 85,
       "obst": 8
     },
     "wald-gross": {
-      "holz": 84
+      "holz": 85
     },
     "quellwald": {
-      "holz": 89
+      "holz": 90
     },
     "westwald": {
-      "holz": 79
+      "holz": 80
     },
     "moor": {
       "matsch": 80
     },
     "huegel": {
-      "gras": 74
+      "gras": 75
     },
     "acker": {
       "zustand": "brach"
@@ -90,13 +90,13 @@
       "art": "Pferd",
       "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
       "werte": {
-        "satt": 36,
-        "laune": 10,
-        "fitness": 68,
-        "pflege": 20,
+        "satt": 26,
+        "laune": 5,
+        "fitness": 64,
+        "pflege": 15,
         "vertrauen": 28
       },
-      "stimmung": "Steht noch immer im Stall, hungrig, ungestriegelt und beleidigt. Sie scharrt im Stroh und wartet auf Johanna.",
+      "stimmung": "Steht im Stall, hungrig, ungestriegelt und zutiefst beleidigt. Sie wartet seit Mittwoch auf Johanna und schnaubt jeden an, der vorbeikommt.",
       "ort": "hof",
       "plan": [],
       "tricks": [],
@@ -116,10 +116,10 @@
         "benzin": 60,
         "oel": 80,
         "messer": 75,
-        "zustand": 93,
-        "laune": 34
+        "zustand": 92,
+        "laune": 31
       },
-      "stimmung": "Steht im Schuppen und brummelt. Lob wäre jetzt fällig, sonst springt er bald nicht mehr an.",
+      "stimmung": "Steht im Schuppen und brummelt. Ein Lob wäre jetzt dringend fällig, sonst springt er bald nicht mehr an.",
       "ort": "hof",
       "plan": [],
       "anspring_serie": 0,
@@ -138,7 +138,7 @@
         "laune": 90,
         "energie": 60
       },
-      "stimmung": "Hat seinen Schwanz gejagt, ist dabei umgekippt und schläft jetzt im Hundekorb.",
+      "stimmung": "Ist in den Teich gesprungen, wurde von Gerda in den Hintern gekniffen und schläft jetzt beleidigt im Hundekorb.",
       "ort": "hof",
       "plan": []
     },
@@ -151,11 +151,11 @@
       "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
       "werte": {
         "benzin": 60,
-        "politur": 69,
-        "bewunderung": 95,
-        "zustand": 72
+        "politur": 67,
+        "bewunderung": 100,
+        "zustand": 71
       },
-      "stimmung": "Wurde in der Garage gelobt, der Fuchsschwanz wippt wie verrückt. Politur ist noch ordentlich, Frost und Rost sind ihm egal.",
+      "stimmung": "Wurde in der Garage gelobt, der Fuchsschwanz wippt wie verrückt. Politur ist ordentlich, Frost und Rost sind ihm egal.",
       "ort": "dorf",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
@@ -180,11 +180,11 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 73,
-        "wasser": 60,
-        "ruhm": 95
+        "satt": 96,
+        "wasser": 90,
+        "ruhm": 100
       },
-      "stimmung": "Satt, der Schal wurde bewundert, sie thront am Teich und kneift vorsichtshalber in die Luft.",
+      "stimmung": "Hat geplanscht, gefressen und ihren Schal bewundern lassen. Sie thront satt am Teich und kneift vorsichtshalber in die Luft.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
@@ -210,7 +210,7 @@
       "werte": {
         "bier": 0,
         "insekten": 0,
-        "ruhe": 25
+        "ruhe": 20
       },
       "stimmung": "Sitzt im hohlen Baum, hungrig und bierlos, und träumt von Schaumresten.",
       "ort": "wald-gross",
@@ -241,10 +241,20 @@
     "S-01": null,
     "S-02": "2026-11-11T07:20:00+01:00",
     "S-03": "2026-11-14T07:16:00+01:00",
-    "S-04": "2026-11-15T07:11:00+01:00",
+    "S-04": "2026-11-16T07:12:00+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-16T07:12:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Niemand außer Justus hat sich gemeldet. Bella steht ohne Plan im Stall (satt 26, laune 5, pflege 15) und ist schwer beleidigt, der Mäher brummelt im Schuppen (laune 31), Lipa sitzt bierlos im hohlen Baum. Paul ist in den Teich gesprungen, Gerda hat ihn dafür in den Hintern gekniffen, danach hat er sich beleidigt im Kreis gedreht. Seit Mittwoch hat sich niemand um Bella gekümmert."
+    },
+    {
+      "zeit": "2026-11-16T07:12:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda durfte schwimmen (wasser 90), wurde gefüttert (satt 96) und hat ihren Schal bewundern lassen (ruhm 100). Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
     {
       "zeit": "2026-11-15T19:11:00+01:00",
       "wer": "Hof",
