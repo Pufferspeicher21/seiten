@@ -1,14 +1,14 @@
 {
  "version": 2,
  "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-17T07:12:00+01:00",
+ "letzte_berechnung": "2026-11-17T19:10:00+01:00",
  "letzte_meldung": {
   "S-02": "2026-11-17",
-  "S-03": "2026-11-16"
+  "S-03": "2026-11-17"
  },
  "taler": 50,
  "vorraete": {
-  "heu": 9,
+  "heu": 10,
   "hafer": 2,
   "karotte": 1,
   "apfel": 0,
@@ -51,7 +51,7 @@
  ],
  "flaechen": {
   "w-grosse-wiese": {
-   "gras": 14
+   "gras": 10
   },
   "w-koppel": {
    "gras": 4
@@ -113,28 +113,15 @@
    "art": "Aufsitzmäher (Benzin)",
    "beschreibung": "Alter Benzin-Aufsitzmäher. Brummig, stolz, hält sich für unverzichtbar. Springt nicht an, wenn er schlechte Laune hat. Name wird noch ausgesucht.",
    "werte": {
-    "benzin": 60,
-    "oel": 80,
-    "messer": 75,
+    "benzin": 20,
+    "oel": 70,
+    "messer": 50,
     "zustand": 100,
-    "laune": 43
+    "laune": 38
    },
-   "stimmung": "Glänzt und brummelt vor Vorfreude: Heute soll er Große Wiese und Koppel mähen, bei der Abendrunde geht es los.",
-   "ort": "w-grosse-wiese",
-   "plan": [
-    {
-     "datum": "2026-11-17",
-     "flaeche": "w-grosse-wiese",
-     "aktion": "maehen",
-     "von": "S-03"
-    },
-    {
-     "datum": "2026-11-17",
-     "flaeche": "w-koppel",
-     "aktion": "maehen",
-     "von": "S-03"
-    }
-   ],
+   "stimmung": "Hat Große Wiese und Koppel gemäht und brummelt stolz, die Ausbeute war mager. Paul hat sich mitten in die Spur gelegt und das Bein gehoben. Der Tank ist fast leer (benzin 20), die Messer sind stumpf (50).",
+   "ort": "w-koppel",
+   "plan": [],
    "anspring_serie": 0,
    "halter": "S-03"
   },
@@ -151,8 +138,8 @@
     "laune": 90,
     "energie": 60
    },
-   "stimmung": "Ist in den Teich gesprungen, Gerda hat ihn in den Hintern gekniffen, danach hat er sich beleidigt im Kreis gedreht.",
-   "ort": "hof",
+   "stimmung": "Hat sich vor den Mäher gelegt und ihm zum Dank ans Rad gepinkelt, dann zufrieden eingerollt.",
+   "ort": "w-grosse-wiese",
    "plan": []
   },
   {
@@ -258,6 +245,16 @@
   "S-05": null
  },
  "tagebuch": [
+  {
+   "zeit": "2026-11-17T19:10:00+01:00",
+   "wer": "Hof",
+   "text": "Abendrunde: Der Mäher hat Große Wiese und Koppel gemäht. Das Gras war kurz, es gab nur ein Büschel Heu (Vorrat 10). Tank fast leer, Messer stumpf. Bella hat in der Zeit weiter im Stall gestreikt."
+  },
+  {
+   "zeit": "2026-11-17T19:10:00+01:00",
+   "wer": "Paul",
+   "text": "Paul hat sich mitten in die Mähspur gelegt und danach das Bein am Mäher gehoben. Der Mäher: laune −5, Messer −5. Paul: sehr zufrieden mit sich."
+  },
   {
    "zeit": "2026-11-17T07:12:00+01:00",
    "wer": "Justus (S-04)",
