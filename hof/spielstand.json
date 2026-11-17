@@ -1,9 +1,9 @@
 {
  "version": 2,
  "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-16T19:10:00+01:00",
+ "letzte_berechnung": "2026-11-17T07:12:00+01:00",
  "letzte_meldung": {
-  "S-02": "2026-11-16",
+  "S-02": "2026-11-17",
   "S-03": "2026-11-16"
  },
  "taler": 50,
@@ -51,16 +51,16 @@
  ],
  "flaechen": {
   "w-grosse-wiese": {
-   "gras": 13
+   "gras": 14
   },
   "w-koppel": {
-   "gras": 3
+   "gras": 4
   },
   "bachwiese": {
    "gras": 100
   },
   "obstwiese": {
-   "gras": 85,
+   "gras": 86,
    "obst": 8
   },
   "wald-gross": {
@@ -76,7 +76,7 @@
    "matsch": 80
   },
   "huegel": {
-   "gras": 75
+   "gras": 76
   },
   "acker": {
    "zustand": "brach"
@@ -90,13 +90,13 @@
    "art": "Pferd",
    "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
    "werte": {
-    "satt": 16,
+    "satt": 6,
     "laune": 0,
-    "fitness": 60,
-    "pflege": 10,
+    "fitness": 56,
+    "pflege": 5,
     "vertrauen": 28
    },
-   "stimmung": "Steht im Stall, hungrig, ungestriegelt und mit null Laune. Sie legt sich demonstrativ ins Stroh und wartet auf Johanna.",
+   "stimmung": "Liegt im Stroh, hungrig (satt 6), ungestriegelt und ohne jede Laune. Sie starrt die Stalltür an und wartet auf Johanna.",
    "ort": "hof",
    "plan": [],
    "tricks": [],
@@ -119,8 +119,8 @@
     "zustand": 100,
     "laune": 43
    },
-   "stimmung": "Wurde gelobt, geputzt und abgeschmiert, glänzt im Schuppen und fiebert dem morgigen Einsatz auf Koppel und Großer Wiese entgegen.",
-   "ort": "hof",
+   "stimmung": "Glänzt und brummelt vor Vorfreude: Heute soll er Große Wiese und Koppel mähen, bei der Abendrunde geht es los.",
+   "ort": "w-grosse-wiese",
    "plan": [
     {
      "datum": "2026-11-17",
@@ -151,7 +151,7 @@
     "laune": 90,
     "energie": 60
    },
-   "stimmung": "Hat seinen Schwanz gejagt, ist über die eigenen Pfoten gestolpert und schnarcht jetzt im Korb.",
+   "stimmung": "Ist in den Teich gesprungen, Gerda hat ihn in den Hintern gekniffen, danach hat er sich beleidigt im Kreis gedreht.",
    "ort": "hof",
    "plan": []
   },
@@ -165,10 +165,10 @@
    "werte": {
     "benzin": 60,
     "politur": 65,
-    "bewunderung": 95,
+    "bewunderung": 100,
     "zustand": 70
    },
-   "stimmung": "Wurde in der Garage gelobt, der Fuchsschwanz wippt wie verrückt. Politur ist ordentlich, Frost und Rost sind ihm egal.",
+   "stimmung": "Wurde in der Garage gelobt, der Fuchsschwanz wippt wie verrückt. Er hält sich weiter für das schönste Auto im Dorf.",
    "ort": "dorf",
    "zuhause": "Garage Justus",
    "zuhause_punkt": [
@@ -193,11 +193,11 @@
    "halter": "S-04",
    "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
    "werte": {
-    "satt": 89,
-    "wasser": 80,
-    "ruhm": 95
+    "satt": 82,
+    "wasser": 70,
+    "ruhm": 100
    },
-   "stimmung": "Hat geplanscht, gefressen und ihren Schal bewundern lassen. Sie thront satt am Teich und kneift vorsichtshalber in die Luft.",
+   "stimmung": "Hat ihren Schal bewundern lassen und thront am Teich. Sie kneift vorsichtshalber in die Luft.",
    "ort": "teich",
    "zuhause": "Hütte am Teich",
    "zuhause_punkt": [
@@ -254,10 +254,20 @@
   "S-01": null,
   "S-02": "2026-11-11T07:20:00+01:00",
   "S-03": "2026-11-16T19:10:00+01:00",
-  "S-04": "2026-11-16T07:12:00+01:00",
+  "S-04": "2026-11-17T07:12:00+01:00",
   "S-05": null
  },
  "tagebuch": [
+  {
+   "zeit": "2026-11-17T07:12:00+01:00",
+   "wer": "Justus (S-04)",
+   "text": "Gerda hat ihren Schal bewundern lassen (ruhm 100), Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+  },
+  {
+   "zeit": "2026-11-17T07:12:00+01:00",
+   "wer": "Hof",
+   "text": "Neuer Tag, frostig und trocken. Bella liegt ohne Plan im Stall (satt 6, laune 0, pflege 5) und streikt im Stroh, seit Mittwoch hat sich niemand um sie gekümmert. Der Mäher glänzt im Schuppen und freut sich auf heute Abend, Lipa sitzt bierlos im hohlen Baum. Paul ist in den Teich gesprungen, Gerda hat ihn dafür in den Hintern gekniffen, danach hat er sich beleidigt im Kreis gedreht."
+  },
   {
    "zeit": "2026-11-16T19:10:00+01:00",
    "wer": "Julian (S-03)",
