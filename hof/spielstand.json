@@ -1,7 +1,7 @@
 {
  "version": 2,
  "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-18T07:15:00+01:00",
+ "letzte_berechnung": "2026-11-18T19:10:00+01:00",
  "letzte_meldung": {
   "S-02": "2026-11-18",
   "S-03": "2026-11-17"
@@ -51,16 +51,16 @@
  ],
  "flaechen": {
   "w-grosse-wiese": {
-   "gras": 11
+   "gras": 12
   },
   "w-koppel": {
-   "gras": 5
+   "gras": 6
   },
   "bachwiese": {
    "gras": 100
   },
   "obstwiese": {
-   "gras": 87,
+   "gras": 88,
    "obst": 8
   },
   "wald-gross": {
@@ -76,7 +76,7 @@
    "matsch": 80
   },
   "huegel": {
-   "gras": 77
+   "gras": 78
   },
   "acker": {
    "zustand": "brach"
@@ -92,11 +92,11 @@
    "werte": {
     "satt": 0,
     "laune": 0,
-    "fitness": 52,
+    "fitness": 48,
     "pflege": 0,
     "vertrauen": 28
    },
-   "stimmung": "Liegt im Stroh und streikt komplett: satt 0, laune 0, pflege 0. Sie starrt die Stalltür an und rührt sich erst, wenn Johanna kommt.",
+   "stimmung": "Liegt im Stroh und streikt weiter komplett (satt 0, laune 0, pflege 0). Die Stalltür wird angestarrt, bis Johanna kommt.",
    "ort": "hof",
    "plan": [],
    "tricks": [],
@@ -117,9 +117,9 @@
     "oel": 70,
     "messer": 50,
     "zustand": 99,
-    "laune": 35
+    "laune": 30
    },
-   "stimmung": "Steht im Schuppen und brummelt, weil heute nichts zu mähen ist (Gras erst bei 11). Tank knapp (benzin 20), Messer stumpf (50).",
+   "stimmung": "Steht im Schuppen und brummelt vor Langeweile (laune 30). Tank knapp (benzin 20), Messer stumpf (50).",
    "ort": "hof",
    "plan": [],
    "anspring_serie": 0,
@@ -134,12 +134,12 @@
    "frei": true,
    "beschreibung": "Maskottchen und Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen. Ein ganz Lieber, nur bei Pferden dreht er durch, denn er frisst nur Pferdefleisch. Wer St. Pauli mag, wird gebissen.",
    "werte": {
-    "satt": 70,
+    "satt": 65,
     "laune": 90,
-    "energie": 55
+    "energie": 50
    },
-   "stimmung": "Ist in den Teich gesprungen, Gerda hat ihn in den Hintern gekniffen. Jetzt dreht er sich beleidigt im Kreis.",
-   "ort": "teich",
+   "stimmung": "Ist abends müde vom Teich zurück zum Hof getrottet und hat sich vor Bellas Stalltür gelegt. Sie ignoriert ihn, er ist beleidigt.",
+   "ort": "hof",
    "plan": []
   },
   {
@@ -180,7 +180,7 @@
    "halter": "S-04",
    "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
    "werte": {
-    "satt": 75,
+    "satt": 70,
     "wasser": 100,
     "ruhm": 100
    },
@@ -210,7 +210,7 @@
    "werte": {
     "bier": 0,
     "insekten": 0,
-    "ruhe": 10
+    "ruhe": 5
    },
    "stimmung": "Sitzt im hohlen Baum, hungrig und bierlos, und träumt von Schaumresten.",
    "ort": "wald-gross",
@@ -245,6 +245,11 @@
   "S-05": null
  },
  "tagebuch": [
+  {
+   "zeit": "2026-11-18T19:10:00+01:00",
+   "wer": "Hof",
+   "text": "Abendrunde, frostig und trocken. Niemand hat einen Zug geschickt: Bella streikt im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 30), Lipa sitzt bierlos im hohlen Baum. Paul hat sich vor Bellas Stalltür gelegt und wird ignoriert."
+  },
   {
    "zeit": "2026-11-18T07:15:00+01:00",
    "wer": "Gerda",
