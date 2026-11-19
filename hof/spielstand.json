@@ -1,10 +1,10 @@
 {
  "version": 2,
  "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-18T19:10:00+01:00",
+ "letzte_berechnung": "2026-11-19T07:15:00+01:00",
  "letzte_meldung": {
-  "S-02": "2026-11-18",
-  "S-03": "2026-11-17"
+  "S-02": "2026-11-19",
+  "S-03": "2026-11-19"
  },
  "taler": 50,
  "vorraete": {
@@ -51,32 +51,32 @@
  ],
  "flaechen": {
   "w-grosse-wiese": {
-   "gras": 12
+   "gras": 13
   },
   "w-koppel": {
-   "gras": 6
+   "gras": 7
   },
   "bachwiese": {
    "gras": 100
   },
   "obstwiese": {
-   "gras": 88,
+   "gras": 89,
    "obst": 8
   },
   "wald-gross": {
-   "holz": 85
+   "holz": 86
   },
   "quellwald": {
-   "holz": 90
+   "holz": 91
   },
   "westwald": {
-   "holz": 80
+   "holz": 81
   },
   "moor": {
    "matsch": 80
   },
   "huegel": {
-   "gras": 78
+   "gras": 79
   },
   "acker": {
    "zustand": "brach"
@@ -92,7 +92,7 @@
    "werte": {
     "satt": 0,
     "laune": 0,
-    "fitness": 48,
+    "fitness": 44,
     "pflege": 0,
     "vertrauen": 28
    },
@@ -117,9 +117,9 @@
     "oel": 70,
     "messer": 50,
     "zustand": 99,
-    "laune": 30
+    "laune": 25
    },
-   "stimmung": "Steht im Schuppen und brummelt vor Langeweile (laune 30). Tank knapp (benzin 20), Messer stumpf (50).",
+   "stimmung": "Steht im Schuppen und brummelt vor Langeweile (laune 25). Tank knapp (benzin 20), Messer stumpf (50).",
    "ort": "hof",
    "plan": [],
    "anspring_serie": 0,
@@ -134,11 +134,11 @@
    "frei": true,
    "beschreibung": "Maskottchen und Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen. Ein ganz Lieber, nur bei Pferden dreht er durch, denn er frisst nur Pferdefleisch. Wer St. Pauli mag, wird gebissen.",
    "werte": {
-    "satt": 65,
+    "satt": 60,
     "laune": 90,
-    "energie": 50
+    "energie": 45
    },
-   "stimmung": "Ist abends müde vom Teich zurück zum Hof getrottet und hat sich vor Bellas Stalltür gelegt. Sie ignoriert ihn, er ist beleidigt.",
+   "stimmung": "Hat versucht, seinen eigenen Schwanz zu fangen, und ist dabei gegen den Wassertrog gelaufen. Liegt wieder vor Bellas Stalltür.",
    "ort": "hof",
    "plan": []
   },
@@ -151,11 +151,11 @@
    "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
    "werte": {
     "benzin": 60,
-    "politur": 63,
+    "politur": 62,
     "bewunderung": 100,
     "zustand": 69
    },
-   "stimmung": "Wurde in der Garage gelobt, der Fuchsschwanz wippt wie verrückt. Er hält sich weiter für das schönste Auto im Dorf.",
+   "stimmung": "Wurde in der Garage wieder gelobt, der Fuchsschwanz wippt wie verrückt. Er hält sich weiter für das schönste Auto im Dorf.",
    "ort": "dorf",
    "zuhause": "Garage Justus",
    "zuhause_punkt": [
@@ -180,11 +180,11 @@
    "halter": "S-04",
    "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
    "werte": {
-    "satt": 70,
-    "wasser": 100,
+    "satt": 95,
+    "wasser": 90,
     "ruhm": 100
    },
-   "stimmung": "Hat ausgiebig geschwommen und danach ihren Schal bewundern lassen. Sie thront am Teich und kneift vorsichtshalber in die Luft.",
+   "stimmung": "Satt und stolz, der Schal wurde ausgiebig bewundert (ruhm 100). Sie thront am Teich und kneift vorsichtshalber in die Luft.",
    "ort": "teich",
    "zuhause": "Hütte am Teich",
    "zuhause_punkt": [
@@ -210,9 +210,9 @@
    "werte": {
     "bier": 0,
     "insekten": 0,
-    "ruhe": 5
+    "ruhe": 0
    },
-   "stimmung": "Sitzt im hohlen Baum, hungrig und bierlos, und träumt von Schaumresten.",
+   "stimmung": "Sitzt im hohlen Baum, hungrig, bierlos und völlig unausgeschlafen.",
    "ort": "wald-gross",
    "zuhause": "hohler Baum im Großen Wald (genaue Stelle geheim)",
    "zuhause_punkt": [
@@ -241,10 +241,25 @@
   "S-01": null,
   "S-02": "2026-11-11T07:20:00+01:00",
   "S-03": "2026-11-16T19:10:00+01:00",
-  "S-04": "2026-11-18T07:15:00+01:00",
+  "S-04": "2026-11-19T07:15:00+01:00",
   "S-05": null
  },
  "tagebuch": [
+  {
+   "zeit": "2026-11-19T07:15:00+01:00",
+   "wer": "Hof",
+   "text": "Neuer Tag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 25), Lipa sitzt bierlos und müde im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
+  },
+  {
+   "zeit": "2026-11-19T07:15:00+01:00",
+   "wer": "Paul",
+   "text": "Paul hat versucht, seinen Schwanz zu fangen, und ist dabei gegen den Wassertrog gelaufen. Peinlich, aber niemand hat es gesehen außer Bella, und die ignoriert ihn."
+  },
+  {
+   "zeit": "2026-11-19T07:15:00+01:00",
+   "wer": "Justus (S-04)",
+   "text": "Pflegezüge für Donnerstag: Gerda wird gefüttert (satt 95) und ihr Schal bewundert (ruhm 100), Manni wird in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+  },
   {
    "zeit": "2026-11-18T19:10:00+01:00",
    "wer": "Hof",
@@ -529,21 +544,6 @@
    "zeit": "2026-11-07T23:45:00+01:00",
    "wer": "Hof",
    "text": "Paul ist da! Der Golden Retriever ist ab sofort Hofhund und Maskottchen. Er hat zur Begrüßung den Mäher angebellt, ist über seine eigenen Pfoten gestolpert und hat dann sehr lange und sehr hungrig zu Bella geschaut. Bella hat beschlossen, ab jetzt nur noch mit Hufschutz rauszugehen."
-  },
-  {
-   "zeit": "2026-11-07T23:30:00+01:00",
-   "wer": "Hof",
-   "text": "Neue Hofordnung: Bella gehört jetzt Johanna, der Mäher gehört Julian. Max ist der Besitzer vom Hof. Justus ist neu dabei und darf sich einen eigenen Bewohner ausdenken. Bella hat die Nachricht mit einem zufriedenen Schnauben aufgenommen, der Mäher mit einer Fehlzündung."
-  },
-  {
-   "zeit": "2026-11-07T23:00:00+01:00",
-   "wer": "Hof",
-   "text": "Ein alter Aufsitzmäher ist in den Schuppen gerollt. Er hat einmal laut geknattert, eine blaue Wolke ausgestoßen und Bella dabei direkt angeschaut. Die beiden werden keine Freunde."
-  },
-  {
-   "zeit": "2026-11-07T21:00:00+01:00",
-   "wer": "Hof",
-   "text": "Bella ist angekommen. Sie hat den Hänger verlassen, einmal geschnaubt und sich sofort das beste Stück Wiese gesucht. Willkommen im Zickenstall!"
   }
  ],
  "antraege": [
