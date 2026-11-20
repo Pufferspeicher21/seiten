@@ -1,10 +1,10 @@
 {
  "version": 2,
  "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-19T07:15:00+01:00",
+ "letzte_berechnung": "2026-11-20T07:12:00+01:00",
  "letzte_meldung": {
-  "S-02": "2026-11-19",
-  "S-03": "2026-11-19"
+  "S-02": "2026-11-20",
+  "S-03": "2026-11-20"
  },
  "taler": 50,
  "vorraete": {
@@ -51,16 +51,16 @@
  ],
  "flaechen": {
   "w-grosse-wiese": {
-   "gras": 13
+   "gras": 15
   },
   "w-koppel": {
-   "gras": 7
+   "gras": 9
   },
   "bachwiese": {
    "gras": 100
   },
   "obstwiese": {
-   "gras": 89,
+   "gras": 91,
    "obst": 8
   },
   "wald-gross": {
@@ -76,7 +76,7 @@
    "matsch": 80
   },
   "huegel": {
-   "gras": 79
+   "gras": 81
   },
   "acker": {
    "zustand": "brach"
@@ -92,11 +92,11 @@
    "werte": {
     "satt": 0,
     "laune": 0,
-    "fitness": 44,
+    "fitness": 36,
     "pflege": 0,
     "vertrauen": 28
    },
-   "stimmung": "Liegt im Stroh und streikt weiter komplett (satt 0, laune 0, pflege 0). Die Stalltür wird angestarrt, bis Johanna kommt.",
+   "stimmung": "Liegt seit Tagen im Stroh und streikt weiter komplett (satt 0, laune 0, pflege 0). Die Stalltür wird angestarrt, bis Johanna kommt.",
    "ort": "hof",
    "plan": [],
    "tricks": [],
@@ -116,10 +116,10 @@
     "benzin": 20,
     "oel": 70,
     "messer": 50,
-    "zustand": 99,
-    "laune": 25
+    "zustand": 96,
+    "laune": 20
    },
-   "stimmung": "Steht im Schuppen und brummelt vor Langeweile (laune 25). Tank knapp (benzin 20), Messer stumpf (50).",
+   "stimmung": "Steht im Schuppen und brummelt vor Langeweile (laune 20). Tank knapp (benzin 20), Messer stumpf (50).",
    "ort": "hof",
    "plan": [],
    "anspring_serie": 0,
@@ -134,11 +134,11 @@
    "frei": true,
    "beschreibung": "Maskottchen und Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen. Ein ganz Lieber, nur bei Pferden dreht er durch, denn er frisst nur Pferdefleisch. Wer St. Pauli mag, wird gebissen.",
    "werte": {
-    "satt": 60,
+    "satt": 55,
     "laune": 90,
-    "energie": 45
+    "energie": 50
    },
-   "stimmung": "Hat versucht, seinen eigenen Schwanz zu fangen, und ist dabei gegen den Wassertrog gelaufen. Liegt wieder vor Bellas Stalltür.",
+   "stimmung": "Hat den Raureif auf der Hofwiese angebellt und ist beleidigt, dass er nicht zurückbellt. Liegt wieder vor Bellas Stalltür.",
    "ort": "hof",
    "plan": []
   },
@@ -151,11 +151,11 @@
    "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
    "werte": {
     "benzin": 60,
-    "politur": 62,
+    "politur": 57,
     "bewunderung": 100,
-    "zustand": 69
+    "zustand": 66
    },
-   "stimmung": "Wurde in der Garage wieder gelobt, der Fuchsschwanz wippt wie verrückt. Er hält sich weiter für das schönste Auto im Dorf.",
+   "stimmung": "Wurde in der Garage wieder gelobt, der Fuchsschwanz wippt wie verrückt. Politur lässt langsam nach (57), er hält sich trotzdem für das schönste Auto im Dorf.",
    "ort": "dorf",
    "zuhause": "Garage Justus",
    "zuhause_punkt": [
@@ -180,11 +180,11 @@
    "halter": "S-04",
    "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
    "werte": {
-    "satt": 95,
-    "wasser": 90,
+    "satt": 80,
+    "wasser": 70,
     "ruhm": 100
    },
-   "stimmung": "Satt und stolz, der Schal wurde ausgiebig bewundert (ruhm 100). Sie thront am Teich und kneift vorsichtshalber in die Luft.",
+   "stimmung": "Ihr Schal wurde wieder ausgiebig bewundert (ruhm 100). Sie thront am Teich im Raureif und kneift vorsichtshalber in die Luft.",
    "ort": "teich",
    "zuhause": "Hütte am Teich",
    "zuhause_punkt": [
@@ -241,10 +241,25 @@
   "S-01": null,
   "S-02": "2026-11-11T07:20:00+01:00",
   "S-03": "2026-11-16T19:10:00+01:00",
-  "S-04": "2026-11-19T07:15:00+01:00",
+  "S-04": "2026-11-20T07:12:00+01:00",
   "S-05": null
  },
  "tagebuch": [
+  {
+   "zeit": "2026-11-20T07:12:00+01:00",
+   "wer": "Hof",
+   "text": "Neuer Tag, frostig und trocken, Raureif auf den Wiesen. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
+  },
+  {
+   "zeit": "2026-11-20T07:12:00+01:00",
+   "wer": "Paul",
+   "text": "Paul hat den Raureif auf dem Hof angebellt und war empört, dass der nicht zurückbellt. Keine Wirkung, nur peinlich."
+  },
+  {
+   "zeit": "2026-11-20T07:12:00+01:00",
+   "wer": "Justus (S-04)",
+   "text": "Pflegezüge für Freitag: Gerdas Schal wird bewundert (ruhm 100), Manni wird in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+  },
   {
    "zeit": "2026-11-19T07:15:00+01:00",
    "wer": "Hof",
@@ -529,21 +544,6 @@
    "zeit": "2026-11-08T01:30:00+01:00",
    "wer": "Hof",
    "text": "Mit lautem Hupkonzert ist Manni ins Dorf gerollt, ein rostiger Opel Manta mit Fuchsschwanz, und hat sich in der Garage an Justus’ Haus breitgemacht. Der Mäher hat ihm sofort eine Fehlzündung entgegengeknallt, Bella hat sich im Stall in die hinterste Ecke verzogen, und Paul ist begeistert zur Garage getrabt, um das Bein an Mannis Reifen zu heben. Manni ist zutiefst beleidigt."
-  },
-  {
-   "zeit": "2026-11-07T22:26:00+01:00",
-   "wer": "Johanna (S-02)",
-   "text": "Johanna hat Bella mit Hafer, Heu und gleich zwei Äpfeln verwöhnt, sie gestriegelt, den Stall ausgemistet und ist mit ihr im Mondschein eine Runde über den Hof geritten. Dazu gab es eine eigene Bürste. Bella hat danach so zufrieden geschnaubt, dass Paul im Hundekorb aufgewacht ist. Erfolg: Erster Ausritt."
-  },
-  {
-   "zeit": "2026-11-08T01:00:00+01:00",
-   "wer": "Hof",
-   "text": "Über Nacht ist der Hof gewachsen! Rundherum liegen jetzt Wald, Moor, Hügel und eine Bachwiese im Nebel, ein Fluss fließt durch den Teich, und unten im Dorf stehen die Häuser von Johanna, Julian und Justus. Paul hat sofort einen neuen Sonnenplatz gesucht und ist auf dem Weg dorthin eingeschlafen."
-  },
-  {
-   "zeit": "2026-11-07T23:45:00+01:00",
-   "wer": "Hof",
-   "text": "Paul ist da! Der Golden Retriever ist ab sofort Hofhund und Maskottchen. Er hat zur Begrüßung den Mäher angebellt, ist über seine eigenen Pfoten gestolpert und hat dann sehr lange und sehr hungrig zu Bella geschaut. Bella hat beschlossen, ab jetzt nur noch mit Hufschutz rauszugehen."
   }
  ],
  "antraege": [
@@ -637,7 +637,7 @@
  ],
  "welt": {
   "fluss": "normal",
-  "wetter": "frostig, trocken",
+  "wetter": "frostig, trocken, Raureif am Morgen",
   "woche": 1
  },
  "hofbauer": {
