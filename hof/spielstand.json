@@ -1,7 +1,7 @@
 {
  "version": 2,
  "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-21T07:15:00+01:00",
+ "letzte_berechnung": "2026-11-21T19:10:00+01:00",
  "letzte_meldung": {
   "S-02": "2026-11-21",
   "S-03": "2026-11-21"
@@ -245,6 +245,16 @@
   "S-05": null
  },
  "tagebuch": [
+  {
+   "zeit": "2026-11-21T19:10:00+01:00",
+   "wer": "Hof",
+   "text": "Abendrunde, frostig und trocken. Es ist kein neuer Zug eingegangen: Bella streikt im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 15), Manni glänzt in der Garage, Gerda thront am Teich, Lipa sitzt bierlos im hohlen Baum."
+  },
+  {
+   "zeit": "2026-11-21T19:10:00+01:00",
+   "wer": "Paul",
+   "text": "Paul hat sich vor Bellas Stalltür gelegt und hoffnungsvoll gewartet, dass etwas Pferdiges herauskommt. Bella hat ihn keines Blickes gewürdigt. Keine Wirkung, nur peinlich."
+  },
   {
    "zeit": "2026-11-21T07:15:00+01:00",
    "wer": "Hof",
