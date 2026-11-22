@@ -1,7 +1,7 @@
 {
  "version": 2,
  "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-22T07:20:00+01:00",
+ "letzte_berechnung": "2026-11-22T19:10:00+01:00",
  "letzte_meldung": {
   "S-02": "2026-11-22",
   "S-03": "2026-11-22"
@@ -51,16 +51,16 @@
  ],
  "flaechen": {
   "w-grosse-wiese": {
-   "gras": 20
+   "gras": 21
   },
   "w-koppel": {
-   "gras": 14
+   "gras": 15
   },
   "bachwiese": {
    "gras": 100
   },
   "obstwiese": {
-   "gras": 96,
+   "gras": 97,
    "obst": 8
   },
   "wald-gross": {
@@ -76,7 +76,7 @@
    "matsch": 80
   },
   "huegel": {
-   "gras": 86
+   "gras": 87
   },
   "acker": {
    "zustand": "brach"
@@ -117,7 +117,7 @@
     "oel": 70,
     "messer": 50,
     "zustand": 90,
-    "laune": 10
+    "laune": 8
    },
    "stimmung": "Steht im Schuppen und brummelt vor Langeweile (laune 10). Tank knapp (benzin 20), Messer stumpf (50).",
    "ort": "hof",
@@ -136,9 +136,9 @@
    "werte": {
     "satt": 55,
     "laune": 85,
-    "energie": 50
+    "energie": 45
    },
-   "stimmung": "Hat am Teich einen Kniff von Gerda kassiert und trottet beleidigt zurück Richtung Hof.",
+   "stimmung": "Hat Bella durch die Stalltür angebellt und trottet zufrieden zum Teich.",
    "ort": "teich",
    "plan": []
   },
@@ -152,7 +152,7 @@
    "werte": {
     "benzin": 60,
     "politur": 95,
-    "bewunderung": 100,
+    "bewunderung": 95,
     "zustand": 60
    },
    "stimmung": "In der Garage gelobt: Bewunderung 100, Politur 95. Der Fuchsschwanz wippt.",
@@ -180,9 +180,9 @@
    "halter": "S-04",
    "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
    "werte": {
-    "satt": 80,
-    "wasser": 70,
-    "ruhm": 100
+    "satt": 73,
+    "wasser": 60,
+    "ruhm": 95
    },
    "stimmung": "Satt und stolz (satt 80, ruhm 100). Sie thront am Teich im Raureif und hat Paul gekniffen.",
    "ort": "teich",
@@ -245,6 +245,16 @@
   "S-05": null
  },
  "tagebuch": [
+  {
+   "zeit": "2026-11-22T19:10:00+01:00",
+   "wer": "Hof",
+   "text": "Abendrechnung, Sonntag, klirrender Frost. Keine Pläne für heute: Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 8, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
+  },
+  {
+   "zeit": "2026-11-22T19:10:00+01:00",
+   "wer": "Paul",
+   "text": "Paul hat am Stall gelauscht, Pferdegeruch gewittert und die Tür angeknurrt. Mehr als Bellen war nicht drin, Bella hat im Stroh nur ein Ohr bewegt."
+  },
   {
    "zeit": "2026-11-22T07:20:00+01:00",
    "wer": "Hof",
@@ -534,16 +544,6 @@
    "zeit": "2026-11-09T07:20:00+01:00",
    "wer": "Hof",
    "text": "Neuer Tag, Bella ist auf der Koppel (Gras wächst langsam, es ist November). Paul hat am Mäher das Bein gehoben (Mäher laune −5, Messer −5) und danach am Teich Gerda aufgescheucht. Sie hat ihm im Vorbeigehen in den Hintern gekniffen, er war sehr beleidigt."
-  },
-  {
-   "zeit": "2026-11-08T18:11:15+01:00",
-   "wer": "Johanna (S-02)",
-   "text": "Johanna ist mit Bella ausgeritten (ein bisschen Trab am Feldweg), hat sie mit Heu gefüttert und auf die Koppel gestellt. Den Stall-Plan hat sie sich anders überlegt: Bella darf jetzt bis Samstag jeden Tag auf die Koppel. Bella tut so, als wäre das immer ihre Idee gewesen."
-  },
-  {
-   "zeit": "2026-11-08T18:11:15+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Gerda ist zum Erkundungsflattern von ihrem Teich in die Bachwiese gehüpft, ein Flug mit viel Flügelschlagen und wenig Höhe. Dort steht saftiges Gras, der Boden ist weich und nass (Mannis Albtraum), ein Geheimnis gibt es nicht. Das Gebiet bleibt im Nebel. Danach ein Bad und der Schal bewundert. Manni hat sich nach dem Hupkonzert polieren und loben lassen und ist dann den Abend langsam durchs Dorf gerollt, Fenster runter, Kassette laut. Die Dorfkneipe hat gewunken."
   }
  ],
  "antraege": [
