@@ -1,7 +1,7 @@
 {
  "version": 2,
  "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-23T07:20:00+01:00",
+ "letzte_berechnung": "2026-11-23T19:10:00+01:00",
  "letzte_meldung": {
   "S-02": "2026-11-23",
   "S-03": "2026-11-23"
@@ -51,16 +51,16 @@
  ],
  "flaechen": {
   "w-grosse-wiese": {
-   "gras": 22
+   "gras": 23
   },
   "w-koppel": {
-   "gras": 16
+   "gras": 17
   },
   "bachwiese": {
    "gras": 100
   },
   "obstwiese": {
-   "gras": 98,
+   "gras": 99,
    "obst": 8
   },
   "wald-gross": {
@@ -76,7 +76,7 @@
    "matsch": 80
   },
   "huegel": {
-   "gras": 88
+   "gras": 89
   },
   "acker": {
    "zustand": "brach"
@@ -117,7 +117,7 @@
     "oel": 70,
     "messer": 50,
     "zustand": 89,
-    "laune": 6
+    "laune": 4
    },
    "stimmung": "Steht im Schuppen und brummelt vor Langeweile (laune 6). Tank knapp (benzin 20), Messer stumpf (50).",
    "ort": "hof",
@@ -136,9 +136,9 @@
    "werte": {
     "satt": 50,
     "laune": 80,
-    "energie": 50
+    "energie": 45
    },
-   "stimmung": "Wollte am Teich Entenbrot wittern und hat von Gerda wieder einen Kniff in den Hintern bekommen. Beleidigt, aber unverbesserlich.",
+   "stimmung": "Hat sich vor Bellas Stalltür gelegt und sehnsüchtig geschnüffelt. Zufrieden, aber unverbesserlich.",
    "ort": "teich",
    "plan": []
   },
@@ -152,7 +152,7 @@
    "werte": {
     "benzin": 60,
     "politur": 93,
-    "bewunderung": 100,
+    "bewunderung": 95,
     "zustand": 89
    },
    "stimmung": "In der Garage geschraubt, geputzt und gelobt: Zustand 89, Bewunderung 100. Der Fuchsschwanz wippt.",
@@ -180,9 +180,9 @@
    "halter": "S-04",
    "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
    "werte": {
-    "satt": 96,
-    "wasser": 90,
-    "ruhm": 100
+    "satt": 89,
+    "wasser": 80,
+    "ruhm": 95
    },
    "stimmung": "Satt, nass und stolz (satt 96, wasser 90, ruhm 100). Sie thront am Teich im Raureif und hat Paul gekniffen.",
    "ort": "teich",
@@ -245,6 +245,16 @@
   "S-05": null
  },
  "tagebuch": [
+  {
+   "zeit": "2026-11-23T19:10:00+01:00",
+   "wer": "Hof",
+   "text": "Abendrechnung, Montag, klirrender Frost. Keine Pläne für heute: Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 4, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
+  },
+  {
+   "zeit": "2026-11-23T19:10:00+01:00",
+   "wer": "Paul",
+   "text": "Paul hat sich vor Bellas Stalltür gelegt und gehofft, dass etwas Pferdiges herauskommt. Bella hat ihn keines Blickes gewürdigt. Keine Wirkung, nur peinlich."
+  },
   {
    "zeit": "2026-11-23T07:20:00+01:00",
    "wer": "Hof",
@@ -534,16 +544,6 @@
    "zeit": "2026-11-10T07:20:00+01:00",
    "wer": "Johanna (S-02)",
    "text": "Johanna füttert Bella am Morgen mit Heu, geht mit ihr ausreiten und gibt Leckerlis (Karotten, Äpfel sind aus). Bella steht heute auf der Großen Wiese, weit weg von Paul. Einen Zaun kann nur der Hofbauer ziehen."
-  },
-  {
-   "zeit": "2026-11-09T21:30:00+01:00",
-   "wer": "Hof",
-   "text": "Lipa ist eingezogen! Ein winziger Koboldmaki mit Augen so groß wie Bierdeckel wohnt jetzt in einem hohlen Baum irgendwo im Großen Wald. Wo genau, weiß keiner. Dafür ist der Große Wald jetzt für alle freigelegt. In der Dorfkneipe hat am ersten Abend schon ein halbes Bier gefehlt, und aus dem Gebüsch kam ein schiefes Lied. Paul hat geschlafen und nichts gemerkt."
-  },
-  {
-   "zeit": "2026-11-09T19:12:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde: Paul hat auf der Koppel Bella ins Bein gezwickt (Bella laune −5, pflege −5). Sie hat getreten, er hat beleidigt geschaut und sich in den Hundekorb verzogen."
   }
  ],
  "antraege": [
