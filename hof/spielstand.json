@@ -1,7 +1,7 @@
 {
  "version": 2,
  "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-24T07:20:00+01:00",
+ "letzte_berechnung": "2026-11-24T19:10:00+01:00",
  "letzte_meldung": {
   "S-02": "2026-11-24",
   "S-03": "2026-11-24"
@@ -51,10 +51,10 @@
  ],
  "flaechen": {
   "w-grosse-wiese": {
-   "gras": 24
+   "gras": 25
   },
   "w-koppel": {
-   "gras": 18
+   "gras": 19
   },
   "bachwiese": {
    "gras": 100
@@ -76,7 +76,7 @@
    "matsch": 80
   },
   "huegel": {
-   "gras": 90
+   "gras": 91
   },
   "acker": {
    "zustand": "brach"
@@ -117,9 +117,9 @@
     "oel": 70,
     "messer": 50,
     "zustand": 89,
-    "laune": 2
+    "laune": 0
    },
-   "stimmung": "Brummelt im Schuppen vor Langeweile (laune 2). Tank knapp (benzin 20), Messer stumpf (50).",
+   "stimmung": "Brummelt im Schuppen vor sich hin, Laune im Keller (0), Tank knapp (benzin 20), Messer stumpf (50). Er springt so nicht an.",
    "ort": "hof",
    "plan": [],
    "anspring_serie": 0,
@@ -136,9 +136,9 @@
    "werte": {
     "satt": 50,
     "laune": 75,
-    "energie": 45
+    "energie": 40
    },
-   "stimmung": "Trottet vom Teich ab, Gerda hat ihn wieder gekniffen. Beleidigt, aber unverbesserlich.",
+   "stimmung": "Hat sich vor Bellas Stalltür gelegt und sehnsüchtig geschnüffelt. Müde, aber unverbesserlich.",
    "ort": "teich",
    "plan": []
   },
@@ -152,10 +152,10 @@
    "werte": {
     "benzin": 60,
     "politur": 93,
-    "bewunderung": 100,
+    "bewunderung": 95,
     "zustand": 89
    },
-   "stimmung": "In der Garage gelobt: Bewunderung 100, Zustand 89, Politur 93. Der Fuchsschwanz wippt.",
+   "stimmung": "Steht in der Garage, Bewunderung 95, Politur 93. Der Fuchsschwanz wippt zufrieden.",
    "ort": "dorf",
    "zuhause": "Garage Justus",
    "zuhause_punkt": [
@@ -180,11 +180,11 @@
    "halter": "S-04",
    "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
    "werte": {
-    "satt": 82,
-    "wasser": 70,
-    "ruhm": 100
+    "satt": 75,
+    "wasser": 60,
+    "ruhm": 95
    },
-   "stimmung": "Satt 82, wasser 70, ruhm 100. Sie thront am Teich im Raureif, der Schal glänzt, und sie sucht schon wieder Paul.",
+   "stimmung": "Satt 75, wasser 60, ruhm 95. Feierabend in der Hütte am Teich, der Schal glänzt noch.",
    "ort": "teich",
    "zuhause": "Hütte am Teich",
    "zuhause_punkt": [
@@ -245,6 +245,16 @@
   "S-05": null
  },
  "tagebuch": [
+  {
+   "zeit": "2026-11-24T19:10:00+01:00",
+   "wer": "Hof",
+   "text": "Abendrechnung, Dienstag, frostige Dämmerung. Keine Pläne für heute: Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 0, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
+  },
+  {
+   "zeit": "2026-11-24T19:10:00+01:00",
+   "wer": "Paul",
+   "text": "Paul hat sich vor Bellas Stalltür gelegt und gehofft, dass etwas Pferdiges herauskommt. Bella hat ihn keines Blickes gewürdigt. Keine Wirkung, nur peinlich."
+  },
   {
    "zeit": "2026-11-24T07:20:00+01:00",
    "wer": "Hof",
@@ -534,16 +544,6 @@
    "zeit": "2026-11-11T07:20:00+01:00",
    "wer": "Hof",
    "text": "Neuer Tag. Paul ist zum Teich getrabt, hat Gerda aufgescheucht und dafür sofort einen Zwicker in den Hintern bekommen. Er hat es für ein Spiel gehalten."
-  },
-  {
-   "zeit": "2026-11-10T19:15:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde: Paul hat auf dem Hofplatz seinen Schwanz gejagt und ist gegen den Hundekorb gelaufen. Zu Bella kam er nicht durch, der Tierarzt stand im Weg und hat ihn mit einem Blick zurück ins Körbchen geschickt."
-  },
-  {
-   "zeit": "2026-11-10T19:15:00+01:00",
-   "wer": "Johanna (S-02)",
-   "text": "Am Nachmittag kam spontan der Hufschmied und hat Bellas Hufe schön gemacht, danach wurde sie geputzt (pflege +30, vertrauen +3). Der Tierarzt hat sich die Stellen am Bein angeschaut: nur ein Kratzer, nichts Schlimmes. Danach ging es wieder auf die Große Wiese (satt +25, laune +5, Gras −15). Bella hat alles mit sehr vornehmer Miene über sich ergehen lassen."
   }
  ],
  "antraege": [
