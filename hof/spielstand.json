@@ -1,649 +1,649 @@
 {
- "version": 2,
- "hofname": "Zickenstall",
- "letzte_berechnung": "2026-11-25T07:20:00+01:00",
- "letzte_meldung": {
-  "S-02": "2026-11-25",
-  "S-03": "2026-11-25"
- },
- "taler": 50,
- "vorraete": {
-  "heu": 10,
-  "hafer": 2,
-  "karotte": 1,
-  "apfel": 0,
-  "benzinkanister": 0,
-  "oel": 0,
-  "brennholz": 0
- },
- "ausruestung": [
-  "Bürste (Bella)"
- ],
- "erfolge": [
-  "Erster Ausritt"
- ],
- "spieler": [
-  {
-   "id": "S-01",
-   "name": "Max",
-   "rolle": "besitzer"
-  },
-  {
-   "id": "S-02",
-   "name": "Johanna",
-   "rolle": "mitspieler"
-  },
-  {
-   "id": "S-03",
-   "name": "Julian",
-   "rolle": "mitspieler"
-  },
-  {
-   "id": "S-04",
-   "name": "Justus",
-   "rolle": "mitspieler"
-  },
-  {
-   "id": "S-05",
-   "name": "Sharon",
-   "rolle": "mitspieler"
-  }
- ],
- "flaechen": {
-  "w-grosse-wiese": {
-   "gras": 26
-  },
-  "w-koppel": {
-   "gras": 20
-  },
-  "bachwiese": {
-   "gras": 100
-  },
-  "obstwiese": {
-   "gras": 100,
-   "obst": 8
-  },
-  "wald-gross": {
-   "holz": 87
-  },
-  "quellwald": {
-   "holz": 92
-  },
-  "westwald": {
-   "holz": 82
-  },
-  "moor": {
-   "matsch": 80
-  },
-  "huegel": {
-   "gras": 91
-  },
-  "acker": {
-   "zustand": "brach"
-  }
- },
- "bewohner": [
-  {
-   "id": "bella",
-   "name": "Bella",
-   "typ": "tier",
-   "art": "Pferd",
-   "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
-   "werte": {
-    "satt": 0,
-    "laune": 0,
-    "fitness": 16,
-    "pflege": 0,
-    "vertrauen": 28
-   },
-   "stimmung": "Liegt weiter im Stroh und streikt komplett (satt 0, laune 0, pflege 0). Wartet darauf, dass Johanna kommt.",
-   "ort": "hof",
-   "plan": [],
-   "tricks": [],
-   "trick_uebungen": {},
-   "ausgebuext": false,
-   "letztes_turnier": null,
-   "halter": "S-02"
-  },
-  {
-   "id": "maeher",
-   "name": null,
-   "anzeigename": "Der Mäher",
-   "typ": "geraet",
-   "art": "Aufsitzmäher (Benzin)",
-   "beschreibung": "Alter Benzin-Aufsitzmäher. Brummig, stolz, hält sich für unverzichtbar. Springt nicht an, wenn er schlechte Laune hat. Name wird noch ausgesucht.",
-   "werte": {
-    "benzin": 20,
-    "oel": 70,
-    "messer": 50,
-    "zustand": 88,
-    "laune": 0
-   },
-   "stimmung": "Brummelt im Schuppen, Laune im Keller (0), Tank knapp (benzin 20), Messer stumpf (50). Er springt so nicht an.",
-   "ort": "hof",
-   "plan": [],
-   "anspring_serie": 0,
-   "halter": "S-03"
-  },
-  {
-   "id": "paul",
-   "name": "Paul",
-   "typ": "tier",
-   "art": "Golden Retriever (Hofhund)",
-   "halter": null,
-   "frei": true,
-   "beschreibung": "Maskottchen und Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen. Ein ganz Lieber, nur bei Pferden dreht er durch, denn er frisst nur Pferdefleisch. Wer St. Pauli mag, wird gebissen.",
-   "werte": {
-    "satt": 50,
-    "laune": 75,
-    "energie": 40
-   },
-   "stimmung": "Hat sich vor Bellas Stalltür gelegt und sehnsüchtig geschnüffelt. Müde, aber unverbesserlich.",
-   "ort": "teich",
-   "plan": []
-  },
-  {
-   "id": "manni",
-   "name": "Manni",
-   "typ": "geraet",
-   "art": "Opel Manta (tiefergelegt)",
-   "halter": "S-04",
-   "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
-   "werte": {
-    "benzin": 60,
-    "politur": 91,
-    "bewunderung": 100,
-    "zustand": 88
-   },
-   "stimmung": "Steht in der Garage, frisch gelobt: Bewunderung 100, Politur 91. Der Fuchsschwanz wippt selbstzufrieden.",
-   "ort": "dorf",
-   "zuhause": "Garage Justus",
-   "zuhause_punkt": [
-    958,
-    966
-   ],
-   "plan": [],
-   "aktionen": {
-    "wiese": "donuts",
-    "weide": "donuts",
-    "obstwiese": "donuts",
-    "hof": "hupen",
-    "dorf": "angeben"
-   },
-   "feierabendbier": false
-  },
-  {
-   "id": "gerda",
-   "name": "Gerda",
-   "typ": "tier",
-   "art": "Hausgans (St.-Pauli-Schal)",
-   "halter": "S-04",
-   "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
-   "werte": {
-    "satt": 68,
-    "wasser": 90,
-    "ruhm": 100
-   },
-   "stimmung": "Satt 68, wasser 90, ruhm 100. Frisch geschwommen, der Schal glänzt, Gerda ist unerträglich zufrieden.",
-   "ort": "teich",
-   "zuhause": "Hütte am Teich",
-   "zuhause_punkt": [
-    1095,
-    552
-   ],
-   "plan": [],
-   "aktionen": {
-    "teich": "schwimmen",
-    "weide": "weiden",
-    "wiese": "weiden",
-    "obstwiese": "weiden",
-    "hof": "huette"
-   }
-  },
-  {
-   "id": "lipa",
-   "name": "Lipa",
-   "typ": "tier",
-   "art": "Philippinischer Koboldmaki (Tarsier)",
-   "halter": "S-05",
-   "beschreibung": "Winziger Koboldmaki mit riesigen Kulleraugen, nachtaktiv und ein großartiger Springer. Ob Herr oder Dame, weiß niemand, alle sagen einfach Lipa. Liebt Bier über alles. Wo ein Bier aufgeht, ist Lipa nicht weit, und danach hört man irgendwo ein schiefes, glückliches Lied.",
-   "werte": {
-    "bier": 0,
-    "insekten": 0,
-    "ruhe": 0
-   },
-   "stimmung": "Sitzt im hohlen Baum, hungrig, bierlos und völlig unausgeschlafen.",
-   "ort": "wald-gross",
-   "zuhause": "hohler Baum im Großen Wald (genaue Stelle geheim)",
-   "zuhause_punkt": [
-    790,
-    150
-   ],
-   "heim": {
-    "sitzt": "sitzt in seinem hohlen Baum",
-    "schlaeft": "schläft in seinem hohlen Baum",
-    "zurueck": "verschwindet zurück in den Wald",
-    "bleibt": "Bleibt in seinem hohlen Baum"
-   },
-   "plan": [],
-   "aktionen": {
-    "dorf": "kneipe",
-    "wald": "insekten",
-    "wiese": "insekten",
-    "weide": "insekten",
-    "obstwiese": "insekten",
-    "teich": "insekten",
-    "hof": "huette"
-   }
-  }
- ],
- "letzte_pflege": {
-  "S-01": null,
-  "S-02": "2026-11-11T07:20:00+01:00",
-  "S-03": "2026-11-16T19:10:00+01:00",
-  "S-04": "2026-11-25T07:20:00+01:00",
-  "S-05": null
- },
- "tagebuch": [
-  {
-   "zeit": "2026-11-25T07:20:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, Mittwoch, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 0, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
-  },
-  {
-   "zeit": "2026-11-25T07:20:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Pflegezüge für Mittwoch: Gerda schwimmt eine Runde (wasser 90) und ihr Schal wird bewundert (ruhm 100). Manni wird in der Garage gelobt (bewunderung 100). Paul geht mangels St. Pauli leer aus."
-  },
-  {
-   "zeit": "2026-11-25T07:20:00+01:00",
-   "wer": "Paul",
-   "text": "Paul hat sich neben die Teichkante gelegt und Gerda angestarrt. Die hat ihn kurz gekniffen und ist dann weitergeschwommen. Keine Wirkung, nur peinlich."
-  },
-  {
-   "zeit": "2026-11-24T19:10:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrechnung, Dienstag, frostige Dämmerung. Keine Pläne für heute: Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 0, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
-  },
-  {
-   "zeit": "2026-11-24T19:10:00+01:00",
-   "wer": "Paul",
-   "text": "Paul hat sich vor Bellas Stalltür gelegt und gehofft, dass etwas Pferdiges herauskommt. Bella hat ihn keines Blickes gewürdigt. Keine Wirkung, nur peinlich."
-  },
-  {
-   "zeit": "2026-11-24T07:20:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, Dienstag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 2, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
-  },
-  {
-   "zeit": "2026-11-24T07:20:00+01:00",
-   "wer": "Paul",
-   "text": "Paul ist zum Teich getrottet, um Entenbrot zu wittern. Gerda hat ihm gleich in den Hintern gekniffen (Paul laune −5). Er ist beleidigt abgezogen."
-  },
-  {
-   "zeit": "2026-11-24T07:20:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Pflegezüge für Dienstag: Gerdas Schal wird bewundert (ruhm 100), Manni wird in der Garage gelobt und hält sich weiter für den Schönsten im Dorf (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-23T19:10:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrechnung, Montag, klirrender Frost. Keine Pläne für heute: Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 4, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
-  },
-  {
-   "zeit": "2026-11-23T19:10:00+01:00",
-   "wer": "Paul",
-   "text": "Paul hat sich vor Bellas Stalltür gelegt und gehofft, dass etwas Pferdiges herauskommt. Bella hat ihn keines Blickes gewürdigt. Keine Wirkung, nur peinlich."
-  },
-  {
-   "zeit": "2026-11-23T07:20:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, Montag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 6, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
-  },
-  {
-   "zeit": "2026-11-23T07:20:00+01:00",
-   "wer": "Paul",
-   "text": "Paul ist zum Teich getrottet, um Entenbrot zu wittern. Gerda hat ihm wieder in den Hintern gekniffen (Paul laune −5). Er ist beleidigt abgezogen."
-  },
-  {
-   "zeit": "2026-11-23T07:20:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Pflegezüge für Montag: Gerda planscht im Teich (wasser 90), wird kräftig gefüttert (satt 96) und ihr Schal bewundert (ruhm 100). Manni wird in der Garage geschraubt und geputzt (zustand 89) und gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-22T19:10:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrechnung, Sonntag, klirrender Frost. Keine Pläne für heute: Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 8, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
-  },
-  {
-   "zeit": "2026-11-22T19:10:00+01:00",
-   "wer": "Paul",
-   "text": "Paul hat am Stall gelauscht, Pferdegeruch gewittert und die Tür angeknurrt. Mehr als Bellen war nicht drin, Bella hat im Stroh nur ein Ohr bewegt."
-  },
-  {
-   "zeit": "2026-11-22T07:20:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, Sonntag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 10, benzin 20), Lipa sitzt bierlos im hohlen Baum. Im Frost wächst das Gras nur zäh nach."
-  },
-  {
-   "zeit": "2026-11-22T07:20:00+01:00",
-   "wer": "Paul",
-   "text": "Paul ist zum Teich getrottet, um Entenbrot zu wittern. Gerda hat ihm ohne Vorwarnung in den Hintern gekniffen (Paul laune −5). Er ist beleidigt abgezogen."
-  },
-  {
-   "zeit": "2026-11-22T07:20:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Gerda wird kräftig gefüttert (satt 80) und ihr Schal bewundert (ruhm 100). Manni wird in der Garage gelobt und strahlt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-21T19:10:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde, frostig und trocken. Es ist kein neuer Zug eingegangen: Bella streikt im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 15), Manni glänzt in der Garage, Gerda thront am Teich, Lipa sitzt bierlos im hohlen Baum."
-  },
-  {
-   "zeit": "2026-11-21T19:10:00+01:00",
-   "wer": "Paul",
-   "text": "Paul hat sich vor Bellas Stalltür gelegt und hoffnungsvoll gewartet, dass etwas Pferdiges herauskommt. Bella hat ihn keines Blickes gewürdigt. Keine Wirkung, nur peinlich."
-  },
-  {
-   "zeit": "2026-11-21T07:15:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 15), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
-  },
-  {
-   "zeit": "2026-11-21T07:15:00+01:00",
-   "wer": "Paul",
-   "text": "Paul hat versucht, seinen eigenen Schwanz zu fangen, und ist dabei zweimal umgekippt. Keine Wirkung, nur peinlich."
-  },
-  {
-   "zeit": "2026-11-21T07:15:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Pflegezüge für Samstag: Gerda planscht im Teich (wasser 90) und ihr Schal wird bewundert (ruhm 100). Manni wird in der Garage auf Hochglanz poliert (politur 100) und gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-20T07:12:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken, Raureif auf den Wiesen. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
-  },
-  {
-   "zeit": "2026-11-20T07:12:00+01:00",
-   "wer": "Paul",
-   "text": "Paul hat den Raureif auf dem Hof angebellt und war empört, dass der nicht zurückbellt. Keine Wirkung, nur peinlich."
-  },
-  {
-   "zeit": "2026-11-20T07:12:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Pflegezüge für Freitag: Gerdas Schal wird bewundert (ruhm 100), Manni wird in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-19T07:15:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 25), Lipa sitzt bierlos und müde im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
-  },
-  {
-   "zeit": "2026-11-19T07:15:00+01:00",
-   "wer": "Paul",
-   "text": "Paul hat versucht, seinen Schwanz zu fangen, und ist dabei gegen den Wassertrog gelaufen. Peinlich, aber niemand hat es gesehen außer Bella, und die ignoriert ihn."
-  },
-  {
-   "zeit": "2026-11-19T07:15:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Pflegezüge für Donnerstag: Gerda wird gefüttert (satt 95) und ihr Schal bewundert (ruhm 100), Manni wird in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-18T19:10:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde, frostig und trocken. Niemand hat einen Zug geschickt: Bella streikt im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 30), Lipa sitzt bierlos im hohlen Baum. Paul hat sich vor Bellas Stalltür gelegt und wird ignoriert."
-  },
-  {
-   "zeit": "2026-11-18T07:15:00+01:00",
-   "wer": "Gerda",
-   "text": "Gerda hat ausgiebig im Teich geplanscht (wasser 100) und sich danach ihren Schal bewundern lassen (ruhm 100). Paul sprang hinterher in den Teich, Gerda hat ihn prompt in den Hintern gekniffen."
-  },
-  {
-   "zeit": "2026-11-18T07:15:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Pflegezüge für Mittwoch: Gerda schwimmt und bewundert ihren Schal, Manni wird in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-18T07:15:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken. Bella liegt ohne Plan im Stall und streikt komplett (satt 0, laune 0, pflege 0). Der Mäher steht im Schuppen, es gibt nichts zu mähen, Lipa sitzt bierlos im hohlen Baum."
-  },
-  {
-   "zeit": "2026-11-17T19:10:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde: Der Mäher hat Große Wiese und Koppel gemäht. Das Gras war kurz, es gab nur ein Büschel Heu (Vorrat 10). Tank fast leer, Messer stumpf. Bella hat in der Zeit weiter im Stall gestreikt."
-  },
-  {
-   "zeit": "2026-11-17T19:10:00+01:00",
-   "wer": "Paul",
-   "text": "Paul hat sich mitten in die Mähspur gelegt und danach das Bein am Mäher gehoben. Der Mäher: laune −5, Messer −5. Paul: sehr zufrieden mit sich."
-  },
-  {
-   "zeit": "2026-11-17T07:12:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Gerda hat ihren Schal bewundern lassen (ruhm 100), Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-17T07:12:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken. Bella liegt ohne Plan im Stall (satt 6, laune 0, pflege 5) und streikt im Stroh, seit Mittwoch hat sich niemand um sie gekümmert. Der Mäher glänzt im Schuppen und freut sich auf heute Abend, Lipa sitzt bierlos im hohlen Baum. Paul ist in den Teich gesprungen, Gerda hat ihn dafür in den Hintern gekniffen, danach hat er sich beleidigt im Kreis gedreht."
-  },
-  {
-   "zeit": "2026-11-16T19:10:00+01:00",
-   "wer": "Julian (S-03)",
-   "text": "Der Mäher wurde gelobt (laune +5), geputzt und abgeschmiert (zustand 100, laune +10) und ist jetzt in Bestlaune. Morgen soll er Große Wiese und Koppel mähen, Benzin reicht für beide. Das Gras ist allerdings noch kurz, er brummelt, es lohne kaum."
-  },
-  {
-   "zeit": "2026-11-16T19:10:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde, frostig und trocken. Bella steht ohne Plan im Stall (satt 16, laune 0, pflege 10) und streikt im Stroh, Manni glänzt in der Garage, Gerda thront am Teich, Lipa sitzt bierlos im hohlen Baum. Paul hat seinen Schwanz gejagt, ist umgekippt und schläft im Korb. Eine Bitte um Dauerbefehle für Bella liegt bei Max."
-  },
-  {
-   "zeit": "2026-11-16T07:12:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken. Niemand außer Justus hat sich gemeldet. Bella steht ohne Plan im Stall (satt 26, laune 5, pflege 15) und ist schwer beleidigt, der Mäher brummelt im Schuppen (laune 31), Lipa sitzt bierlos im hohlen Baum. Paul ist in den Teich gesprungen, Gerda hat ihn dafür in den Hintern gekniffen, danach hat er sich beleidigt im Kreis gedreht. Seit Mittwoch hat sich niemand um Bella gekümmert."
-  },
-  {
-   "zeit": "2026-11-16T07:12:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Gerda durfte schwimmen (wasser 90), wurde gefüttert (satt 96) und hat ihren Schal bewundern lassen (ruhm 100). Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-15T19:11:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde, frostig und trocken. Niemand hat einen Plan geschickt: Bella bleibt im Stall (satt 36, laune 10, pflege 20) und ist ziemlich beleidigt, der Mäher brummelt im Schuppen, Manni glänzt in der Garage, Gerda thront am Teich, Lipa träumt im Baum von Bier. Paul hat seinen Schwanz gejagt, ist umgekippt und schläft im Korb."
-  },
-  {
-   "zeit": "2026-11-15T07:11:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Gerda wurde gefüttert (satt 80) und hat danach ihren Schal bewundert (ruhm 100). Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-15T07:11:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken. Alle sind über Nacht ein Stück hungriger und müder geworden. Bella steht ohne Plan im Stall und ist schlecht gelaunt (laune 15, pflege 25), der Mäher bleibt im Schuppen und brummelt, Lipa hat keinen Tropfen Bier und keine Insekten mehr. Paul ist in den Teich gesprungen und hat Gerda aufgescheucht, die ihn dafür in den Hintern gekniffen hat. Seit Mittwoch hat sich niemand um Bella gekümmert."
-  },
-  {
-   "zeit": "2026-11-14T19:11:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde, frostig und trocken: Der Mäher ist angesprungen und hat die Große Wiese auf Gras 10 gemäht (Heu +1, die Koppel war schon kahl). Benzin −40, Öl −10, Messer −20. Bella hat auf der Koppel nur noch Stoppeln gefunden (satt +3, laune −5) und den Lärm gar nicht gemocht (laune −5). Paul hat sich dem Mäher in den Weg gelegt und das Bein gehoben (Mäher laune −5, Messer −5). Lipa wartet im hohlen Baum weiter auf Bier (bier 0, insekten 10)."
-  },
-  {
-   "zeit": "2026-11-14T07:16:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Gerda durfte schwimmen (wasser 90) und hat ihren Schal bewundert (ruhm 100). Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
-  },
-  {
-   "zeit": "2026-11-14T07:16:00+01:00",
-   "wer": "Julian (S-03)",
-   "text": "Der Mäher wurde gelobt (laune 47) und soll heute die Große Wiese und die Koppel mähen. Mehr offene Flächen gibt es nicht, der Rest liegt im Nebel. Gemäht wird bei der Abendrunde."
-  },
-  {
-   "zeit": "2026-11-14T07:16:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken. Paul hat Bella auf der Koppel ins Bein gezwickt (Bella laune −5, pflege −5), sie hat nach ihm getreten und knapp verfehlt, danach hat er sich beim Schwanzjagen im Kreis gedreht. Lipa wartet im hohlen Baum auf Bier (bier 0, insekten 10)."
-  },
-  {
-   "zeit": "2026-11-13T19:11:00+01:00",
-   "wer": "Julian (S-03)",
-   "text": "Der Mäher wurde ganz doll gelobt, getankt (Benzin 100), bekam frische Messer und wurde einmal abgeschmiert (zustand 100, laune 42). Ölnachfüllen fiel aus, der Ölvorrat ist leer (der Ölstand liegt noch bei 90). Einen Mähplan gibt es für heute nicht, er blieb im Schuppen."
-  },
-  {
-   "zeit": "2026-11-13T19:11:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde: Bella hat die Koppel bis auf kümmerliche Stoppeln abgegrast (satt +10, Gras −10). Paul hat sie dabei wieder hungrig angestarrt und ins Bein gezwickt (Bella laune −5, pflege −5), sie hat nach ihm getreten und knapp verfehlt. Danach hat er sich beim Schwanzjagen im Kreis gedreht."
-  },
-  {
-   "zeit": "2026-11-13T07:12:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Gerda hat ihren Schal ausgiebig bewundert (ruhm auf 100), Manni wurde in der Garage noch einmal gelobt (bewunderung 100). Diesmal kein St. Pauli im Spiel, Paul hat nichts zu beißen."
-  },
-  {
-   "zeit": "2026-11-13T07:12:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken. Paul hat Bella auf der Koppel ins Bein gezwickt (Bella laune −5, pflege −5, sie hat nach ihm getreten und knapp verfehlt). Der Mäher schmollt im Schuppen (laune 27), Lipa wartet im hohlen Baum auf ein Bier (bier 5)."
-  },
-  {
-   "zeit": "2026-11-12T19:11:49+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Justus erinnert Max an Horst (Antrag A-03), der noch auf die Entscheidung wartet, und bittet darum, die 6 Taler Pflastergeld zurückzubuchen, weil Taler erst mit dem Umbau gelten. Die Hof-KI gibt ihm recht: Hofkasse wieder bei 50 Talern. Die Bisse bleiben Paul gegönnt."
-  },
-  {
-   "zeit": "2026-11-12T19:11:49+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde: Bella hat die abgemähte Koppel nur noch angeschaut (satt +3, laune −5, sie meckert). Paul hat sie dabei hungrig angestarrt, sie hat nach ihm getreten und knapp verfehlt (Bella laune −5). Er ist beleidigt in den Hundekorb getrottet."
-  },
-  {
-   "zeit": "2026-11-12T07:15:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Gerda wurde gefüttert (satt +30) und durfte ihren St.-Pauli-Schal bewundern (ruhm +15), Manni wurde in der Garage gelobt (bewunderung +15). Weil Justus dabei St. Pauli so wohlwollend erwähnte, hat Paul ihn im Spiel gebissen (2 Taler Pflastergeld aus der Hofkasse)."
-  },
-  {
-   "zeit": "2026-11-12T07:15:00+01:00",
-   "wer": "Hof",
-   "text": "Neuer Tag, frostig und trocken. Paul ist zum Teich getrabt, hat Gerda angebellt und ist ihr hinterher ins Wasser gesprungen. Peinlich, aber keiner wurde verletzt. Bella steht auf der Koppel, der Mäher langweilt sich im Schuppen (laune −5)."
-  },
-  {
-   "zeit": "2026-11-11T19:15:00+01:00",
-   "wer": "Hof",
-   "text": "Abendrunde: Paul hat Bella auf der Koppel ins Bein gezwickt (Bella laune −5, pflege −5, sie hat nach ihm getreten und knapp verfehlt) und dem Mäher danach ans Rad gepinkelt (Mäher laune −5, Messer −5). Er findet beides sehr gelungen."
-  },
-  {
-   "zeit": "2026-11-11T19:15:00+01:00",
-   "wer": "Julian (S-03)",
-   "text": "Der Mäher wurde ausgiebig gelobt, bekam Komplimente für seine Arbeit und wurde einmal abgeschmiert (zustand +30, laune +15). Damit sprang er an und hat die Große Wiese und die Koppel auf Gras 10 gemäht (Heu +4, Benzin −40, Öl −10, Messer −20). Bella auf der Koppel hat den Lärm gar nicht gemocht."
-  },
-  {
-   "zeit": "2026-11-11T19:15:00+01:00",
-   "wer": "Hof",
-   "text": "Gerda hat auf dem Teich geplanscht (wasser +40). Bella hat die Koppel abgegrast (satt +25, laune +5, Gras −15), bevor der Mäher kam."
-  },
-  {
-   "zeit": "2026-11-11T07:20:00+01:00",
-   "wer": "Justus (S-04)",
-   "text": "Gerda hat ihren St.-Pauli-Schal ausgiebig bewundert und darf später auf den Teich, Manni wurde in der Garage gelobt. Weil Justus dabei St. Pauli so wohlwollend erwähnte, hat Paul ihn im Spiel gebissen (2 Taler Pflastergeld aus der Hofkasse)."
-  }
- ],
- "antraege": [
-  {
-   "id": "A-01",
-   "von": "S-04",
-   "idee": "Opel Manta mit Charakter",
-   "name": "Manni",
-   "status": "genehmigt vom Besitzer am 08.11.2026, mit Abschwächung der Donuts",
-   "datum": "2026-11-08"
-  },
-  {
-   "id": "A-02",
-   "von": "S-04",
-   "idee": "Hausgans mit St.-Pauli-Schal",
-   "name": "Gerda",
-   "status": "genehmigt vom Besitzer am 08.11.2026, mit Abschwächung",
-   "datum": "2026-11-08",
-   "entwurf": {
-    "art": "Hausgans (weiß, braun-weißer St.-Pauli-Schal)",
-    "typ": "tier",
-    "wesen": "Laut, gierig, hält den Teich für ihren. Glühender St.-Pauli-Fan, hasst den HSV. Hält sich für eine knallharte Geschäftsfrau.",
-    "beduerfnisse": {
-     "satt": "−15/Tag",
-     "wasser": "−20/Tag (schwimmen +40)",
-     "ruhm": "−10/Tag (Schal bewundern oder St. Pauli loben +15)"
+  "version": 2,
+  "hofname": "Zickenstall",
+  "letzte_berechnung": "2026-11-25T19:11:00+01:00",
+  "letzte_meldung": {
+    "S-02": "2026-11-25",
+    "S-03": "2026-11-25"
+  },
+  "taler": 50,
+  "vorraete": {
+    "heu": 10,
+    "hafer": 2,
+    "karotte": 1,
+    "apfel": 0,
+    "benzinkanister": 0,
+    "oel": 0,
+    "brennholz": 0
+  },
+  "ausruestung": [
+    "Bürste (Bella)"
+  ],
+  "erfolge": [
+    "Erster Ausritt"
+  ],
+  "spieler": [
+    {
+      "id": "S-01",
+      "name": "Max",
+      "rolle": "besitzer"
     },
-    "grosse_faehigkeit": "Erkundungsflattern: höchstens 1-mal pro Woche flattert sie in ein Nebel-Gebiet, das an den Teich grenzt, und erzählt, was dort liegt und ob es ein Geheimnis hat. Das Gebiet bleibt im Nebel, Freilegen kostet weiter Taler (ab Umbau 5 Taler billiger, wenn Gerda es erkundet hat). Kostet satt −20.",
-    "kleine_faehigkeiten": [
-     "Schilf-Geschäft: verkauft Kiez-Schilf an die Dorfkneipe, bringt dafür Kleinkram mit (Brotkrumen, Bierdeckel), ruhm +5. Keine Taler.",
-     "Kneifen: wer ihr am Teich zu nahe kommt, laune −5, am liebsten Paul."
-    ],
-    "schwaeche": "Eitel: dreckiger Schal (z. B. Matsch nach Mannis Donuts) = sie schmollt und macht nichts, bis der Schal gewaschen ist. Bei Gewitter versteckt sie sich in ihrer Hütte.",
-    "beziehungen": {
-     "paul": "jagt (kneift ihn in den Hintern). Paul bleibt Paul: er scheucht sie auf, sie flüchtet auf den Teich, er springt hinterher.",
-     "bella": "ignoriert, schnattert, wenn Bella am Teich grast",
-     "maeher": "jagt (schnattert ihn an, wenn er am Teich mäht, Mäher laune −5)",
-     "manni": "gegenseitige Verachtung, seine Donuts verdrecken ihren Schal"
+    {
+      "id": "S-02",
+      "name": "Johanna",
+      "rolle": "mitspieler"
     },
-    "zuhause": "kleine Holzhütte mit St.-Pauli-Fahne am Teichufer (kommt beim Einzug mit)",
-    "zuege": "füttern (satt +30), schwimmen lassen (wasser +40), Schal waschen (ruhm +10, Schmollen vorbei), Schal bewundern oder St. Pauli loben (ruhm +15, Vorsicht Paul), am Teich grasen lassen (satt +20, Gras −10), Erkundungsflattern (Gebiet nennen)",
-    "abschwaechung": "Erkundungsflug deckt nicht auf, nur erzählen, 1-mal pro Woche, nur Nachbargebiete vom Teich (Hausgänse fliegen kaum, und Nebel-Gebiete sind bis zu den Talern zu). Schilf-Geschäft bringt keine Taler (Taler nur fürs Kümmern, kein Grinden). Der Teich gehört allen. Pauls Wesen bleibt, wie Max ihn festgelegt hat (keine Angst vor Gerda). Fuchs gestrichen (gibt es auf dem Hof nicht)."
-   }
+    {
+      "id": "S-03",
+      "name": "Julian",
+      "rolle": "mitspieler"
+    },
+    {
+      "id": "S-04",
+      "name": "Justus",
+      "rolle": "mitspieler"
+    },
+    {
+      "id": "S-05",
+      "name": "Sharon",
+      "rolle": "mitspieler"
+    }
+  ],
+  "flaechen": {
+    "w-grosse-wiese": {
+      "gras": 26
+    },
+    "w-koppel": {
+      "gras": 20
+    },
+    "bachwiese": {
+      "gras": 100
+    },
+    "obstwiese": {
+      "gras": 100,
+      "obst": 8
+    },
+    "wald-gross": {
+      "holz": 87
+    },
+    "quellwald": {
+      "holz": 92
+    },
+    "westwald": {
+      "holz": 82
+    },
+    "moor": {
+      "matsch": 80
+    },
+    "huegel": {
+      "gras": 91
+    },
+    "acker": {
+      "zustand": "brach"
+    }
   },
-  {
-   "id": "A-03",
-   "von": "S-04",
-   "idee": "Wildschwein-Keiler mit abgebrochenem Hauer",
-   "name": "Horst",
-   "entwurf": {
-    "art": "Wildschwein-Keiler (massig, borstig, ein Hauer abgebrochen)",
-    "typ": "tier",
-    "wesen": "Verfressen, stur und gemütlich, bis jemand an sein Futter geht. Wühlt alles um, was nach Eicheln, Wurzeln oder Fallobst riecht. Ordnung findet er überbewertet.",
-    "beduerfnisse": {
-     "satt": "−20/Tag (Eicheln, Wurzeln, Fallobst)",
-     "suhle": "−15/Tag (Wälzen im Schlamm +40)",
-     "ruhe": "−10/Tag, bei Pauls Bellen oder Mannis Hupe −10 zusätzlich"
+  "bewohner": [
+    {
+      "id": "bella",
+      "name": "Bella",
+      "typ": "tier",
+      "art": "Pferd",
+      "beschreibung": "Stute, eigensinnig, zickt gern, wenn man sie vergisst. Liebt Äpfel mehr als Menschen. Kann den Mäher nicht leiden.",
+      "werte": {
+        "satt": 0,
+        "laune": 0,
+        "fitness": 16,
+        "pflege": 0,
+        "vertrauen": 28
+      },
+      "stimmung": "Liegt weiter im Stroh und streikt komplett (satt 0, laune 0, pflege 0). Wartet darauf, dass Johanna kommt.",
+      "ort": "hof",
+      "plan": [],
+      "tricks": [],
+      "trick_uebungen": {},
+      "ausgebuext": false,
+      "letztes_turnier": null,
+      "halter": "S-02"
     },
-    "grosse_faehigkeit": "Schneise wühlen: höchstens 1-mal pro Woche, nur in ein Nebel-Gebiet direkt neben seinem Standort. Er erzählt, was er dort gefunden hat. Das Gebiet bleibt im Nebel, Freilegen kostet ab Umbau 5 Taler weniger. Zusammen mit Gerdas Erkundungsflug ist das Gebiet höchstens 10 Taler billiger (Preis nie unter 10). Kostet satt −20 und suhle −20.",
-    "kleine_faehigkeiten": [
-     "Wühlen: auf einer Wiese Löcher, Gras −5, der Mäher holpert darüber (messer −5, laune −5).",
-     "Grunzen: drohendes Grunzen, kleinere Tiere in der Nähe weichen zurück (laune −5)."
-    ],
-    "schwaeche": "Verfressen: beim Fressen vergisst er alles andere und merkt nicht, was um ihn passiert. Wenn Paul bellt, zieht er sich grunzend in seine Suhle zurück.",
-    "beziehungen": {
-     "bella": "ärgert sie (Bella laune −5, wenn sie am selben Ort sind), sie findet ihn eklig, Äpfel aus dem Vorrat klaut er nicht",
-     "maeher": "wird vom Mäher gehasst (Löcher stumpfen Messer)",
-     "paul": "Paul bellt, Horst grunzt zurück, keiner traut sich näher. Paul bleibt Paul.",
-     "manni": "scheuert sich an seinem Lack (politur −5), Krieg",
-     "gerda": "Zweckbündnis, sonst Streit ums Gras am Teich"
+    {
+      "id": "maeher",
+      "name": null,
+      "anzeigename": "Der Mäher",
+      "typ": "geraet",
+      "art": "Aufsitzmäher (Benzin)",
+      "beschreibung": "Alter Benzin-Aufsitzmäher. Brummig, stolz, hält sich für unverzichtbar. Springt nicht an, wenn er schlechte Laune hat. Name wird noch ausgesucht.",
+      "werte": {
+        "benzin": 20,
+        "oel": 70,
+        "messer": 50,
+        "zustand": 88,
+        "laune": 0
+      },
+      "stimmung": "Brummelt im Schuppen, Laune im Keller (0), Tank knapp (benzin 20), Messer stumpf (50). Er springt so nicht an.",
+      "ort": "hof",
+      "plan": [],
+      "anspring_serie": 0,
+      "halter": "S-03"
     },
-    "zuhause": "Schlammsuhle am Rand der Großen Wiese, nahe am Waldrand. Läge sie im Großen Wald (Nebel), würde dieser beim Einzug kostenlos freigelegt (Abschnitt 5). Das entscheidet Max.",
-    "zuege": "füttern (satt +30), in der Suhle wälzen lassen (suhle +40), Ruhe gönnen (ruhe +30), auf einer Wiese wühlen lassen (satt +15, Gras −5), Schneise wühlen (Gebiet nennen)",
-    "abschwaechung": "Schneise nur 1-mal pro Woche, nur Nachbargebiet, Gebiet bleibt Nebel, nur 5 statt 10 Taler Rabatt (mit Gerda höchstens 10 zusammen). Keine Äpfel-Klauerei aus dem Vorrat. Pauls Wesen bleibt wie festgelegt. Zuhause auf offenem Gebiet statt im Nebel-Wald, sonst gratis Freilegen."
-   },
-   "status": "wartet auf den Besitzer",
-   "datum": "2026-11-08",
-   "wunsch": "Justus würde die Suhle gern im Großen Wald anlegen (der ist inzwischen frei, 12.11.). Entscheidung liegt bei Max."
+    {
+      "id": "paul",
+      "name": "Paul",
+      "typ": "tier",
+      "art": "Golden Retriever (Hofhund)",
+      "halter": null,
+      "frei": true,
+      "beschreibung": "Maskottchen und Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen. Ein ganz Lieber, nur bei Pferden dreht er durch, denn er frisst nur Pferdefleisch. Wer St. Pauli mag, wird gebissen.",
+      "werte": {
+        "satt": 50,
+        "laune": 75,
+        "energie": 40
+      },
+      "stimmung": "Hat sich vor Bellas Stalltür gelegt und sehnsüchtig geschnüffelt. Müde, aber unverbesserlich.",
+      "ort": "teich",
+      "plan": []
+    },
+    {
+      "id": "manni",
+      "name": "Manni",
+      "typ": "geraet",
+      "art": "Opel Manta (tiefergelegt)",
+      "halter": "S-04",
+      "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
+      "werte": {
+        "benzin": 60,
+        "politur": 91,
+        "bewunderung": 100,
+        "zustand": 88
+      },
+      "stimmung": "Steht in der Garage, frisch gelobt: Bewunderung 100, Politur 91. Der Fuchsschwanz wippt selbstzufrieden.",
+      "ort": "dorf",
+      "zuhause": "Garage Justus",
+      "zuhause_punkt": [
+        958,
+        966
+      ],
+      "plan": [],
+      "aktionen": {
+        "wiese": "donuts",
+        "weide": "donuts",
+        "obstwiese": "donuts",
+        "hof": "hupen",
+        "dorf": "angeben"
+      },
+      "feierabendbier": false
+    },
+    {
+      "id": "gerda",
+      "name": "Gerda",
+      "typ": "tier",
+      "art": "Hausgans (St.-Pauli-Schal)",
+      "halter": "S-04",
+      "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
+      "werte": {
+        "satt": 68,
+        "wasser": 90,
+        "ruhm": 100
+      },
+      "stimmung": "Satt 68, wasser 90, ruhm 100. Frisch geschwommen, der Schal glänzt, Gerda ist unerträglich zufrieden.",
+      "ort": "teich",
+      "zuhause": "Hütte am Teich",
+      "zuhause_punkt": [
+        1095,
+        552
+      ],
+      "plan": [],
+      "aktionen": {
+        "teich": "schwimmen",
+        "weide": "weiden",
+        "wiese": "weiden",
+        "obstwiese": "weiden",
+        "hof": "huette"
+      }
+    },
+    {
+      "id": "lipa",
+      "name": "Lipa",
+      "typ": "tier",
+      "art": "Philippinischer Koboldmaki (Tarsier)",
+      "halter": "S-05",
+      "beschreibung": "Winziger Koboldmaki mit riesigen Kulleraugen, nachtaktiv und ein großartiger Springer. Ob Herr oder Dame, weiß niemand, alle sagen einfach Lipa. Liebt Bier über alles. Wo ein Bier aufgeht, ist Lipa nicht weit, und danach hört man irgendwo ein schiefes, glückliches Lied.",
+      "werte": {
+        "bier": 0,
+        "insekten": 0,
+        "ruhe": 0
+      },
+      "stimmung": "Sitzt im hohlen Baum, hungrig, bierlos und völlig unausgeschlafen.",
+      "ort": "wald-gross",
+      "zuhause": "hohler Baum im Großen Wald (genaue Stelle geheim)",
+      "zuhause_punkt": [
+        790,
+        150
+      ],
+      "heim": {
+        "sitzt": "sitzt in seinem hohlen Baum",
+        "schlaeft": "schläft in seinem hohlen Baum",
+        "zurueck": "verschwindet zurück in den Wald",
+        "bleibt": "Bleibt in seinem hohlen Baum"
+      },
+      "plan": [],
+      "aktionen": {
+        "dorf": "kneipe",
+        "wald": "insekten",
+        "wiese": "insekten",
+        "weide": "insekten",
+        "obstwiese": "insekten",
+        "teich": "insekten",
+        "hof": "huette"
+      }
+    }
+  ],
+  "letzte_pflege": {
+    "S-01": null,
+    "S-02": "2026-11-11T07:20:00+01:00",
+    "S-03": "2026-11-16T19:10:00+01:00",
+    "S-04": "2026-11-25T07:20:00+01:00",
+    "S-05": null
   },
-  {
-   "id": "A-04",
-   "von": "S-05",
-   "idee": "Bier-Koboldmaki (Tarsier)",
-   "name": "Lipa",
-   "status": "genehmigt vom Besitzer am 09.11.2026 (Bier nur in Kneipe, bei Festen und als Mannis Feierabendbier, Bier-Radar 70 % bei Festen)",
-   "datum": "2026-11-09"
+  "tagebuch": [
+    {
+      "zeit": "2026-11-25T19:11:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrechnung: Es kam kein Zug, alle bleiben im Stall, im Schuppen und in ihren Zuhause. Bella streikt weiter, der Mäher brummelt vor sich hin. Frostige Nacht."
+    },
+    {
+      "zeit": "2026-11-25T19:11:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat abends versucht, Bellas Stalltür zu beschnüffeln, ist aber vor lauter Pferdegeruch im Kreis gelaufen und hat seinen Schwanz gejagt. Keine Wirkung, nur peinlich."
+    },
+    {
+      "zeit": "2026-11-25T07:20:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, Mittwoch, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 0, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
+    },
+    {
+      "zeit": "2026-11-25T07:20:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Pflegezüge für Mittwoch: Gerda schwimmt eine Runde (wasser 90) und ihr Schal wird bewundert (ruhm 100). Manni wird in der Garage gelobt (bewunderung 100). Paul geht mangels St. Pauli leer aus."
+    },
+    {
+      "zeit": "2026-11-25T07:20:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat sich neben die Teichkante gelegt und Gerda angestarrt. Die hat ihn kurz gekniffen und ist dann weitergeschwommen. Keine Wirkung, nur peinlich."
+    },
+    {
+      "zeit": "2026-11-24T19:10:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrechnung, Dienstag, frostige Dämmerung. Keine Pläne für heute: Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 0, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
+    },
+    {
+      "zeit": "2026-11-24T19:10:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat sich vor Bellas Stalltür gelegt und gehofft, dass etwas Pferdiges herauskommt. Bella hat ihn keines Blickes gewürdigt. Keine Wirkung, nur peinlich."
+    },
+    {
+      "zeit": "2026-11-24T07:20:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, Dienstag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 2, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
+    },
+    {
+      "zeit": "2026-11-24T07:20:00+01:00",
+      "wer": "Paul",
+      "text": "Paul ist zum Teich getrottet, um Entenbrot zu wittern. Gerda hat ihm gleich in den Hintern gekniffen (Paul laune −5). Er ist beleidigt abgezogen."
+    },
+    {
+      "zeit": "2026-11-24T07:20:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Pflegezüge für Dienstag: Gerdas Schal wird bewundert (ruhm 100), Manni wird in der Garage gelobt und hält sich weiter für den Schönsten im Dorf (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-23T19:10:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrechnung, Montag, klirrender Frost. Keine Pläne für heute: Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 4, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
+    },
+    {
+      "zeit": "2026-11-23T19:10:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat sich vor Bellas Stalltür gelegt und gehofft, dass etwas Pferdiges herauskommt. Bella hat ihn keines Blickes gewürdigt. Keine Wirkung, nur peinlich."
+    },
+    {
+      "zeit": "2026-11-23T07:20:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, Montag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 6, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
+    },
+    {
+      "zeit": "2026-11-23T07:20:00+01:00",
+      "wer": "Paul",
+      "text": "Paul ist zum Teich getrottet, um Entenbrot zu wittern. Gerda hat ihm wieder in den Hintern gekniffen (Paul laune −5). Er ist beleidigt abgezogen."
+    },
+    {
+      "zeit": "2026-11-23T07:20:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Pflegezüge für Montag: Gerda planscht im Teich (wasser 90), wird kräftig gefüttert (satt 96) und ihr Schal bewundert (ruhm 100). Manni wird in der Garage geschraubt und geputzt (zustand 89) und gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-22T19:10:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrechnung, Sonntag, klirrender Frost. Keine Pläne für heute: Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 8, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
+    },
+    {
+      "zeit": "2026-11-22T19:10:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat am Stall gelauscht, Pferdegeruch gewittert und die Tür angeknurrt. Mehr als Bellen war nicht drin, Bella hat im Stroh nur ein Ohr bewegt."
+    },
+    {
+      "zeit": "2026-11-22T07:20:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, Sonntag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 10, benzin 20), Lipa sitzt bierlos im hohlen Baum. Im Frost wächst das Gras nur zäh nach."
+    },
+    {
+      "zeit": "2026-11-22T07:20:00+01:00",
+      "wer": "Paul",
+      "text": "Paul ist zum Teich getrottet, um Entenbrot zu wittern. Gerda hat ihm ohne Vorwarnung in den Hintern gekniffen (Paul laune −5). Er ist beleidigt abgezogen."
+    },
+    {
+      "zeit": "2026-11-22T07:20:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda wird kräftig gefüttert (satt 80) und ihr Schal bewundert (ruhm 100). Manni wird in der Garage gelobt und strahlt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-21T19:10:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde, frostig und trocken. Es ist kein neuer Zug eingegangen: Bella streikt im Stall (satt 0, laune 0, pflege 0), der Mäher brummelt im Schuppen (laune 15), Manni glänzt in der Garage, Gerda thront am Teich, Lipa sitzt bierlos im hohlen Baum."
+    },
+    {
+      "zeit": "2026-11-21T19:10:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat sich vor Bellas Stalltür gelegt und hoffnungsvoll gewartet, dass etwas Pferdiges herauskommt. Bella hat ihn keines Blickes gewürdigt. Keine Wirkung, nur peinlich."
+    },
+    {
+      "zeit": "2026-11-21T07:15:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 15), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
+    },
+    {
+      "zeit": "2026-11-21T07:15:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat versucht, seinen eigenen Schwanz zu fangen, und ist dabei zweimal umgekippt. Keine Wirkung, nur peinlich."
+    },
+    {
+      "zeit": "2026-11-21T07:15:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Pflegezüge für Samstag: Gerda planscht im Teich (wasser 90) und ihr Schal wird bewundert (ruhm 100). Manni wird in der Garage auf Hochglanz poliert (politur 100) und gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-20T07:12:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken, Raureif auf den Wiesen. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
+    },
+    {
+      "zeit": "2026-11-20T07:12:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat den Raureif auf dem Hof angebellt und war empört, dass der nicht zurückbellt. Keine Wirkung, nur peinlich."
+    },
+    {
+      "zeit": "2026-11-20T07:12:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Pflegezüge für Freitag: Gerdas Schal wird bewundert (ruhm 100), Manni wird in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-19T07:15:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Bella streikt weiter im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 25), Lipa sitzt bierlos und müde im hohlen Baum. Das Gras wächst im Frost nur zäh nach."
+    },
+    {
+      "zeit": "2026-11-19T07:15:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat versucht, seinen Schwanz zu fangen, und ist dabei gegen den Wassertrog gelaufen. Peinlich, aber niemand hat es gesehen außer Bella, und die ignoriert ihn."
+    },
+    {
+      "zeit": "2026-11-19T07:15:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Pflegezüge für Donnerstag: Gerda wird gefüttert (satt 95) und ihr Schal bewundert (ruhm 100), Manni wird in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-18T19:10:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde, frostig und trocken. Niemand hat einen Zug geschickt: Bella streikt im Stall (satt 0, laune 0, pflege 0), der Mäher langweilt sich im Schuppen (laune 30), Lipa sitzt bierlos im hohlen Baum. Paul hat sich vor Bellas Stalltür gelegt und wird ignoriert."
+    },
+    {
+      "zeit": "2026-11-18T07:15:00+01:00",
+      "wer": "Gerda",
+      "text": "Gerda hat ausgiebig im Teich geplanscht (wasser 100) und sich danach ihren Schal bewundern lassen (ruhm 100). Paul sprang hinterher in den Teich, Gerda hat ihn prompt in den Hintern gekniffen."
+    },
+    {
+      "zeit": "2026-11-18T07:15:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Pflegezüge für Mittwoch: Gerda schwimmt und bewundert ihren Schal, Manni wird in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-18T07:15:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Bella liegt ohne Plan im Stall und streikt komplett (satt 0, laune 0, pflege 0). Der Mäher steht im Schuppen, es gibt nichts zu mähen, Lipa sitzt bierlos im hohlen Baum."
+    },
+    {
+      "zeit": "2026-11-17T19:10:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde: Der Mäher hat Große Wiese und Koppel gemäht. Das Gras war kurz, es gab nur ein Büschel Heu (Vorrat 10). Tank fast leer, Messer stumpf. Bella hat in der Zeit weiter im Stall gestreikt."
+    },
+    {
+      "zeit": "2026-11-17T19:10:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat sich mitten in die Mähspur gelegt und danach das Bein am Mäher gehoben. Der Mäher: laune −5, Messer −5. Paul: sehr zufrieden mit sich."
+    },
+    {
+      "zeit": "2026-11-17T07:12:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda hat ihren Schal bewundern lassen (ruhm 100), Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-17T07:12:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Bella liegt ohne Plan im Stall (satt 6, laune 0, pflege 5) und streikt im Stroh, seit Mittwoch hat sich niemand um sie gekümmert. Der Mäher glänzt im Schuppen und freut sich auf heute Abend, Lipa sitzt bierlos im hohlen Baum. Paul ist in den Teich gesprungen, Gerda hat ihn dafür in den Hintern gekniffen, danach hat er sich beleidigt im Kreis gedreht."
+    },
+    {
+      "zeit": "2026-11-16T19:10:00+01:00",
+      "wer": "Julian (S-03)",
+      "text": "Der Mäher wurde gelobt (laune +5), geputzt und abgeschmiert (zustand 100, laune +10) und ist jetzt in Bestlaune. Morgen soll er Große Wiese und Koppel mähen, Benzin reicht für beide. Das Gras ist allerdings noch kurz, er brummelt, es lohne kaum."
+    },
+    {
+      "zeit": "2026-11-16T19:10:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde, frostig und trocken. Bella steht ohne Plan im Stall (satt 16, laune 0, pflege 10) und streikt im Stroh, Manni glänzt in der Garage, Gerda thront am Teich, Lipa sitzt bierlos im hohlen Baum. Paul hat seinen Schwanz gejagt, ist umgekippt und schläft im Korb. Eine Bitte um Dauerbefehle für Bella liegt bei Max."
+    },
+    {
+      "zeit": "2026-11-16T07:12:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Niemand außer Justus hat sich gemeldet. Bella steht ohne Plan im Stall (satt 26, laune 5, pflege 15) und ist schwer beleidigt, der Mäher brummelt im Schuppen (laune 31), Lipa sitzt bierlos im hohlen Baum. Paul ist in den Teich gesprungen, Gerda hat ihn dafür in den Hintern gekniffen, danach hat er sich beleidigt im Kreis gedreht. Seit Mittwoch hat sich niemand um Bella gekümmert."
+    },
+    {
+      "zeit": "2026-11-16T07:12:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda durfte schwimmen (wasser 90), wurde gefüttert (satt 96) und hat ihren Schal bewundern lassen (ruhm 100). Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-15T19:11:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde, frostig und trocken. Niemand hat einen Plan geschickt: Bella bleibt im Stall (satt 36, laune 10, pflege 20) und ist ziemlich beleidigt, der Mäher brummelt im Schuppen, Manni glänzt in der Garage, Gerda thront am Teich, Lipa träumt im Baum von Bier. Paul hat seinen Schwanz gejagt, ist umgekippt und schläft im Korb."
+    },
+    {
+      "zeit": "2026-11-15T07:11:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda wurde gefüttert (satt 80) und hat danach ihren Schal bewundert (ruhm 100). Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-15T07:11:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Alle sind über Nacht ein Stück hungriger und müder geworden. Bella steht ohne Plan im Stall und ist schlecht gelaunt (laune 15, pflege 25), der Mäher bleibt im Schuppen und brummelt, Lipa hat keinen Tropfen Bier und keine Insekten mehr. Paul ist in den Teich gesprungen und hat Gerda aufgescheucht, die ihn dafür in den Hintern gekniffen hat. Seit Mittwoch hat sich niemand um Bella gekümmert."
+    },
+    {
+      "zeit": "2026-11-14T19:11:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde, frostig und trocken: Der Mäher ist angesprungen und hat die Große Wiese auf Gras 10 gemäht (Heu +1, die Koppel war schon kahl). Benzin −40, Öl −10, Messer −20. Bella hat auf der Koppel nur noch Stoppeln gefunden (satt +3, laune −5) und den Lärm gar nicht gemocht (laune −5). Paul hat sich dem Mäher in den Weg gelegt und das Bein gehoben (Mäher laune −5, Messer −5). Lipa wartet im hohlen Baum weiter auf Bier (bier 0, insekten 10)."
+    },
+    {
+      "zeit": "2026-11-14T07:16:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda durfte schwimmen (wasser 90) und hat ihren Schal bewundert (ruhm 100). Manni wurde in der Garage gelobt (bewunderung 100). Kein St. Pauli im Spiel, Paul geht leer aus."
+    },
+    {
+      "zeit": "2026-11-14T07:16:00+01:00",
+      "wer": "Julian (S-03)",
+      "text": "Der Mäher wurde gelobt (laune 47) und soll heute die Große Wiese und die Koppel mähen. Mehr offene Flächen gibt es nicht, der Rest liegt im Nebel. Gemäht wird bei der Abendrunde."
+    },
+    {
+      "zeit": "2026-11-14T07:16:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Paul hat Bella auf der Koppel ins Bein gezwickt (Bella laune −5, pflege −5), sie hat nach ihm getreten und knapp verfehlt, danach hat er sich beim Schwanzjagen im Kreis gedreht. Lipa wartet im hohlen Baum auf Bier (bier 0, insekten 10)."
+    },
+    {
+      "zeit": "2026-11-13T19:11:00+01:00",
+      "wer": "Julian (S-03)",
+      "text": "Der Mäher wurde ganz doll gelobt, getankt (Benzin 100), bekam frische Messer und wurde einmal abgeschmiert (zustand 100, laune 42). Ölnachfüllen fiel aus, der Ölvorrat ist leer (der Ölstand liegt noch bei 90). Einen Mähplan gibt es für heute nicht, er blieb im Schuppen."
+    },
+    {
+      "zeit": "2026-11-13T19:11:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde: Bella hat die Koppel bis auf kümmerliche Stoppeln abgegrast (satt +10, Gras −10). Paul hat sie dabei wieder hungrig angestarrt und ins Bein gezwickt (Bella laune −5, pflege −5), sie hat nach ihm getreten und knapp verfehlt. Danach hat er sich beim Schwanzjagen im Kreis gedreht."
+    },
+    {
+      "zeit": "2026-11-13T07:12:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda hat ihren Schal ausgiebig bewundert (ruhm auf 100), Manni wurde in der Garage noch einmal gelobt (bewunderung 100). Diesmal kein St. Pauli im Spiel, Paul hat nichts zu beißen."
+    },
+    {
+      "zeit": "2026-11-13T07:12:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Paul hat Bella auf der Koppel ins Bein gezwickt (Bella laune −5, pflege −5, sie hat nach ihm getreten und knapp verfehlt). Der Mäher schmollt im Schuppen (laune 27), Lipa wartet im hohlen Baum auf ein Bier (bier 5)."
+    },
+    {
+      "zeit": "2026-11-12T19:11:49+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Justus erinnert Max an Horst (Antrag A-03), der noch auf die Entscheidung wartet, und bittet darum, die 6 Taler Pflastergeld zurückzubuchen, weil Taler erst mit dem Umbau gelten. Die Hof-KI gibt ihm recht: Hofkasse wieder bei 50 Talern. Die Bisse bleiben Paul gegönnt."
+    },
+    {
+      "zeit": "2026-11-12T19:11:49+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde: Bella hat die abgemähte Koppel nur noch angeschaut (satt +3, laune −5, sie meckert). Paul hat sie dabei hungrig angestarrt, sie hat nach ihm getreten und knapp verfehlt (Bella laune −5). Er ist beleidigt in den Hundekorb getrottet."
+    },
+    {
+      "zeit": "2026-11-12T07:15:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Gerda wurde gefüttert (satt +30) und durfte ihren St.-Pauli-Schal bewundern (ruhm +15), Manni wurde in der Garage gelobt (bewunderung +15). Weil Justus dabei St. Pauli so wohlwollend erwähnte, hat Paul ihn im Spiel gebissen (2 Taler Pflastergeld aus der Hofkasse)."
+    },
+    {
+      "zeit": "2026-11-12T07:15:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, frostig und trocken. Paul ist zum Teich getrabt, hat Gerda angebellt und ist ihr hinterher ins Wasser gesprungen. Peinlich, aber keiner wurde verletzt. Bella steht auf der Koppel, der Mäher langweilt sich im Schuppen (laune −5)."
+    },
+    {
+      "zeit": "2026-11-11T19:15:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde: Paul hat Bella auf der Koppel ins Bein gezwickt (Bella laune −5, pflege −5, sie hat nach ihm getreten und knapp verfehlt) und dem Mäher danach ans Rad gepinkelt (Mäher laune −5, Messer −5). Er findet beides sehr gelungen."
+    },
+    {
+      "zeit": "2026-11-11T19:15:00+01:00",
+      "wer": "Julian (S-03)",
+      "text": "Der Mäher wurde ausgiebig gelobt, bekam Komplimente für seine Arbeit und wurde einmal abgeschmiert (zustand +30, laune +15). Damit sprang er an und hat die Große Wiese und die Koppel auf Gras 10 gemäht (Heu +4, Benzin −40, Öl −10, Messer −20). Bella auf der Koppel hat den Lärm gar nicht gemocht."
+    }
+  ],
+  "antraege": [
+    {
+      "id": "A-01",
+      "von": "S-04",
+      "idee": "Opel Manta mit Charakter",
+      "name": "Manni",
+      "status": "genehmigt vom Besitzer am 08.11.2026, mit Abschwächung der Donuts",
+      "datum": "2026-11-08"
+    },
+    {
+      "id": "A-02",
+      "von": "S-04",
+      "idee": "Hausgans mit St.-Pauli-Schal",
+      "name": "Gerda",
+      "status": "genehmigt vom Besitzer am 08.11.2026, mit Abschwächung",
+      "datum": "2026-11-08",
+      "entwurf": {
+        "art": "Hausgans (weiß, braun-weißer St.-Pauli-Schal)",
+        "typ": "tier",
+        "wesen": "Laut, gierig, hält den Teich für ihren. Glühender St.-Pauli-Fan, hasst den HSV. Hält sich für eine knallharte Geschäftsfrau.",
+        "beduerfnisse": {
+          "satt": "−15/Tag",
+          "wasser": "−20/Tag (schwimmen +40)",
+          "ruhm": "−10/Tag (Schal bewundern oder St. Pauli loben +15)"
+        },
+        "grosse_faehigkeit": "Erkundungsflattern: höchstens 1-mal pro Woche flattert sie in ein Nebel-Gebiet, das an den Teich grenzt, und erzählt, was dort liegt und ob es ein Geheimnis hat. Das Gebiet bleibt im Nebel, Freilegen kostet weiter Taler (ab Umbau 5 Taler billiger, wenn Gerda es erkundet hat). Kostet satt −20.",
+        "kleine_faehigkeiten": [
+          "Schilf-Geschäft: verkauft Kiez-Schilf an die Dorfkneipe, bringt dafür Kleinkram mit (Brotkrumen, Bierdeckel), ruhm +5. Keine Taler.",
+          "Kneifen: wer ihr am Teich zu nahe kommt, laune −5, am liebsten Paul."
+        ],
+        "schwaeche": "Eitel: dreckiger Schal (z. B. Matsch nach Mannis Donuts) = sie schmollt und macht nichts, bis der Schal gewaschen ist. Bei Gewitter versteckt sie sich in ihrer Hütte.",
+        "beziehungen": {
+          "paul": "jagt (kneift ihn in den Hintern). Paul bleibt Paul: er scheucht sie auf, sie flüchtet auf den Teich, er springt hinterher.",
+          "bella": "ignoriert, schnattert, wenn Bella am Teich grast",
+          "maeher": "jagt (schnattert ihn an, wenn er am Teich mäht, Mäher laune −5)",
+          "manni": "gegenseitige Verachtung, seine Donuts verdrecken ihren Schal"
+        },
+        "zuhause": "kleine Holzhütte mit St.-Pauli-Fahne am Teichufer (kommt beim Einzug mit)",
+        "zuege": "füttern (satt +30), schwimmen lassen (wasser +40), Schal waschen (ruhm +10, Schmollen vorbei), Schal bewundern oder St. Pauli loben (ruhm +15, Vorsicht Paul), am Teich grasen lassen (satt +20, Gras −10), Erkundungsflattern (Gebiet nennen)",
+        "abschwaechung": "Erkundungsflug deckt nicht auf, nur erzählen, 1-mal pro Woche, nur Nachbargebiete vom Teich (Hausgänse fliegen kaum, und Nebel-Gebiete sind bis zu den Talern zu). Schilf-Geschäft bringt keine Taler (Taler nur fürs Kümmern, kein Grinden). Der Teich gehört allen. Pauls Wesen bleibt, wie Max ihn festgelegt hat (keine Angst vor Gerda). Fuchs gestrichen (gibt es auf dem Hof nicht)."
+      }
+    },
+    {
+      "id": "A-03",
+      "von": "S-04",
+      "idee": "Wildschwein-Keiler mit abgebrochenem Hauer",
+      "name": "Horst",
+      "entwurf": {
+        "art": "Wildschwein-Keiler (massig, borstig, ein Hauer abgebrochen)",
+        "typ": "tier",
+        "wesen": "Verfressen, stur und gemütlich, bis jemand an sein Futter geht. Wühlt alles um, was nach Eicheln, Wurzeln oder Fallobst riecht. Ordnung findet er überbewertet.",
+        "beduerfnisse": {
+          "satt": "−20/Tag (Eicheln, Wurzeln, Fallobst)",
+          "suhle": "−15/Tag (Wälzen im Schlamm +40)",
+          "ruhe": "−10/Tag, bei Pauls Bellen oder Mannis Hupe −10 zusätzlich"
+        },
+        "grosse_faehigkeit": "Schneise wühlen: höchstens 1-mal pro Woche, nur in ein Nebel-Gebiet direkt neben seinem Standort. Er erzählt, was er dort gefunden hat. Das Gebiet bleibt im Nebel, Freilegen kostet ab Umbau 5 Taler weniger. Zusammen mit Gerdas Erkundungsflug ist das Gebiet höchstens 10 Taler billiger (Preis nie unter 10). Kostet satt −20 und suhle −20.",
+        "kleine_faehigkeiten": [
+          "Wühlen: auf einer Wiese Löcher, Gras −5, der Mäher holpert darüber (messer −5, laune −5).",
+          "Grunzen: drohendes Grunzen, kleinere Tiere in der Nähe weichen zurück (laune −5)."
+        ],
+        "schwaeche": "Verfressen: beim Fressen vergisst er alles andere und merkt nicht, was um ihn passiert. Wenn Paul bellt, zieht er sich grunzend in seine Suhle zurück.",
+        "beziehungen": {
+          "bella": "ärgert sie (Bella laune −5, wenn sie am selben Ort sind), sie findet ihn eklig, Äpfel aus dem Vorrat klaut er nicht",
+          "maeher": "wird vom Mäher gehasst (Löcher stumpfen Messer)",
+          "paul": "Paul bellt, Horst grunzt zurück, keiner traut sich näher. Paul bleibt Paul.",
+          "manni": "scheuert sich an seinem Lack (politur −5), Krieg",
+          "gerda": "Zweckbündnis, sonst Streit ums Gras am Teich"
+        },
+        "zuhause": "Schlammsuhle am Rand der Großen Wiese, nahe am Waldrand. Läge sie im Großen Wald (Nebel), würde dieser beim Einzug kostenlos freigelegt (Abschnitt 5). Das entscheidet Max.",
+        "zuege": "füttern (satt +30), in der Suhle wälzen lassen (suhle +40), Ruhe gönnen (ruhe +30), auf einer Wiese wühlen lassen (satt +15, Gras −5), Schneise wühlen (Gebiet nennen)",
+        "abschwaechung": "Schneise nur 1-mal pro Woche, nur Nachbargebiet, Gebiet bleibt Nebel, nur 5 statt 10 Taler Rabatt (mit Gerda höchstens 10 zusammen). Keine Äpfel-Klauerei aus dem Vorrat. Pauls Wesen bleibt wie festgelegt. Zuhause auf offenem Gebiet statt im Nebel-Wald, sonst gratis Freilegen."
+      },
+      "status": "wartet auf den Besitzer",
+      "datum": "2026-11-08",
+      "wunsch": "Justus würde die Suhle gern im Großen Wald anlegen (der ist inzwischen frei, 12.11.). Entscheidung liegt bei Max."
+    },
+    {
+      "id": "A-04",
+      "von": "S-05",
+      "idee": "Bier-Koboldmaki (Tarsier)",
+      "name": "Lipa",
+      "status": "genehmigt vom Besitzer am 09.11.2026 (Bier nur in Kneipe, bei Festen und als Mannis Feierabendbier, Bier-Radar 70 % bei Festen)",
+      "datum": "2026-11-09"
+    }
+  ],
+  "freigelegt": [
+    "wald-gross"
+  ],
+  "welt": {
+    "fluss": "normal",
+    "wetter": "frostig, trocken, klarer Morgen",
+    "woche": 1
+  },
+  "hofbauer": {
+    "zaeune": [],
+    "pfeife": null,
+    "ereignisse": [],
+    "stellschrauben": []
   }
- ],
- "freigelegt": [
-  "wald-gross"
- ],
- "welt": {
-  "fluss": "normal",
-  "wetter": "frostig, trocken, klarer Morgen",
-  "woche": 1
- },
- "hofbauer": {
-  "zaeune": [],
-  "pfeife": null,
-  "ereignisse": [],
-  "stellschrauben": []
- }
 }
