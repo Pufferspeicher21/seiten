@@ -1,7 +1,7 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-26T07:20:00+01:00",
+  "letzte_berechnung": "2026-11-26T19:11:00+01:00",
   "letzte_meldung": {
     "S-02": "2026-11-26",
     "S-03": "2026-11-26"
@@ -245,6 +245,16 @@
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-26T19:11:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrechnung: Es kam kein Zug, alle bleiben im Stall, im Schuppen und in ihren Zuhause. Bella streikt weiter, der Mäher brummelt vor sich hin, Lipa sitzt bierlos im Baum. Frostige Nacht."
+    },
+    {
+      "zeit": "2026-11-26T19:11:00+01:00",
+      "wer": "Paul",
+      "text": "Paul wollte abends Bellas Stalltür beschnüffeln, ist vor lauter Pferdegeruch gegen den Futtertrog gelaufen und hat danach seinen Schwanz gejagt. Keine Wirkung, nur peinlich."
+    },
     {
       "zeit": "2026-11-26T07:20:00+01:00",
       "wer": "Hof",
@@ -534,16 +544,6 @@
       "zeit": "2026-11-12T19:11:49+01:00",
       "wer": "Justus (S-04)",
       "text": "Justus erinnert Max an Horst (Antrag A-03), der noch auf die Entscheidung wartet, und bittet darum, die 6 Taler Pflastergeld zurückzubuchen, weil Taler erst mit dem Umbau gelten. Die Hof-KI gibt ihm recht: Hofkasse wieder bei 50 Talern. Die Bisse bleiben Paul gegönnt."
-    },
-    {
-      "zeit": "2026-11-12T19:11:49+01:00",
-      "wer": "Hof",
-      "text": "Abendrunde: Bella hat die abgemähte Koppel nur noch angeschaut (satt +3, laune −5, sie meckert). Paul hat sie dabei hungrig angestarrt, sie hat nach ihm getreten und knapp verfehlt (Bella laune −5). Er ist beleidigt in den Hundekorb getrottet."
-    },
-    {
-      "zeit": "2026-11-12T07:15:00+01:00",
-      "wer": "Justus (S-04)",
-      "text": "Gerda wurde gefüttert (satt +30) und durfte ihren St.-Pauli-Schal bewundern (ruhm +15), Manni wurde in der Garage gelobt (bewunderung +15). Weil Justus dabei St. Pauli so wohlwollend erwähnte, hat Paul ihn im Spiel gebissen (2 Taler Pflastergeld aus der Hofkasse)."
     }
   ],
   "antraege": [
