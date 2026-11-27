@@ -1,10 +1,10 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-26T19:11:00+01:00",
+  "letzte_berechnung": "2026-11-27T07:15:00+01:00",
   "letzte_meldung": {
-    "S-02": "2026-11-26",
-    "S-03": "2026-11-26"
+    "S-02": "2026-11-27",
+    "S-03": "2026-11-27"
   },
   "taler": 50,
   "vorraete": {
@@ -51,10 +51,10 @@
   ],
   "flaechen": {
     "w-grosse-wiese": {
-      "gras": 28
+      "gras": 30
     },
     "w-koppel": {
-      "gras": 22
+      "gras": 24
     },
     "bachwiese": {
       "gras": 100
@@ -76,7 +76,7 @@
       "matsch": 80
     },
     "huegel": {
-      "gras": 93
+      "gras": 95
     },
     "acker": {
       "zustand": "brach"
@@ -92,7 +92,7 @@
       "werte": {
         "satt": 0,
         "laune": 0,
-        "fitness": 8,
+        "fitness": 0,
         "pflege": 0,
         "vertrauen": 28
       },
@@ -116,7 +116,7 @@
         "benzin": 20,
         "oel": 70,
         "messer": 50,
-        "zustand": 85,
+        "zustand": 82,
         "laune": 0
       },
       "stimmung": "Brummelt im Schuppen, Laune im Keller (0), Tank knapp (benzin 20), Messer stumpf (50). Er springt so nicht an.",
@@ -135,10 +135,10 @@
       "beschreibung": "Maskottchen und Liebling vom Hof. Ein kleines Dickerchen mit Pech beim Denken. Trägt immer sein HSV-Lätzchen. Ein ganz Lieber, nur bei Pferden dreht er durch, denn er frisst nur Pferdefleisch. Wer St. Pauli mag, wird gebissen.",
       "werte": {
         "satt": 50,
-        "laune": 70,
+        "laune": 65,
         "energie": 40
       },
-      "stimmung": "Reibt sich den Hintern, Gerda hat gekniffen. Beleidigt, aber unverbesserlich.",
+      "stimmung": "Reibt sich schon wieder den Hintern, Gerda hat gekniffen. Beleidigt, aber unverbesserlich.",
       "ort": "teich",
       "plan": []
     },
@@ -151,11 +151,11 @@
       "beschreibung": "Rostiger, tiefergelegter Opel Manta mit Fuchsschwanz an der Antenne, Spoiler und viel zu lauter Hupe. Ein Proll mit Herz: hält sich für das schönste Auto im Dorf und will ständig bewundert werden. Ein Kratzer im Lack ruiniert ihm den Tag.",
       "werte": {
         "benzin": 60,
-        "politur": 86,
+        "politur": 81,
         "bewunderung": 100,
-        "zustand": 85
+        "zustand": 82
       },
-      "stimmung": "Steht in der Garage, frisch gelobt: Bewunderung 100, Politur 86. Der Fuchsschwanz wippt selbstzufrieden.",
+      "stimmung": "Steht in der Garage, frisch gelobt: Bewunderung 100, Politur 81. Der Fuchsschwanz wippt selbstzufrieden.",
       "ort": "dorf",
       "zuhause": "Garage Justus",
       "zuhause_punkt": [
@@ -180,11 +180,11 @@
       "halter": "S-04",
       "beschreibung": "Weiße Hausgans mit braun-weißem St.-Pauli-Schal. Laut, gierig und überzeugt, dass ihr der Teich gehört. Hält sich für eine knallharte Geschäftsfrau und Paul mit seinem HSV-Lätzchen für ihren Todfeind.",
       "werte": {
-        "satt": 83,
-        "wasser": 70,
+        "satt": 68,
+        "wasser": 90,
         "ruhm": 100
       },
-      "stimmung": "Satt 83, wasser 70, ruhm 100. Gefüttert, Schal bewundert, Gerda ist unerträglich zufrieden und hat Paul schon einmal gekniffen.",
+      "stimmung": "Satt 68, wasser 90, ruhm 100. Frisch geschwommen, der Schal glänzt, Gerda ist unerträglich zufrieden.",
       "ort": "teich",
       "zuhause": "Hütte am Teich",
       "zuhause_punkt": [
@@ -241,10 +241,25 @@
     "S-01": null,
     "S-02": "2026-11-11T07:20:00+01:00",
     "S-03": "2026-11-16T19:10:00+01:00",
-    "S-04": "2026-11-26T07:20:00+01:00",
+    "S-04": "2026-11-27T07:15:00+01:00",
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-27T07:15:00+01:00",
+      "wer": "Paul",
+      "text": "Paul wollte am Teich nur kurz Gerdas glänzenden Schal beschnuppern. Gerda hat ihn prompt in den Hintern gekniffen (laune −5). Alles Slapstick, niemand verletzt."
+    },
+    {
+      "zeit": "2026-11-27T07:15:00+01:00",
+      "wer": "Justus (S-04)",
+      "text": "Pflegezüge für Freitag: Gerda darf auf dem Teich schwimmen (wasser 90) und ihr Schal wird bewundert (ruhm 100). Manni wird in der Garage gelobt (bewunderung 100)."
+    },
+    {
+      "zeit": "2026-11-27T07:15:00+01:00",
+      "wer": "Hof",
+      "text": "Neuer Tag, Freitag, frostig und trocken. Bella streikt weiter im Stall, der Mäher brummelt im Schuppen (laune 0, benzin 20), Lipa sitzt bierlos im hohlen Baum. Das Gras wächst im Frost nur zäh."
+    },
     {
       "zeit": "2026-11-26T19:11:00+01:00",
       "wer": "Hof",
@@ -529,21 +544,6 @@
       "zeit": "2026-11-13T19:11:00+01:00",
       "wer": "Hof",
       "text": "Abendrunde: Bella hat die Koppel bis auf kümmerliche Stoppeln abgegrast (satt +10, Gras −10). Paul hat sie dabei wieder hungrig angestarrt und ins Bein gezwickt (Bella laune −5, pflege −5), sie hat nach ihm getreten und knapp verfehlt. Danach hat er sich beim Schwanzjagen im Kreis gedreht."
-    },
-    {
-      "zeit": "2026-11-13T07:12:00+01:00",
-      "wer": "Justus (S-04)",
-      "text": "Gerda hat ihren Schal ausgiebig bewundert (ruhm auf 100), Manni wurde in der Garage noch einmal gelobt (bewunderung 100). Diesmal kein St. Pauli im Spiel, Paul hat nichts zu beißen."
-    },
-    {
-      "zeit": "2026-11-13T07:12:00+01:00",
-      "wer": "Hof",
-      "text": "Neuer Tag, frostig und trocken. Paul hat Bella auf der Koppel ins Bein gezwickt (Bella laune −5, pflege −5, sie hat nach ihm getreten und knapp verfehlt). Der Mäher schmollt im Schuppen (laune 27), Lipa wartet im hohlen Baum auf ein Bier (bier 5)."
-    },
-    {
-      "zeit": "2026-11-12T19:11:49+01:00",
-      "wer": "Justus (S-04)",
-      "text": "Justus erinnert Max an Horst (Antrag A-03), der noch auf die Entscheidung wartet, und bittet darum, die 6 Taler Pflastergeld zurückzubuchen, weil Taler erst mit dem Umbau gelten. Die Hof-KI gibt ihm recht: Hofkasse wieder bei 50 Talern. Die Bisse bleiben Paul gegönnt."
     }
   ],
   "antraege": [
