@@ -1,7 +1,7 @@
 {
   "version": 2,
   "hofname": "Zickenstall",
-  "letzte_berechnung": "2026-11-27T07:15:00+01:00",
+  "letzte_berechnung": "2026-11-27T19:10:00+01:00",
   "letzte_meldung": {
     "S-02": "2026-11-27",
     "S-03": "2026-11-27"
@@ -245,6 +245,16 @@
     "S-05": null
   },
   "tagebuch": [
+    {
+      "zeit": "2026-11-27T19:10:00+01:00",
+      "wer": "Paul",
+      "text": "Paul hat am Abend am Teich Gerdas Schal wieder verdächtig lange angestarrt, aber diesmal aus sicherer Entfernung. Gerda hat nur laut gezischt. Kein Schaden."
+    },
+    {
+      "zeit": "2026-11-27T19:10:00+01:00",
+      "wer": "Hof",
+      "text": "Abendrunde, Freitag: Keine neuen Züge und keine Pläne. Bella streikt weiter im Stall, der Mäher brummelt im Schuppen, Lipa wartet bierlos im hohlen Baum. Neue Werte gibt es erst morgen früh."
+    },
     {
       "zeit": "2026-11-27T07:15:00+01:00",
       "wer": "Paul",
